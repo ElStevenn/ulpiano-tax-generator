@@ -1,0 +1,444 @@
+{
+  "model650": {
+    "description": "Estructura completa de datos para el Modelo 650 (Declaración del Impuesto de Sucesiones)",
+    "structure": {
+      "tramitante": {
+        "description": "Tramitante - Persona o entidad que presenta la declaración",
+        "required": true,
+        "fields": {
+          "nif": {
+            "type": "string",
+            "required": true,
+            "description": "NIF/NIE/CIF del tramitante",
+            "validation": "Debe tener formato válido de DNI, NIE o CIF"
+          },
+          "nombre": {
+            "type": "string",
+            "required": false,
+            "description": "Nombre de pila (si es persona, no empresa)",
+            "note": "Requerido si no se proporciona razonSocial"
+          },
+          "primerApellido": {
+            "type": "string",
+            "required": false,
+            "description": "Primer apellido (si es persona, no empresa)",
+            "note": "Requerido si no se proporciona razonSocial"
+          },
+          "segundoApellido": {
+            "type": "string",
+            "required": false,
+            "description": "Segundo apellido (opcional)"
+          },
+          "razonSocial": {
+            "type": "string",
+            "required": false,
+            "description": "Razón social (si es empresa, no persona)",
+            "note": "Requerido si no se proporcionan nombre/primerApellido"
+          },
+          "email": {
+            "type": "string",
+            "required": false,
+            "description": "Dirección de correo electrónico",
+            "recommended": true
+          },
+          "telefono": {
+            "type": "string",
+            "required": false,
+            "description": "Número de teléfono",
+            "recommended": true
+          },
+          "domicilio": {
+            "type": "object",
+            "required": true,
+            "fields": {
+              "via": {
+                "type": "string",
+                "required": true,
+                "description": "Nombre de la calle"
+              },
+              "numero": {
+                "type": "string",
+                "required": true,
+                "description": "Número de la calle"
+              },
+              "piso": {
+                "type": "string",
+                "required": false,
+                "description": "Piso/número de apartamento"
+              },
+              "cp": {
+                "type": "string",
+                "required": true,
+                "description": "Código postal",
+                "validation": "Debe tener 5 dígitos"
+              },
+              "municipio": {
+                "type": "string",
+                "required": true,
+                "description": "Ciudad/Municipio"
+              },
+              "provincia": {
+                "type": "string",
+                "required": true,
+                "description": "Provincia"
+              },
+              "pais": {
+                "type": "string",
+                "required": false,
+                "description": "Código de país (ej: 'ES')",
+                "recommended": true
+              }
+            }
+          }
+        }
+      },
+      "causante": {
+        "description": "Causante - Persona fallecida",
+        "required": true,
+        "fields": {
+          "nif": {
+            "type": "string",
+            "required": false,
+            "description": "NIF/NIE de la persona fallecida"
+          },
+          "nombre": {
+            "type": "string",
+            "required": false,
+            "description": "Nombre de pila del fallecido"
+          },
+          "primerApellido": {
+            "type": "string",
+            "required": false,
+            "description": "Primer apellido del fallecido"
+          },
+          "segundoApellido": {
+            "type": "string",
+            "required": false,
+            "description": "Segundo apellido del fallecido"
+          },
+          "fechaFallecimiento": {
+            "type": "string",
+            "required": true,
+            "description": "Fecha de fallecimiento",
+            "format": "YYYY-MM-DD",
+            "validation": "Debe ser una fecha válida y no puede ser futura"
+          },
+          "caDevengo": {
+            "type": "string",
+            "required": true,
+            "description": "Comunidad Autónoma donde devenga el impuesto (ej: 'Madrid')"
+          }
+        }
+      },
+      "beneficiarios": {
+        "description": "Beneficiarios - Lista de herederos/beneficiarios",
+        "required": true,
+        "type": "array",
+        "validation": "Debe haber al menos un heredero, y porcentajeParticipacionPct debe sumar 100%",
+        "fields": {
+          "nif": {
+            "type": "string",
+            "required": true,
+            "description": "NIF/NIE del heredero"
+          },
+          "nombre": {
+            "type": "string",
+            "required": true,
+            "description": "Nombre de pila del heredero"
+          },
+          "primerApellido": {
+            "type": "string",
+            "required": true,
+            "description": "Primer apellido del heredero"
+          },
+          "segundoApellido": {
+            "type": "string",
+            "required": false,
+            "description": "Segundo apellido del heredero"
+          },
+          "parentesco": {
+            "type": "string",
+            "required": true,
+            "description": "Parentesco con el fallecido (ej: 'Hijo/a', 'Cónyuge', 'Padre/Madre', etc.)"
+          },
+          "porcentajeParticipacionPct": {
+            "type": "number",
+            "required": true,
+            "description": "Porcentaje de participación en la herencia",
+            "validation": "Debe ser un número, la suma de todos los herederos debe ser igual a 100%"
+          },
+          "gradoDiscapacidadPct": {
+            "type": "number",
+            "required": false,
+            "description": "Porcentaje de grado de discapacidad (para reducciones)"
+          },
+          "domicilio": {
+            "type": "object",
+            "required": false,
+            "description": "Domicilio del heredero",
+            "recommended": true,
+            "fields": {
+              "via": {
+                "type": "string",
+                "required": true,
+                "description": "Nombre de la calle"
+              },
+              "numero": {
+                "type": "string",
+                "required": false,
+                "description": "Número de la calle"
+              },
+              "piso": {
+                "type": "string",
+                "required": false,
+                "description": "Piso/número de apartamento"
+              },
+              "cp": {
+                "type": "string",
+                "required": false,
+                "description": "Código postal"
+              },
+              "municipio": {
+                "type": "string",
+                "required": false,
+                "description": "Ciudad/Municipio"
+              },
+              "provincia": {
+                "type": "string",
+                "required": false,
+                "description": "Provincia"
+              },
+              "pais": {
+                "type": "string",
+                "required": false,
+                "description": "Código de país"
+              }
+            }
+          }
+        }
+      },
+      "bienes": {
+        "description": "Listado de bienes - Lista de bienes y derechos",
+        "required": true,
+        "type": "array",
+        "validation": "Debe haber al menos un bien",
+        "fields": {
+          "tipo": {
+            "type": "string",
+            "required": true,
+            "description": "Tipo de bien (ej: 'inmuebles', 'dinero', 'valores', 'derechos', etc.)"
+          },
+          "descripcion": {
+            "type": "string",
+            "required": true,
+            "description": "Descripción del bien"
+          },
+          "valor": {
+            "type": "number",
+            "required": true,
+            "description": "Valor del bien en euros",
+            "format": "decimal"
+          },
+          "cargasODebenes": {
+            "type": "number",
+            "required": true,
+            "description": "Cargas o deudas sobre el bien en euros",
+            "format": "decimal",
+            "default": 0
+          },
+          "esViviendaHabitual": {
+            "type": "boolean",
+            "required": false,
+            "description": "Si es vivienda habitual"
+          },
+          "porcentajeTitularidadDecujusPct": {
+            "type": "number",
+            "required": true,
+            "description": "Porcentaje de titularidad del fallecido",
+            "format": "decimal",
+            "validation": "Normalmente 100% a menos que sea copropiedad"
+          },
+          "fechaValoracion": {
+            "type": "string",
+            "required": false,
+            "description": "Fecha de valoración del bien",
+            "format": "YYYY-MM-DD",
+            "recommended": true
+          }
+        }
+      },
+      "reducciones": {
+        "description": "Reducciones - Deducciones fiscales",
+        "required": false,
+        "fields": {
+          "reduccionParentesco": {
+            "type": "number",
+            "required": false,
+            "description": "Reducción por parentesco",
+            "format": "decimal"
+          },
+          "reduccionDiscapacidad": {
+            "type": "number",
+            "required": false,
+            "description": "Reducción por discapacidad",
+            "format": "decimal"
+          },
+          "reduccionEmpresaFamiliar": {
+            "type": "number",
+            "required": false,
+            "description": "Reducción por empresa familiar",
+            "format": "decimal"
+          },
+          "reduccionSeguroVida": {
+            "type": "number",
+            "required": false,
+            "description": "Reducción por seguro de vida",
+            "format": "decimal"
+          }
+        }
+      },
+      "autoliquidacion": {
+        "description": "Autoliquidación - Información de autoliquidación y pago",
+        "required": true,
+        "fields": {
+          "formaPago": {
+            "type": "string",
+            "required": true,
+            "description": "Forma de pago",
+            "values": ["domiciliacion", "nrc", "otras"],
+            "validation": {
+              "domiciliacion": "Requiere el campo 'iban'",
+              "nrc": "Requiere el campo 'nrc'",
+              "otras": "No requiere campos adicionales"
+            }
+          },
+          "iban": {
+            "type": "string",
+            "required": false,
+            "description": "IBAN para pago por domiciliación",
+            "validation": "Requerido si formaPago = 'domiciliacion', debe tener formato IBAN válido"
+          },
+          "nrc": {
+            "type": "string",
+            "required": false,
+            "description": "NRC (Número de Referencia Completo) para el pago",
+            "validation": "Requerido si formaPago = 'nrc'"
+          },
+          "baseImponible": {
+            "type": "number",
+            "required": false,
+            "description": "Base imponible (calculada a partir de los bienes)",
+            "format": "decimal",
+            "note": "Puede calcularse automáticamente a partir de los bienes si no se proporciona"
+          },
+          "reducciones": {
+            "type": "number",
+            "required": false,
+            "description": "Total de reducciones",
+            "format": "decimal"
+          },
+          "baseLiquidable": {
+            "type": "number",
+            "required": false,
+            "description": "Base liquidable (baseImponible - reducciones)",
+            "format": "decimal"
+          },
+          "cuotaIntegra": {
+            "type": "number",
+            "required": false,
+            "description": "Cuota íntegra (importe del impuesto antes de bonificaciones)",
+            "format": "decimal"
+          },
+          "bonificaciones": {
+            "type": "number",
+            "required": false,
+            "description": "Bonificaciones/descuentos",
+            "format": "decimal"
+          },
+          "cuotaLiquida": {
+            "type": "number",
+            "required": false,
+            "description": "Cuota líquida (cuotaIntegra - bonificaciones)",
+            "format": "decimal"
+          },
+          "resultado": {
+            "type": "number",
+            "required": false,
+            "description": "Resultado final (importe a pagar o a devolver)",
+            "format": "decimal"
+          }
+        }
+      }
+    },
+    "example": {
+      "tramitante": {
+        "nif": "00000000T",
+        "nombre": "Test",
+        "primerApellido": "User",
+        "segundoApellido": null,
+        "email": "test@example.com",
+        "telefono": "600000000",
+        "domicilio": {
+          "via": "Calle Ejemplo",
+          "numero": "1",
+          "piso": null,
+          "cp": "28001",
+          "municipio": "Madrid",
+          "provincia": "Madrid",
+          "pais": "ES"
+        }
+      },
+      "causante": {
+        "nif": "11111111H",
+        "nombre": "Decedent",
+        "primerApellido": "Example",
+        "segundoApellido": null,
+        "fechaFallecimiento": "2024-10-10",
+        "caDevengo": "Madrid"
+      },
+      "beneficiarios": [
+        {
+          "nif": "22222222J",
+          "nombre": "Heir",
+          "primerApellido": "One",
+          "segundoApellido": null,
+          "parentesco": "Hijo/a",
+          "porcentajeParticipacionPct": 100,
+          "gradoDiscapacidadPct": null,
+          "domicilio": {
+            "via": "Calle Heredero",
+            "numero": "2",
+            "piso": "1º",
+            "cp": "28002",
+            "municipio": "Madrid",
+            "provincia": "Madrid",
+            "pais": "ES"
+          }
+        }
+      ],
+      "bienes": [
+        {
+          "tipo": "inmuebles",
+          "descripcion": "Flat in Madrid",
+          "valor": 100000,
+          "cargasODebenes": 0,
+          "esViviendaHabitual": false,
+          "porcentajeTitularidadDecujusPct": 100,
+          "fechaValoracion": "2024-10-10"
+        }
+      ],
+      "reducciones": {
+        "reduccionParentesco": null,
+        "reduccionDiscapacidad": null,
+        "reduccionEmpresaFamiliar": null,
+        "reduccionSeguroVida": null
+      },
+      "autoliquidacion": {
+        "formaPago": "otras",
+        "iban": null,
+        "nrc": null
+      }
+    }
+  }
+}
+
