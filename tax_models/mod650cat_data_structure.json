@@ -1,493 +1,493 @@
 {
   "model650cat": {
-    "description": "Ordered data structure for the Catalonia specific inheritance tax return (Model 650 - ATC-650E-6).",
+    "description": "Estructura de datos ordenada para la declaración del impuesto de sucesiones específica de Cataluña (Modelo 650 - ATC-650E-6).",
     "metadata": {
       "source": "tax_models/650_es-cat.pdf",
       "formCode": "ATC-650E-6",
-      "jurisdiction": "Catalonia",
+      "jurisdiction": "Cataluña",
       "language": "es-CA",
       "lastUpdated": "2025-11-17"
     },
     "structure": [
       {
-        "id": "header",
-        "label": "Header",
+        "id": "encabezado",
+        "label": "Encabezado",
         "order": 0,
         "required": true,
         "fields": [
           {
             "id": "cpr",
-            "label": "CPR reference",
+            "label": "Referencia CPR",
             "type": "string",
             "order": 1,
             "required": true,
-            "description": "Reference number displayed at the top-left of the form (CPR)."
+            "description": "Número de referencia mostrado en la parte superior izquierda del formulario (CPR)."
           }
         ]
       },
       {
-        "id": "subject",
-        "label": "Subject (taxpayer / inheritor)",
+        "id": "sujeto",
+        "label": "Sujeto (contribuyente / heredero)",
         "order": 1,
         "required": true,
         "fields": [
           {
             "id": "nif",
-            "label": "NIF (box 2)",
+            "label": "NIF (caja 2)",
             "type": "string",
             "order": 1,
             "required": true,
-            "description": "Spanish tax identification number printed next to box (2).",
-            "validation": "Must be a valid DNI, NIE or CIF."
+            "description": "Número de identificación fiscal español impreso junto a la caja (2).",
+            "validation": "Debe ser un DNI, NIE o CIF válido."
           },
           {
-            "id": "fullNameOrBusinessName",
-            "label": "Full name or business name",
+            "id": "nombreCompletoORazonSocial",
+            "label": "Nombre completo o razón social",
             "type": "string",
             "order": 2,
             "required": true,
-            "description": "Complete legal name of the taxpayer (or the company name when acting as an entity)."
+            "description": "Nombre legal completo del contribuyente (o el nombre de la empresa cuando actúa como entidad)."
           },
           {
-            "id": "streetName",
-            "label": "Street name",
+            "id": "nombreVia",
+            "label": "Nombre de la vía",
             "type": "string",
             "order": 3,
             "required": true,
-            "description": "Street or road used in the postal address (Vía pública)."
+            "description": "Calle o vía utilizada en la dirección postal (Vía pública)."
           },
           {
-            "id": "streetNumber",
-            "label": "Street number",
+            "id": "numeroVia",
+            "label": "Número de la vía",
             "type": "string",
             "order": 4,
             "required": true,
-            "description": "House or building number shown before Esc./Piso/Puerta."
+            "description": "Número de casa o edificio mostrado antes de Esc./Piso/Puerta."
           },
           {
-            "id": "stair",
-            "label": "Stair / block",
+            "id": "escalera",
+            "label": "Escalera / bloque",
             "type": "string",
             "order": 5,
             "required": false,
-            "description": "Stairway, block or entrance (Esc.)."
+            "description": "Escalera, bloque o entrada (Esc.)."
           },
           {
-            "id": "floor",
-            "label": "Floor",
+            "id": "piso",
+            "label": "Piso",
             "type": "string",
             "order": 6,
             "required": false,
-            "description": "Floor information (Piso)."
+            "description": "Información del piso (Piso)."
           },
           {
-            "id": "door",
-            "label": "Door / unit",
+            "id": "puerta",
+            "label": "Puerta / unidad",
             "type": "string",
             "order": 7,
             "required": false,
-            "description": "Door number or unit identifier (Puerta)."
+            "description": "Número de puerta o identificador de unidad (Puerta)."
           },
           {
-            "id": "postalCode",
-            "label": "Postal code",
+            "id": "codigoPostal",
+            "label": "Código postal",
             "type": "string",
             "order": 8,
             "required": true,
-            "description": "Postal code next to the address block.",
-            "validation": "Must contain exactly 5 digits."
+            "description": "Código postal junto al bloque de dirección.",
+            "validation": "Debe contener exactamente 5 dígitos."
           },
           {
-            "id": "municipality",
-            "label": "Municipality",
+            "id": "municipio",
+            "label": "Municipio",
             "type": "string",
             "order": 9,
             "required": true,
-            "description": "Municipality or city name."
+            "description": "Nombre del municipio o ciudad."
           },
           {
-            "id": "province",
-            "label": "Province",
+            "id": "provincia",
+            "label": "Provincia",
             "type": "string",
             "order": 10,
             "required": true,
-            "description": "Province name (Provincia)."
+            "description": "Nombre de la provincia (Provincia)."
           },
           {
-            "id": "country",
-            "label": "Country",
+            "id": "pais",
+            "label": "País",
             "type": "string",
             "order": 11,
             "required": false,
-            "description": "Country code printed under País.",
+            "description": "Código de país impreso bajo País.",
             "default": "ES"
           },
           {
-            "id": "phone",
-            "label": "Phone number (box 3)",
+            "id": "telefono",
+            "label": "Número de teléfono (caja 3)",
             "type": "string",
             "order": 12,
             "required": false,
-            "description": "Telephone contact shown in box (3).",
+            "description": "Contacto telefónico mostrado en la caja (3).",
             "recommended": true
           },
           {
-            "id": "email",
-            "label": "Email address",
+            "id": "correoElectronico",
+            "label": "Dirección de correo electrónico",
             "type": "string",
             "order": 13,
             "required": false,
-            "description": "Email address (Dirección electrónica).",
+            "description": "Dirección de correo electrónico (Dirección electrónica).",
             "recommended": true
           },
           {
-            "id": "birthDate",
-            "label": "Birth date (box 4)",
+            "id": "fechaNacimiento",
+            "label": "Fecha de nacimiento (caja 4)",
             "type": "string",
             "order": 14,
             "required": true,
-            "description": "Date of birth requested in box (4).",
+            "description": "Fecha de nacimiento solicitada en la caja (4).",
             "format": "YYYY-MM-DD"
           },
           {
-            "id": "kinship",
-            "label": "Kinship",
+            "id": "parentesco",
+            "label": "Parentesco",
             "type": "string",
             "order": 15,
             "required": true,
-            "description": "Kinship with the deceased (Parentesco)."
+            "description": "Parentesco con el fallecido (Parentesco)."
           },
           {
-            "id": "kinshipGroup",
-            "label": "Kinship group",
+            "id": "grupoParentesco",
+            "label": "Grupo de parentesco",
             "type": "string",
             "order": 16,
             "required": true,
-            "description": "Tax group requested next to Parentesco (Grupo).",
+            "description": "Grupo fiscal solicitado junto a Parentesco (Grupo).",
             "values": ["I", "II", "III", "IV"]
           },
           {
-            "id": "preExistingNetWorth",
-            "label": "Pre-existing net worth",
+            "id": "patrimonioPreexistente",
+            "label": "Patrimonio preexistente",
             "type": "number",
             "order": 17,
             "required": false,
-            "description": "Amount entered in Patrimonio preexistente (EUR).",
+            "description": "Importe ingresado en Patrimonio preexistente (EUR).",
             "format": "decimal"
           },
           {
-            "id": "hasDisability",
-            "label": "Has disability",
+            "id": "tieneDiscapacidad",
+            "label": "Tiene discapacidad",
             "type": "boolean",
             "order": 18,
             "required": false,
-            "description": "Checkbox that indicates whether the taxpayer has a disability (Discapacidad: Sí)."
+            "description": "Casilla que indica si el contribuyente tiene una discapacidad (Discapacidad: Sí)."
           },
           {
-            "id": "disabilityPercentage",
-            "label": "Disability percentage",
+            "id": "porcentajeDiscapacidad",
+            "label": "Porcentaje de discapacidad",
             "type": "number",
             "order": 19,
             "required": false,
-            "description": "Percentage written next to the disability checkbox.",
+            "description": "Porcentaje escrito junto a la casilla de discapacidad.",
             "format": "decimal",
-            "validation": "Use a value between 0 and 100.",
-            "dependsOn": "hasDisability"
+            "validation": "Usar un valor entre 0 y 100.",
+            "dependsOn": "tieneDiscapacidad"
           },
           {
-            "id": "successionTitle",
-            "label": "Succession title",
+            "id": "tituloSucesorio",
+            "label": "Título sucesorio",
             "type": "string",
             "order": 20,
             "required": false,
-            "description": "Legal title to the succession (Título sucesorio)."
+            "description": "Título legal de la sucesión (Título sucesorio)."
           }
         ]
       },
       {
-        "id": "deceased",
-        "label": "Deceased person (causante)",
+        "id": "causante",
+        "label": "Persona fallecida (causante)",
         "order": 2,
         "required": true,
         "fields": [
           {
             "id": "nif",
-            "label": "Deceased NIF",
+            "label": "NIF del fallecido",
             "type": "string",
             "order": 1,
             "required": false,
-            "description": "NIF/NIE of the deceased person."
+            "description": "NIF/NIE de la persona fallecida."
           },
           {
-            "id": "fullName",
-            "label": "Deceased full name",
+            "id": "nombreCompleto",
+            "label": "Nombre completo del fallecido",
             "type": "string",
             "order": 2,
             "required": false,
-            "description": "Full name of the deceased (Apellidos y nombre)."
+            "description": "Nombre completo del fallecido (Apellidos y nombre)."
           },
           {
-            "id": "streetName",
-            "label": "Street name",
+            "id": "nombreVia",
+            "label": "Nombre de la vía",
             "type": "string",
             "order": 3,
             "required": false,
-            "description": "Street or road used in the postal address (Vía pública)."
+            "description": "Calle o vía utilizada en la dirección postal (Vía pública)."
           },
           {
-            "id": "streetNumber",
-            "label": "Street number",
+            "id": "numeroVia",
+            "label": "Número de la vía",
             "type": "string",
             "order": 4,
             "required": false,
-            "description": "House or building number shown before Esc./Piso/Puerta."
+            "description": "Número de casa o edificio mostrado antes de Esc./Piso/Puerta."
           },
           {
-            "id": "stair",
-            "label": "Stair / block",
+            "id": "escalera",
+            "label": "Escalera / bloque",
             "type": "string",
             "order": 5,
             "required": false,
-            "description": "Stairway, block or entrance (Esc.)."
+            "description": "Escalera, bloque o entrada (Esc.)."
           },
           {
-            "id": "floor",
-            "label": "Floor",
+            "id": "piso",
+            "label": "Piso",
             "type": "string",
             "order": 6,
             "required": false,
-            "description": "Floor information (Piso)."
+            "description": "Información del piso (Piso)."
           },
           {
-            "id": "door",
-            "label": "Door / unit",
+            "id": "puerta",
+            "label": "Puerta / unidad",
             "type": "string",
             "order": 7,
             "required": false,
-            "description": "Door number or unit identifier (Puerta)."
+            "description": "Número de puerta o identificador de unidad (Puerta)."
           },
           {
-            "id": "postalCode",
-            "label": "Postal code",
+            "id": "codigoPostal",
+            "label": "Código postal",
             "type": "string",
             "order": 8,
             "required": false,
-            "description": "Postal code next to the address block.",
-            "validation": "Must contain exactly 5 digits."
+            "description": "Código postal junto al bloque de dirección.",
+            "validation": "Debe contener exactamente 5 dígitos."
           },
           {
-            "id": "municipality",
-            "label": "Municipality",
+            "id": "municipio",
+            "label": "Municipio",
             "type": "string",
             "order": 9,
             "required": false,
-            "description": "Municipality or city name."
+            "description": "Nombre del municipio o ciudad."
           },
           {
-            "id": "province",
-            "label": "Province",
+            "id": "provincia",
+            "label": "Provincia",
             "type": "string",
             "order": 10,
             "required": false,
-            "description": "Province name (Provincia)."
+            "description": "Nombre de la provincia (Provincia)."
           },
           {
-            "id": "country",
-            "label": "Country",
+            "id": "pais",
+            "label": "País",
             "type": "string",
             "order": 11,
             "required": false,
-            "description": "Country code printed under País.",
+            "description": "Código de país impreso bajo País.",
             "default": "ES"
           },
           {
-            "id": "obligatedToWealthTaxInLastFourYears",
-            "label": "Was obligated to wealth tax in the last 4 years",
+            "id": "obligadoImpuestoPatrimonioUltimosCuatroAnos",
+            "label": "Estaba obligado al impuesto sobre el patrimonio en los últimos 4 años",
             "type": "boolean",
             "order": 12,
             "required": false,
-            "description": "Corresponds to the question 'Persona causante obligada a presentar declaración del impuesto sobre el patrimonio en alguno de los 4 años anteriores a la muerte?'. Checkbox marked with X for 'Sí' (Yes)."
+            "description": "Corresponde a la pregunta 'Persona causante obligada a presentar declaración del impuesto sobre el patrimonio en alguno de los 4 años anteriores a la muerte?'. Casilla marcada con X para 'Sí' (Sí)."
           },
           {
-            "id": "isTestate",
-            "label": "Succession is testate (with will)",
+            "id": "esTestada",
+            "label": "La sucesión es testada (con testamento)",
             "type": "boolean",
             "order": 12.5,
             "required": false,
-            "description": "Checkbox for 'testada' (testate succession, meaning with a will)."
+            "description": "Casilla para 'testada' (sucesión testada, es decir, con testamento)."
           },
           {
-            "id": "isIntestate",
-            "label": "Succession is intestate (without will)",
+            "id": "esIntestada",
+            "label": "La sucesión es intestada (sin testamento)",
             "type": "boolean",
             "order": 12.6,
             "required": false,
-            "description": "Checkbox for 'intestada' (intestate succession, meaning without a will)."
+            "description": "Casilla para 'intestada' (sucesión intestada, es decir, sin testamento)."
           },
           {
-            "id": "numberOfInterestedParties",
-            "label": "Number of interested parties",
+            "id": "numeroPersonasInteresadas",
+            "label": "Número de personas interesadas",
             "type": "number",
             "order": 13,
             "required": true,
             "description": "Número de personas interesadas en la sucesión.",
             "format": "integer",
-            "validation": "Must be greater than or equal to 1."
+            "validation": "Debe ser mayor o igual a 1."
           },
           {
-            "id": "notaryOrAuthority",
-            "label": "Notary or authority",
+            "id": "notarioOAutoridad",
+            "label": "Notario o autoridad",
             "type": "string",
             "order": 14,
             "required": false,
-            "description": "Name of the notary or competent authority (Notario/aria o autoridad)."
+            "description": "Nombre del notario o autoridad competente (Notario/aria o autoridad)."
           },
           {
-            "id": "notarialActDate",
-            "label": "Notarial act date",
+            "id": "fechaActaNotarial",
+            "label": "Fecha del acta notarial",
             "type": "string",
             "order": 15,
             "required": false,
-            "description": "Date shown next to the Notary/authority block (//).",
+            "description": "Fecha mostrada junto al bloque Notario/autoridad (//).",
             "format": "YYYY-MM-DD"
           }
         ]
       },
       {
-        "id": "acknowledgement",
-        "label": "Acknowledgement",
+        "id": "reconocimiento",
+        "label": "Reconocimiento",
         "order": 3,
         "required": true,
         "fields": [
           {
-            "id": "signatoryNif",
-            "label": "Signatory NIF",
+            "id": "nifFirmante",
+            "label": "NIF del firmante",
             "type": "string",
             "order": 1,
             "required": true,
-            "description": "NIF printed next to the statement signed by the taxpayer or presenter."
+            "description": "NIF impreso junto a la declaración firmada por el contribuyente o presentador."
           },
           {
-            "id": "signatoryFullName",
-            "label": "Signatory full name",
+            "id": "nombreCompletoFirmante",
+            "label": "Nombre completo del firmante",
             "type": "string",
             "order": 2,
             "required": true,
-            "description": "Name of the person who signs the declaration."
+            "description": "Nombre de la persona que firma la declaración."
           },
           {
-            "id": "streetName",
-            "label": "Street name",
+            "id": "nombreVia",
+            "label": "Nombre de la vía",
             "type": "string",
             "order": 2.5,
             "required": false,
-            "description": "Street or road used in the postal address (Vía pública)."
+            "description": "Calle o vía utilizada en la dirección postal (Vía pública)."
           },
           {
-            "id": "streetNumber",
-            "label": "Street number",
+            "id": "numeroVia",
+            "label": "Número de la vía",
             "type": "string",
             "order": 2.6,
             "required": false,
-            "description": "House or building number shown before Esc./Piso/Puerta."
+            "description": "Número de casa o edificio mostrado antes de Esc./Piso/Puerta."
           },
           {
-            "id": "stair",
-            "label": "Stair / block",
+            "id": "escalera",
+            "label": "Escalera / bloque",
             "type": "string",
             "order": 2.7,
             "required": false,
-            "description": "Stairway, block or entrance (Esc.)."
+            "description": "Escalera, bloque o entrada (Esc.)."
           },
           {
-            "id": "floor",
-            "label": "Floor",
+            "id": "piso",
+            "label": "Piso",
             "type": "string",
             "order": 2.8,
             "required": false,
-            "description": "Floor information (Piso)."
+            "description": "Información del piso (Piso)."
           },
           {
-            "id": "door",
-            "label": "Door / unit",
+            "id": "puerta",
+            "label": "Puerta / unidad",
             "type": "string",
             "order": 2.9,
             "required": false,
-            "description": "Door number or unit identifier (Puerta)."
+            "description": "Número de puerta o identificador de unidad (Puerta)."
           },
           {
-            "id": "postalCode",
-            "label": "Postal code",
+            "id": "codigoPostal",
+            "label": "Código postal",
             "type": "string",
             "order": 3,
             "required": false,
-            "description": "Postal code next to the address block.",
-            "validation": "Must contain exactly 5 digits."
+            "description": "Código postal junto al bloque de dirección.",
+            "validation": "Debe contener exactamente 5 dígitos."
           },
           {
-            "id": "municipality",
-            "label": "Municipality",
+            "id": "municipio",
+            "label": "Municipio",
             "type": "string",
             "order": 3.1,
             "required": false,
-            "description": "Municipality or city name."
+            "description": "Nombre del municipio o ciudad."
           },
           {
-            "id": "province",
-            "label": "Province",
+            "id": "provincia",
+            "label": "Provincia",
             "type": "string",
             "order": 3.2,
             "required": false,
-            "description": "Province name (Provincia)."
+            "description": "Nombre de la provincia (Provincia)."
           },
           {
-            "id": "country",
-            "label": "Country",
+            "id": "pais",
+            "label": "País",
             "type": "string",
             "order": 3.3,
             "required": false,
-            "description": "Country code printed under País.",
+            "description": "Código de país impreso bajo País.",
             "default": "ES"
           },
           {
-            "id": "phone",
-            "label": "Phone number",
+            "id": "telefono",
+            "label": "Número de teléfono",
             "type": "string",
             "order": 3.4,
             "required": false,
-            "description": "Telephone contact (Teléfono)."
+            "description": "Contacto telefónico (Teléfono)."
           },
           {
-            "id": "email",
-            "label": "Email address",
+            "id": "correoElectronico",
+            "label": "Dirección de correo electrónico",
             "type": "string",
             "order": 3.5,
             "required": false,
-            "description": "Email address (Dirección electrónica)."
+            "description": "Dirección de correo electrónico (Dirección electrónica)."
           },
           {
-            "id": "statementAgreement",
-            "label": "Agreement with the statement",
+            "id": "acuerdoDeclaracion",
+            "label": "Acuerdo con la declaración",
             "type": "boolean",
             "order": 4,
             "required": false,
-            "description": "Checkbox 'Sí' that indicates the presenter declares under their responsibility that the simple copy matches the original.",
+            "description": "Casilla 'Sí' que indica que el presentador declara bajo su responsabilidad que la copia simple coincide con el original.",
             "default": true
           },
           {
-            "id": "signatureDate",
-            "label": "Signature date",
+            "id": "fechaFirma",
+            "label": "Fecha de firma",
             "type": "string",
             "order": 5,
             "required": false,
-            "description": "Date of signature shown in the declaration (día, mes, año).",
+            "description": "Fecha de firma mostrada en la declaración (día, mes, año).",
             "format": "YYYY-MM-DD"
           }
         ]
       },
       {
-        "id": "payment",
-        "label": "Payment details",
+        "id": "pago",
+        "label": "Detalles de pago",
         "order": 4,
         "required": true,
         "fields": [
@@ -498,102 +498,102 @@
             "order": 1,
             "required": false,
             "description": "Código internacional de cuenta bancaria (IBAN).",
-            "validation": "Must follow the IBAN format (country code + control digits + BBAN)."
+            "validation": "Debe seguir el formato IBAN (código de país + dígitos de control + BBAN)."
           },
           {
-            "id": "chargeInAccount",
-            "label": "Charge in account",
+            "id": "cargoEnCuenta",
+            "label": "Cargo en cuenta",
             "type": "boolean",
             "order": 2,
             "required": false,
-            "description": "Checkbox 'Cargo en cuenta' that authorizes the bank to charge the IBAN."
+            "description": "Casilla 'Cargo en cuenta' que autoriza al banco a cargar el IBAN."
           },
           {
-            "id": "cashPayment",
-            "label": "Cash payment",
+            "id": "pagoEfectivo",
+            "label": "Pago en efectivo",
             "type": "boolean",
             "order": 3,
             "required": false,
-            "description": "Checkbox 'En efectivo' for cash payments."
+            "description": "Casilla 'En efectivo' para pagos en efectivo."
           },
           {
-            "id": "bankCountry",
-            "label": "Bank country",
+            "id": "paisBanco",
+            "label": "País del banco",
             "type": "string",
             "order": 4,
             "required": false,
-            "description": "Country code written under 'País' next to the IBAN boxes.",
+            "description": "Código de país escrito bajo 'País' junto a las cajas IBAN.",
             "default": "ES"
           },
           {
-            "id": "bankControlDigits",
-            "label": "Control digits (DC)",
+            "id": "digitosControlBanco",
+            "label": "Dígitos de control (DC)",
             "type": "string",
             "order": 5,
             "required": false,
-            "description": "Control digits shown in the first 'DC' box (after country code)."
+            "description": "Dígitos de control mostrados en la primera caja 'DC' (después del código de país)."
           },
           {
-            "id": "bankEntity",
-            "label": "Bank entity",
+            "id": "entidadBanco",
+            "label": "Entidad bancaria",
             "type": "string",
             "order": 6,
             "required": false,
-            "description": "Bank entity code (Entidad) - 4 digits."
+            "description": "Código de entidad bancaria (Entidad) - 4 dígitos."
           },
           {
-            "id": "bankBranch",
-            "label": "Bank branch",
+            "id": "sucursalBanco",
+            "label": "Sucursal bancaria",
             "type": "string",
             "order": 7,
             "required": false,
-            "description": "Bank branch code (Sucursal) - 4 digits."
+            "description": "Código de sucursal bancaria (Sucursal) - 4 dígitos."
           },
           {
-            "id": "bankControlDigits2",
-            "label": "Control digits 2 (DC)",
+            "id": "digitosControlBanco2",
+            "label": "Dígitos de control 2 (DC)",
             "type": "string",
             "order": 8,
             "required": false,
-            "description": "Second control digits shown in the 'DC' box (after branch)."
+            "description": "Segundos dígitos de control mostrados en la caja 'DC' (después de la sucursal)."
           },
           {
-            "id": "accountNumber",
-            "label": "Account number",
+            "id": "numeroCuenta",
+            "label": "Número de cuenta",
             "type": "string",
             "order": 9,
             "required": false,
-            "description": "Account number (Número de cuenta) - 10 digits."
+            "description": "Número de cuenta (Número de cuenta) - 10 dígitos."
           },
           {
-            "id": "amount",
-            "label": "Amount",
+            "id": "importe",
+            "label": "Importe",
             "type": "number",
             "order": 10,
             "required": false,
-            "description": "Payment amount (Importe) in EUR.",
+            "description": "Importe del pago (Importe) en EUR.",
             "format": "decimal"
           }
         ]
       },
       {
-        "id": "settlement",
-        "label": "Settlement (autoliquidación)",
+        "id": "liquidacion",
+        "label": "Liquidación (autoliquidación)",
         "order": 5,
         "required": true,
         "fields": [
           {
-            "id": "disabilityAllowance",
-            "label": "Disability allowance",
+            "id": "prestacionDiscapacidad",
+            "label": "Prestación por discapacidad",
             "type": "number",
             "order": 1,
             "required": false,
-            "description": "Amount in the 'Por discapacidad' line.",
+            "description": "Importe en la línea 'Por discapacidad'.",
             "format": "decimal"
           },
           {
-            "id": "taxLiabilityCaseGeneral",
-            "label": "Tax liability - general case",
+            "id": "cuotaTributariaCasoGeneral",
+            "label": "Cuota tributaria - caso general",
             "type": "number",
             "order": 2,
             "required": false,
@@ -601,8 +601,8 @@
             "format": "decimal"
           },
           {
-            "id": "taxLiabilityAverageRate",
-            "label": "Tax liability - average rate",
+            "id": "cuotaTributariaTipoMedio",
+            "label": "Cuota tributaria - tipo medio efectivo",
             "type": "number",
             "order": 3,
             "required": false,
@@ -610,44 +610,44 @@
             "format": "decimal"
           },
           {
-            "id": "baseLiquidableRealBox13",
-            "label": "Real taxable base (box 13)",
+            "id": "baseLiquidableRealCaja13",
+            "label": "Base liquidable real (caja 13)",
             "type": "number",
             "order": 4,
             "required": false,
-            "description": "Base liquidable real shown in box 13.",
+            "description": "Base liquidable real mostrada en la caja 13.",
             "format": "decimal"
           },
           {
-            "id": "baseLiquidableTeoricaBox14",
-            "label": "Theoretical taxable base (box 14)",
+            "id": "baseLiquidableTeoricaCaja14",
+            "label": "Base liquidable teórica (caja 14)",
             "type": "number",
             "order": 5,
             "required": false,
-            "description": "Base liquidable teórica shown in box 14.",
+            "description": "Base liquidable teórica mostrada en la caja 14.",
             "format": "decimal"
           },
           {
-            "id": "cuotaIntegraBox16",
-            "label": "Integral tax quota (box 16)",
+            "id": "cuotaIntegraCaja16",
+            "label": "Cuota íntegra (caja 16)",
             "type": "number",
             "order": 6,
             "required": false,
-            "description": "Cuota íntegra calculated for box 16.",
+            "description": "Cuota íntegra calculada para la caja 16.",
             "format": "decimal"
           },
           {
-            "id": "taxLiabilityBox605",
-            "label": "Tax liability (box 605)",
+            "id": "cuotaTributariaCaja605",
+            "label": "Cuota tributaria (caja 605)",
             "type": "number",
             "order": 7,
             "required": false,
-            "description": "Cuota tributaria before reductions (box 605).",
+            "description": "Cuota tributaria antes de reducciones (caja 605).",
             "format": "decimal"
           },
           {
-            "id": "excessTaxReductionBox606",
-            "label": "Reduction for excess tax (box 606)",
+            "id": "reduccionExcesoCuotaCaja606",
+            "label": "Reducción por exceso de cuota (caja 606)",
             "type": "number",
             "order": 8,
             "required": false,
@@ -655,8 +655,8 @@
             "format": "decimal"
           },
           {
-            "id": "adjustedTaxLiabilityBox607",
-            "label": "Adjusted tax liability (box 607)",
+            "id": "cuotaTributariaAjustadaCaja607",
+            "label": "Cuota tributaria ajustada (caja 607)",
             "type": "number",
             "order": 9,
             "required": false,
@@ -664,8 +664,8 @@
             "format": "decimal"
           },
           {
-            "id": "tipoMedioEfectivoBox17",
-            "label": "Effective average rate (box 17)",
+            "id": "tipoMedioEfectivoCaja17",
+            "label": "Tipo medio efectivo (caja 17)",
             "type": "number",
             "order": 10,
             "required": false,
@@ -673,17 +673,17 @@
             "format": "decimal"
           },
           {
-            "id": "cuotaTributariaAjustadaBox18",
-            "label": "Adjusted tax quota (box 18)",
+            "id": "cuotaTributariaAjustadaCaja18",
+            "label": "Cuota tributaria ajustada (caja 18)",
             "type": "number",
             "order": 11,
             "required": false,
-            "description": "Cuota tributaria ajustada shown in box 18.",
+            "description": "Cuota tributaria ajustada mostrada en la caja 18.",
             "format": "decimal"
           },
           {
-            "id": "bonificacionCuotaBox19",
-            "label": "Bonus on the tax quota (box 19)",
+            "id": "bonificacionCuotaCaja19",
+            "label": "Bonificación de la cuota tributaria (caja 19)",
             "type": "number",
             "order": 12,
             "required": false,
@@ -691,8 +691,8 @@
             "format": "decimal"
           },
           {
-            "id": "deduccionDobleImposicionBox20",
-            "label": "Double taxation deduction (box 20)",
+            "id": "deduccionDobleImposicionCaja20",
+            "label": "Deducción por doble imposición (caja 20)",
             "type": "number",
             "order": 13,
             "required": false,
@@ -700,8 +700,8 @@
             "format": "decimal"
           },
           {
-            "id": "deduccionCuotasAnterioresBox21",
-            "label": "Previous liabilities deduction (box 21)",
+            "id": "deduccionCuotasAnterioresCaja21",
+            "label": "Deducción de cuotas anteriores (caja 21)",
             "type": "number",
             "order": 14,
             "required": false,
@@ -709,26 +709,26 @@
             "format": "decimal"
           },
           {
-            "id": "cuotaIngresarBox22",
-            "label": "Amount to enter (box 22)",
+            "id": "cuotaIngresarCaja22",
+            "label": "Importe a ingresar (caja 22)",
             "type": "number",
             "order": 15,
             "required": false,
-            "description": "Quota to pay: 18 - 19 - 20 - 21.",
+            "description": "Cuota a pagar: 18 - 19 - 20 - 21.",
             "format": "decimal"
           },
           {
-            "id": "recargoBox23",
-            "label": "Surcharge (box 23)",
+            "id": "recargoCaja23",
+            "label": "Recargo (caja 23)",
             "type": "number",
             "order": 16,
             "required": false,
-            "description": "Recàrrec applied to the amount to enter.",
+            "description": "Recàrrec aplicado al importe a ingresar.",
             "format": "decimal"
           },
           {
-            "id": "interesesDemoraBox24",
-            "label": "Late-payment interest (box 24)",
+            "id": "interesesDemoraCaja24",
+            "label": "Intereses de demora (caja 24)",
             "type": "number",
             "order": 17,
             "required": false,
@@ -736,8 +736,8 @@
             "format": "decimal"
           },
           {
-            "id": "totalIngresarBox25",
-            "label": "Total amount to enter (box 25)",
+            "id": "totalIngresarCaja25",
+            "label": "Importe total a ingresar (caja 25)",
             "type": "number",
             "order": 18,
             "required": false,
@@ -748,75 +748,75 @@
       }
     ],
     "example": {
-      "header": {
+      "encabezado": {
         "cpr": "9055050"
       },
-      "subject": {
+      "sujeto": {
         "nif": "00000000T",
-        "fullNameOrBusinessName": "Test Taxpayer",
-        "streetName": "Carrer Gran",
-        "streetNumber": "12",
-        "stair": "A",
-        "floor": "2",
-        "door": "1",
-        "postalCode": "08001",
-        "municipality": "Barcelona",
-        "province": "Barcelona",
-        "country": "ES",
-        "phone": "600000000",
-        "email": "test@example.com",
-        "birthDate": "1990-05-12",
-        "kinship": "Child",
-        "kinshipGroup": "I",
-        "preExistingNetWorth": 150000,
-        "hasDisability": false,
-        "disabilityPercentage": null,
-        "successionTitle": "Will"
+        "nombreCompletoORazonSocial": "Contribuyente de Prueba",
+        "nombreVia": "Carrer Gran",
+        "numeroVia": "12",
+        "escalera": "A",
+        "piso": "2",
+        "puerta": "1",
+        "codigoPostal": "08001",
+        "municipio": "Barcelona",
+        "provincia": "Barcelona",
+        "pais": "ES",
+        "telefono": "600000000",
+        "correoElectronico": "test@example.com",
+        "fechaNacimiento": "1990-05-12",
+        "parentesco": "Hijo/a",
+        "grupoParentesco": "I",
+        "patrimonioPreexistente": 150000,
+        "tieneDiscapacidad": false,
+        "porcentajeDiscapacidad": null,
+        "tituloSucesorio": "Testamento"
       },
-      "deceased": {
+      "causante": {
         "nif": "11111111H",
-        "fullName": "Decedent Sample",
-        "obligatedToWealthTaxInLastFourYears": true,
-        "numberOfInterestedParties": 2,
-        "notaryOrAuthority": "Notary Anna Serra",
-        "notarialActDate": "2024-08-01"
+        "nombreCompleto": "Fallecido de Prueba",
+        "obligadoImpuestoPatrimonioUltimosCuatroAnos": true,
+        "numeroPersonasInteresadas": 2,
+        "notarioOAutoridad": "Notary Anna Serra",
+        "fechaActaNotarial": "2024-08-01"
       },
-      "acknowledgement": {
-        "signatoryNif": "00000000T",
-        "signatoryFullName": "Test Taxpayer",
-        "statementAgreement": true
+      "reconocimiento": {
+        "nifFirmante": "00000000T",
+        "nombreCompletoFirmante": "Contribuyente de Prueba",
+        "acuerdoDeclaracion": true
       },
-      "payment": {
+      "pago": {
         "iban": "ES1200491500052718123412",
-        "chargeInAccount": true,
-        "cashPayment": false,
-        "bankCountry": "ES",
-        "bankControlDigits": "12"
+        "cargoEnCuenta": true,
+        "pagoEfectivo": false,
+        "paisBanco": "ES",
+        "digitosControlBanco": "12"
       },
-      "settlement": {
-        "disabilityAllowance": 0,
-        "taxLiabilityCaseGeneral": 0,
-        "taxLiabilityAverageRate": 0,
-        "baseLiquidableRealBox13": 500000,
-        "baseLiquidableTeoricaBox14": 500000,
-        "cuotaIntegraBox16": 80000,
-        "taxLiabilityBox605": 80000,
-        "excessTaxReductionBox606": 0,
-        "adjustedTaxLiabilityBox607": 80000,
-        "tipoMedioEfectivoBox17": 16,
-        "cuotaTributariaAjustadaBox18": 80000,
-        "bonificacionCuotaBox19": 0,
-        "deduccionDobleImposicionBox20": 0,
-        "deduccionCuotasAnterioresBox21": 0,
-        "cuotaIngresarBox22": 80000,
-        "recargoBox23": 0,
-        "interesesDemoraBox24": 0,
-        "totalIngresarBox25": 80000
+      "liquidacion": {
+        "prestacionDiscapacidad": 0,
+        "cuotaTributariaCasoGeneral": 0,
+        "cuotaTributariaTipoMedio": 0,
+        "baseLiquidableRealCaja13": 500000,
+        "baseLiquidableTeoricaCaja14": 500000,
+        "cuotaIntegraCaja16": 80000,
+        "cuotaTributariaCaja605": 80000,
+        "reduccionExcesoCuotaCaja606": 0,
+        "cuotaTributariaAjustadaCaja607": 80000,
+        "tipoMedioEfectivoCaja17": 16,
+        "cuotaTributariaAjustadaCaja18": 80000,
+        "bonificacionCuotaCaja19": 0,
+        "deduccionDobleImposicionCaja20": 0,
+        "deduccionCuotasAnterioresCaja21": 0,
+        "cuotaIngresarCaja22": 80000,
+        "recargoCaja23": 0,
+        "interesesDemoraCaja24": 0,
+        "totalIngresarCaja25": 80000
       }
     },
     "notes": {
-      "ordering": "Sections and fields follow the ATC-650E-6 layout so UI components can consume this JSON sequentially.",
-      "boxMapping": "References to boxes 13-25 and 605-607 match the numbering printed on the Catalan administration form."
+      "ordering": "Las secciones y campos siguen el diseño ATC-650E-6 para que los componentes de la interfaz puedan consumir este JSON secuencialmente.",
+      "boxMapping": "Las referencias a las cajas 13-25 y 605-607 coinciden con la numeración impresa en el formulario de la administración catalana."
     }
   }
 }
