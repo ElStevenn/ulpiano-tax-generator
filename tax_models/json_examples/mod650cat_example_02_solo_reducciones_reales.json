@@ -1,0 +1,119 @@
+{
+  "encabezado": {
+    "cpr": "9055050"
+  },
+  "sujeto": {
+    "sujetoNif": "23456789Y",
+    "sujetoNombreCompletoRazonSocial": "Carlos Martínez Ruiz",
+    "sujetoNombreVia": "Carrer de Mallorca",
+    "sujetoNumeroVia": "789",
+    "sujetoEscalera": "A",
+    "sujetoPiso": "5",
+    "sujetoPuerta": "3",
+    "sujetoCodigoPostal": "08013",
+    "sujetoMunicipio": "Barcelona",
+    "sujetoProvincia": "Barcelona",
+    "sujetoPais": "ES",
+    "sujetoTelefono": "932456789",
+    "sujetoCorreoElectronico": "carlos.martinez@example.com",
+    "sujetoFechaNacimiento": "1990-07-22",
+    "sujetoParentesco": "Hijo",
+    "sujetoGrupoParentesco": "I",
+    "sujetoPatrimonioPreexistente": 50000.0,
+    "sujetoTieneDiscapacidad": false,
+    "sujetoPorcentajeDiscapacidad": null,
+    "sujetoTituloSucesorio": "Heredero"
+  },
+  "fallecido": {
+    "fallecidoNif": "76543210B",
+    "fallecidoNombreCompleto": "Ana Martínez Sánchez",
+    "fallecidoNombreVia": "Passeig de Gràcia",
+    "fallecidoNumeroVia": "92",
+    "fallecidoEscalera": null,
+    "fallecidoPiso": "2",
+    "fallecidoPuerta": "1",
+    "fallecidoCodigoPostal": "08008",
+    "fallecidoMunicipio": "Barcelona",
+    "fallecidoProvincia": "Barcelona",
+    "fallecidoPais": "ES",
+    "fallecidoObligadoImpuestoPatrimonioUltimosCuatroAnos": true,
+    "fallecidoEsTestamentaria": true,
+    "fallecidoEsIntestada": false,
+    "fallecidoNumeroPersonasInteresadas": 2,
+    "fallecidoNotarioOAutoridad": "Notaria Maria Soler",
+    "fallecidoFechaActaNotarial": "2024-09-10"
+  },
+  "reconocimiento": {
+    "reconocimientoNifFirmante": "23456789Y",
+    "reconocimientoNombreCompletoFirmante": "Carlos Martínez Ruiz",
+    "reconocimientoNombreVia": "Carrer de Mallorca",
+    "reconocimientoNumeroVia": "789",
+    "reconocimientoEscalera": "A",
+    "reconocimientoPiso": "5",
+    "reconocimientoPuerta": "3",
+    "reconocimientoCodigoPostal": "08013",
+    "reconocimientoMunicipio": "Barcelona",
+    "reconocimientoProvincia": "Barcelona",
+    "reconocimientoPais": "ES",
+    "reconocimientoTelefono": "932456789",
+    "reconocimientoCorreoElectronico": "carlos.martinez@example.com",
+    "reconocimientoAcuerdoDeclaracion": true,
+    "reconocimientoFechaFirma": "2024-11-18"
+  },
+  "pago": {
+    "pagoIban": "ES2100492352082414205764",
+    "pagoCargoEnCuenta": true,
+    "pagoPagoEfectivo": false,
+    "pagoPaisBanco": "ES",
+    "pagoDigitosControlBanco": "21",
+    "pagoEntidadBanco": "0049",
+    "pagoSucursalBanco": "2352",
+    "pagoDigitosControlBanco2": "08",
+    "pagoNumeroCuenta": "2414205764",
+    "pagoImporte": 56000.0
+  },
+  "liquidacion": {
+    "liquidacionBonificacionDiscapacidad": 0.0,
+    "liquidacionCuotaTributariaCasoGeneral": 70000.0,
+    "liquidacionTipoMedioEfectivoCuotaTributaria": 0.0,
+    "liquidacionBaseLiquidableRealCaja13": 400000.0,
+    "liquidacionBaseLiquidableTeoricaCaja14": 500000.0,
+    "liquidacionCuotaIntegraCaja16": 70000.0,
+    "liquidacionCuotaTributariaCaja605": 70000.0,
+    "liquidacionReduccionExcesoCuotaCaja606": 0.0,
+    "liquidacionCuotaTributariaAjustadaCaja607": 70000.0,
+    "liquidacionTipoMedioEfectivoCaja17": 14.0,
+    "liquidacionCuotaTributariaAjustadaCaja18": 56000.0,
+    "liquidacionBonificacionCuotaCaja19": 0.0,
+    "liquidacionDeduccionDobleImposicionCaja20": 0.0,
+    "liquidacionDeduccionCuotasAnterioresCaja21": 0.0,
+    "liquidacionCuotaIngresarCaja22": 56000.0,
+    "liquidacionRecargoCaja23": 0.0,
+    "liquidacionInteresesDemoraCaja24": 0.0,
+    "liquidacionTotalIngresarCaja25": 56000.0
+  },
+  "reducciones": [
+    {
+      "casillaReal": 301,
+      "casillaTeorica": 401,
+      "clave": "por_parentesco",
+      "etiqueta": "Por parentesco",
+      "importeReal": 15000.0,
+      "importeTeorico": 0.0
+    },
+    {
+      "casillaReal": 308,
+      "casillaTeorica": 408,
+      "clave": "por_vivienda_habitual",
+      "etiqueta": "Por vivienda habitual del/de la causante",
+      "importeReal": 100000.0,
+      "importeTeorico": 0.0
+    }
+  ],
+  "totalesReducciones": {
+    "totalReduccionesRealCaja11": 115000.0,
+    "totalReduccionesTeoricaCaja12": 0.0,
+    "totalReduccionesAplicadas": 115000.0
+  }
+}
+

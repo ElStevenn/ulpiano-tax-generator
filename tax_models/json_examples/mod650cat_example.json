@@ -1,0 +1,120 @@
+{
+  "encabezado": {
+    "cpr": "9055050"
+  },
+  "sujeto": {
+    "sujetoNif": "00000000T",
+    "sujetoNombreCompletoRazonSocial": "Marc Díaz Martínez",
+    "sujetoNombreVia": "Carrer Girona",
+    "sujetoNumeroVia": "12",
+    "sujetoEscalera": "B",
+    "sujetoPiso": "2",
+    "sujetoPuerta": "1",
+    "sujetoCodigoPostal": "08001",
+    "sujetoMunicipio": "Hospitalet de Llobregat",
+    "sujetoProvincia": "Barcelona",
+    "sujetoPais": "ES",
+    "sujetoTelefono": "600000000",
+    "sujetoCorreoElectronico": "test@example.com",
+    "sujetoFechaNacimiento": "2003-03-12",
+    "sujetoParentesco": "Hijo/a",
+    "sujetoGrupoParentesco": "I",
+    "sujetoPatrimonioPreexistente": 150000,
+    "sujetoTieneDiscapacidad": true,
+    "sujetoPorcentajeDiscapacidad": 33,
+    "sujetoTituloSucesorio": "Heredero"
+  },
+  "fallecido": {
+    "fallecidoNif": "20263967F",
+    "fallecidoNombreCompleto": "Juan Pérez García",
+    "fallecidoNombreVia": "Carrer de la Pau",
+    "fallecidoNumeroVia": "45",
+    "fallecidoEscalera": "A",
+    "fallecidoPiso": "3",
+    "fallecidoPuerta": "2",
+    "fallecidoCodigoPostal": "08002",
+    "fallecidoMunicipio": "Barcelona",
+    "fallecidoProvincia": "Barcelona",
+    "fallecidoPais": "ES",
+    "fallecidoObligadoImpuestoPatrimonioUltimosCuatroAnos": true,
+    "fallecidoEsTestamentaria": true,
+    "fallecidoEsIntestada": false,
+    "fallecidoNumeroPersonasInteresadas": 2,
+    "fallecidoNotarioOAutoridad": "Notary Anna Serra",
+    "fallecidoFechaActaNotarial": "2024-08-01"
+  },
+  "reconocimiento": {
+    "reconocimientoNifFirmante": "00000000T",
+    "reconocimientoNombreCompletoFirmante": "Marc Díaz Martínez",
+    "reconocimientoNombreVia": "Carrer Girona",
+    "reconocimientoNumeroVia": "12",
+    "reconocimientoEscalera": "B",
+    "reconocimientoPiso": "2",
+    "reconocimientoPuerta": "1",
+    "reconocimientoCodigoPostal": "08001",
+    "reconocimientoMunicipio": "Hospitalet de Llobregat",
+    "reconocimientoProvincia": "Barcelona",
+    "reconocimientoPais": "ES",
+    "reconocimientoTelefono": "600000000",
+    "reconocimientoCorreoElectronico": "test@example.com",
+    "reconocimientoAcuerdoDeclaracion": true,
+    "reconocimientoFechaFirma": "2024-11-17"
+  },
+  "pago": {
+    "pagoIban": "ES1200491500052718123412",
+    "pagoCargoEnCuenta": true,
+    "pagoPagoEfectivo": false,
+    "pagoImporte": 80000.00
+  },
+  "liquidacion": {
+    "liquidacionBonificacionDiscapacidad": 0,
+    "liquidacionCuotaTributariaCasoGeneral": 0,
+    "liquidacionTipoMedioEfectivoCuotaTributaria": 0,
+    "liquidacionBaseLiquidableRealCaja13": 500000,
+    "liquidacionBaseLiquidableTeoricaCaja14": 500000,
+    "liquidacionCuotaIntegraCaja16": 80000,
+    "liquidacionCuotaTributariaCaja605": 80000,
+    "liquidacionReduccionExcesoCuotaCaja606": 0,
+    "liquidacionCuotaTributariaAjustadaCaja607": 80000,
+    "liquidacionTipoMedioEfectivoCaja17": 16,
+    "liquidacionCuotaTributariaAjustadaCaja18": 80000,
+    "liquidacionBonificacionCuotaCaja19": 0,
+    "liquidacionDeduccionDobleImposicionCaja20": 0,
+    "liquidacionDeduccionCuotasAnterioresCaja21": 0,
+    "liquidacionCuotaIngresarCaja22": 80000,
+    "liquidacionRecargoCaja23": 0,
+    "liquidacionInteresesDemoraCaja24": 0,
+    "liquidacionTotalIngresarCaja25": 80000
+  },
+  "reducciones": [
+    {
+      "casillaReal": 301,
+      "casillaTeorica": 401,
+      "clave": "por_parentesco",
+      "etiqueta": "Por parentesco",
+      "importeReal": 10000.00,
+      "importeTeorico": 0.00
+    },
+    {
+      "casillaReal": 302,
+      "casillaTeorica": 402,
+      "clave": "por_discapacidad",
+      "etiqueta": "Por discapacidad",
+      "importeReal": 0.00,
+      "importeTeorico": 0.00
+    },
+    {
+      "casillaReal": 308,
+      "casillaTeorica": 408,
+      "clave": "por_vivienda_habitual",
+      "etiqueta": "Por vivienda habitual del/de la causante",
+      "importeReal": 5000.00,
+      "importeTeorico": 0.00
+    }
+  ],
+  "totalesReducciones": {
+    "totalReduccionesRealCaja11": 15000.00,
+    "totalReduccionesTeoricaCaja12": 0.00,
+    "totalReduccionesAplicadas": 15000.00
+  }
+}

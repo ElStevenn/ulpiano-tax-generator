@@ -1,0 +1,143 @@
+{
+  "encabezado": {
+    "cpr": "9055050"
+  },
+  "sujeto": {
+    "sujetoNif": "56789012V",
+    "sujetoNombreCompletoRazonSocial": "Anna Torres Vidal",
+    "sujetoNombreVia": "Carrer de Muntaner",
+    "sujetoNumeroVia": "123",
+    "sujetoEscalera": "B",
+    "sujetoPiso": "4",
+    "sujetoPuerta": "1",
+    "sujetoCodigoPostal": "08021",
+    "sujetoMunicipio": "Barcelona",
+    "sujetoProvincia": "Barcelona",
+    "sujetoPais": "ES",
+    "sujetoTelefono": "932345678",
+    "sujetoCorreoElectronico": "anna.torres@example.com",
+    "sujetoFechaNacimiento": "1987-09-30",
+    "sujetoParentesco": "Hija",
+    "sujetoGrupoParentesco": "I",
+    "sujetoPatrimonioPreexistente": 120000.0,
+    "sujetoTieneDiscapacidad": true,
+    "sujetoPorcentajeDiscapacidad": 65.0,
+    "sujetoTituloSucesorio": "Heredera"
+  },
+  "fallecido": {
+    "fallecidoNif": "43210987E",
+    "fallecidoNombreCompleto": "Ramon Torres Soler",
+    "fallecidoNombreVia": "Passeig de Sant Joan",
+    "fallecidoNumeroVia": "89",
+    "fallecidoEscalera": null,
+    "fallecidoPiso": "2",
+    "fallecidoPuerta": "A",
+    "fallecidoCodigoPostal": "08009",
+    "fallecidoMunicipio": "Barcelona",
+    "fallecidoProvincia": "Barcelona",
+    "fallecidoPais": "ES",
+    "fallecidoObligadoImpuestoPatrimonioUltimosCuatroAnos": true,
+    "fallecidoEsTestamentaria": true,
+    "fallecidoEsIntestada": false,
+    "fallecidoNumeroPersonasInteresadas": 3,
+    "fallecidoNotarioOAutoridad": "Notario Francesc Mas",
+    "fallecidoFechaActaNotarial": "2024-09-20"
+  },
+  "reconocimiento": {
+    "reconocimientoNifFirmante": "56789012V",
+    "reconocimientoNombreCompletoFirmante": "Anna Torres Vidal",
+    "reconocimientoNombreVia": "Carrer de Muntaner",
+    "reconocimientoNumeroVia": "123",
+    "reconocimientoEscalera": "B",
+    "reconocimientoPiso": "4",
+    "reconocimientoPuerta": "1",
+    "reconocimientoCodigoPostal": "08021",
+    "reconocimientoMunicipio": "Barcelona",
+    "reconocimientoProvincia": "Barcelona",
+    "reconocimientoPais": "ES",
+    "reconocimientoTelefono": "932345678",
+    "reconocimientoCorreoElectronico": "anna.torres@example.com",
+    "reconocimientoAcuerdoDeclaracion": true,
+    "reconocimientoFechaFirma": "2024-11-16"
+  },
+  "pago": {
+    "pagoIban": "ES7600810012345678901234",
+    "pagoCargoEnCuenta": true,
+    "pagoPagoEfectivo": false,
+    "pagoPaisBanco": "ES",
+    "pagoDigitosControlBanco": "76",
+    "pagoEntidadBanco": "0081",
+    "pagoSucursalBanco": "0012",
+    "pagoDigitosControlBanco2": "34",
+    "pagoNumeroCuenta": "5678901234",
+    "pagoImporte": 38500.0
+  },
+  "liquidacion": {
+    "liquidacionBonificacionDiscapacidad": 15000.0,
+    "liquidacionCuotaTributariaCasoGeneral": 0.0,
+    "liquidacionTipoMedioEfectivoCuotaTributaria": 60000.0,
+    "liquidacionBaseLiquidableRealCaja13": 500000.0,
+    "liquidacionBaseLiquidableTeoricaCaja14": 600000.0,
+    "liquidacionCuotaIntegraCaja16": 60000.0,
+    "liquidacionCuotaTributariaCaja605": 60000.0,
+    "liquidacionReduccionExcesoCuotaCaja606": 5000.0,
+    "liquidacionCuotaTributariaAjustadaCaja607": 55000.0,
+    "liquidacionTipoMedioEfectivoCaja17": 9.17,
+    "liquidacionCuotaTributariaAjustadaCaja18": 45850.0,
+    "liquidacionBonificacionCuotaCaja19": 15000.0,
+    "liquidacionDeduccionDobleImposicionCaja20": 2000.0,
+    "liquidacionDeduccionCuotasAnterioresCaja21": 350.0,
+    "liquidacionCuotaIngresarCaja22": 28500.0,
+    "liquidacionRecargoCaja23": 5000.0,
+    "liquidacionInteresesDemoraCaja24": 5000.0,
+    "liquidacionTotalIngresarCaja25": 38500.0
+  },
+  "reducciones": [
+    {
+      "casillaReal": 301,
+      "casillaTeorica": 401,
+      "clave": "por_parentesco",
+      "etiqueta": "Por parentesco",
+      "importeReal": 30000.0,
+      "importeTeorico": 40000.0
+    },
+    {
+      "casillaReal": 302,
+      "casillaTeorica": 402,
+      "clave": "por_discapacidad",
+      "etiqueta": "Por discapacidad",
+      "importeReal": 50000.0,
+      "importeTeorico": 60000.0
+    },
+    {
+      "casillaReal": 303,
+      "casillaTeorica": 403,
+      "clave": "por_empresa_familiar",
+      "etiqueta": "Por empresa familiar",
+      "importeReal": 100000.0,
+      "importeTeorico": 0.0
+    },
+    {
+      "casillaReal": 304,
+      "casillaTeorica": 404,
+      "clave": "por_seguro_vida",
+      "etiqueta": "Por seguro de vida",
+      "importeReal": 20000.0,
+      "importeTeorico": 0.0
+    },
+    {
+      "casillaReal": 308,
+      "casillaTeorica": 408,
+      "clave": "por_vivienda_habitual",
+      "etiqueta": "Por vivienda habitual del/de la causante",
+      "importeReal": 150000.0,
+      "importeTeorico": 0.0
+    }
+  ],
+  "totalesReducciones": {
+    "totalReduccionesRealCaja11": 350000.0,
+    "totalReduccionesTeoricaCaja12": 100000.0,
+    "totalReduccionesAplicadas": 350000.0
+  }
+}
+

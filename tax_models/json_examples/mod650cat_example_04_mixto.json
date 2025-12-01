@@ -1,0 +1,127 @@
+{
+  "encabezado": {
+    "cpr": "9055050"
+  },
+  "sujeto": {
+    "sujetoNif": "45678901W",
+    "sujetoNombreCompletoRazonSocial": "Jordi Sánchez Pérez",
+    "sujetoNombreVia": "Carrer de Balmes",
+    "sujetoNumeroVia": "567",
+    "sujetoEscalera": "D",
+    "sujetoPiso": "2",
+    "sujetoPuerta": "4",
+    "sujetoCodigoPostal": "08022",
+    "sujetoMunicipio": "Barcelona",
+    "sujetoProvincia": "Barcelona",
+    "sujetoPais": "ES",
+    "sujetoTelefono": "934567890",
+    "sujetoCorreoElectronico": "jordi.sanchez@example.com",
+    "sujetoFechaNacimiento": "1992-02-14",
+    "sujetoParentesco": "Hijo",
+    "sujetoGrupoParentesco": "I",
+    "sujetoPatrimonioPreexistente": 75000.0,
+    "sujetoTieneDiscapacidad": true,
+    "sujetoPorcentajeDiscapacidad": 33.0,
+    "sujetoTituloSucesorio": "Heredero"
+  },
+  "fallecido": {
+    "fallecidoNif": "54321098D",
+    "fallecidoNombreCompleto": "Carmen Sánchez López",
+    "fallecidoNombreVia": "Avinguda del Tibidabo",
+    "fallecidoNumeroVia": "12",
+    "fallecidoEscalera": null,
+    "fallecidoPiso": "3",
+    "fallecidoPuerta": "C",
+    "fallecidoCodigoPostal": "08022",
+    "fallecidoMunicipio": "Barcelona",
+    "fallecidoProvincia": "Barcelona",
+    "fallecidoPais": "ES",
+    "fallecidoObligadoImpuestoPatrimonioUltimosCuatroAnos": true,
+    "fallecidoEsTestamentaria": true,
+    "fallecidoEsIntestada": false,
+    "fallecidoNumeroPersonasInteresadas": 2,
+    "fallecidoNotarioOAutoridad": "Notaria Montserrat Roca",
+    "fallecidoFechaActaNotarial": "2024-10-05"
+  },
+  "reconocimiento": {
+    "reconocimientoNifFirmante": "45678901W",
+    "reconocimientoNombreCompletoFirmante": "Jordi Sánchez Pérez",
+    "reconocimientoNombreVia": "Carrer de Balmes",
+    "reconocimientoNumeroVia": "567",
+    "reconocimientoEscalera": "D",
+    "reconocimientoPiso": "2",
+    "reconocimientoPuerta": "4",
+    "reconocimientoCodigoPostal": "08022",
+    "reconocimientoMunicipio": "Barcelona",
+    "reconocimientoProvincia": "Barcelona",
+    "reconocimientoPais": "ES",
+    "reconocimientoTelefono": "934567890",
+    "reconocimientoCorreoElectronico": "jordi.sanchez@example.com",
+    "reconocimientoAcuerdoDeclaracion": true,
+    "reconocimientoFechaFirma": "2024-11-17"
+  },
+  "pago": {
+    "pagoIban": "ES9820385778983000045698",
+    "pagoCargoEnCuenta": true,
+    "pagoPagoEfectivo": false,
+    "pagoPaisBanco": "ES",
+    "pagoDigitosControlBanco": "98",
+    "pagoEntidadBanco": "2038",
+    "pagoSucursalBanco": "5778",
+    "pagoDigitosControlBanco2": "98",
+    "pagoNumeroCuenta": "3000045698",
+    "pagoImporte": 48000.0
+  },
+  "liquidacion": {
+    "liquidacionBonificacionDiscapacidad": 5000.0,
+    "liquidacionCuotaTributariaCasoGeneral": 0.0,
+    "liquidacionTipoMedioEfectivoCuotaTributaria": 53000.0,
+    "liquidacionBaseLiquidableRealCaja13": 350000.0,
+    "liquidacionBaseLiquidableTeoricaCaja14": 450000.0,
+    "liquidacionCuotaIntegraCaja16": 53000.0,
+    "liquidacionCuotaTributariaCaja605": 53000.0,
+    "liquidacionReduccionExcesoCuotaCaja606": 0.0,
+    "liquidacionCuotaTributariaAjustadaCaja607": 53000.0,
+    "liquidacionTipoMedioEfectivoCaja17": 11.78,
+    "liquidacionCuotaTributariaAjustadaCaja18": 41230.0,
+    "liquidacionBonificacionCuotaCaja19": 5000.0,
+    "liquidacionDeduccionDobleImposicionCaja20": 0.0,
+    "liquidacionDeduccionCuotasAnterioresCaja21": 0.0,
+    "liquidacionCuotaIngresarCaja22": 36230.0,
+    "liquidacionRecargoCaja23": 0.0,
+    "liquidacionInteresesDemoraCaja24": 0.0,
+    "liquidacionTotalIngresarCaja25": 36230.0
+  },
+  "reducciones": [
+    {
+      "casillaReal": 301,
+      "casillaTeorica": 401,
+      "clave": "por_parentesco",
+      "etiqueta": "Por parentesco",
+      "importeReal": 20000.0,
+      "importeTeorico": 25000.0
+    },
+    {
+      "casillaReal": 302,
+      "casillaTeorica": 402,
+      "clave": "por_discapacidad",
+      "etiqueta": "Por discapacidad",
+      "importeReal": 30000.0,
+      "importeTeorico": 25000.0
+    },
+    {
+      "casillaReal": 308,
+      "casillaTeorica": 408,
+      "clave": "por_vivienda_habitual",
+      "etiqueta": "Por vivienda habitual del/de la causante",
+      "importeReal": 100000.0,
+      "importeTeorico": 0.0
+    }
+  ],
+  "totalesReducciones": {
+    "totalReduccionesRealCaja11": 150000.0,
+    "totalReduccionesTeoricaCaja12": 50000.0,
+    "totalReduccionesAplicadas": 150000.0
+  }
+}
+

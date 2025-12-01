@@ -4,17 +4,17 @@ Generate a filled Catalan Model 650 (ATC-650E-6) PDF by overlaying data coming
 from a structured JSON file on top of the official template.
 
 The script performs four major steps:
-1. Load and validate the JSON payload against `mod650cat_data_structure.json`.
+1. Load and validate the JSON payload against `tax_models/data_models/mod650cat_data_structure.json`.
 2. Flatten the JSON so every field can be referenced with a dotted path
    (e.g. `subject.nif`, `settlement.cuotaIntegraBox16`).
 3. Draw each value on a transparent PDF overlay, respecting the coordinates
    provided in `FIELD_MAPPINGS`.
-4. Merge the overlay with `tax_models/650_es-cat.pdf` and write the final file
-   under `/generated`.
+4. Merge the overlay with `tax_models/models/650_es-cat.pdf` and write the final file
+   under `generated/`.
 
 Usage:
-    python scripts/generate_mod650cat_pdf.py \
-        --data tax_models/mod650cat_example.json \
+    python scripts/generate_mod650cat_pdf_clean_version.py \
+        --data tax_models/json_examples/mod650cat_example.json \
         --output generated/model650cat_overlay.pdf
 
 The default arguments already point to the sample JSON, structure description
@@ -36,9 +36,9 @@ from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-DEFAULT_DATA = BASE_DIR / "tax_models" / "mod650cat_example.json"
-DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "mod650cat_data_structure.json"
-DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "650_es-cat.pdf"
+DEFAULT_DATA = BASE_DIR / "tax_models" / "json_examples" / "mod650cat_example.json"
+DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "data_models" / "mod650cat_data_structure.json"
+DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "models" / "650_es-cat.pdf"
 DEFAULT_OUTPUT_DIR = BASE_DIR / "generated"
 # Offsets (multipliers) to center the drawn "X" inside checkbox widgets
 CHECKBOX_X_OFFSET_MULT = -0.35  # shift left relative to font size
@@ -64,62 +64,62 @@ SETTLEMENT_PAGES = [4, 5]
 ALL_PAGES = [0, 1, 2, 3, 4, 5]
 
 FIELD_MAPPINGS: List[FieldMapping] = [
-    # Header
-    FieldMapping("header.cpr", ALL_PAGES, x=170, y_from_top=95, font_size=11),
-    # Subject / presenter
-    FieldMapping("subject.nif", FIRST_COPY_PAGES, x=70, y_from_top=209, font_size=11),
+    # Encabezado
+    FieldMapping("encabezado.cpr", ALL_PAGES, x=170, y_from_top=95, font_size=11),
+    # Sujeto / presentador
+    FieldMapping("sujeto.sujetoNif", FIRST_COPY_PAGES, x=70, y_from_top=209, font_size=11),
     FieldMapping(
-        "subject.fullNameOrBusinessName",
+        "sujeto.sujetoNombreCompletoRazonSocial",
         FIRST_COPY_PAGES,
         x=138,
         y_from_top=222,
         font_size=10,
     ),
-    FieldMapping("subject.streetName", FIRST_COPY_PAGES, x=33, y_from_top=242, font_size=8),
-    FieldMapping("subject.streetNumber", FIRST_COPY_PAGES, x=230, y_from_top=242, font_size=9),
-    FieldMapping("subject.stair", FIRST_COPY_PAGES, x=266, y_from_top=242, font_size=9),
-    FieldMapping("subject.floor", FIRST_COPY_PAGES, x=280, y_from_top=242, font_size=9),
-    FieldMapping("subject.door", FIRST_COPY_PAGES, x=300, y_from_top=242, font_size=9),
-    FieldMapping("subject.postalCode", FIRST_COPY_PAGES, x=34, y_from_top=263, font_size=10),
-    FieldMapping("subject.municipality", FIRST_COPY_PAGES, x=100, y_from_top=263),
-    FieldMapping("subject.province", FIRST_COPY_PAGES, x=230, y_from_top=263),
-    FieldMapping("subject.country", FIRST_COPY_PAGES, x=290, y_from_top=263),
-    FieldMapping("subject.phone", FIRST_COPY_PAGES, x=33, y_from_top=287),
-    FieldMapping("subject.email", FIRST_COPY_PAGES, x=126, y_from_top=287),
+    FieldMapping("sujeto.sujetoNombreVia", FIRST_COPY_PAGES, x=33, y_from_top=242, font_size=8),
+    FieldMapping("sujeto.sujetoNumeroVia", FIRST_COPY_PAGES, x=230, y_from_top=242, font_size=9),
+    FieldMapping("sujeto.sujetoEscalera", FIRST_COPY_PAGES, x=266, y_from_top=242, font_size=9),
+    FieldMapping("sujeto.sujetoPiso", FIRST_COPY_PAGES, x=280, y_from_top=242, font_size=9),
+    FieldMapping("sujeto.sujetoPuerta", FIRST_COPY_PAGES, x=300, y_from_top=242, font_size=9),
+    FieldMapping("sujeto.sujetoCodigoPostal", FIRST_COPY_PAGES, x=34, y_from_top=263, font_size=10),
+    FieldMapping("sujeto.sujetoMunicipio", FIRST_COPY_PAGES, x=100, y_from_top=263),
+    FieldMapping("sujeto.sujetoProvincia", FIRST_COPY_PAGES, x=230, y_from_top=263),
+    FieldMapping("sujeto.sujetoPais", FIRST_COPY_PAGES, x=290, y_from_top=263),
+    FieldMapping("sujeto.sujetoTelefono", FIRST_COPY_PAGES, x=33, y_from_top=287),
+    FieldMapping("sujeto.sujetoCorreoElectronico", FIRST_COPY_PAGES, x=126, y_from_top=287),
     FieldMapping(
-        "subject.birthDate",
+        "sujeto.sujetoFechaNacimiento",
         FIRST_COPY_PAGES,
         x=105,
         y_from_top=301,
         formatter="date",
         font_size=9,
     ),
-    FieldMapping("subject.preExistingNetWorth", FIRST_COPY_PAGES, x=86, y_from_top=320, formatter="decimal"),
-    FieldMapping("subject.kinship", FIRST_COPY_PAGES, x=205, y_from_top=301),
-    FieldMapping("subject.kinshipGroup", FIRST_COPY_PAGES, x=295, y_from_top=301),
-    FieldMapping("subject.disabilityPercentage", FIRST_COPY_PAGES, x=278, y_from_top=320, formatter="integer"),
-    FieldMapping("subject.successionTitle", FIRST_COPY_PAGES, x=94, y_from_top=333),
+    FieldMapping("sujeto.sujetoPatrimonioPreexistente", FIRST_COPY_PAGES, x=86, y_from_top=320, formatter="decimal"),
+    FieldMapping("sujeto.sujetoParentesco", FIRST_COPY_PAGES, x=205, y_from_top=301),
+    FieldMapping("sujeto.sujetoGrupoParentesco", FIRST_COPY_PAGES, x=295, y_from_top=301),
+    FieldMapping("sujeto.sujetoPorcentajeDiscapacidad", FIRST_COPY_PAGES, x=278, y_from_top=320, formatter="integer"),
+    FieldMapping("sujeto.sujetoTituloSucesorio", FIRST_COPY_PAGES, x=94, y_from_top=333),
     FieldMapping(
-        "subject.hasDisability",
+        "sujeto.sujetoTieneDiscapacidad",
         FIRST_COPY_PAGES,
         x=253.0,
         y_from_top=318.7,
         field_type="checkbox",
     ),
-    # Deceased (causante)
-    FieldMapping("deceased.nif", FIRST_COPY_PAGES, x=62, y_from_top=367, font_size=11),
-    FieldMapping("deceased.fullName", FIRST_COPY_PAGES, x=105, y_from_top=380, font_size=10),
-    FieldMapping("deceased.streetName", FIRST_COPY_PAGES, x=33, y_from_top=400, font_size=8),
-    FieldMapping("deceased.streetNumber", FIRST_COPY_PAGES, x=230, y_from_top=400, font_size=9),
-    FieldMapping("deceased.stair", FIRST_COPY_PAGES, x=266, y_from_top=400, font_size=9),
-    FieldMapping("deceased.floor", FIRST_COPY_PAGES, x=280, y_from_top=400, font_size=9),
-    FieldMapping("deceased.door", FIRST_COPY_PAGES, x=300, y_from_top=400, font_size=9),
-    FieldMapping("deceased.postalCode", FIRST_COPY_PAGES, x=34, y_from_top=421, font_size=10),
-    FieldMapping("deceased.municipality", FIRST_COPY_PAGES, x=100, y_from_top=421, font_size=10),
-    FieldMapping("deceased.province", FIRST_COPY_PAGES, x=230, y_from_top=421, font_size=10),
-    FieldMapping("deceased.country", FIRST_COPY_PAGES, x=290, y_from_top=421, font_size=10),
+    # Fallecido (causante)
+    FieldMapping("fallecido.fallecidoNif", FIRST_COPY_PAGES, x=62, y_from_top=367, font_size=11),
+    FieldMapping("fallecido.fallecidoNombreCompleto", FIRST_COPY_PAGES, x=105, y_from_top=380, font_size=10),
+    FieldMapping("fallecido.fallecidoNombreVia", FIRST_COPY_PAGES, x=33, y_from_top=400, font_size=8),
+    FieldMapping("fallecido.fallecidoNumeroVia", FIRST_COPY_PAGES, x=230, y_from_top=400, font_size=9),
+    FieldMapping("fallecido.fallecidoEscalera", FIRST_COPY_PAGES, x=266, y_from_top=400, font_size=9),
+    FieldMapping("fallecido.fallecidoPiso", FIRST_COPY_PAGES, x=280, y_from_top=400, font_size=9),
+    FieldMapping("fallecido.fallecidoPuerta", FIRST_COPY_PAGES, x=300, y_from_top=400, font_size=9),
+    FieldMapping("fallecido.fallecidoCodigoPostal", FIRST_COPY_PAGES, x=34, y_from_top=421, font_size=10),
+    FieldMapping("fallecido.fallecidoMunicipio", FIRST_COPY_PAGES, x=100, y_from_top=421, font_size=10),
+    FieldMapping("fallecido.fallecidoProvincia", FIRST_COPY_PAGES, x=230, y_from_top=421, font_size=10),
+    FieldMapping("fallecido.fallecidoPais", FIRST_COPY_PAGES, x=290, y_from_top=421, font_size=10),
     FieldMapping(
-        "deceased.obligatedToWealthTaxInLastFourYears",
+        "fallecido.fallecidoObligadoImpuestoPatrimonioUltimosCuatroAnos",
         FIRST_COPY_PAGES,
         x=515.8,
         y_from_top=376.5,
@@ -127,7 +127,7 @@ FIELD_MAPPINGS: List[FieldMapping] = [
         font_size=9,
     ),
     FieldMapping(
-        "deceased.isTestate",
+        "fallecido.fallecidoEsTestamentaria",
         FIRST_COPY_PAGES,
         x=455.6,
         y_from_top=395.1,
@@ -135,7 +135,7 @@ FIELD_MAPPINGS: List[FieldMapping] = [
         font_size=9,
     ),
     FieldMapping(
-        "deceased.isIntestate",
+        "fallecido.fallecidoEsIntestada",
         FIRST_COPY_PAGES,
         x=404.7,
         y_from_top=396.3,
@@ -143,38 +143,38 @@ FIELD_MAPPINGS: List[FieldMapping] = [
         font_size=9,
     ),
     FieldMapping(
-        "deceased.numberOfInterestedParties",
+        "fallecido.fallecidoNumeroPersonasInteresadas",
         FIRST_COPY_PAGES,
         x=491,
         y_from_top=417,
         formatter="integer",
         font_size=10,
     ),
-    FieldMapping("deceased.notaryOrAuthority", FIRST_COPY_PAGES, x=124, y_from_top=463, font_size=10),
+    FieldMapping("fallecido.fallecidoNotarioOAutoridad", FIRST_COPY_PAGES, x=124, y_from_top=463, font_size=10),
     FieldMapping(
-        "deceased.notarialActDate",
+        "fallecido.fallecidoFechaActaNotarial",
         FIRST_COPY_PAGES,
         x=435,
         y_from_top=463,
         formatter="date_spanish",
         font_size=9,
     ),
-    # Acknowledgement block (Presentador/a)
-    FieldMapping("acknowledgement.signatoryNif", FIRST_COPY_PAGES, x=65, y_from_top=607, font_size=11),
-    FieldMapping("acknowledgement.signatoryFullName", FIRST_COPY_PAGES, x=136, y_from_top=622, font_size=10),
-    FieldMapping("acknowledgement.streetName", FIRST_COPY_PAGES, x=33, y_from_top=642, font_size=8),
-    FieldMapping("acknowledgement.streetNumber", FIRST_COPY_PAGES, x=230, y_from_top=642, font_size=9),
-    FieldMapping("acknowledgement.stair", FIRST_COPY_PAGES, x=266, y_from_top=642, font_size=9),
-    FieldMapping("acknowledgement.floor", FIRST_COPY_PAGES, x=280, y_from_top=642, font_size=9),
-    FieldMapping("acknowledgement.door", FIRST_COPY_PAGES, x=300, y_from_top=642, font_size=9),
-    FieldMapping("acknowledgement.postalCode", FIRST_COPY_PAGES, x=34, y_from_top=663, font_size=10),
-    FieldMapping("acknowledgement.municipality", FIRST_COPY_PAGES, x=100, y_from_top=663, font_size=10),
-    FieldMapping("acknowledgement.province", FIRST_COPY_PAGES, x=230, y_from_top=663, font_size=10),
-    FieldMapping("acknowledgement.country", FIRST_COPY_PAGES, x=290, y_from_top=663, font_size=10),
-    FieldMapping("acknowledgement.phone", FIRST_COPY_PAGES, x=33, y_from_top=687, font_size=10),
-    FieldMapping("acknowledgement.email", FIRST_COPY_PAGES, x=126, y_from_top=687, font_size=10),
+    # Bloque de reconocimiento (Presentador/a)
+    FieldMapping("reconocimiento.reconocimientoNifFirmante", FIRST_COPY_PAGES, x=65, y_from_top=607, font_size=11),
+    FieldMapping("reconocimiento.reconocimientoNombreCompletoFirmante", FIRST_COPY_PAGES, x=136, y_from_top=622, font_size=10),
+    FieldMapping("reconocimiento.reconocimientoNombreVia", FIRST_COPY_PAGES, x=33, y_from_top=642, font_size=8),
+    FieldMapping("reconocimiento.reconocimientoNumeroVia", FIRST_COPY_PAGES, x=230, y_from_top=642, font_size=9),
+    FieldMapping("reconocimiento.reconocimientoEscalera", FIRST_COPY_PAGES, x=266, y_from_top=642, font_size=9),
+    FieldMapping("reconocimiento.reconocimientoPiso", FIRST_COPY_PAGES, x=280, y_from_top=642, font_size=9),
+    FieldMapping("reconocimiento.reconocimientoPuerta", FIRST_COPY_PAGES, x=300, y_from_top=642, font_size=9),
+    FieldMapping("reconocimiento.reconocimientoCodigoPostal", FIRST_COPY_PAGES, x=34, y_from_top=663, font_size=10),
+    FieldMapping("reconocimiento.reconocimientoMunicipio", FIRST_COPY_PAGES, x=100, y_from_top=663, font_size=10),
+    FieldMapping("reconocimiento.reconocimientoProvincia", FIRST_COPY_PAGES, x=230, y_from_top=663, font_size=10),
+    FieldMapping("reconocimiento.reconocimientoPais", FIRST_COPY_PAGES, x=290, y_from_top=663, font_size=10),
+    FieldMapping("reconocimiento.reconocimientoTelefono", FIRST_COPY_PAGES, x=33, y_from_top=687, font_size=10),
+    FieldMapping("reconocimiento.reconocimientoCorreoElectronico", FIRST_COPY_PAGES, x=126, y_from_top=687, font_size=10),
     FieldMapping(
-        "acknowledgement.statementAgreement",
+        "reconocimiento.reconocimientoAcuerdoDeclaracion",
         FIRST_COPY_PAGES,
         x=470,
         y_from_top=611,
@@ -182,56 +182,56 @@ FIELD_MAPPINGS: List[FieldMapping] = [
         true_label="",
         font_size=9,
     ),
-    # Signature date fields (day, month, year separated)
-    FieldMapping("acknowledgement.signatureDate", FIRST_COPY_PAGES, x=470, y_from_top=642, formatter="date_spanish", font_size=9),
-    # Payment area (Ingreso)
+    # Campos de fecha de firma (día, mes, año separados)
+    FieldMapping("reconocimiento.reconocimientoFechaFirma", FIRST_COPY_PAGES, x=470, y_from_top=642, formatter="date_spanish", font_size=9),
+    # Área de pago (Ingreso)
 
-    FieldMapping("payment.bankCountry", FIRST_COPY_PAGES, x=50, y_from_top=745, font_size=10),
-    FieldMapping("payment.bankControlDigits", FIRST_COPY_PAGES, x=79, y_from_top=745, font_size=10),
-    FieldMapping("payment.bankEntity", FIRST_COPY_PAGES, x=115, y_from_top=745, font_size=10),
-    FieldMapping("payment.bankBranch", FIRST_COPY_PAGES, x=165, y_from_top=745, font_size=10),
-    FieldMapping("payment.bankControlDigits2", FIRST_COPY_PAGES, x=222, y_from_top=745, font_size=10),
-    FieldMapping("payment.accountNumber", FIRST_COPY_PAGES, x=255, y_from_top=745, font_size=10),
+    FieldMapping("pago.pagoPaisBanco", FIRST_COPY_PAGES, x=50, y_from_top=745, font_size=10),
+    FieldMapping("pago.pagoDigitosControlBanco", FIRST_COPY_PAGES, x=79, y_from_top=745, font_size=10),
+    FieldMapping("pago.pagoEntidadBanco", FIRST_COPY_PAGES, x=115, y_from_top=745, font_size=10),
+    FieldMapping("pago.pagoSucursalBanco", FIRST_COPY_PAGES, x=165, y_from_top=745, font_size=10),
+    FieldMapping("pago.pagoDigitosControlBanco2", FIRST_COPY_PAGES, x=222, y_from_top=745, font_size=10),
+    FieldMapping("pago.pagoNumeroCuenta", FIRST_COPY_PAGES, x=255, y_from_top=745, font_size=10),
     # Métodos de pago (a la derecha, en la línea superior)
     FieldMapping(
-        "payment.chargeInAccount",
+        "pago.pagoCargoEnCuenta",
         FIRST_COPY_PAGES,
         x=362.2,
         y_from_top=725.2,
         field_type="checkbox",
     ),
     FieldMapping(
-        "payment.cashPayment",
+        "pago.pagoPagoEfectivo",
         FIRST_COPY_PAGES,
         x=439.2,
         y_from_top=726.6,
         field_type="checkbox",
     ),
     # Importe (debajo de "En efectivo", a la derecha)
-    FieldMapping("payment.amount", FIRST_COPY_PAGES, x=450, y_from_top=748, formatter="decimal", font_size=9),
-    # Settlement (autoliquidación) - applies to calculation pages
-    FieldMapping("settlement.disabilityAllowance", SETTLEMENT_PAGES, x=200, y_from_top=207.5, formatter="decimal"),
-    FieldMapping("settlement.taxLiabilityCaseGeneral", SETTLEMENT_PAGES, x=189.6, y_from_top=506.4, formatter="decimal"),
-    FieldMapping("settlement.taxLiabilityAverageRate", SETTLEMENT_PAGES, x=429.0, y_from_top=433.2, formatter="decimal"),
-    # Base liquidable real: show on page 4, blank on page 5
-    FieldMapping("settlement.baseLiquidableRealBox13", [4], x=230, y_from_top=486, formatter="decimal", font_size=8.5),
-    FieldMapping("settlement.baseLiquidableRealBox13", [5], x=504, y_from_top=642.7, formatter="decimal", font_size=8.5),
-    FieldMapping("settlement.baseLiquidableTeoricaBox14", SETTLEMENT_PAGES, x=500, y_from_top=486, formatter="decimal", font_size=8.5),
-    FieldMapping("settlement.cuotaIntegraBox16", SETTLEMENT_PAGES, x=230, y_from_top=556, formatter="decimal", font_size=8.5),
-    FieldMapping("settlement.taxLiabilityBox605", SETTLEMENT_PAGES, x=203.8, y_from_top=575.6, formatter="blank", font_size=8.5),
-    FieldMapping("settlement.excessTaxReductionBox606", SETTLEMENT_PAGES, x=210.2, y_from_top=598.8, formatter="decimal"),
-    FieldMapping("settlement.adjustedTaxLiabilityBox607", SETTLEMENT_PAGES, x=220, y_from_top=616.9, formatter="blank", font_size=8.0),
-    FieldMapping("settlement.tipoMedioEfectivoBox17", SETTLEMENT_PAGES, x=205, y_from_top=653.5, formatter="decimal", font_size=9.0),
-    FieldMapping("settlement.cuotaTributariaAjustadaBox18", [4], x=500, y_from_top=642.7, formatter="decimal", font_size=8.5),
-    FieldMapping("settlement.cuotaTributariaAjustadaBox18", [5], x=500, y_from_top=666, formatter="decimal", font_size=8.3),
-    FieldMapping("settlement.bonificacionCuotaBox19", SETTLEMENT_PAGES, x=199.3, y_from_top=710.5, formatter="decimal"),
-    FieldMapping("settlement.deduccionDobleImposicionBox20", SETTLEMENT_PAGES, x=198.6, y_from_top=729.3, formatter="decimal"),
-    FieldMapping("settlement.deduccionCuotasAnterioresBox21", SETTLEMENT_PAGES, x=198.6, y_from_top=749.1, formatter="decimal"),
-    FieldMapping("settlement.cuotaIngresarBox22", SETTLEMENT_PAGES, x=198.1, y_from_top=767.1, formatter="decimal"),
-    FieldMapping("settlement.recargoBox23", SETTLEMENT_PAGES, x=467.2, y_from_top=708.3, formatter="decimal"),
-    FieldMapping("settlement.interesesDemoraBox24", SETTLEMENT_PAGES, x=467.1, y_from_top=728.1, formatter="decimal"),
-    FieldMapping("settlement.totalIngresarBox25", SETTLEMENT_PAGES, x=466.7, y_from_top=746.1, formatter="decimal"),
-    FieldMapping("settlement.adjustedTaxLiabilityBox607", SETTLEMENT_PAGES, x=461.6, y_from_top=606.1, formatter="blank"),
+    FieldMapping("pago.pagoImporte", FIRST_COPY_PAGES, x=450, y_from_top=748, formatter="decimal", font_size=9),
+    # Liquidación (autoliquidación) - se aplica a las páginas de cálculo
+    FieldMapping("liquidacion.liquidacionBonificacionDiscapacidad", SETTLEMENT_PAGES, x=200, y_from_top=207.5, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionCuotaTributariaCasoGeneral", SETTLEMENT_PAGES, x=189.6, y_from_top=506.4, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionTipoMedioEfectivoCuotaTributaria", SETTLEMENT_PAGES, x=429.0, y_from_top=433.2, formatter="decimal"),
+    # Base liquidable real: mostrar en página 4, en blanco en página 5
+    FieldMapping("liquidacion.liquidacionBaseLiquidableRealCaja13", [4], x=230, y_from_top=486, formatter="decimal", font_size=8.5),
+    FieldMapping("liquidacion.liquidacionBaseLiquidableRealCaja13", [5], x=504, y_from_top=642.7, formatter="decimal", font_size=8.5),
+    FieldMapping("liquidacion.liquidacionBaseLiquidableTeoricaCaja14", SETTLEMENT_PAGES, x=500, y_from_top=486, formatter="decimal", font_size=8.5),
+    FieldMapping("liquidacion.liquidacionCuotaIntegraCaja16", SETTLEMENT_PAGES, x=230, y_from_top=556, formatter="decimal", font_size=8.5),
+    FieldMapping("liquidacion.liquidacionCuotaTributariaCaja605", SETTLEMENT_PAGES, x=203.8, y_from_top=575.6, formatter="blank", font_size=8.5),
+    FieldMapping("liquidacion.liquidacionReduccionExcesoCuotaCaja606", SETTLEMENT_PAGES, x=210.2, y_from_top=598.8, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionCuotaTributariaAjustadaCaja607", SETTLEMENT_PAGES, x=220, y_from_top=616.9, formatter="blank", font_size=8.0),
+    FieldMapping("liquidacion.liquidacionTipoMedioEfectivoCaja17", SETTLEMENT_PAGES, x=205, y_from_top=653.5, formatter="decimal", font_size=9.0),
+    FieldMapping("liquidacion.liquidacionCuotaTributariaAjustadaCaja18", [4], x=500, y_from_top=642.7, formatter="decimal", font_size=8.5),
+    FieldMapping("liquidacion.liquidacionCuotaTributariaAjustadaCaja18", [5], x=500, y_from_top=666, formatter="decimal", font_size=8.3),
+    FieldMapping("liquidacion.liquidacionBonificacionCuotaCaja19", SETTLEMENT_PAGES, x=199.3, y_from_top=710.5, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionDeduccionDobleImposicionCaja20", SETTLEMENT_PAGES, x=198.6, y_from_top=729.3, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionDeduccionCuotasAnterioresCaja21", SETTLEMENT_PAGES, x=198.6, y_from_top=749.1, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionCuotaIngresarCaja22", SETTLEMENT_PAGES, x=198.1, y_from_top=767.1, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionRecargoCaja23", SETTLEMENT_PAGES, x=467.2, y_from_top=708.3, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionInteresesDemoraCaja24", SETTLEMENT_PAGES, x=467.1, y_from_top=728.1, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionTotalIngresarCaja25", SETTLEMENT_PAGES, x=466.7, y_from_top=746.1, formatter="decimal"),
+    FieldMapping("liquidacion.liquidacionCuotaTributariaAjustadaCaja607", SETTLEMENT_PAGES, x=461.6, y_from_top=606.1, formatter="blank"),
 ]
 
 
@@ -378,22 +378,22 @@ def build_overlay(
 
     # Auto-populate IBAN components from IBAN if provided
     # The IBAN is always split into its components for the form fields
-    iban = flattened_data.get("payment.iban", "")
+    iban = flattened_data.get("pago.pagoIban", "")
     if iban:
         iban_parts = split_spanish_iban(iban)
         # Always populate components from IBAN, even if they exist (IBAN is the source of truth)
         if iban_parts['country']:
-            flattened_data["payment.bankCountry"] = iban_parts['country']
+            flattened_data["pago.pagoPaisBanco"] = iban_parts['country']
         if iban_parts['controlDigits']:
-            flattened_data["payment.bankControlDigits"] = iban_parts['controlDigits']
+            flattened_data["pago.pagoDigitosControlBanco"] = iban_parts['controlDigits']
         if iban_parts['entity']:
-            flattened_data["payment.bankEntity"] = iban_parts['entity']
+            flattened_data["pago.pagoEntidadBanco"] = iban_parts['entity']
         if iban_parts['branch']:
-            flattened_data["payment.bankBranch"] = iban_parts['branch']
+            flattened_data["pago.pagoSucursalBanco"] = iban_parts['branch']
         if iban_parts['controlDigits2']:
-            flattened_data["payment.bankControlDigits2"] = iban_parts['controlDigits2']
+            flattened_data["pago.pagoDigitosControlBanco2"] = iban_parts['controlDigits2']
         if iban_parts['accountNumber']:
-            flattened_data["payment.accountNumber"] = iban_parts['accountNumber']
+            flattened_data["pago.pagoNumeroCuenta"] = iban_parts['accountNumber']
 
     buffer = BytesIO()
     canv = canvas.Canvas(buffer)
