@@ -1,0 +1,25 @@
+
+
+
+
+Cada modelo de impuestos se genera para cada beneficiario, 
+
+
+Por cada modelo de impuestos, en el caso del modelo 650, nosotros sabemos lo siguiente de cada cosa:
+
+Despacho/Empresa gestora:
+
+Beneficiario:
+
+Causante:
+
+Tramitante:
+
+
+
+
+
+
+
+
+

@@ -13,231 +13,35 @@
         "id": "encabezado",
         "label": "Encabezado",
         "order": 0,
-        "required": true,
-        "fields": [
-          {
-            "id": "cpr",
-            "label": "Referencia CPR",
-            "type": "string",
-            "order": 1,
-            "required": true,
-            "description": "Número de referencia mostrado en la parte superior izquierda del formulario (CPR).",
-            "boxNumber": "CPR"
-          }
-        ]
+        "required": false,
+        "fields": []
       },
       {
-        "id": "sujeto",
-        "label": "Sujeto (contribuyente / heredero)",
+        "id": "causante",
+        "label": "Causante",
         "order": 1,
         "required": true,
         "fields": [
           {
-            "id": "sujetoNif",
-            "label": "NIF (caja 2)",
-            "type": "string",
-            "order": 1,
-            "required": true,
-            "description": "Número de identificación fiscal español impreso junto a la caja (2).",
-            "validation": "Debe ser un DNI, NIE o CIF válido.",
-            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$",
-            "boxNumber": "2"
-          },
-          {
-            "id": "sujetoNombreCompletoRazonSocial",
-            "label": "Nombre completo o razón social",
-            "type": "string",
-            "order": 2,
-            "required": true,
-            "description": "Nombre legal completo del contribuyente (o el nombre de la empresa cuando actúa como entidad)."
-          },
-          {
-            "id": "sujetoNombreVia",
-            "label": "Nombre de la vía",
-            "type": "string",
-            "order": 3,
-            "required": true,
-            "description": "Calle o vía utilizada en la dirección postal (Vía pública)."
-          },
-          {
-            "id": "sujetoNumeroVia",
-            "label": "Número de la vía",
-            "type": "string",
-            "order": 4,
-            "required": true,
-            "description": "Número de casa o edificio mostrado antes de Esc./Piso/Puerta."
-          },
-          {
-            "id": "sujetoEscalera",
-            "label": "Escalera / bloque",
-            "type": "string",
-            "order": 5,
-            "required": false,
-            "description": "Escalera, bloque o entrada (Esc.)."
-          },
-          {
-            "id": "sujetoPiso",
-            "label": "Piso",
-            "type": "string",
-            "order": 6,
-            "required": false,
-            "description": "Información del piso (Piso)."
-          },
-          {
-            "id": "sujetoPuerta",
-            "label": "Puerta / unidad",
-            "type": "string",
-            "order": 7,
-            "required": false,
-            "description": "Número de puerta o identificador de unidad (Puerta)."
-          },
-          {
-            "id": "sujetoCodigoPostal",
-            "label": "Código postal",
-            "type": "string",
-            "order": 8,
-            "required": true,
-            "description": "Código postal junto al bloque de dirección.",
-            "validation": "Debe contener exactamente 5 dígitos.",
-            "validationRegex": "^\\d{5}$"
-          },
-          {
-            "id": "sujetoMunicipio",
-            "label": "Municipio",
-            "type": "string",
-            "order": 9,
-            "required": true,
-            "description": "Nombre del municipio o ciudad."
-          },
-          {
-            "id": "sujetoProvincia",
-            "label": "Provincia",
-            "type": "string",
-            "order": 10,
-            "required": true,
-            "description": "Nombre de la provincia (Provincia)."
-          },
-          {
-            "id": "sujetoPais",
-            "label": "País",
-            "type": "string",
-            "order": 11,
-            "required": false,
-            "description": "Código de país impreso bajo País.",
-            "default": "ES"
-          },
-          {
-            "id": "sujetoTelefono",
-            "label": "Número de teléfono (caja 3)",
-            "type": "string",
-            "order": 12,
-            "required": false,
-            "description": "Contacto telefónico mostrado en la caja (3).",
-            "recommended": true,
-            "boxNumber": "3"
-          },
-          {
-            "id": "sujetoCorreoElectronico",
-            "label": "Dirección de correo electrónico",
-            "type": "string",
-            "order": 13,
-            "required": false,
-            "description": "Dirección de correo electrónico (Dirección electrónica).",
-            "recommended": true
-          },
-          {
-            "id": "sujetoFechaNacimiento",
-            "label": "Fecha de nacimiento (caja 4)",
-            "type": "string",
-            "order": 14,
-            "required": true,
-            "description": "Fecha de nacimiento solicitada en la caja (4).",
-            "format": "YYYY-MM-DD",
-            "validation": "Debe ser una fecha válida en formato ISO (YYYY-MM-DD).",
-            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$",
-            "boxNumber": "4"
-          },
-          {
-            "id": "sujetoParentesco",
-            "label": "Parentesco",
-            "type": "string",
-            "order": 15,
-            "required": true,
-            "description": "Parentesco con el fallecido (Parentesco)."
-          },
-          {
-            "id": "sujetoGrupoParentesco",
-            "label": "Grupo de parentesco",
-            "type": "string",
-            "order": 16,
-            "required": true,
-            "description": "Grupo fiscal solicitado junto a Parentesco (Grupo).",
-            "values": ["I", "II", "III", "IV"]
-          },
-          {
-            "id": "sujetoPatrimonioPreexistente",
-            "label": "Patrimonio preexistente",
-            "type": "number",
-            "order": 17,
-            "required": false,
-            "description": "Importe ingresado en Patrimonio preexistente (EUR).",
-            "format": "decimal"
-          },
-          {
-            "id": "sujetoTieneDiscapacidad",
-            "label": "Tiene discapacidad",
-            "type": "boolean",
-            "order": 18,
-            "required": false,
-            "description": "Casilla que indica si el contribuyente tiene discapacidad (Discapacidad: Sí)."
-          },
-          {
-            "id": "sujetoPorcentajeDiscapacidad",
-            "label": "Porcentaje de discapacidad",
-            "type": "number",
-            "order": 19,
-            "required": false,
-            "description": "Porcentaje escrito junto a la casilla de discapacidad.",
-            "format": "decimal",
-            "validation": "Debe ser un valor entre 0 y 100.",
-            "dependsOn": "sujetoTieneDiscapacidad"
-          },
-          {
-            "id": "sujetoTituloSucesorio",
-            "label": "Título sucesorio",
-            "type": "string",
-            "order": 20,
-            "required": false,
-            "description": "Título legal de la sucesión (Título sucesorio)."
-          }
-        ]
-      },
-      {
-        "id": "fallecido",
-        "label": "Persona fallecida (causante)",
-        "order": 2,
-        "required": true,
-        "fields": [
-          {
-            "id": "fallecidoNif",
-            "label": "NIF del fallecido",
+            "id": "dni_nif",
+            "label": "NIF del causante",
             "type": "string",
             "order": 1,
             "required": false,
-            "description": "NIF/NIE de la persona fallecida.",
+            "description": "NIF/NIE de la persona causante.",
             "validation": "Debe ser un DNI, NIE o CIF válido.",
             "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
           },
           {
-            "id": "fallecidoNombreCompleto",
-            "label": "Nombre completo del fallecido",
+            "id": "nombre_completo",
+            "label": "Nombre completo del causante",
             "type": "string",
             "order": 2,
             "required": false,
-            "description": "Nombre completo del fallecido (Apellidos y nombre)."
+            "description": "Nombre completo del causante (Apellidos y nombre)."
           },
           {
-            "id": "fallecidoNombreVia",
+            "id": "nombre_via",
             "label": "Nombre de la vía",
             "type": "string",
             "order": 3,
@@ -245,7 +49,7 @@
             "description": "Calle o vía utilizada en la dirección postal (Vía pública)."
           },
           {
-            "id": "fallecidoNumeroVia",
+            "id": "numero_via",
             "label": "Número de la vía",
             "type": "string",
             "order": 4,
@@ -253,7 +57,7 @@
             "description": "Número de casa o edificio mostrado antes de Esc./Piso/Puerta."
           },
           {
-            "id": "fallecidoEscalera",
+            "id": "escalera",
             "label": "Escalera / bloque",
             "type": "string",
             "order": 5,
@@ -261,7 +65,7 @@
             "description": "Escalera, bloque o entrada (Esc.)."
           },
           {
-            "id": "fallecidoPiso",
+            "id": "piso",
             "label": "Piso",
             "type": "string",
             "order": 6,
@@ -269,7 +73,7 @@
             "description": "Información del piso (Piso)."
           },
           {
-            "id": "fallecidoPuerta",
+            "id": "puerta",
             "label": "Puerta / unidad",
             "type": "string",
             "order": 7,
@@ -277,7 +81,7 @@
             "description": "Número de puerta o identificador de unidad (Puerta)."
           },
           {
-            "id": "fallecidoCodigoPostal",
+            "id": "codigo_postal",
             "label": "Código postal",
             "type": "string",
             "order": 8,
@@ -287,7 +91,7 @@
             "validationRegex": "^\\d{5}$"
           },
           {
-            "id": "fallecidoMunicipio",
+            "id": "municipio",
             "label": "Municipio",
             "type": "string",
             "order": 9,
@@ -295,7 +99,7 @@
             "description": "Nombre del municipio o ciudad."
           },
           {
-            "id": "fallecidoProvincia",
+            "id": "provincia",
             "label": "Provincia",
             "type": "string",
             "order": 10,
@@ -303,7 +107,7 @@
             "description": "Nombre de la provincia (Provincia)."
           },
           {
-            "id": "fallecidoPais",
+            "id": "pais",
             "label": "País",
             "type": "string",
             "order": 11,
@@ -312,7 +116,7 @@
             "default": "ES"
           },
           {
-            "id": "fallecidoObligadoImpuestoPatrimonioUltimosCuatroAnos",
+            "id": "obligado_impuesto_patrimonio_ultimos_cuatro_anos",
             "label": "Estaba obligado al impuesto sobre el patrimonio en los últimos 4 años",
             "type": "boolean",
             "order": 12,
@@ -320,7 +124,7 @@
             "description": "Corresponde a la pregunta 'Persona causante obligada a presentar declaración del impuesto sobre el patrimonio en alguno de los 4 años anteriores a la muerte?'. Casilla marcada con X para 'Sí'."
           },
           {
-            "id": "fallecidoEsTestamentaria",
+            "id": "es_testamentaria",
             "label": "La sucesión es testamentaria (con testamento)",
             "type": "boolean",
             "order": 13,
@@ -328,7 +132,7 @@
             "description": "Casilla para 'testada' (sucesión testamentaria, es decir, con testamento)."
           },
           {
-            "id": "fallecidoEsIntestada",
+            "id": "es_intestada",
             "label": "La sucesión es intestada (sin testamento)",
             "type": "boolean",
             "order": 14,
@@ -336,7 +140,7 @@
             "description": "Casilla para 'intestada' (sucesión intestada, es decir, sin testamento)."
           },
           {
-            "id": "fallecidoNumeroPersonasInteresadas",
+            "id": "numero_personas_interesadas",
             "label": "Número de personas interesadas",
             "type": "number",
             "order": 15,
@@ -346,7 +150,7 @@
             "validation": "Debe ser mayor o igual a 1."
           },
           {
-            "id": "fallecidoNotarioOAutoridad",
+            "id": "notario_o_autoridad",
             "label": "Notario o autoridad",
             "type": "string",
             "order": 16,
@@ -354,7 +158,7 @@
             "description": "Nombre del notario o autoridad competente (Notario/aria o autoridad)."
           },
           {
-            "id": "fallecidoFechaActaNotarial",
+            "id": "fecha_acta_notarial",
             "label": "Fecha del acta notarial",
             "type": "string",
             "order": 17,
@@ -367,47 +171,48 @@
         ]
       },
       {
-        "id": "reconocimiento",
-        "label": "Reconocimiento",
-        "order": 3,
+        "id": "beneficiario",
+        "label": "Beneficiario",
+        "order": 2,
         "required": true,
         "fields": [
           {
-            "id": "reconocimientoNifFirmante",
-            "label": "NIF del firmante",
+            "id": "dni_nif",
+            "label": "NIF (caja 2)",
             "type": "string",
             "order": 1,
             "required": true,
-            "description": "NIF impreso junto a la declaración firmada por el contribuyente o presentador.",
+            "description": "Número de identificación fiscal español impreso junto a la caja (2).",
             "validation": "Debe ser un DNI, NIE o CIF válido.",
-            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$",
+            "boxNumber": "2"
           },
           {
-            "id": "reconocimientoNombreCompletoFirmante",
-            "label": "Nombre completo del firmante",
+            "id": "nombre_completo_razon_social",
+            "label": "Nombre completo o razón social",
             "type": "string",
             "order": 2,
             "required": true,
-            "description": "Nombre de la persona que firma la declaración."
+            "description": "Nombre legal completo del beneficiario (o el nombre de la empresa cuando actúa como entidad)."
           },
           {
-            "id": "reconocimientoNombreVia",
+            "id": "nombre_via",
             "label": "Nombre de la vía",
             "type": "string",
             "order": 3,
-            "required": false,
+            "required": true,
             "description": "Calle o vía utilizada en la dirección postal (Vía pública)."
           },
           {
-            "id": "reconocimientoNumeroVia",
+            "id": "numero_via",
             "label": "Número de la vía",
             "type": "string",
             "order": 4,
-            "required": false,
+            "required": true,
             "description": "Número de casa o edificio mostrado antes de Esc./Piso/Puerta."
           },
           {
-            "id": "reconocimientoEscalera",
+            "id": "escalera",
             "label": "Escalera / bloque",
             "type": "string",
             "order": 5,
@@ -415,7 +220,7 @@
             "description": "Escalera, bloque o entrada (Esc.)."
           },
           {
-            "id": "reconocimientoPiso",
+            "id": "piso",
             "label": "Piso",
             "type": "string",
             "order": 6,
@@ -423,7 +228,7 @@
             "description": "Información del piso (Piso)."
           },
           {
-            "id": "reconocimientoPuerta",
+            "id": "puerta",
             "label": "Puerta / unidad",
             "type": "string",
             "order": 7,
@@ -431,7 +236,192 @@
             "description": "Número de puerta o identificador de unidad (Puerta)."
           },
           {
-            "id": "reconocimientoCodigoPostal",
+            "id": "codigo_postal",
+            "label": "Código postal",
+            "type": "string",
+            "order": 8,
+            "required": true,
+            "description": "Código postal junto al bloque de dirección.",
+            "validation": "Debe contener exactamente 5 dígitos.",
+            "validationRegex": "^\\d{5}$"
+          },
+          {
+            "id": "municipio",
+            "label": "Municipio",
+            "type": "string",
+            "order": 9,
+            "required": true,
+            "description": "Nombre del municipio o ciudad."
+          },
+          {
+            "id": "provincia",
+            "label": "Provincia",
+            "type": "string",
+            "order": 10,
+            "required": true,
+            "description": "Nombre de la provincia (Provincia)."
+          },
+          {
+            "id": "pais",
+            "label": "País",
+            "type": "string",
+            "order": 11,
+            "required": false,
+            "description": "Código de país impreso bajo País.",
+            "default": "ES"
+          },
+          {
+            "id": "telefono",
+            "label": "Número de teléfono (caja 3)",
+            "type": "string",
+            "order": 12,
+            "required": false,
+            "description": "Contacto telefónico mostrado en la caja (3).",
+            "recommended": true,
+            "boxNumber": "3"
+          },
+          {
+            "id": "correo_electronico",
+            "label": "Dirección de correo electrónico",
+            "type": "string",
+            "order": 13,
+            "required": false,
+            "description": "Dirección de correo electrónico (Dirección electrónica).",
+            "recommended": true
+          },
+          {
+            "id": "fecha_nacimiento",
+            "label": "Fecha de nacimiento (caja 4)",
+            "type": "string",
+            "order": 14,
+            "required": true,
+            "description": "Fecha de nacimiento solicitada en la caja (4).",
+            "format": "YYYY-MM-DD",
+            "validation": "Debe ser una fecha válida en formato ISO (YYYY-MM-DD).",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$",
+            "boxNumber": "4"
+          },
+          {
+            "id": "parentesco",
+            "label": "Parentesco",
+            "type": "string",
+            "order": 15,
+            "required": true,
+            "description": "Parentesco con el causante (Parentesco)."
+          },
+          {
+            "id": "grupo_parentesco",
+            "label": "Grupo de parentesco",
+            "type": "string",
+            "order": 16,
+            "required": true,
+            "description": "Grupo fiscal solicitado junto a Parentesco (Grupo).",
+            "values": ["I", "II", "III", "IV"]
+          },
+          {
+            "id": "patrimonio_preexistente",
+            "label": "Patrimonio preexistente",
+            "type": "number",
+            "order": 17,
+            "required": false,
+            "description": "Importe ingresado en Patrimonio preexistente (EUR).",
+            "format": "decimal"
+          },
+          {
+            "id": "tiene_discapacidad",
+            "label": "Tiene discapacidad",
+            "type": "boolean",
+            "order": 18,
+            "required": false,
+            "description": "Casilla que indica si el beneficiario tiene discapacidad (Discapacidad: Sí)."
+          },
+          {
+            "id": "porcentaje_discapacidad",
+            "label": "Porcentaje de discapacidad",
+            "type": "number",
+            "order": 19,
+            "required": false,
+            "description": "Porcentaje escrito junto a la casilla de discapacidad.",
+            "format": "decimal",
+            "validation": "Debe ser un valor entre 0 y 100.",
+            "dependsOn": "tiene_discapacidad"
+          },
+          {
+            "id": "titulo_sucesorio",
+            "label": "Título sucesorio",
+            "type": "string",
+            "order": 20,
+            "required": false,
+            "description": "Título legal de la sucesión (Título sucesorio)."
+          }
+        ]
+      },
+      {
+        "id": "tramitante",
+        "label": "Tramitante",
+        "order": 3,
+        "required": true,
+        "fields": [
+          {
+            "id": "dni_nif",
+            "label": "NIF del firmante",
+            "type": "string",
+            "order": 1,
+            "required": true,
+            "description": "NIF impreso junto a la declaración firmada por el tramitante o presentador.",
+            "validation": "Debe ser un DNI, NIE o CIF válido.",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre_completo_firmante",
+            "label": "Nombre completo del firmante",
+            "type": "string",
+            "order": 2,
+            "required": true,
+            "description": "Nombre de la persona que firma la declaración."
+          },
+          {
+            "id": "nombre_via",
+            "label": "Nombre de la vía",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Calle o vía utilizada en la dirección postal (Vía pública)."
+          },
+          {
+            "id": "numero_via",
+            "label": "Número de la vía",
+            "type": "string",
+            "order": 4,
+            "required": false,
+            "description": "Número de casa o edificio mostrado antes de Esc./Piso/Puerta."
+          },
+          {
+            "id": "escalera",
+            "label": "Escalera / bloque",
+            "type": "string",
+            "order": 5,
+            "required": false,
+            "description": "Escalera, bloque o entrada (Esc.)."
+          },
+          {
+            "id": "piso",
+            "label": "Piso",
+            "type": "string",
+            "order": 6,
+            "required": false,
+            "description": "Información del piso (Piso)."
+          },
+          {
+            "id": "puerta",
+            "label": "Puerta / unidad",
+            "type": "string",
+            "order": 7,
+            "required": false,
+            "description": "Número de puerta o identificador de unidad (Puerta)."
+          },
+          {
+            "id": "codigo_postal",
             "label": "Código postal",
             "type": "string",
             "order": 8,
@@ -441,7 +431,7 @@
             "validationRegex": "^\\d{5}$"
           },
           {
-            "id": "reconocimientoMunicipio",
+            "id": "municipio",
             "label": "Municipio",
             "type": "string",
             "order": 9,
@@ -449,7 +439,7 @@
             "description": "Nombre del municipio o ciudad."
           },
           {
-            "id": "reconocimientoProvincia",
+            "id": "provincia",
             "label": "Provincia",
             "type": "string",
             "order": 10,
@@ -457,7 +447,7 @@
             "description": "Nombre de la provincia (Provincia)."
           },
           {
-            "id": "reconocimientoPais",
+            "id": "pais",
             "label": "País",
             "type": "string",
             "order": 11,
@@ -466,7 +456,7 @@
             "default": "ES"
           },
           {
-            "id": "reconocimientoTelefono",
+            "id": "telefono",
             "label": "Número de teléfono",
             "type": "string",
             "order": 12,
@@ -474,7 +464,7 @@
             "description": "Contacto telefónico (Teléfono)."
           },
           {
-            "id": "reconocimientoCorreoElectronico",
+            "id": "correo_electronico",
             "label": "Dirección de correo electrónico",
             "type": "string",
             "order": 13,
@@ -482,7 +472,7 @@
             "description": "Dirección de correo electrónico (Dirección electrónica)."
           },
           {
-            "id": "reconocimientoAcuerdoDeclaracion",
+            "id": "acuerdo_declaracion",
             "label": "Acuerdo con la declaración",
             "type": "boolean",
             "order": 14,
@@ -491,12 +481,12 @@
             "default": true
           },
           {
-            "id": "reconocimientoFechaFirma",
+            "id": "fecha_firma",
             "label": "Fecha de firma",
             "type": "string",
             "order": 15,
             "required": false,
-            "description": "Fecha de firma mostrada en la declaración (día, mes, año).",
+            "description": "Misma fecha la cual se hace el documento, y se genera osea un .today()",
             "format": "YYYY-MM-DD",
             "validation": "Debe ser una fecha válida en formato ISO (YYYY-MM-DD).",
             "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
@@ -510,7 +500,7 @@
         "required": true,
         "fields": [
           {
-            "id": "pagoIban",
+            "id": "iban",
             "label": "IBAN",
             "type": "string",
             "order": 1,
@@ -520,7 +510,7 @@
             "validationRegex": "^[A-Z]{2}\\d{2}[A-Z0-9]{4,30}$"
           },
           {
-            "id": "pagoCargoEnCuenta",
+            "id": "cargo_en_cuenta",
             "label": "Cargo en cuenta",
             "type": "boolean",
             "order": 2,
@@ -528,7 +518,7 @@
             "description": "Casilla 'Cargo en cuenta' que autoriza al banco a cargar el IBAN."
           },
           {
-            "id": "pagoPagoEfectivo",
+            "id": "pago_efectivo",
             "label": "Pago en efectivo",
             "type": "boolean",
             "order": 3,
@@ -536,7 +526,7 @@
             "description": "Casilla 'En efectivo' para pagos en efectivo."
           },
           {
-            "id": "pagoPaisBanco",
+            "id": "pais_banco",
             "label": "País del banco",
             "type": "string",
             "order": 4,
@@ -545,7 +535,7 @@
             "default": "ES"
           },
           {
-            "id": "pagoDigitosControlBanco",
+            "id": "digitos_control_banco",
             "label": "Dígitos de control (DC)",
             "type": "string",
             "order": 5,
@@ -553,7 +543,7 @@
             "description": "Dígitos de control mostrados en la primera caja 'DC' (después del código de país)."
           },
           {
-            "id": "pagoEntidadBanco",
+            "id": "entidad_banco",
             "label": "Entidad bancaria",
             "type": "string",
             "order": 6,
@@ -562,7 +552,7 @@
             "validationRegex": "^\\d{4}$"
           },
           {
-            "id": "pagoSucursalBanco",
+            "id": "sucursal_banco",
             "label": "Sucursal bancaria",
             "type": "string",
             "order": 7,
@@ -571,7 +561,7 @@
             "validationRegex": "^\\d{4}$"
           },
           {
-            "id": "pagoDigitosControlBanco2",
+            "id": "digitos_control_banco_2",
             "label": "Dígitos de control 2 (DC)",
             "type": "string",
             "order": 8,
@@ -579,7 +569,7 @@
             "description": "Segundos dígitos de control mostrados en la caja 'DC' (después de la sucursal)."
           },
           {
-            "id": "pagoNumeroCuenta",
+            "id": "numero_cuenta",
             "label": "Número de cuenta",
             "type": "string",
             "order": 9,
@@ -588,7 +578,7 @@
             "validationRegex": "^\\d{10}$"
           },
           {
-            "id": "pagoImporte",
+            "id": "importe",
             "label": "Importe",
             "type": "number",
             "order": 10,
@@ -605,7 +595,7 @@
         "required": true,
         "fields": [
           {
-            "id": "liquidacionBonificacionDiscapacidad",
+            "id": "bonificacion_discapacidad",
             "label": "Bonificación por discapacidad",
             "type": "number",
             "order": 1,
@@ -614,7 +604,7 @@
             "format": "decimal"
           },
           {
-            "id": "liquidacionCuotaTributariaCasoGeneral",
+            "id": "cuota_tributaria_caso_general",
             "label": "Cuota tributaria - caso general",
             "type": "number",
             "order": 2,
@@ -623,7 +613,7 @@
             "format": "decimal"
           },
           {
-            "id": "liquidacionTipoMedioEfectivoCuotaTributaria",
+            "id": "tipo_medio_efectivo_cuota_tributaria",
             "label": "Cuota tributaria - tipo medio efectivo",
             "type": "number",
             "order": 3,
@@ -632,7 +622,7 @@
             "format": "decimal"
           },
           {
-            "id": "liquidacionBaseLiquidableRealCaja13",
+            "id": "base_liquidable_real_caja_13",
             "label": "Base liquidable real (caja 13)",
             "type": "number",
             "order": 4,
@@ -643,7 +633,7 @@
             "calculation": "baseBrutaReal - totalReduccionesRealCaja11"
           },
           {
-            "id": "liquidacionBaseLiquidableTeoricaCaja14",
+            "id": "base_liquidable_teorica_caja_14",
             "label": "Base liquidable teórica (caja 14)",
             "type": "number",
             "order": 5,
@@ -654,7 +644,7 @@
             "calculation": "baseBrutaTeorica - totalReduccionesTeoricaCaja12"
           },
           {
-            "id": "liquidacionCuotaIntegraCaja16",
+            "id": "cuota_integra_caja_16",
             "label": "Cuota íntegra (caja 16)",
             "type": "number",
             "order": 6,
@@ -664,7 +654,7 @@
             "boxNumber": "16"
           },
           {
-            "id": "liquidacionCuotaTributariaCaja605",
+            "id": "cuota_tributaria_caja_605",
             "label": "Cuota tributaria (caja 605)",
             "type": "number",
             "order": 7,
@@ -674,7 +664,7 @@
             "boxNumber": "605"
           },
           {
-            "id": "liquidacionReduccionExcesoCuotaCaja606",
+            "id": "reduccion_exceso_cuota_caja_606",
             "label": "Reducción por exceso de cuota (caja 606)",
             "type": "number",
             "order": 8,
@@ -684,7 +674,7 @@
             "boxNumber": "606"
           },
           {
-            "id": "liquidacionCuotaTributariaAjustadaCaja607",
+            "id": "cuota_tributaria_ajustada_caja_607",
             "label": "Cuota tributaria ajustada (caja 607)",
             "type": "number",
             "order": 9,
@@ -695,7 +685,7 @@
             "calculation": "cuotaTributariaCaja605 - reduccionExcesoCuotaCaja606"
           },
           {
-            "id": "liquidacionTipoMedioEfectivoCaja17",
+            "id": "tipo_medio_efectivo_caja_17",
             "label": "Tipo medio efectivo (caja 17)",
             "type": "number",
             "order": 10,
@@ -706,7 +696,7 @@
             "calculation": "cuotaTributariaAjustadaCaja607 / baseLiquidableTeoricaCaja14 * 100"
           },
           {
-            "id": "liquidacionCuotaTributariaAjustadaCaja18",
+            "id": "cuota_tributaria_ajustada_caja_18",
             "label": "Cuota tributaria ajustada (caja 18)",
             "type": "number",
             "order": 11,
@@ -717,7 +707,7 @@
             "calculation": "baseLiquidableRealCaja13 * tipoMedioEfectivoCaja17 / 100"
           },
           {
-            "id": "liquidacionBonificacionCuotaCaja19",
+            "id": "bonificacion_cuota_caja_19",
             "label": "Bonificación de la cuota tributaria (caja 19)",
             "type": "number",
             "order": 12,
@@ -727,7 +717,7 @@
             "boxNumber": "19"
           },
           {
-            "id": "liquidacionDeduccionDobleImposicionCaja20",
+            "id": "deduccion_doble_imposicion_caja_20",
             "label": "Deducción por doble imposición (caja 20)",
             "type": "number",
             "order": 13,
@@ -737,7 +727,7 @@
             "boxNumber": "20"
           },
           {
-            "id": "liquidacionDeduccionCuotasAnterioresCaja21",
+            "id": "deduccion_cuotas_anteriores_caja_21",
             "label": "Deducción de cuotas anteriores (caja 21)",
             "type": "number",
             "order": 14,
@@ -747,7 +737,7 @@
             "boxNumber": "21"
           },
           {
-            "id": "liquidacionCuotaIngresarCaja22",
+            "id": "cuota_ingresar_caja_22",
             "label": "Importe a ingresar (caja 22)",
             "type": "number",
             "order": 15,
@@ -758,7 +748,7 @@
             "calculation": "cuotaTributariaAjustadaCaja18 - bonificacionCuotaCaja19 - deduccionDobleImposicionCaja20 - deduccionCuotasAnterioresCaja21"
           },
           {
-            "id": "liquidacionRecargoCaja23",
+            "id": "recargo_caja_23",
             "label": "Recargo (caja 23)",
             "type": "number",
             "order": 16,
@@ -768,7 +758,7 @@
             "boxNumber": "23"
           },
           {
-            "id": "liquidacionInteresesDemoraCaja24",
+            "id": "intereses_demora_caja_24",
             "label": "Intereses de demora (caja 24)",
             "type": "number",
             "order": 17,
@@ -778,7 +768,7 @@
             "boxNumber": "24"
           },
           {
-            "id": "liquidacionTotalIngresarCaja25",
+            "id": "total_ingresar_caja_25",
             "label": "Importe total a ingresar (caja 25)",
             "type": "number",
             "order": 18,
@@ -857,7 +847,7 @@
         "required": false,
         "fields": [
           {
-            "id": "totalReduccionesRealCaja11",
+            "id": "total_reducciones_real_caja_11",
             "label": "Total reducciones real (caja 11)",
             "type": "number",
             "order": 1,
@@ -869,7 +859,7 @@
             "validation": "Debe coincidir con la suma de todas las reducciones.importeReal."
           },
           {
-            "id": "totalReduccionesTeoricaCaja12",
+            "id": "total_reducciones_teorica_caja_12",
             "label": "Total reducciones teórica (caja 12)",
             "type": "number",
             "order": 2,
@@ -881,7 +871,7 @@
             "validation": "Debe coincidir con la suma de todas las reducciones.importeTeorico."
           },
           {
-            "id": "totalReduccionesAplicadas",
+            "id": "total_reducciones_aplicadas",
             "label": "Total reducciones aplicadas",
             "type": "number",
             "order": 3,
@@ -894,73 +884,71 @@
       }
     ],
     "example": {
-      "encabezado": {
-        "cpr": "9055050"
+      "encabezado": {},
+      "causante": {
+        "dni_nif": "11111111H",
+        "nombre_completo": "Causante de Ejemplo",
+        "obligado_impuesto_patrimonio_ultimos_cuatro_anos": true,
+        "es_testamentaria": true,
+        "es_intestada": false,
+        "numero_personas_interesadas": 2,
+        "notario_o_autoridad": "Notario Anna Serra",
+        "fecha_acta_notarial": "2024-08-01"
       },
-      "sujeto": {
-        "sujetoNif": "00000000T",
-        "sujetoNombreCompletoRazonSocial": "Contribuyente de Prueba",
-        "sujetoNombreVia": "Carrer Gran",
-        "sujetoNumeroVia": "12",
-        "sujetoEscalera": "A",
-        "sujetoPiso": "2",
-        "sujetoPuerta": "1",
-        "sujetoCodigoPostal": "08001",
-        "sujetoMunicipio": "Barcelona",
-        "sujetoProvincia": "Barcelona",
-        "sujetoPais": "ES",
-        "sujetoTelefono": "600000000",
-        "sujetoCorreoElectronico": "test@example.com",
-        "sujetoFechaNacimiento": "1990-05-12",
-        "sujetoParentesco": "Hijo/a",
-        "sujetoGrupoParentesco": "I",
-        "sujetoPatrimonioPreexistente": 150000,
-        "sujetoTieneDiscapacidad": false,
-        "sujetoPorcentajeDiscapacidad": null,
-        "sujetoTituloSucesorio": "Testamento"
+      "beneficiario": {
+        "dni_nif": "00000000T",
+        "nombre_completo_razon_social": "Beneficiario de Prueba",
+        "nombre_via": "Carrer Gran",
+        "numero_via": "12",
+        "escalera": "A",
+        "piso": "2",
+        "puerta": "1",
+        "codigo_postal": "08001",
+        "municipio": "Barcelona",
+        "provincia": "Barcelona",
+        "pais": "ES",
+        "telefono": "600000000",
+        "correo_electronico": "test@example.com",
+        "fecha_nacimiento": "1990-05-12",
+        "parentesco": "Hijo/a",
+        "grupo_parentesco": "I",
+        "patrimonio_preexistente": 150000,
+        "tiene_discapacidad": false,
+        "porcentaje_discapacidad": null,
+        "titulo_sucesorio": "Testamento"
       },
-      "fallecido": {
-        "fallecidoNif": "11111111H",
-        "fallecidoNombreCompleto": "Fallecido de Ejemplo",
-        "fallecidoObligadoImpuestoPatrimonioUltimosCuatroAnos": true,
-        "fallecidoEsTestamentaria": true,
-        "fallecidoEsIntestada": false,
-        "fallecidoNumeroPersonasInteresadas": 2,
-        "fallecidoNotarioOAutoridad": "Notario Anna Serra",
-        "fallecidoFechaActaNotarial": "2024-08-01"
-      },
-      "reconocimiento": {
-        "reconocimientoNifFirmante": "00000000T",
-        "reconocimientoNombreCompletoFirmante": "Contribuyente de Prueba",
-        "reconocimientoAcuerdoDeclaracion": true,
-        "reconocimientoFechaFirma": "2024-11-17"
+      "tramitante": {
+        "dni_nif": "00000000T",
+        "nombre_completo_firmante": "Tramitante de Prueba",
+        "acuerdo_declaracion": true,
+        "fecha_firma": "2024-11-17"
       },
       "pago": {
-        "pagoIban": "ES1200491500052718123412",
-        "pagoCargoEnCuenta": true,
-        "pagoPagoEfectivo": false,
-        "pagoPaisBanco": "ES",
-        "pagoDigitosControlBanco": "12"
+        "iban": "ES1200491500052718123412",
+        "cargo_en_cuenta": true,
+        "pago_efectivo": false,
+        "pais_banco": "ES",
+        "digitos_control_banco": "12"
       },
       "liquidacion": {
-        "liquidacionBonificacionDiscapacidad": 0,
-        "liquidacionCuotaTributariaCasoGeneral": 0,
-        "liquidacionTipoMedioEfectivoCuotaTributaria": 0,
-        "liquidacionBaseLiquidableRealCaja13": 500000,
-        "liquidacionBaseLiquidableTeoricaCaja14": 500000,
-        "liquidacionCuotaIntegraCaja16": 80000,
-        "liquidacionCuotaTributariaCaja605": 80000,
-        "liquidacionReduccionExcesoCuotaCaja606": 0,
-        "liquidacionCuotaTributariaAjustadaCaja607": 80000,
-        "liquidacionTipoMedioEfectivoCaja17": 16,
-        "liquidacionCuotaTributariaAjustadaCaja18": 80000,
-        "liquidacionBonificacionCuotaCaja19": 0,
-        "liquidacionDeduccionDobleImposicionCaja20": 0,
-        "liquidacionDeduccionCuotasAnterioresCaja21": 0,
-        "liquidacionCuotaIngresarCaja22": 80000,
-        "liquidacionRecargoCaja23": 0,
-        "liquidacionInteresesDemoraCaja24": 0,
-        "liquidacionTotalIngresarCaja25": 80000
+        "bonificacion_discapacidad": 0,
+        "cuota_tributaria_caso_general": 0,
+        "tipo_medio_efectivo_cuota_tributaria": 0,
+        "base_liquidable_real_caja_13": 500000,
+        "base_liquidable_teorica_caja_14": 500000,
+        "cuota_integra_caja_16": 80000,
+        "cuota_tributaria_caja_605": 80000,
+        "reduccion_exceso_cuota_caja_606": 0,
+        "cuota_tributaria_ajustada_caja_607": 80000,
+        "tipo_medio_efectivo_caja_17": 16,
+        "cuota_tributaria_ajustada_caja_18": 80000,
+        "bonificacion_cuota_caja_19": 0,
+        "deduccion_doble_imposicion_caja_20": 0,
+        "deduccion_cuotas_anteriores_caja_21": 0,
+        "cuota_ingresar_caja_22": 80000,
+        "recargo_caja_23": 0,
+        "intereses_demora_caja_24": 0,
+        "total_ingresar_caja_25": 80000
       },
       "reducciones": [
         {
@@ -989,9 +977,9 @@
         }
       ],
       "totalesReducciones": {
-        "totalReduccionesRealCaja11": 15000.00,
-        "totalReduccionesTeoricaCaja12": 0.00,
-        "totalReduccionesAplicadas": 15000.00
+        "total_reducciones_real_caja_11": 15000.00,
+        "total_reducciones_teorica_caja_12": 0.00,
+        "total_reducciones_aplicadas": 15000.00
       }
     },
     "notes": {
@@ -1004,7 +992,7 @@
         "sumas": "sum(reducciones.importeReal) === totalesReducciones.totalReduccionesRealCaja11 y sum(reducciones.importeTeorico) === totalesReducciones.totalReduccionesTeoricaCaja12",
         "baseLiquidable": "Si totalReduccionesRealCaja11 > 0, recalcular baseLiquidableRealCaja13 = baseBrutaReal - totalReduccionesRealCaja11"
       },
-      "idNaming": "Todos los IDs de campos usan prefijos de sección (sujeto_, fallecido_, reconocimiento_, pago_, liquidacion_) para evitar duplicados y facilitar el mapeo."
+      "idNaming": "Los IDs de campos no incluyen prefijos de sección ya que el contexto se determina por la sección padre. Los nombres siguen snake_case para coincidir con los campos de la base de datos."
     }
   }
 }

@@ -4,17 +4,17 @@ Generate a filled Catalan Model 650 (ATC-650E-6) PDF by overlaying data coming
 from a structured JSON file on top of the official template.
 
 The script performs four major steps:
-1. Load and validate the JSON payload against `tax_models/data_models/mod650cat_data_structure.json`.
+1. Load and validate the JSON payload against `tax_models/mod650cat/data_models/mod650cat_data_structure.json`.
 2. Flatten the JSON so every field can be referenced with a dotted path
    (e.g. `subject.nif`, `settlement.cuotaIntegraBox16`).
 3. Draw each value on a transparent PDF overlay, respecting the coordinates
    provided in `FIELD_MAPPINGS`.
-4. Merge the overlay with `tax_models/models/650_es-cat.pdf` and write the final file
+4. Merge the overlay with `tax_models/mod650cat/models/650_es-cat.pdf` and write the final file
    under `generated/`.
 
 Usage:
-    python scripts/generate_mod650cat_pdf_clean_version.py \
-        --data tax_models/json_examples/mod650cat_example.json \
+    python src/scripts/generate_mod650cat.py \
+        --data tax_models/mod650cat/json_examples/mod650cat_example.json \
         --output generated/model650cat_overlay.pdf
 
 The default arguments already point to the sample JSON, structure description
@@ -35,10 +35,10 @@ from typing import Any, Dict, List, Optional, Sequence
 from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DEFAULT_DATA = BASE_DIR / "tax_models" / "json_examples" / "mod650cat_example.json"
-DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "data_models" / "mod650cat_data_structure.json"
-DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "models" / "650_es-cat.pdf"
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+DEFAULT_DATA = BASE_DIR / "tax_models" / "mod650cat" / "json_examples" / "mod650cat_example.json"
+DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "mod650cat" / "data_models" / "mod650cat_data_structure.json"
+DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "mod650cat" / "models" / "650_es-cat.pdf"
 DEFAULT_OUTPUT_DIR = BASE_DIR / "generated"
 # Offsets (multipliers) to center the drawn "X" inside checkbox widgets
 CHECKBOX_X_OFFSET_MULT = -0.35  # shift left relative to font size
@@ -64,8 +64,6 @@ SETTLEMENT_PAGES = [4, 5]
 ALL_PAGES = [0, 1, 2, 3, 4, 5]
 
 FIELD_MAPPINGS: List[FieldMapping] = [
-    # Encabezado
-    FieldMapping("encabezado.cpr", ALL_PAGES, x=170, y_from_top=95, font_size=11),
     # Sujeto / presentador
     FieldMapping("sujeto.sujetoNif", FIRST_COPY_PAGES, x=70, y_from_top=209, font_size=11),
     FieldMapping(

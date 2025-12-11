@@ -4,17 +4,17 @@ Genera un PDF relleno del Modelo 650 (ATC-650E-6) de Cataluña superponiendo dat
 procedentes de un fichero JSON estructurado sobre la plantilla oficial.
 
 El script realiza cuatro pasos principales:
-1. Cargar y validar el payload JSON contra `tax_models/data_models/mod650cat_data_structure.json`.
+1. Cargar y validar el payload JSON contra `tax_models/mod650cat/data_models/mod650cat_data_structure.json`.
 2. Aplanar el JSON para que cada campo pueda referenciarse con una ruta punteada
    (ej. `subject.nif`, `settlement.cuotaIntegraBox16`).
 3. Dibujar cada valor en una capa PDF transparente respetando las coordenadas
    definidas en `FIELD_MAPPINGS`.
-4. Combinar la capa con `tax_models/models/650_es-cat.pdf` y escribir el fichero final
+4. Combinar la capa con `tax_models/mod650cat/models/650_es-cat.pdf` y escribir el fichero final
    en `generated/`.
 
 Uso:
-    python scripts/generate_mod650cat_pdf_clean_version.py \
-        --data tax_models/json_examples/mod650cat_example.json \
+    python src/scripts/generate_mod650cat_deprecated.py \
+        --data tax_models/mod650cat/json_examples/mod650cat_example.json \
         --output generated/model650cat_overlay.pdf
 
 Los argumentos por defecto ya apuntan al JSON de muestra, la definición de estructura
@@ -38,10 +38,10 @@ from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DEFAULT_DATA = BASE_DIR / "tax_models" / "json_examples" / "mod650cat_example.json"
-DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "data_models" / "mod650cat_data_structure.json"
-DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "models" / "650_es-cat.pdf"
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+DEFAULT_DATA = BASE_DIR / "tax_models" / "mod650cat" / "json_examples" / "mod650cat_example_01_sin_reducciones.json"
+DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "mod650cat" / "data_models" / "mod650cat_data_structure.json"
+DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "mod650cat" / "models" / "650_es-cat.pdf"
 DEFAULT_OUTPUT_DIR = BASE_DIR / "generated"
 # Desplazamientos (multiplicadores) para centrar la "X" dibujada dentro de checkboxes
 CHECKBOX_X_OFFSET_MULT = -0.35  # desplazamiento a la izquierda relativo al tamaño de fuente
@@ -67,8 +67,6 @@ SETTLEMENT_PAGES = [4, 5]
 ALL_PAGES = [0, 1, 2, 3, 4, 5]
 
 FIELD_MAPPINGS: List[FieldMapping] = [
-    # Encabezado
-    FieldMapping("encabezado.cpr", ALL_PAGES, x=170, y_from_top=95, font_size=11),
     # Sujeto / presentador
     FieldMapping("sujeto.sujetoNif", FIRST_COPY_PAGES, x=70, y_from_top=209, font_size=11),
     FieldMapping(
