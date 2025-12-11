@@ -14,7 +14,7 @@ generated/
 .history/
 
 # PDF files (large binary files that don't need indexing)
-*.pdf
+# *.pdf
 
 # IDE and editor files
 .vscode/

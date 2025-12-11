@@ -1,60 +1,73 @@
-Cambios introducidos en generate_mod650cat_pdf.py
+INDEX
+ 1. Crear data model en base a un prompt
+ 2. Crear los example JSONs
+ 3. Crear el script
 
-Esta versión del script incorpora toda la lógica necesaria para gestionar correctamente la sección de reducciones del Modelo 650 de Cataluña, cumpliendo exactamente las especificaciones pedidas por el cliente.
+=======================
 
-Cambios principales incluidos en la V2:
-Traducción a español.
-Adaptación del formato de reducciones.
-El script ahora admite tanto el formato antiguo (un diccionario con campos como reduccionParentesco) como el nuevo formato exigido por el cliente (lista de objetos con claves casillaReal, casillaTeorica, clave, etiqueta, importeReal, importeTeorico).
-Cuando recibe el formato antiguo, lo convierte internamente al nuevo formato.
+1. Crear data model en base a un prompt
 
-Validación completa de la sección de reducciones
-Se comprueba que cada reducción tenga todos los campos requeridos y que los valores monetarios sean numéricos y convertibles a Decimal.
-Si existen totalesReducciones en el JSON, el script compara los totales declarados con las sumas reales de los importes. Si no coinciden, lanza error con detalle.
-
-Cálculo automático de totalesReducciones
-Aunque vengan definidos en el JSON, el script recalcula siempre los totales reales y teóricos para garantizar coherencia.
-
-Recalculo de la base liquidable (casillas 13 y 14)
-A partir de la base previa (antes de reducciones), el script aplica:
-
-baseNueva = basePrevia - totalReducciones
+Proporciona a la IA el siguiente prompt junto con el PDF del formulario oficial (asegurate de pasarle correctamente las variables):
 
 
-Esto actualiza automáticamente:
+---------------------------------------------
+"Genera un data model JSON completo para el modelo de impuesto [NOMBRE_MODELO] basándote en el formulario oficial PDF y los campos de la base de datos.
 
-Caja 13 (real)
+REFERENCIAS OBLIGATORIAS:
+- database_fields.md: Este archivo contiene el mapeo completo de todos los campos que existen en la base de datos. Documenta qué campos hay, en qué tablas están, y cómo acceder a ellos. SIEMPRE consulta este archivo antes de inventar nombres de campos porque muchos campos ya existen en BD con nombres específicos (ej: zip_code en lugar de codigo_postal, email en lugar de correo_electronico, patrimonio_valor en lugar de patrimonio_preexistente).
+- tax_models/mod650cat/data_models/mod650cat_data_structure.json: Usa este archivo como referencia del formato y estructura JSON a seguir.
 
-Caja 14 (teórica)
+PROCESO:
 
-Recalculo proporcional de casillas dependientes (605, 606, 607 y 16)
-Cuando existe una base previa real distinta de cero, el script aplica un factor de ajuste proporcional sobre las casillas dependientes:
+1. Lee el PDF del formulario oficial del modelo [NOMBRE_MODELO] e identifica todas las secciones y campos que aparecen.
 
-liquidacionCuotaTributariaCaja605
+2. Para cada campo del formulario, consulta database_fields.md para verificar si existe en la base de datos:
+   - Si existe en BD: usa el nombre exacto del campo de BD (ej: zip_code, email, dni_nif, patrimonio_valor)
+   - Si no existe en BD: inventa el nombre siguiendo snake_case (ej: numero_via, escalera, acuerdo_declaracion)
+   - Si requiere combinar campos: documenta en description cómo combinar (ej: nombre + apellidos de tabla persona)
+   - Si requiere derivar valores: documenta en description cómo derivar (ej: es_testamentaria desde escenario_sucesorio.tipo == 'testada')
 
-liquidacionReduccionExcesoCuotaCaja606
+3. Organiza los campos en secciones según el formulario:
+   - causante: consulta database_fields.md sección "1. CAUSANTE" para campos disponibles
+   - beneficiario: consulta database_fields.md sección "2. BENEFICIARIO" para campos disponibles
+   - tramitante: consulta database_fields.md sección "3. TRAMITANTE" para campos disponibles
+   - pago: inventar campos siguiendo snake_case (no existen en BD excepto importe que puede venir de AtribucionReduccion.total_a_pagar)
+   - liquidacion: inventar campos siguiendo snake_case (no existen en BD excepto algunos que pueden venir de AtribucionReduccion)
+   - reducciones: array con estructura estándar (casillaReal, casillaTeorica, clave, etiqueta, importeReal, importeTeorico)
+   - totalesReducciones: algunos pueden venir de AtribucionReduccion.total_reduccion
 
-liquidacionCuotaTributariaAjustadaCaja607
+4. Nombres de campos:
+   - NO usar prefijos de sección en los IDs (NO causanteNif, usar dni_nif)
+   - El contexto viene de la sección padre (causante.dni_nif, beneficiario.dni_nif, tramitante.dni_nif)
+   - Usar snake_case para todos los nombres
+   - Los nombres deben coincidir exactamente con los campos de BD cuando existan
 
-liquidacionCuotaIntegraCaja16
+5. Agregar validaciones cuando corresponda: validationRegex para DNI/código postal/fechas, format para fechas ("YYYY-MM-DD") y números ("decimal", "integer"), boxNumber cuando corresponda al formulario, calculation cuando sea calculado, dependsOn cuando dependa de otro campo.
 
-Este factor garantiza coherencia matemática entre bases y cuotas después de aplicar reducciones.
+6. Incluir ejemplo JSON completo en la sección "example" usando los nombres correctos (sin prefijos).
 
-Integración completa con el flujo original del script
-No se ha modificado nada del proceso de dibujo PDF ni de FIELD_MAPPINGS.
-La lógica nueva se ejecuta antes del aplanado (flatten_data) para que todo el PDF ya reciba los valores correctos.
+7. Actualizar lastUpdated con fecha actual y documentar en notes.idNaming que los IDs no incluyen prefijos de sección."
 
-Compatibilidad con todos los JSON de ejemplo del cliente
-La V2 ha sido comprobada contra los cinco JSON proporcionados por el cliente:
+Comprueba manualmente que los datos generados sean correctos comparándolos con el formulario PDF.
 
-sin reducciones
+---------------------------------------------
 
-solo reducciones reales
 
-solo reducciones teóricas
+=======================
 
-mixto
+2. Crear los example JSONs
 
-complejo
+Proporciona a la IA el data model creado y pide que genere varios JSONs de ejemplo con datos realistas. Estos JSONs servirán para probar el script de generación.
 
-Todos pasan validación y recalculo de forma consistente.
+Puedes pedirle que cree diferentes escenarios: casos simples, casos complejos, casos con reducciones, casos sin reducciones, etc.
+
+=======================
+
+3. Crear el script
+
+Usa los scripts existentes en src/scripts/ como referencia (generate_mod650cat.py). El script debe:
+- Leer el data model desde tax_models/[MODELO]/data_models/[MODELO]_data_structure.json
+- Cargar los JSONs de datos de ejemplo (manualmente poner el que quieres el json que te generee)
+- Generar el PDF rellenado usando PyPDF2 y reportlab
+- Seguir la misma estructura y patrones que generate_mod650cat.py
+
