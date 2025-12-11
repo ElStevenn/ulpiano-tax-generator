@@ -65,7 +65,7 @@ Puedes pedirle que cree diferentes escenarios: casos simples, casos complejos, c
 
 3. Crear el script
 
-Usa los scripts existentes en src/scripts/ como referencia (generate_mod650cat.py). El script debe:
+Usa los scripts existentes en src/scripts_generate_models/ como referencia (generate_mod650cat.py). El script debe:
 - Leer el data model desde tax_models/[MODELO]/data_models/[MODELO]_data_structure.json
 - Cargar los JSONs de datos de ejemplo (manualmente poner el que quieres el json que te generee)
 - Generar el PDF rellenado usando PyPDF2 y reportlab
