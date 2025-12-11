@@ -9,7 +9,7 @@ The script performs four major steps:
    (e.g. `subject.nif`, `settlement.cuotaIntegraBox16`).
 3. Draw each value on a transparent PDF overlay, respecting the coordinates
    provided in `FIELD_MAPPINGS`.
-4. Merge the overlay with `tax_models/mod650cat/models/650_es-cat.pdf` and write the final file
+4. Merge the overlay with `tax_models/mod650cat/mod650cat.pdf` and write the final file
    under `generated/`.
 
 Usage:
@@ -38,7 +38,7 @@ from reportlab.pdfgen import canvas
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_DATA = BASE_DIR / "tax_models" / "mod650cat" / "json_examples" / "mod650cat_example.json"
 DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "mod650cat" / "data_models" / "mod650cat_data_structure.json"
-DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "mod650cat" / "models" / "650_es-cat.pdf"
+DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "mod650cat" / "mod650cat.pdf"
 DEFAULT_OUTPUT_DIR = BASE_DIR / "generated"
 # Offsets (multipliers) to center the drawn "X" inside checkbox widgets
 CHECKBOX_X_OFFSET_MULT = -0.35  # shift left relative to font size
