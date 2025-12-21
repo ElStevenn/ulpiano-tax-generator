@@ -1,0 +1,53 @@
+{
+  "encabezado": {
+    "fecha_devengo": "",
+    "fecha_documento": ""
+  },
+  "causante": {
+    "dni_nif": "12345678Z",
+    "nombre_completo": "Jose Perez Garcia",
+    "fecha_nacimiento": "1985-04-20",
+    "tiene_discapacidad": true,
+    "porcentaje_discapacidad": 33
+  },
+  "beneficiario": {
+    "dni_nif": "12345678Z",
+    "nombre_completo_razon_social": "Jose Perez Garcia",
+    "fecha_nacimiento": "1990-05-12",
+    "parentesco": "Hijo/a",
+    "grupo_parentesco": "",
+    "patrimonio_preexistente": 150000,
+    "tiene_discapacidad": true,
+    "porcentaje_discapacidad": 33
+  },
+  "tramitante": {
+    "dni_nif": "12345678Z",
+    "nombre_completo_firmante": "Jose Perez Garcia",
+    "fecha_firma": "",
+    "acuerdo_declaracion": true
+  },
+  "pago": {
+    "metodo_pago": "",
+    "importe": null
+  },
+  "liquidacion": {
+    "base_imposable": null,
+    "base_imposable_real": null,
+    "base_liquidable": null,
+    "base_liquidable_real": null,
+    "cuota_tributaria": null,
+    "cuota_integra": null,
+    "cuota_liquida": null,
+    "cuota_liquidada_anterior": null,
+    "cuota_resultante": null,
+    "intereses_demora": null,
+    "recargo": null,
+    "total_ingresar": null
+  },
+  "reducciones": [],
+  "totalesReducciones": {
+    "total_reducciones_real": null,
+    "total_reducciones_teorica": null,
+    "total_reducciones_aplicadas": null
+  }
+}
