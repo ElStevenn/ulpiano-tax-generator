@@ -1,0 +1,987 @@
+{
+  "model651cat": {
+    "description": "Data structure for Catalonia Model 651 (donations).",
+    "metadata": {
+      "source": "tax_models/mod651cat/mod651cat.pdf",
+      "formCode": "651",
+      "jurisdiction": "Catalonia",
+      "language": "ca-ES",
+      "lastUpdated": "2025-12-21"
+    },
+    "structure": [
+      {
+        "id": "encabezado",
+        "label": "Encabezado",
+        "order": 0,
+        "required": false,
+        "fields": [
+          {
+            "id": "fecha_devengo",
+            "label": "Fecha de devengo",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Header date of accrual.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          {
+            "id": "fecha_documento",
+            "label": "Fecha del documento",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Document date shown in the header.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        ]
+      },
+      {
+        "id": "causante",
+        "label": "Donante",
+        "order": 1,
+        "required": true,
+        "fields": [
+          {
+            "id": "dni_nif",
+            "label": "NIF del donante",
+            "type": "string",
+            "order": 1,
+            "required": true,
+            "description": "NIF/NIE of the donor (persona.dni_nif).",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre_completo",
+            "label": "Nombre completo del donante",
+            "type": "string",
+            "order": 2,
+            "required": true,
+            "description": "Nombre + apellidos (persona.nombre + persona.apellidos)."
+          },
+          {
+            "id": "fecha_nacimiento",
+            "label": "Fecha de nacimiento del donante",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Fecha de nacimiento (persona.fecha_nacimiento).",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          {
+            "id": "tiene_discapacidad",
+            "label": "Tiene discapacidad",
+            "type": "boolean",
+            "order": 4,
+            "required": false,
+            "description": "Derived from persona.info_discapacidad.porcentaje IS NOT NULL."
+          },
+          {
+            "id": "porcentaje_discapacidad",
+            "label": "Porcentaje de discapacidad",
+            "type": "number",
+            "order": 5,
+            "required": false,
+            "description": "Porcentaje de discapacidad (info_discapacidad.porcentaje).",
+            "format": "integer",
+            "dependsOn": "tiene_discapacidad"
+          },
+          {
+            "id": "nombre_via",
+            "label": "Nombre via",
+            "type": "string",
+            "required": false,
+            "description": "Street name (addresses.linea_direccion).",
+            "order": 6
+          },
+          {
+            "id": "numero_via",
+            "label": "Numero via",
+            "type": "string",
+            "required": false,
+            "description": "Street number (invented if not available).",
+            "order": 7
+          },
+          {
+            "id": "escalera",
+            "label": "Escalera",
+            "type": "string",
+            "required": false,
+            "description": "Staircase identifier (invented if not available).",
+            "order": 8
+          },
+          {
+            "id": "piso",
+            "label": "Piso",
+            "type": "string",
+            "required": false,
+            "description": "Floor (invented if not available).",
+            "order": 9
+          },
+          {
+            "id": "puerta",
+            "label": "Puerta",
+            "type": "string",
+            "required": false,
+            "description": "Door number (invented if not available).",
+            "order": 10
+          },
+          {
+            "id": "codigo_postal",
+            "label": "Codigo postal",
+            "type": "string",
+            "required": false,
+            "description": "Postal code (addresses.zip_code).",
+            "validationRegex": "^\\d{5}$",
+            "order": 11
+          },
+          {
+            "id": "municipio",
+            "label": "Municipio",
+            "type": "string",
+            "required": false,
+            "description": "City or municipality (addresses.municipio).",
+            "order": 12
+          },
+          {
+            "id": "provincia",
+            "label": "Provincia",
+            "type": "string",
+            "required": false,
+            "description": "Province (addresses.provincia).",
+            "order": 13
+          },
+          {
+            "id": "pais",
+            "label": "Pais",
+            "type": "string",
+            "required": false,
+            "description": "Country (addresses.pais).",
+            "order": 14
+          },
+          {
+            "id": "telefono",
+            "label": "Telefono",
+            "type": "string",
+            "required": false,
+            "description": "Phone number (persona.telefono).",
+            "order": 15
+          },
+          {
+            "id": "email",
+            "label": "Email",
+            "type": "string",
+            "required": false,
+            "description": "Email address (persona.email).",
+            "order": 16
+          },
+          {
+            "id": "obligado_impuesto_patrimonio_ultimos_cuatro_anos",
+            "label": "Obligado impuesto patrimonio ultimos cuatro anos",
+            "type": "boolean",
+            "required": false,
+            "description": "Whether the donor was subject to wealth tax in the last four years.",
+            "order": 17
+          },
+          {
+            "id": "es_testamentaria",
+            "label": "Es testamentaria",
+            "type": "boolean",
+            "required": false,
+            "description": "Derived from escenario.tipo == 'testada'.",
+            "calculation": "escenario.tipo == 'testada'",
+            "order": 18
+          },
+          {
+            "id": "es_intestada",
+            "label": "Es intestada",
+            "type": "boolean",
+            "required": false,
+            "description": "Derived from escenario.tipo == 'intestada'.",
+            "calculation": "escenario.tipo == 'intestada'",
+            "order": 19
+          },
+          {
+            "id": "numero_personas_interesadas",
+            "label": "Numero personas interesadas",
+            "type": "number",
+            "required": false,
+            "description": "Count of interested parties (count(escenario.atribuciones)).",
+            "format": "integer",
+            "order": 20
+          },
+          {
+            "id": "notario_o_autoridad",
+            "label": "Notario o autoridad",
+            "type": "string",
+            "required": false,
+            "description": "Notary or authority (invented if not available).",
+            "order": 21
+          },
+          {
+            "id": "fecha_acta_notarial",
+            "label": "Fecha acta notarial",
+            "type": "string",
+            "required": false,
+            "description": "Notarial act date (invented if not available).",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$",
+            "order": 22
+          },
+          {
+            "id": "fecha_defuncion",
+            "label": "Fecha defuncion",
+            "type": "string",
+            "required": false,
+            "description": "Death date (miembro_familiar.fecha_defuncion).",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$",
+            "order": 23
+          },
+          {
+            "id": "nacionalidad",
+            "label": "Nacionalidad",
+            "type": "string",
+            "required": false,
+            "description": "Nationality (miembro_familiar.nacionalidad).",
+            "order": 24
+          },
+          {
+            "id": "vecindad_civil",
+            "label": "Vecindad civil",
+            "type": "string",
+            "required": false,
+            "description": "Civil neighborhood (persona.vecindad_civil).",
+            "order": 25
+          },
+          {
+            "id": "estado_civil",
+            "label": "Estado civil",
+            "type": "string",
+            "required": false,
+            "description": "Civil status (persona.estado_civil).",
+            "order": 26
+          }
+        ]
+      },
+      {
+        "id": "beneficiario",
+        "label": "Donatario",
+        "order": 2,
+        "required": true,
+        "fields": [
+          {
+            "id": "dni_nif",
+            "label": "NIF del donatario",
+            "type": "string",
+            "order": 1,
+            "required": true,
+            "description": "NIF/NIE of the donee (persona.dni_nif).",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre_completo_razon_social",
+            "label": "Nombre completo o razon social",
+            "type": "string",
+            "order": 2,
+            "required": true,
+            "description": "Nombre + apellidos (persona.nombre + persona.apellidos)."
+          },
+          {
+            "id": "fecha_nacimiento",
+            "label": "Fecha de nacimiento",
+            "type": "string",
+            "order": 3,
+            "required": true,
+            "description": "Fecha de nacimiento (persona.fecha_nacimiento).",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          {
+            "id": "parentesco",
+            "label": "Parentesco",
+            "type": "string",
+            "order": 4,
+            "required": true,
+            "description": "Relacion personal (relacion_causante_familiar.relacion_personal)."
+          },
+          {
+            "id": "grupo_parentesco",
+            "label": "Grupo de parentesco",
+            "type": "string",
+            "order": 5,
+            "required": false,
+            "description": "Group derived from parentesco.",
+            "values": [
+              "I",
+              "II",
+              "III",
+              "IV"
+            ]
+          },
+          {
+            "id": "patrimonio_preexistente",
+            "label": "Patrimonio preexistente",
+            "type": "number",
+            "order": 6,
+            "required": false,
+            "description": "Patrimonio preexistente (patrimonio_preexistente.patrimonio_valor).",
+            "format": "decimal"
+          },
+          {
+            "id": "tiene_discapacidad",
+            "label": "Tiene discapacidad",
+            "type": "boolean",
+            "order": 7,
+            "required": false,
+            "description": "Derived from persona.info_discapacidad.porcentaje IS NOT NULL."
+          },
+          {
+            "id": "porcentaje_discapacidad",
+            "label": "Porcentaje de discapacidad",
+            "type": "number",
+            "order": 8,
+            "required": false,
+            "description": "Porcentaje de discapacidad (info_discapacidad.porcentaje).",
+            "format": "integer",
+            "dependsOn": "tiene_discapacidad"
+          },
+          {
+            "id": "nombre_via",
+            "label": "Nombre via",
+            "type": "string",
+            "required": false,
+            "description": "Street name (addresses.linea_direccion).",
+            "order": 9
+          },
+          {
+            "id": "numero_via",
+            "label": "Numero via",
+            "type": "string",
+            "required": false,
+            "description": "Street number (invented if not available).",
+            "order": 10
+          },
+          {
+            "id": "escalera",
+            "label": "Escalera",
+            "type": "string",
+            "required": false,
+            "description": "Staircase identifier (invented if not available).",
+            "order": 11
+          },
+          {
+            "id": "piso",
+            "label": "Piso",
+            "type": "string",
+            "required": false,
+            "description": "Floor (invented if not available).",
+            "order": 12
+          },
+          {
+            "id": "puerta",
+            "label": "Puerta",
+            "type": "string",
+            "required": false,
+            "description": "Door number (invented if not available).",
+            "order": 13
+          },
+          {
+            "id": "codigo_postal",
+            "label": "Codigo postal",
+            "type": "string",
+            "required": false,
+            "description": "Postal code (addresses.zip_code).",
+            "validationRegex": "^\\d{5}$",
+            "order": 14
+          },
+          {
+            "id": "municipio",
+            "label": "Municipio",
+            "type": "string",
+            "required": false,
+            "description": "City or municipality (addresses.municipio).",
+            "order": 15
+          },
+          {
+            "id": "provincia",
+            "label": "Provincia",
+            "type": "string",
+            "required": false,
+            "description": "Province (addresses.provincia).",
+            "order": 16
+          },
+          {
+            "id": "pais",
+            "label": "Pais",
+            "type": "string",
+            "required": false,
+            "description": "Country (addresses.pais).",
+            "order": 17
+          },
+          {
+            "id": "telefono",
+            "label": "Telefono",
+            "type": "string",
+            "required": false,
+            "description": "Phone number (persona.telefono).",
+            "order": 18
+          },
+          {
+            "id": "correo_electronico",
+            "label": "Correo electronico",
+            "type": "string",
+            "required": false,
+            "description": "Email address (persona.email).",
+            "order": 19
+          },
+          {
+            "id": "titulo_sucesorio",
+            "label": "Titulo sucesorio",
+            "type": "string",
+            "required": false,
+            "description": "Succession title (atribucion.titulo).",
+            "order": 20
+          },
+          {
+            "id": "cuota_porcentaje",
+            "label": "Cuota porcentaje",
+            "type": "number",
+            "required": false,
+            "description": "Inheritance share percentage (atribucion.cuota_porcentaje).",
+            "format": "decimal",
+            "order": 21
+          },
+          {
+            "id": "cuota_tipo",
+            "label": "Cuota tipo",
+            "type": "string",
+            "required": false,
+            "description": "Share type (atribucion.cuota_tipo).",
+            "order": 22
+          },
+          {
+            "id": "relacion",
+            "label": "Relacion",
+            "type": "string",
+            "required": false,
+            "description": "Relationship (atribucion.party.persona.relacion).",
+            "order": 23
+          },
+          {
+            "id": "grado",
+            "label": "Grado",
+            "type": "string",
+            "required": false,
+            "description": "Disability grade (info_discapacidad.grado).",
+            "order": 24
+          },
+          {
+            "id": "nivel_dependencia",
+            "label": "Nivel dependencia",
+            "type": "string",
+            "required": false,
+            "description": "Dependency level (info_discapacidad.nivel_dependencia).",
+            "order": 25
+          },
+          {
+            "id": "coeficiente_multiplicador",
+            "label": "Coeficiente multiplicador",
+            "type": "number",
+            "required": false,
+            "description": "Wealth multiplier (patrimonio_preexistente.coeficiente_multiplicador).",
+            "format": "decimal",
+            "order": 26
+          }
+        ]
+      },
+      {
+        "id": "tramitante",
+        "label": "Tramitante",
+        "order": 3,
+        "required": false,
+        "fields": [
+          {
+            "id": "dni_nif",
+            "label": "NIF del tramitante",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "NIF/NIE of the presenter (persona.dni_nif).",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre_completo_firmante",
+            "label": "Nombre completo del firmante",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Nombre + apellidos (persona.nombre + persona.apellidos)."
+          },
+          {
+            "id": "fecha_firma",
+            "label": "Fecha de firma",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Signature date (use current date if needed).",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          {
+            "id": "acuerdo_declaracion",
+            "label": "Acuerdo de declaracion",
+            "type": "boolean",
+            "order": 4,
+            "required": false,
+            "description": "Checkbox declaring that the copy matches the original.",
+            "default": true
+          },
+          {
+            "id": "nombre_via",
+            "label": "Nombre via",
+            "type": "string",
+            "required": false,
+            "description": "Street name (addresses.linea_direccion).",
+            "order": 5
+          },
+          {
+            "id": "numero_via",
+            "label": "Numero via",
+            "type": "string",
+            "required": false,
+            "description": "Street number (invented if not available).",
+            "order": 6
+          },
+          {
+            "id": "escalera",
+            "label": "Escalera",
+            "type": "string",
+            "required": false,
+            "description": "Staircase identifier (invented if not available).",
+            "order": 7
+          },
+          {
+            "id": "piso",
+            "label": "Piso",
+            "type": "string",
+            "required": false,
+            "description": "Floor (invented if not available).",
+            "order": 8
+          },
+          {
+            "id": "puerta",
+            "label": "Puerta",
+            "type": "string",
+            "required": false,
+            "description": "Door number (invented if not available).",
+            "order": 9
+          },
+          {
+            "id": "codigo_postal",
+            "label": "Codigo postal",
+            "type": "string",
+            "required": false,
+            "description": "Postal code (addresses.zip_code).",
+            "validationRegex": "^\\d{5}$",
+            "order": 10
+          },
+          {
+            "id": "municipio",
+            "label": "Municipio",
+            "type": "string",
+            "required": false,
+            "description": "City or municipality (addresses.municipio).",
+            "order": 11
+          },
+          {
+            "id": "provincia",
+            "label": "Provincia",
+            "type": "string",
+            "required": false,
+            "description": "Province (addresses.provincia).",
+            "order": 12
+          },
+          {
+            "id": "pais",
+            "label": "Pais",
+            "type": "string",
+            "required": false,
+            "description": "Country (addresses.pais).",
+            "order": 13
+          },
+          {
+            "id": "telefono",
+            "label": "Telefono",
+            "type": "string",
+            "required": false,
+            "description": "Phone number (persona.telefono).",
+            "order": 14
+          },
+          {
+            "id": "correo_electronico",
+            "label": "Correo electronico",
+            "type": "string",
+            "required": false,
+            "description": "Email address (persona.email).",
+            "order": 15
+          }
+        ]
+      },
+      {
+        "id": "pago",
+        "label": "Pago",
+        "order": 4,
+        "required": false,
+        "fields": [
+          {
+            "id": "metodo_pago",
+            "label": "Metodo de pago",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Payment method (invented field)."
+          },
+          {
+            "id": "importe",
+            "label": "Importe",
+            "type": "number",
+            "order": 2,
+            "required": false,
+            "description": "Payment amount in EUR.",
+            "format": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "liquidacion",
+        "label": "Liquidacion",
+        "order": 5,
+        "required": false,
+        "fields": [
+          {
+            "id": "base_imposable",
+            "label": "Base imponible",
+            "type": "number",
+            "order": 1,
+            "required": false,
+            "description": "Base imponible.",
+            "format": "decimal"
+          },
+          {
+            "id": "base_imposable_real",
+            "label": "Base imponible real",
+            "type": "number",
+            "order": 2,
+            "required": false,
+            "description": "Base imponible real.",
+            "format": "decimal"
+          },
+          {
+            "id": "base_liquidable",
+            "label": "Base liquidable",
+            "type": "number",
+            "order": 3,
+            "required": false,
+            "description": "Base liquidable.",
+            "format": "decimal"
+          },
+          {
+            "id": "base_liquidable_real",
+            "label": "Base liquidable real",
+            "type": "number",
+            "order": 4,
+            "required": false,
+            "description": "Base liquidable real.",
+            "format": "decimal"
+          },
+          {
+            "id": "cuota_tributaria",
+            "label": "Cuota tributaria",
+            "type": "number",
+            "order": 5,
+            "required": false,
+            "description": "Cuota tributaria.",
+            "format": "decimal"
+          },
+          {
+            "id": "cuota_integra",
+            "label": "Cuota integra",
+            "type": "number",
+            "order": 6,
+            "required": false,
+            "description": "Cuota integra.",
+            "format": "decimal"
+          },
+          {
+            "id": "cuota_liquida",
+            "label": "Cuota liquida",
+            "type": "number",
+            "order": 7,
+            "required": false,
+            "description": "Cuota liquida.",
+            "format": "decimal"
+          },
+          {
+            "id": "cuota_liquidada_anterior",
+            "label": "Cuota liquidada anteriormente",
+            "type": "number",
+            "order": 8,
+            "required": false,
+            "description": "Cuota liquidada anteriormente.",
+            "format": "decimal"
+          },
+          {
+            "id": "cuota_resultante",
+            "label": "Cuota resultante",
+            "type": "number",
+            "order": 9,
+            "required": false,
+            "description": "Cuota resultante.",
+            "format": "decimal"
+          },
+          {
+            "id": "intereses_demora",
+            "label": "Intereses de demora",
+            "type": "number",
+            "order": 10,
+            "required": false,
+            "description": "Intereses de demora.",
+            "format": "decimal"
+          },
+          {
+            "id": "recargo",
+            "label": "Recargo",
+            "type": "number",
+            "order": 11,
+            "required": false,
+            "description": "Recargo.",
+            "format": "decimal"
+          },
+          {
+            "id": "total_ingresar",
+            "label": "Total a ingresar",
+            "type": "number",
+            "order": 12,
+            "required": false,
+            "description": "Total a ingresar.",
+            "format": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "reducciones",
+        "label": "Reducciones",
+        "order": 6,
+        "required": false,
+        "type": "array",
+        "description": "Reductions applied to the taxable base.",
+        "fields": {
+          "casillaReal": {
+            "type": "integer",
+            "required": true,
+            "description": "Box number for real reduction (301-312)."
+          },
+          "casillaTeorica": {
+            "type": "integer",
+            "required": true,
+            "description": "Box number for theoretical reduction (401-412)."
+          },
+          "clave": {
+            "type": "string",
+            "required": true,
+            "description": "Reduction key (snake_case)."
+          },
+          "etiqueta": {
+            "type": "string",
+            "required": true,
+            "description": "Reduction label."
+          },
+          "importeReal": {
+            "type": "number",
+            "required": false,
+            "description": "Real reduction amount.",
+            "format": "decimal",
+            "default": 0.0
+          },
+          "importeTeorico": {
+            "type": "number",
+            "required": false,
+            "description": "Theoretical reduction amount.",
+            "format": "decimal",
+            "default": 0.0
+          }
+        }
+      },
+      {
+        "id": "totalesReducciones",
+        "label": "Totales de reducciones",
+        "order": 7,
+        "required": false,
+        "fields": [
+          {
+            "id": "total_reducciones_real",
+            "label": "Total reducciones real",
+            "type": "number",
+            "order": 1,
+            "required": false,
+            "description": "Total of real reductions.",
+            "format": "decimal"
+          },
+          {
+            "id": "total_reducciones_teorica",
+            "label": "Total reducciones teorica",
+            "type": "number",
+            "order": 2,
+            "required": false,
+            "description": "Total of theoretical reductions.",
+            "format": "decimal"
+          },
+          {
+            "id": "total_reducciones_aplicadas",
+            "label": "Total reducciones aplicadas",
+            "type": "number",
+            "order": 3,
+            "required": false,
+            "description": "Total applied reductions.",
+            "format": "decimal"
+          }
+        ]
+      }
+    ],
+    "example": {
+      "encabezado": {
+        "fecha_devengo": "2025-11-10",
+        "fecha_documento": "2025-11-12"
+      },
+      "causante": {
+        "dni_nif": "12345678Z",
+        "nombre_completo": "Miguel Torres Prieto",
+        "fecha_nacimiento": "1968-02-14",
+        "tiene_discapacidad": true,
+        "porcentaje_discapacidad": 45,
+        "nombre_via": "Calle Aragon",
+        "numero_via": "120",
+        "escalera": "A",
+        "piso": "3",
+        "puerta": "2",
+        "codigo_postal": "08013",
+        "municipio": "Barcelona",
+        "provincia": "Barcelona",
+        "pais": "Espana",
+        "telefono": "600123111",
+        "email": "miguel.torres@example.com",
+        "obligado_impuesto_patrimonio_ultimos_cuatro_anos": false,
+        "es_testamentaria": true,
+        "es_intestada": false,
+        "numero_personas_interesadas": 2,
+        "notario_o_autoridad": "Notaria Perez",
+        "fecha_acta_notarial": "2025-11-09",
+        "fecha_defuncion": "2025-10-30",
+        "nacionalidad": "Espanola",
+        "vecindad_civil": "Catalana",
+        "estado_civil": "Casado"
+      },
+      "beneficiario": {
+        "dni_nif": "87654321X",
+        "nombre_completo_razon_social": "Laura Medina Soler",
+        "fecha_nacimiento": "1992-07-03",
+        "parentesco": "Hijo/a",
+        "grupo_parentesco": "II",
+        "patrimonio_preexistente": 275000.75,
+        "tiene_discapacidad": true,
+        "porcentaje_discapacidad": 33,
+        "nombre_via": "Avenida Diagonal",
+        "numero_via": "450",
+        "escalera": "B",
+        "piso": "5",
+        "puerta": "1",
+        "codigo_postal": "08029",
+        "municipio": "Barcelona",
+        "provincia": "Barcelona",
+        "pais": "Espana",
+        "telefono": "650987222",
+        "correo_electronico": "laura.medina@example.com",
+        "titulo_sucesorio": "Donacion",
+        "cuota_porcentaje": 100,
+        "cuota_tipo": "total",
+        "relacion": "Hija",
+        "grado": "2",
+        "nivel_dependencia": "I",
+        "coeficiente_multiplicador": 1.1
+      },
+      "tramitante": {
+        "dni_nif": "11223344J",
+        "nombre_completo_firmante": "Sergio Pardo Rios",
+        "fecha_firma": "2025-11-15",
+        "acuerdo_declaracion": true,
+        "nombre_via": "Calle Mallorca",
+        "numero_via": "55",
+        "escalera": "C",
+        "piso": "2",
+        "puerta": "B",
+        "codigo_postal": "08026",
+        "municipio": "Barcelona",
+        "provincia": "Barcelona",
+        "pais": "Espana",
+        "telefono": "677445566",
+        "correo_electronico": "sergio.pardo@example.com"
+      },
+      "pago": {
+        "metodo_pago": "transferencia",
+        "importe": 5711.5
+      },
+      "liquidacion": {
+        "base_imposable": 150000.25,
+        "base_imposable_real": 149500.75,
+        "base_liquidable": 120000.5,
+        "base_liquidable_real": 118750.25,
+        "cuota_tributaria": 7200.55,
+        "cuota_integra": 7150.25,
+        "cuota_liquida": 6900.75,
+        "cuota_liquidada_anterior": 1250.5,
+        "cuota_resultante": 5650.25,
+        "intereses_demora": 45.75,
+        "recargo": 15.5,
+        "total_ingresar": 5711.5
+      },
+      "reducciones": [
+        {
+          "casillaReal": 301,
+          "casillaTeorica": 401,
+          "clave": "reduccion_parentesco",
+          "etiqueta": "Reduccion por parentesco",
+          "importeReal": 10000.0,
+          "importeTeorico": 12000.0
+        },
+        {
+          "casillaReal": 302,
+          "casillaTeorica": 402,
+          "clave": "reduccion_empresa_familiar",
+          "etiqueta": "Reduccion empresa familiar",
+          "importeReal": 25000.5,
+          "importeTeorico": 30000.0
+        },
+        {
+          "casillaReal": 303,
+          "casillaTeorica": 403,
+          "clave": "reduccion_discapacidad",
+          "etiqueta": "Reduccion por discapacidad",
+          "importeReal": 4750.25,
+          "importeTeorico": 5000.75
+        }
+      ],
+      "totalesReducciones": {
+        "total_reducciones_real": 39750.75,
+        "total_reducciones_teorica": 47000.75,
+        "total_reducciones_aplicadas": 39750.75
+      }
+    },
+    "notes": {
+      "fieldMappings": "tax_models/mod651cat/data_models/mod651cat_field_mappings.json",
+      "idNaming": "Field IDs do not include section prefixes; names use snake_case and match DB fields when available."
+    }
+  }
+}
