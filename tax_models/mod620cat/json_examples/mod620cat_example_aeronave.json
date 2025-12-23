@@ -1,0 +1,70 @@
+{
+  "encabezado": {},
+  "contribuyente": {
+    "dni_nif": "11223344J",
+    "nombre_completo": "Clara Ruiz Palma",
+    "telefono": "688555444",
+    "direccion_electronica": "clara.ruiz@example.com"
+  },
+  "transmitente": {
+    "dni_nif": "X1234567T",
+    "nombre_completo_razon_social": "Aero Services SA",
+    "telefono": "933221100",
+    "direccion_electronica": "operaciones@aeroservices.com"
+  },
+  "devengo": {
+    "fecha_devengo": "2025-08-12",
+    "adquisicion_porcentaje": 100
+  },
+  "bien": {
+    "tipo_bien": "aeronave"
+  },
+  "vehiculo": {},
+  "embarcacion": {},
+  "aeronave": {
+    "marca": "Piper",
+    "modelo": "PA-28",
+    "peso": 1060.5,
+    "numero_motores": 1,
+    "marca_motor": "Lycoming",
+    "potencia": 180.5
+  },
+  "exenciones": {
+    "exento": true,
+    "no_sujeto": false,
+    "no_sujecion_1": "",
+    "no_sujecion_2": "",
+    "no_sujecion_3": ""
+  },
+  "liquidacion": {
+    "base_imponible": 90000,
+    "gravamen": 7.5,
+    "cuota_tributaria": 6750,
+    "cuota_ingresada": 5000,
+    "recargo": 0,
+    "intereses_demora": 0,
+    "total": 1750,
+    "liquidacion_complementaria": false,
+    "numero_liquidacion_complementaria": ""
+  },
+  "pago": {
+    "cargo_en_cuenta": true,
+    "pago_efectivo": false,
+    "pais_banco": "ES",
+    "dc_iban": "99",
+    "entidad_banco": "0182",
+    "sucursal_banco": "0001",
+    "digitos_control_banco": "75",
+    "numero_cuenta": "1234567890"
+  },
+  "presentacion": {
+    "fecha_presentacion": "2025-08-20",
+    "lugar": "Lleida"
+  },
+  "presentador": {
+    "dni_nif": "11223344J",
+    "nombre_completo": "Clara Ruiz Palma",
+    "telefono": "688555444",
+    "direccion_electronica": "clara.ruiz@example.com"
+  }
+}

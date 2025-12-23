@@ -1,0 +1,69 @@
+{
+  "encabezado": {},
+  "contribuyente": {
+    "dni_nif": "98765432H",
+    "nombre_completo": "Ramon Vidal Costa",
+    "telefono": "699123987",
+    "direccion_electronica": "ramon.vidal@example.com"
+  },
+  "transmitente": {
+    "dni_nif": "B12345678",
+    "nombre_completo_razon_social": "Nautica Levante SL",
+    "telefono": "934556677",
+    "direccion_electronica": "info@nauticalevante.com"
+  },
+  "devengo": {
+    "fecha_devengo": "2025-09-01",
+    "adquisicion_porcentaje": 50
+  },
+  "bien": {
+    "tipo_bien": "embarcacion"
+  },
+  "vehiculo": {},
+  "embarcacion": {
+    "marca": "Jeanneau",
+    "modelo": "Sun Odyssey 33",
+    "eslora": 9.96,
+    "vela": "Si",
+    "numero_motores": 1,
+    "cv": 29,
+    "fecha_fabricacion_motores": "2018-06-15",
+    "tipo_motor": "gasolina"
+  },
+  "aeronave": {},
+  "exenciones": {
+    "exento": false,
+    "no_sujeto": true,
+    "no_sujecion_1": "Operacion no sujeta art. X",
+    "no_sujecion_2": "Bien usado",
+    "no_sujecion_3": "Doc adjunta"
+  },
+  "liquidacion": {
+    "base_imponible": 35000,
+    "gravamen": 8.0,
+    "cuota_tributaria": 2800,
+    "cuota_ingresada": 0,
+    "recargo": 0,
+    "intereses_demora": 0,
+    "total": 2800,
+    "liquidacion_complementaria": true,
+    "numero_liquidacion_complementaria": "LC-2025-0012"
+  },
+  "pago": {
+    "cargo_en_cuenta": false,
+    "pago_efectivo": true
+  },
+  "presentacion": {
+    "fecha_presentacion": "2025-09-05",
+    "dia_presentacion": "05",
+    "mes_presentacion": "09",
+    "anyo_presentacion": "25",
+    "lugar": "Tarragona"
+  },
+  "presentador": {
+    "dni_nif": "98765432H",
+    "nombre_completo": "Ramon Vidal Costa",
+    "telefono": "699123987",
+    "direccion_electronica": "ramon.vidal@example.com"
+  }
+}

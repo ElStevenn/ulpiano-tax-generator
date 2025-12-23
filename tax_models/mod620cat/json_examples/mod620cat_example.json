@@ -1,0 +1,99 @@
+{
+  "encabezado": {},
+  "contribuyente": {
+    "dni_nif": "12345678Z",
+    "nombre_completo": "Jose Perez Garcia",
+    "telefono": "600123456",
+    "direccion_electronica": "jose.perez@example.com"
+  },
+  "transmitente": {
+    "dni_nif": "87654321A",
+    "nombre_completo_razon_social": "Compraventa Motor SL",
+    "telefono": "931234567",
+    "direccion_electronica": "contacto@compraventamotor.com"
+  },
+  "devengo": {
+    "fecha_devengo": "2025-11-30",
+    "adquisicion_porcentaje": 100
+  },
+  "bien": {
+    "tipo_bien": "vehiculo",
+    "es_vehiculo": true,
+    "es_embarcacion": false,
+    "es_aeronave": false
+  },
+  "vehiculo": {
+    "anyo_fabricacion": 2022,
+    "fecha_primera_matriculacion": "2022-03-05",
+    "numero_matricula": "1234BCD",
+    "tipo_vehiculo": "Turismo",
+    "marca": "SEAT",
+    "modelo": "Leon",
+    "potencia": 110.5,
+    "bastidor": "VSSZZZ1MZPR000123",
+    "cilindrada": 1598
+  },
+  "embarcacion": {
+    "marca": "Beneteau",
+    "modelo": "Oceanis 34",
+    "eslora": 10.3,
+    "vela": "Si",
+    "numero_motores": 1,
+    "cv": 30,
+    "fecha_fabricacion_motores": "2019-05-10",
+    "tipo_motor": "diesel",
+    "motor_diesel": true,
+    "motor_gasolina": false,
+    "motor_otros": false
+  },
+  "aeronave": {
+    "marca": "Cessna",
+    "modelo": "172S",
+    "peso": 1111.5,
+    "numero_motores": 1,
+    "marca_motor": "Lycoming",
+    "potencia": 160
+  },
+  "exenciones": {
+    "exento": false,
+    "no_sujeto": false,
+    "no_sujecion_1": "N/A",
+    "no_sujecion_2": "N/A",
+    "no_sujecion_3": "N/A"
+  },
+  "liquidacion": {
+    "base_imponible": 25000,
+    "gravamen": 5.5,
+    "cuota_tributaria": 1375,
+    "cuota_ingresada": 0,
+    "recargo": 0,
+    "intereses_demora": 0,
+    "total": 1375,
+    "liquidacion_complementaria": true,
+    "numero_liquidacion_complementaria": "LC-2025-0007"
+  },
+  "pago": {
+    "cargo_en_cuenta": true,
+    "pago_efectivo": false,
+    "iban": "ES1221000418450200051332",
+    "pais_banco": "ES",
+    "dc_iban": "12",
+    "entidad_banco": "2100",
+    "sucursal_banco": "0418",
+    "digitos_control_banco": "45",
+    "numero_cuenta": "0200051332"
+  },
+  "presentacion": {
+    "fecha_presentacion": "2025-12-18",
+    "dia_presentacion": "18",
+    "mes_presentacion": "12",
+    "anyo_presentacion": "25",
+    "lugar": "Barcelona"
+  },
+  "presentador": {
+    "dni_nif": "12345678Z",
+    "nombre_completo": "Jose Perez Garcia",
+    "telefono": "600123456",
+    "direccion_electronica": "jose.perez@example.com"
+  }
+}
