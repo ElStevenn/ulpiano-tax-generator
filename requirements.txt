@@ -1,2 +1,5 @@
 python-dotenv
 openai
+PyPDF2
+reportlab
+pycryptodome
