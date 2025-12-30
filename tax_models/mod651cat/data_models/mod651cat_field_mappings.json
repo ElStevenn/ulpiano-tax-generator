@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "key": "form.adquisicio_1",
     "pages": [
@@ -1695,7 +1695,7 @@
     ],
     "x": 73.2,
     "y_from_top": 223.1,
-    "font_size": 9.0,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1706,7 +1706,7 @@
     ],
     "x": 71.9,
     "y_from_top": 424.3,
-    "font_size": 9.0,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1717,7 +1717,7 @@
     ],
     "x": 70.2,
     "y_from_top": 424.3,
-    "font_size": 9.0,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1729,7 +1729,7 @@
     ],
     "x": 120.0,
     "y_from_top": 540.8,
-    "font_size": 9.4,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1741,7 +1741,7 @@
     ],
     "x": 121.2,
     "y_from_top": 675.6,
-    "font_size": 9.9,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1753,7 +1753,7 @@
     ],
     "x": 72.3,
     "y_from_top": 404.6,
-    "font_size": 9.0,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1765,7 +1765,7 @@
     ],
     "x": 74.3,
     "y_from_top": 583.8,
-    "font_size": 9.0,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1777,7 +1777,7 @@
     ],
     "x": 75.6,
     "y_from_top": 721.9,
-    "font_size": 8.1,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1789,7 +1789,7 @@
     ],
     "x": 66.6,
     "y_from_top": 160.8,
-    "font_size": 8.5,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1801,7 +1801,7 @@
     ],
     "x": 66.0,
     "y_from_top": 276.0,
-    "font_size": 8.5,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1813,7 +1813,7 @@
     ],
     "x": 117.0,
     "y_from_top": 607.8,
-    "font_size": 8.5,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1825,7 +1825,7 @@
     ],
     "x": 114.9,
     "y_from_top": 748.2,
-    "font_size": 8.5,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1836,7 +1836,7 @@
     ],
     "x": 68.4,
     "y_from_top": 231.1,
-    "font_size": 9.0,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -1847,7 +1847,7 @@
     ],
     "x": 70.4,
     "y_from_top": 231.1,
-    "font_size": 9.0,
+    "font_size": 7.5,
     "field_type": "text",
     "formatter": "text"
   },
@@ -2039,7 +2039,7 @@
     ],
     "x": 98.8,
     "y_from_top": 257.7,
-    "font_size": 10.1,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -2050,7 +2050,7 @@
     ],
     "x": 104.7,
     "y_from_top": 257.7,
-    "font_size": 10.1,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -2061,7 +2061,7 @@
     ],
     "x": 104.0,
     "y_from_top": 257.2,
-    "font_size": 9.6,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -2170,7 +2170,7 @@
     ],
     "x": 400.7,
     "y_from_top": 347.0,
-    "font_size": 10.1,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -2181,7 +2181,7 @@
     ],
     "x": 404.6,
     "y_from_top": 347.0,
-    "font_size": 10.1,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3574,7 +3574,7 @@
     ],
     "x": 74.5,
     "y_from_top": 135.4,
-    "font_size": 9.3,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3586,7 +3586,7 @@
     ],
     "x": 70.0,
     "y_from_top": 332.6,
-    "font_size": 9.3,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3598,7 +3598,7 @@
     ],
     "x": 70.4,
     "y_from_top": 540.7,
-    "font_size": 9.3,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3610,7 +3610,7 @@
     ],
     "x": 71.6,
     "y_from_top": 675.1,
-    "font_size": 9.3,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3622,7 +3622,7 @@
     ],
     "x": 74.4,
     "y_from_top": 315.8,
-    "font_size": 9.3,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3634,7 +3634,7 @@
     ],
     "x": 74.4,
     "y_from_top": 495.1,
-    "font_size": 9.3,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3646,7 +3646,7 @@
     ],
     "x": 73.1,
     "y_from_top": 691.3,
-    "font_size": 9.3,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3658,7 +3658,7 @@
     ],
     "x": 67.2,
     "y_from_top": 133.3,
-    "font_size": 8.4,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3670,7 +3670,7 @@
     ],
     "x": 67.7,
     "y_from_top": 248.4,
-    "font_size": 8.4,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3682,7 +3682,7 @@
     ],
     "x": 65.1,
     "y_from_top": 608.5,
-    "font_size": 8.4,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3694,7 +3694,7 @@
     ],
     "x": 64.0,
     "y_from_top": 747.8,
-    "font_size": 8.4,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -3706,7 +3706,7 @@
     ],
     "x": 69.5,
     "y_from_top": 139.4,
-    "font_size": 9.3,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -4687,7 +4687,7 @@
     ],
     "x": 129.6,
     "y_from_top": 474.7,
-    "font_size": 9.6,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -4698,7 +4698,7 @@
     ],
     "x": 127.7,
     "y_from_top": 474.2,
-    "font_size": 9.2,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -4709,7 +4709,7 @@
     ],
     "x": 129.6,
     "y_from_top": 474.2,
-    "font_size": 9.2,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -4720,7 +4720,7 @@
     ],
     "x": 128.3,
     "y_from_top": 474.4,
-    "font_size": 8.7,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -4732,7 +4732,7 @@
     ],
     "x": 63.5,
     "y_from_top": 579.2,
-    "font_size": 9.6,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -4744,7 +4744,7 @@
     ],
     "x": 62.4,
     "y_from_top": 719.6,
-    "font_size": 9.6,
+    "font_size": 8.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -4969,9 +4969,9 @@
     "pages": [
       0
     ],
-    "x": 526.3,
+    "x": 520.3,
     "y_from_top": 453.9,
-    "font_size": 10.1,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -4980,9 +4980,9 @@
     "pages": [
       1
     ],
-    "x": 521.7,
+    "x": 515.7,
     "y_from_top": 453.9,
-    "font_size": 10.1,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -4991,9 +4991,9 @@
     "pages": [
       2
     ],
-    "x": 527.0,
+    "x": 521.0,
     "y_from_top": 453.4,
-    "font_size": 9.6,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -5002,9 +5002,9 @@
     "pages": [
       3
     ],
-    "x": 527.0,
+    "x": 521.0,
     "y_from_top": 453.9,
-    "font_size": 10.1,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -5052,9 +5052,9 @@
       6,
       7
     ],
-    "x": 489.4,
+    "x": 483.4,
     "y_from_top": 550.6,
-    "font_size": 10.1,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -5064,9 +5064,9 @@
       6,
       7
     ],
-    "x": 489.3,
+    "x": 483.3,
     "y_from_top": 692.0,
-    "font_size": 10.1,
+    "font_size": 9.0,
     "field_type": "text",
     "formatter": "text"
   },
@@ -6201,6 +6201,1115 @@
     "x": 71.3,
     "y_from_top": 167.4,
     "font_size": 9.6,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.tipo_usufructo_uso_habitacion_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 137.1,
+    "y_from_top": 223.6,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.tipo_usufructo_uso_habitacion_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 136.3,
+    "y_from_top": 424.7,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.tipo_usufructo_uso_habitacion_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 136.7,
+    "y_from_top": 405.0,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.tipo_usufructo_uso_habitacion_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 135.7,
+    "y_from_top": 583.2,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.tipo_usufructo_uso_habitacion_4",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 176.3,
+    "y_from_top": 721.9,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.tipo_usufructo_uso_habitacion_5",
+    "pages": [
+      7
+    ],
+    "x": 161.3,
+    "y_from_top": 161.7,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.tipo_usufructo_uso_habitacion_6",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 161.7,
+    "y_from_top": 275.8,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.tipo_usufructo_uso_habitacion_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 138.4,
+    "y_from_top": 231.1,
+    "font_size": 9.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.nif_usufructuario_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 254.1,
+    "y_from_top": 223.1,
+    "font_size": 8.6,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.nif_usufructuario_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 259.6,
+    "y_from_top": 424.3,
+    "font_size": 8.6,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.nif_usufructuario_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 255.3,
+    "y_from_top": 405.1,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.nif_usufructuario_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 255.0,
+    "y_from_top": 583.8,
+    "font_size": 8.6,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.nif_usufructuario_4",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 298.4,
+    "y_from_top": 721.7,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.nif_usufructuario_5",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 291.6,
+    "y_from_top": 161.9,
+    "font_size": 8.6,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.nif_usufructuario_6",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 292.0,
+    "y_from_top": 276.0,
+    "font_size": 8.6,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.nif_usufructuario_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 257.1,
+    "y_from_top": 231.1,
+    "font_size": 8.6,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.fecha_nacimiento_usufructuario_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 423.6,
+    "y_from_top": 222.5,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.fecha_nacimiento_usufructuario_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 425.1,
+    "y_from_top": 423.7,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.fecha_nacimiento_usufructuario_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 424.5,
+    "y_from_top": 403.9,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.fecha_nacimiento_usufructuario_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 424.5,
+    "y_from_top": 583.2,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.fecha_nacimiento_usufructuario_4",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 419.9,
+    "y_from_top": 720.5,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.fecha_nacimiento_usufructuario_5",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 416.0,
+    "y_from_top": 161.3,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.fecha_nacimiento_usufructuario_6",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 414.5,
+    "y_from_top": 276.4,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.fecha_nacimiento_usufructuario_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 425.6,
+    "y_from_top": 231.5,
+    "font_size": 9.1,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.es_gananciales_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 106.9,
+    "y_from_top": 284.0,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 95.4,
+    "y_from_top": 484.2,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_13",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 103.0,
+    "y_from_top": 636.1,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_14",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 102.2,
+    "y_from_top": 770.5,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 105.8,
+    "y_from_top": 462.5,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 106.8,
+    "y_from_top": 643.7,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_4",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 104.5,
+    "y_from_top": 775.5,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_5",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 98.0,
+    "y_from_top": 213.6,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_6",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 99.5,
+    "y_from_top": 328.8,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_7",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 94.1,
+    "y_from_top": 631.9,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_8",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 92.0,
+    "y_from_top": 773.3,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.es_gananciales_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 94.9,
+    "y_from_top": 292.0,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 168.1,
+    "y_from_top": 284.2,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 163.6,
+    "y_from_top": 484.4,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_13",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 167.2,
+    "y_from_top": 636.3,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_14",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 167.4,
+    "y_from_top": 772.7,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 168.0,
+    "y_from_top": 462.7,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 168.0,
+    "y_from_top": 643.9,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_4",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 167.7,
+    "y_from_top": 775.7,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_5",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 158.2,
+    "y_from_top": 213.8,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_6",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 159.7,
+    "y_from_top": 329.0,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_cargas_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 163.1,
+    "y_from_top": 292.2,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 228.1,
+    "y_from_top": 284.2,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 233.6,
+    "y_from_top": 484.4,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_13",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 232.2,
+    "y_from_top": 637.3,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_14",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 232.4,
+    "y_from_top": 772.7,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 229.0,
+    "y_from_top": 462.7,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 228.0,
+    "y_from_top": 643.9,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_4",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 227.0,
+    "y_from_top": 775.7,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_5",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 220.5,
+    "y_from_top": 213.8,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_6",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 222.0,
+    "y_from_top": 328.0,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tiene_deudas_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 232.1,
+    "y_from_top": 292.2,
+    "font_size": 10.1,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 263.5,
+    "y_from_top": 284.8,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 274.1,
+    "y_from_top": 487.9,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_13",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 271.7,
+    "y_from_top": 639.9,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_14",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 269.9,
+    "y_from_top": 775.3,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 262.5,
+    "y_from_top": 464.2,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 264.5,
+    "y_from_top": 644.4,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_4",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 262.1,
+    "y_from_top": 778.3,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_5",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 259.7,
+    "y_from_top": 216.4,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_6",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 260.1,
+    "y_from_top": 331.5,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_7",
+    "pages": [
+      7
+    ],
+    "x": 134.9,
+    "y_from_top": 633.7,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_8",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 135.8,
+    "y_from_top": 775.0,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.clave_beneficio_fiscal_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 274.5,
+    "y_from_top": 294.8,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 345.8,
+    "y_from_top": 284.9,
+    "font_size": 9.9,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 357.2,
+    "y_from_top": 488.0,
+    "font_size": 9.9,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_13",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 355.1,
+    "y_from_top": 639.5,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_14",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 356.8,
+    "y_from_top": 775.9,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 346.4,
+    "y_from_top": 464.8,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 348.0,
+    "y_from_top": 645.0,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_4",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 342.5,
+    "y_from_top": 778.9,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_5",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 343.1,
+    "y_from_top": 217.0,
+    "font_size": 10.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_6",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 344.5,
+    "y_from_top": 332.1,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_7",
+    "pages": [
+      7
+    ],
+    "x": 219.3,
+    "y_from_top": 634.8,
+    "font_size": 9.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_8",
+    "pages": [
+      6,
+      7
+    ],
+    "x": 219.2,
+    "y_from_top": 774.6,
+    "font_size": 9.4,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.descripcion_beneficio_fiscal_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 358.3,
+    "y_from_top": 294.9,
+    "font_size": 9.9,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.poligono_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 275.9,
+    "y_from_top": 163.7,
+    "font_size": 10.3,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.poligono_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 292.5,
+    "y_from_top": 361.3,
+    "font_size": 11.7,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.poligono_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 275.2,
+    "y_from_top": 345.1,
+    "font_size": 10.3,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.poligono_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 276.8,
+    "y_from_top": 523.8,
+    "font_size": 10.7,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.poligono_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 292.6,
+    "y_from_top": 166.7,
+    "font_size": 10.3,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.parcela_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 381.9,
+    "y_from_top": 163.4,
+    "font_size": 10.5,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.parcela_10",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 375.4,
+    "y_from_top": 359.6,
+    "font_size": 10.5,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.parcela_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 379.5,
+    "y_from_top": 345.0,
+    "font_size": 10.0,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.parcela_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 379.8,
+    "y_from_top": 524.1,
+    "font_size": 10.5,
+    "field_type": "text",
+    "formatter": "text"
+  },
+  {
+    "key": "form.parcela_9",
+    "pages": [
+      8,
+      9
+    ],
+    "x": 375.9,
+    "y_from_top": 166.4,
+    "font_size": 10.5,
     "field_type": "text",
     "formatter": "text"
   }

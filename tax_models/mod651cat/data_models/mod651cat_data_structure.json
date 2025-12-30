@@ -772,9 +772,587 @@
         ]
       },
       {
+        "id": "bienes",
+        "label": "Relacion de bienes",
+        "order": 6,
+        "required": false,
+        "fields": [
+          {
+            "id": "bienes_cataluna",
+            "label": "Bienes en Cataluna",
+            "type": "array",
+            "required": false,
+            "description": "Bienes inmuebles situados en Cataluna.",
+            "fields": {
+              "numero": {
+                "type": "integer",
+                "required": false,
+                "description": "Numero correlativo del bien."
+              },
+              "tipo_bien": {
+                "type": "string",
+                "required": false,
+                "description": "Tipo de bien (ej: inmueble urbano, rustico)."
+              },
+              "descripcion": {
+                "type": "string",
+                "required": false,
+                "description": "Descripcion del bien."
+              },
+              "finca_registral": {
+                "type": "string",
+                "required": false,
+                "description": "Numero de finca registral."
+              },
+              "subfinca_registral": {
+                "type": "string",
+                "required": false,
+                "description": "Subfinca registral."
+              },
+              "referencia_catastral": {
+                "type": "string",
+                "required": false,
+                "description": "Referencia catastral."
+              },
+              "nombre_via": {
+                "type": "string",
+                "required": false,
+                "description": "Nombre de la via o paraje."
+              },
+              "numero_via": {
+                "type": "string",
+                "required": false,
+                "description": "Numero o kilometro."
+              },
+              "poligono": {
+                "type": "string",
+                "required": false,
+                "description": "Poligono (campo dentro de Numero/Km/Poligono)."
+              },
+              "escalera": {
+                "type": "string",
+                "required": false,
+                "description": "Escalera."
+              },
+              "piso": {
+                "type": "string",
+                "required": false,
+                "description": "Piso."
+              },
+              "puerta": {
+                "type": "string",
+                "required": false,
+                "description": "Puerta."
+              },
+              "parcela": {
+                "type": "string",
+                "required": false,
+                "description": "Parcela (campo dentro de Escalera, piso, puerta / Parcela)."
+              },
+              "codigo_postal": {
+                "type": "string",
+                "required": false,
+                "description": "Codigo postal.",
+                "validationRegex": "^\\d{5}$"
+              },
+              "municipio": {
+                "type": "string",
+                "required": false,
+                "description": "Municipio."
+              },
+              "provincia": {
+                "type": "string",
+                "required": false,
+                "description": "Provincia."
+              },
+              "pais": {
+                "type": "string",
+                "required": false,
+                "description": "Pais."
+              },
+              "superficie_metros": {
+                "type": "number",
+                "required": false,
+                "description": "Superficie en metros cuadrados.",
+                "format": "decimal"
+              },
+              "superficie_hectareas": {
+                "type": "number",
+                "required": false,
+                "description": "Superficie en hectareas.",
+                "format": "decimal"
+              },
+              "tipo_derecho": {
+                "type": "string",
+                "required": false,
+                "description": "Tipo de derecho."
+              },
+              "tipo_usufructo_uso_habitacion": {
+                "type": "string",
+                "required": false,
+                "description": "Tipo de usufructo, uso o habitacion."
+              },
+              "nif_usufructuario": {
+                "type": "string",
+                "required": false,
+                "description": "NIF de la persona usufructuaria, usuaria o habitacionista.",
+                "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+              },
+              "fecha_nacimiento_usufructuario": {
+                "type": "string",
+                "required": false,
+                "description": "Fecha de nacimiento del usufructuario.",
+                "format": "YYYY-MM-DD",
+                "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "duracion_derecho": {
+                "type": "string",
+                "required": false,
+                "description": "Duracion del derecho."
+              },
+              "valor_referencia": {
+                "type": "number",
+                "required": false,
+                "description": "Valor de referencia.",
+                "format": "decimal"
+              },
+              "valor_neto_total_declarado": {
+                "type": "number",
+                "required": false,
+                "description": "Valor total declarado.",
+                "format": "decimal"
+              },
+              "porcentaje_valor_derecho": {
+                "type": "number",
+                "required": false,
+                "description": "Porcentaje del valor del derecho.",
+                "format": "decimal"
+              },
+              "porcentaje_adquisicion": {
+                "type": "number",
+                "required": false,
+                "description": "Porcentaje de adquisicion.",
+                "format": "decimal"
+              },
+              "valor_neto_donacion": {
+                "type": "number",
+                "required": false,
+                "description": "Valor declarado de la donacion.",
+                "format": "decimal"
+              },
+              "es_gananciales": {
+                "type": "boolean",
+                "required": false,
+                "description": "Bien de gananciales."
+              },
+              "tiene_cargas": {
+                "type": "boolean",
+                "required": false,
+                "description": "Bien con cargas."
+              },
+              "tiene_deudas": {
+                "type": "boolean",
+                "required": false,
+                "description": "Bien con deudas."
+              },
+              "clave_beneficio_fiscal": {
+                "type": "string",
+                "required": false,
+                "description": "Clave de beneficio fiscal."
+              },
+              "descripcion_beneficio_fiscal": {
+                "type": "string",
+                "required": false,
+                "description": "Descripcion de beneficio fiscal."
+              }
+            }
+          },
+          {
+            "id": "bienes_otras_comunidades",
+            "label": "Bienes en otras comunidades",
+            "type": "array",
+            "required": false,
+            "description": "Bienes inmuebles situados en otras comunidades autonomas.",
+            "fields": {
+              "numero": {
+                "type": "integer",
+                "required": false,
+                "description": "Numero correlativo del bien."
+              },
+              "tipo_bien": {
+                "type": "string",
+                "required": false,
+                "description": "Tipo de bien (ej: inmueble urbano, rustico)."
+              },
+              "descripcion": {
+                "type": "string",
+                "required": false,
+                "description": "Descripcion del bien."
+              },
+              "finca_registral": {
+                "type": "string",
+                "required": false,
+                "description": "Numero de finca registral."
+              },
+              "subfinca_registral": {
+                "type": "string",
+                "required": false,
+                "description": "Subfinca registral."
+              },
+              "referencia_catastral": {
+                "type": "string",
+                "required": false,
+                "description": "Referencia catastral."
+              },
+              "nombre_via": {
+                "type": "string",
+                "required": false,
+                "description": "Nombre de la via o paraje."
+              },
+              "numero_via": {
+                "type": "string",
+                "required": false,
+                "description": "Numero o kilometro."
+              },
+              "poligono": {
+                "type": "string",
+                "required": false,
+                "description": "Poligono (campo dentro de Numero/Km/Poligono)."
+              },
+              "escalera": {
+                "type": "string",
+                "required": false,
+                "description": "Escalera."
+              },
+              "piso": {
+                "type": "string",
+                "required": false,
+                "description": "Piso."
+              },
+              "puerta": {
+                "type": "string",
+                "required": false,
+                "description": "Puerta."
+              },
+              "parcela": {
+                "type": "string",
+                "required": false,
+                "description": "Parcela (campo dentro de Escalera, piso, puerta / Parcela)."
+              },
+              "codigo_postal": {
+                "type": "string",
+                "required": false,
+                "description": "Codigo postal.",
+                "validationRegex": "^\\d{5}$"
+              },
+              "municipio": {
+                "type": "string",
+                "required": false,
+                "description": "Municipio."
+              },
+              "provincia": {
+                "type": "string",
+                "required": false,
+                "description": "Provincia."
+              },
+              "pais": {
+                "type": "string",
+                "required": false,
+                "description": "Pais."
+              },
+              "superficie_metros": {
+                "type": "number",
+                "required": false,
+                "description": "Superficie en metros cuadrados.",
+                "format": "decimal"
+              },
+              "superficie_hectareas": {
+                "type": "number",
+                "required": false,
+                "description": "Superficie en hectareas.",
+                "format": "decimal"
+              },
+              "tipo_derecho": {
+                "type": "string",
+                "required": false,
+                "description": "Tipo de derecho."
+              },
+              "tipo_usufructo_uso_habitacion": {
+                "type": "string",
+                "required": false,
+                "description": "Tipo de usufructo, uso o habitacion."
+              },
+              "nif_usufructuario": {
+                "type": "string",
+                "required": false,
+                "description": "NIF de la persona usufructuaria, usuaria o habitacionista.",
+                "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+              },
+              "fecha_nacimiento_usufructuario": {
+                "type": "string",
+                "required": false,
+                "description": "Fecha de nacimiento del usufructuario.",
+                "format": "YYYY-MM-DD",
+                "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "duracion_derecho": {
+                "type": "string",
+                "required": false,
+                "description": "Duracion del derecho."
+              },
+              "valor_referencia": {
+                "type": "number",
+                "required": false,
+                "description": "Valor de referencia.",
+                "format": "decimal"
+              },
+              "valor_neto_total_declarado": {
+                "type": "number",
+                "required": false,
+                "description": "Valor total declarado.",
+                "format": "decimal"
+              },
+              "porcentaje_valor_derecho": {
+                "type": "number",
+                "required": false,
+                "description": "Porcentaje del valor del derecho.",
+                "format": "decimal"
+              },
+              "porcentaje_adquisicion": {
+                "type": "number",
+                "required": false,
+                "description": "Porcentaje de adquisicion.",
+                "format": "decimal"
+              },
+              "valor_neto_donacion": {
+                "type": "number",
+                "required": false,
+                "description": "Valor declarado de la donacion.",
+                "format": "decimal"
+              },
+              "es_gananciales": {
+                "type": "boolean",
+                "required": false,
+                "description": "Bien de gananciales."
+              },
+              "tiene_cargas": {
+                "type": "boolean",
+                "required": false,
+                "description": "Bien con cargas."
+              },
+              "tiene_deudas": {
+                "type": "boolean",
+                "required": false,
+                "description": "Bien con deudas."
+              },
+              "clave_beneficio_fiscal": {
+                "type": "string",
+                "required": false,
+                "description": "Clave de beneficio fiscal."
+              },
+              "descripcion_beneficio_fiscal": {
+                "type": "string",
+                "required": false,
+                "description": "Descripcion de beneficio fiscal."
+              }
+            }
+          },
+          {
+            "id": "bienes_fuera_espana",
+            "label": "Bienes fuera de Espana",
+            "type": "array",
+            "required": false,
+            "description": "Bienes inmuebles situados fuera de Espana.",
+            "fields": {
+              "numero": {
+                "type": "integer",
+                "required": false,
+                "description": "Numero correlativo del bien."
+              },
+              "tipo_bien": {
+                "type": "string",
+                "required": false,
+                "description": "Tipo de bien (ej: inmueble urbano, rustico)."
+              },
+              "descripcion": {
+                "type": "string",
+                "required": false,
+                "description": "Descripcion del bien."
+              },
+              "finca_registral": {
+                "type": "string",
+                "required": false,
+                "description": "Numero de finca registral."
+              },
+              "subfinca_registral": {
+                "type": "string",
+                "required": false,
+                "description": "Subfinca registral."
+              },
+              "referencia_catastral": {
+                "type": "string",
+                "required": false,
+                "description": "Referencia catastral."
+              },
+              "nombre_via": {
+                "type": "string",
+                "required": false,
+                "description": "Nombre de la via o paraje."
+              },
+              "numero_via": {
+                "type": "string",
+                "required": false,
+                "description": "Numero o kilometro."
+              },
+              "poligono": {
+                "type": "string",
+                "required": false,
+                "description": "Poligono (campo dentro de Numero/Km/Poligono)."
+              },
+              "escalera": {
+                "type": "string",
+                "required": false,
+                "description": "Escalera."
+              },
+              "piso": {
+                "type": "string",
+                "required": false,
+                "description": "Piso."
+              },
+              "puerta": {
+                "type": "string",
+                "required": false,
+                "description": "Puerta."
+              },
+              "parcela": {
+                "type": "string",
+                "required": false,
+                "description": "Parcela (campo dentro de Escalera, piso, puerta / Parcela)."
+              },
+              "codigo_postal": {
+                "type": "string",
+                "required": false,
+                "description": "Codigo postal.",
+                "validationRegex": "^\\d{5}$"
+              },
+              "municipio": {
+                "type": "string",
+                "required": false,
+                "description": "Municipio."
+              },
+              "provincia": {
+                "type": "string",
+                "required": false,
+                "description": "Provincia."
+              },
+              "pais": {
+                "type": "string",
+                "required": false,
+                "description": "Pais."
+              },
+              "superficie_metros": {
+                "type": "number",
+                "required": false,
+                "description": "Superficie en metros cuadrados.",
+                "format": "decimal"
+              },
+              "superficie_hectareas": {
+                "type": "number",
+                "required": false,
+                "description": "Superficie en hectareas.",
+                "format": "decimal"
+              },
+              "tipo_derecho": {
+                "type": "string",
+                "required": false,
+                "description": "Tipo de derecho."
+              },
+              "tipo_usufructo_uso_habitacion": {
+                "type": "string",
+                "required": false,
+                "description": "Tipo de usufructo, uso o habitacion."
+              },
+              "nif_usufructuario": {
+                "type": "string",
+                "required": false,
+                "description": "NIF de la persona usufructuaria, usuaria o habitacionista.",
+                "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+              },
+              "fecha_nacimiento_usufructuario": {
+                "type": "string",
+                "required": false,
+                "description": "Fecha de nacimiento del usufructuario.",
+                "format": "YYYY-MM-DD",
+                "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "duracion_derecho": {
+                "type": "string",
+                "required": false,
+                "description": "Duracion del derecho."
+              },
+              "valor_referencia": {
+                "type": "number",
+                "required": false,
+                "description": "Valor de referencia.",
+                "format": "decimal"
+              },
+              "valor_neto_total_declarado": {
+                "type": "number",
+                "required": false,
+                "description": "Valor total declarado.",
+                "format": "decimal"
+              },
+              "porcentaje_valor_derecho": {
+                "type": "number",
+                "required": false,
+                "description": "Porcentaje del valor del derecho.",
+                "format": "decimal"
+              },
+              "porcentaje_adquisicion": {
+                "type": "number",
+                "required": false,
+                "description": "Porcentaje de adquisicion.",
+                "format": "decimal"
+              },
+              "valor_neto_donacion": {
+                "type": "number",
+                "required": false,
+                "description": "Valor declarado de la donacion.",
+                "format": "decimal"
+              },
+              "es_gananciales": {
+                "type": "boolean",
+                "required": false,
+                "description": "Bien de gananciales."
+              },
+              "tiene_cargas": {
+                "type": "boolean",
+                "required": false,
+                "description": "Bien con cargas."
+              },
+              "tiene_deudas": {
+                "type": "boolean",
+                "required": false,
+                "description": "Bien con deudas."
+              },
+              "clave_beneficio_fiscal": {
+                "type": "string",
+                "required": false,
+                "description": "Clave de beneficio fiscal."
+              },
+              "descripcion_beneficio_fiscal": {
+                "type": "string",
+                "required": false,
+                "description": "Descripcion de beneficio fiscal."
+              }
+            }
+          }
+        ]
+      },
+      {
         "id": "reducciones",
         "label": "Reducciones",
-        "order": 6,
+        "order": 7,
         "required": false,
         "type": "array",
         "description": "Reductions applied to the taxable base.",
@@ -818,7 +1396,7 @@
       {
         "id": "totalesReducciones",
         "label": "Totales de reducciones",
-        "order": 7,
+        "order": 8,
         "required": false,
         "fields": [
           {
