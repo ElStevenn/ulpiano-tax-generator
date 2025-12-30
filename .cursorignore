@@ -10,7 +10,7 @@ __pycache__/
 .Python
 
 # Generated files
-generated/
+# generated/
 .history/
 
 # PDF files (large binary files that don't need indexing)

@@ -25,7 +25,7 @@ from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-DEFAULT_DATA = BASE_DIR / "tax_models" / "mod651cat" / "json_examples" / "mod651cat_example.json"
+DEFAULT_DATA = BASE_DIR / "tax_models" / "mod651cat" / "json_examples" / "mod651cat_example_completo.json"
 DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "mod651cat" / "data_models" / "mod651cat_data_structure.json"
 DEFAULT_MAPPING = BASE_DIR / "tax_models" / "mod651cat" / "data_models" / "mod651cat_field_mappings.json"
 DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "mod651cat" / "mod651cat.pdf"
@@ -339,21 +339,23 @@ def build_pdf_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     form["txt_parentiu_contri"] = beneficiario.get("parentesco")
     form["txt_grup_contri"] = beneficiario.get("grupo_parentesco")
     form["txt_patrimonipree_contri"] = beneficiario.get("patrimonio_preexistente")
-    form["txt_minusvalesa_contri"] = beneficiario.get("porcentaje_discapacidad")
     beneficiario_pct = _as_int(beneficiario.get("porcentaje_discapacidad"))
     beneficiario_flag = beneficiario.get("tiene_discapacidad")
     if beneficiario_flag is None:
         beneficiario_flag = beneficiario_pct >= 33 if beneficiario_pct is not None else False
+    if beneficiario_flag or (beneficiario_pct is not None and beneficiario_pct > 0):
+        form["txt_minusvalesa_contri"] = beneficiario.get("porcentaje_discapacidad")
     form["chk_minus_si"] = bool(beneficiario_flag)
 
     form["nif_usu"] = causante.get("dni_nif")
     form["txt_cognoms_usu"] = causante.get("nombre_completo")
     form["fecha_usu"] = causante.get("fecha_nacimiento")
-    form["txt_incapacitat"] = causante.get("porcentaje_discapacidad")
     causante_pct = _as_int(causante.get("porcentaje_discapacidad"))
     causante_flag = causante.get("tiene_discapacidad")
     if causante_flag is None:
         causante_flag = causante_pct >= 33 if causante_pct is not None else False
+    if causante_flag or (causante_pct is not None and causante_pct > 0):
+        form["txt_incapacitat"] = causante.get("porcentaje_discapacidad")
     form["chk_minus_donant_si"] = bool(causante_flag)
 
     form["nif_presentador"] = tramitante.get("dni_nif")
@@ -436,7 +438,6 @@ def build_pdf_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     form["chk_notarial_8"] = has_notarial
     form["aporta_document"] = bool(tramitante.get("acuerdo_declaracion"))
 
-    form["txt_codigo"] = "651"
     form["txt_coeficient"] = beneficiario.get("coeficiente_multiplicador")
     form["nom_titols_4"] = beneficiario.get("titulo_sucesorio")
     form["txt_quota_ingresada"] = liquidacion.get("cuota_liquidada_anterior")
