@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Genera un PDF del Modelo 651 de Cataluna rellenado dibujando los valores sobre la plantilla.
 
@@ -25,7 +25,7 @@ from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-DEFAULT_DATA = BASE_DIR / "tax_models" / "mod651cat" / "json_examples" / "mod651cat_example_sin_discapacidad.json"
+DEFAULT_DATA = BASE_DIR / "tax_models" / "mod651cat" / "json_examples" / "mod651cat_example.json"
 DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "mod651cat" / "data_models" / "mod651cat_data_structure.json"
 DEFAULT_MAPPING = BASE_DIR / "tax_models" / "mod651cat" / "data_models" / "mod651cat_field_mappings.json"
 DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "mod651cat" / "mod651cat.pdf"
@@ -49,7 +49,7 @@ class FieldMapping:
 
 
 def load_json(path: Path) -> Any:
-    with path.open("r", encoding="utf-8") as handle:
+    with path.open("r", encoding="utf-8-sig") as handle:
         return json.load(handle)
 
 
@@ -225,6 +225,37 @@ def _compose_provincia_pais(persona: Dict[str, Any]) -> str:
     return str(provincia or pais or "").strip()
 
 
+def _compose_numero_poligono(bien: Dict[str, Any]) -> str:
+    numero = bien.get("numero_via")
+    poligono = bien.get("poligono")
+    parts: List[str] = []
+    if numero:
+        parts.append(str(numero).strip())
+    if poligono:
+        parts.append(f"Pol {str(poligono).strip()}")
+    return " / ".join(part for part in parts if part).strip()
+
+
+def _compose_parcela(bien: Dict[str, Any]) -> str:
+    building_parts: List[str] = []
+    escalera = bien.get("escalera")
+    if escalera:
+        building_parts.append(f"Esc {str(escalera).strip()}")
+    piso = bien.get("piso")
+    if piso:
+        building_parts.append(f"Piso {str(piso).strip()}")
+    puerta = bien.get("puerta")
+    if puerta:
+        building_parts.append(f"Pta {str(puerta).strip()}")
+    building = " ".join(part for part in building_parts if part).strip()
+    parcela = bien.get("parcela")
+    if parcela:
+        parcela_value = f"Parcela {str(parcela).strip()}"
+        if building:
+            return f"{building} / {parcela_value}"
+        return parcela_value
+    return building
+
 def _apply_bien_address(
     form: Dict[str, Any],
     index: int,
@@ -248,8 +279,46 @@ def _apply_bien_address(
     if label:
         form[f"tipus_bens_{index}"] = "Domicilio"
         form[f"descripcio_bens_{index}"] = label
-        form[f"numero_bens_{index}"] = str(index)
+        form[f"be_num_{index}"] = str(index)
 
+
+def _apply_bien_item(form: Dict[str, Any], index: int, bien: Dict[str, Any]) -> None:
+    if not isinstance(bien, dict):
+        return
+    numero = bien.get("numero")
+    form[f"be_num_{index}"] = numero if numero is not None else index
+    form[f"tipus_bens_{index}"] = bien.get("tipo_bien")
+    form[f"descripcio_bens_{index}"] = bien.get("descripcion")
+    form[f"finca_registral_{index}"] = bien.get("finca_registral")
+    form[f"subfinca_registral_{index}"] = bien.get("subfinca_registral")
+    form[f"catastre_bens_{index}"] = bien.get("referencia_catastral")
+    form[f"via_bens_{index}"] = bien.get("nombre_via")
+    form[f"poligono_{index}"] = _compose_numero_poligono(bien)
+    form[f"parcela_{index}"] = _compose_parcela(bien)
+    form[f"cp_bens_{index}"] = bien.get("codigo_postal")
+    form[f"municipi_bens_{index}"] = bien.get("municipio")
+    provincia_pais = _compose_provincia_pais(bien)
+    if provincia_pais:
+        form[f"provincia_pais_bens_{index}"] = provincia_pais
+    form[f"metres_bens_{index}"] = bien.get("superficie_metros")
+    form[f"hectarees_bens_{index}"] = bien.get("superficie_hectareas")
+    form[f"dret_{index}"] = bien.get("tipo_derecho")
+    form[f"tipo_usufructo_uso_habitacion_{index}"] = bien.get("tipo_usufructo_uso_habitacion")
+    form[f"nif_usufructuario_{index}"] = bien.get("nif_usufructuario")
+    form[f"fecha_nacimiento_usufructuario_{index}"] = bien.get("fecha_nacimiento_usufructuario")
+    form[f"durada_dret_{index}"] = bien.get("duracion_derecho")
+    form[f"valor_referencia_{index}"] = bien.get("valor_referencia")
+    form[f"total_declarat_bens_{index}"] = bien.get("valor_neto_total_declarado")
+    form[f"valor_dret_{index}"] = bien.get("porcentaje_valor_derecho")
+    form[f"adquisicio_{index}"] = bien.get("porcentaje_adquisicion")
+    form[f"valor_declarat_bens_{index}"] = bien.get("valor_neto_donacion")
+    if index in {13, 14}:
+        form[f"valor_declarat_bensdonacio_{index}"] = bien.get("valor_neto_donacion")
+    form[f"es_gananciales_{index}"] = bien.get("es_gananciales")
+    form[f"tiene_cargas_{index}"] = bien.get("tiene_cargas")
+    form[f"tiene_deudas_{index}"] = bien.get("tiene_deudas")
+    form[f"clave_beneficio_fiscal_{index}"] = bien.get("clave_beneficio_fiscal")
+    form[f"descripcion_beneficio_fiscal_{index}"] = bien.get("descripcion_beneficio_fiscal")
 
 def build_pdf_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     encabezado = data.get("encabezado") if isinstance(data.get("encabezado"), dict) else {}
@@ -376,9 +445,45 @@ def build_pdf_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     form["txt_intdemoraforatermini"] = liquidacion.get("intereses_demora")
     form["importe1"] = pago.get("importe")
 
-    _apply_bien_address(form, 1, beneficiario, "Domicilio donatario")
-    _apply_bien_address(form, 2, causante, "Domicilio donante")
-    _apply_bien_address(form, 3, tramitante, "Domicilio tramitante")
+    bienes = data.get("bienes") if isinstance(data.get("bienes"), dict) else {}
+    bienes_cataluna = bienes.get("bienes_cataluna") if isinstance(bienes.get("bienes_cataluna"), list) else []
+    bienes_otras = (
+        bienes.get("bienes_otras_comunidades")
+        if isinstance(bienes.get("bienes_otras_comunidades"), list)
+        else []
+    )
+    bienes_fuera = bienes.get("bienes_fuera_espana") if isinstance(bienes.get("bienes_fuera_espana"), list) else []
+
+    if bienes_cataluna or bienes_otras or bienes_fuera:
+        for offset, bien in enumerate(bienes_cataluna[:4]):
+            _apply_bien_item(form, offset + 1, bien)
+        for offset, bien in enumerate(bienes_otras[:4]):
+            _apply_bien_item(form, offset + 5, bien)
+        indices_fuera = (9, 10, 13, 14)
+        for offset, bien in enumerate(bienes_fuera[: len(indices_fuera)]):
+            _apply_bien_item(form, indices_fuera[offset], bien)
+
+        total_inmobles_fora = 0.0
+        has_total_inmobles = False
+        for bien in bienes_fuera:
+            if not isinstance(bien, dict):
+                continue
+            value = bien.get("valor_neto_donacion")
+            if value is None or value == "":
+                value = bien.get("valor_neto_total_declarado")
+            if value is None or value == "":
+                continue
+            try:
+                total_inmobles_fora += float(str(value).replace(",", "."))
+            except (TypeError, ValueError):
+                continue
+            has_total_inmobles = True
+        if has_total_inmobles:
+            form["inmobles_fora"] = total_inmobles_fora
+    else:
+        _apply_bien_address(form, 1, beneficiario, "Domicilio donatario")
+        _apply_bien_address(form, 2, causante, "Domicilio donante")
+        _apply_bien_address(form, 3, tramitante, "Domicilio tramitante")
 
     return {"form": form}
 
@@ -505,3 +610,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
