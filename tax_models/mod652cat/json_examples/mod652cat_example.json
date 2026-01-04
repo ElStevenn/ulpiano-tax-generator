@@ -1,0 +1,104 @@
+{
+  "encabezado": {
+    "fecha_devengo": "2025-09-15",
+    "fecha_presentacion": "2025-09-18",
+    "numero_autoliquidacion": "65200012345",
+    "numero_justificante": "J65220250918001",
+    "codigo_aleatorio": "",
+    "codigo_aleatorio_ref": "REF652-2025",
+    "no_sujeto": false,
+    "prescrito": false,
+    "condicion_suspensiva": false,
+    "relacion_convivencial_ayuda_mutua": true,
+    "observaciones": "",
+    "pagina_num": 1,
+    "pagina_de": 1
+  },
+  "beneficiario": {
+    "dni_nif": "12345678Z",
+    "nombre_completo_razon_social": "Laura Gomez Roca",
+    "fecha_nacimiento": "1987-05-22",
+    "parentesco": "Conyuge",
+    "grupo_parentesco": "II",
+    "patrimonio_preexistente": 180000.0,
+    "tiene_discapacidad": true,
+    "porcentaje_discapacidad": 45
+  },
+  "causante": {
+    "dni_nif": "87654321X",
+    "nombre_completo": "Miguel Roca Serra",
+    "fecha_defuncion": "2025-08-30"
+  },
+  "tramitante": {
+    "dni_nif": "11223344J",
+    "nombre_completo_firmante": "Sergio Pardo Rios",
+    "aporta_documento_original": true
+  },
+  "seguros": [
+    {
+      "numero_poliza": "POL-2020-0001",
+      "entidad_aseguradora": "Seguros Vida Norte",
+      "fecha_contratacion": "2020-01-10",
+      "valor_total": 120000.0,
+      "valor_declarado": 120000.0,
+      "numero_beneficiarios": 1
+    },
+    {
+      "numero_poliza": "POL-2019-0142",
+      "entidad_aseguradora": "Mutua Capital",
+      "fecha_contratacion": "2019-07-18",
+      "valor_total": 95000.0,
+      "valor_declarado": 95000.0,
+      "numero_beneficiarios": 2
+    },
+    {
+      "numero_poliza": "POL-2021-0450",
+      "entidad_aseguradora": "Aseguradora Iberica",
+      "fecha_contratacion": "2021-03-05",
+      "valor_total": 110000.0,
+      "valor_declarado": 100000.0,
+      "numero_beneficiarios": 1
+    },
+    {
+      "numero_poliza": "POL-2018-0788",
+      "entidad_aseguradora": "Vida Global",
+      "fecha_contratacion": "2018-11-22",
+      "valor_total": 115000.0,
+      "valor_declarado": 110000.0,
+      "numero_beneficiarios": 3
+    }
+  ],
+  "liquidacion": {
+    "valor_1": 425000.0,
+    "valor_2": 15000.0,
+    "valor_3": 410000.0,
+    "valor_4a": 8000.0,
+    "valor_4b": 4000.0,
+    "valor_4c": 6000.0,
+    "valor_4d": 12000.0,
+    "valor_5": 380000.0,
+    "valor_6": 1.25,
+    "valor_7": 28000.0,
+    "valor_8": 30000.0,
+    "valor_9": 27000.0,
+    "valor_10": 25000.0,
+    "valor_11": 1000.0,
+    "valor_12": 24000.0,
+    "valor_13": 2000.0,
+    "valor_14": 22000.0,
+    "valor_15": 200.0,
+    "valor_16": 100.0,
+    "valor_17": 50.0,
+    "valor_18": 22350.0,
+    "valor_101": 425000.0,
+    "valor_102": 15000.0,
+    "valor_103": 410000.0,
+    "valor_porcentaje": 7.5,
+    "valor_resta": 2000.0,
+    "valor_encuentra": 380000.0,
+    "cuota_ingresada": 2000.0
+  },
+  "pago": {
+    "importe": 22350.0
+  }
+}

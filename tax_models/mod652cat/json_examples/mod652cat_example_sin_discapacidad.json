@@ -1,0 +1,88 @@
+{
+  "encabezado": {
+    "fecha_devengo": "2025-05-03",
+    "fecha_presentacion": "2025-05-08",
+    "numero_autoliquidacion": "65200022210",
+    "numero_justificante": "J65220250508002",
+    "codigo_aleatorio": "E5F6G7H8",
+    "codigo_aleatorio_ref": "REF652-2025-02",
+    "no_sujeto": false,
+    "prescrito": false,
+    "condicion_suspensiva": true,
+    "relacion_convivencial_ayuda_mutua": false,
+    "observaciones": "",
+    "pagina_num": 1,
+    "pagina_de": 1
+  },
+  "beneficiario": {
+    "dni_nif": "44556677K",
+    "nombre_completo_razon_social": "Ana Lopez Marin",
+    "fecha_nacimiento": "1979-11-08",
+    "parentesco": "Hijo/a",
+    "grupo_parentesco": "I",
+    "patrimonio_preexistente": 75000.0,
+    "tiene_discapacidad": false,
+    "porcentaje_discapacidad": 0
+  },
+  "causante": {
+    "dni_nif": "99887766L",
+    "nombre_completo": "Carlos Lopez Marin",
+    "fecha_defuncion": "2025-04-20"
+  },
+  "tramitante": {
+    "dni_nif": "33445566M",
+    "nombre_completo_firmante": "Beatriz Soto Cruz",
+    "aporta_documento_original": true
+  },
+  "seguros": [
+    {
+      "numero_poliza": "POL-2017-1200",
+      "entidad_aseguradora": "Seguros Delta",
+      "fecha_contratacion": "2017-02-11",
+      "valor_total": 60000.0,
+      "valor_declarado": 60000.0,
+      "numero_beneficiarios": 1
+    },
+    {
+      "numero_poliza": "POL-2016-0505",
+      "entidad_aseguradora": "Vida Mediterranea",
+      "fecha_contratacion": "2016-09-23",
+      "valor_total": 45000.0,
+      "valor_declarado": 42000.0,
+      "numero_beneficiarios": 2
+    }
+  ],
+  "liquidacion": {
+    "valor_1": 102000.0,
+    "valor_2": 2000.0,
+    "valor_3": 100000.0,
+    "valor_4a": 3000.0,
+    "valor_4b": 0.0,
+    "valor_4c": 0.0,
+    "valor_4d": 4000.0,
+    "valor_5": 93000.0,
+    "valor_6": 1.05,
+    "valor_7": 5000.0,
+    "valor_8": 5200.0,
+    "valor_9": 4800.0,
+    "valor_10": 4500.0,
+    "valor_11": 200.0,
+    "valor_12": 4300.0,
+    "valor_13": 0.0,
+    "valor_14": 4300.0,
+    "valor_15": 0.0,
+    "valor_16": 0.0,
+    "valor_17": 0.0,
+    "valor_18": 4300.0,
+    "valor_101": 102000.0,
+    "valor_102": 2000.0,
+    "valor_103": 100000.0,
+    "valor_porcentaje": 5.2,
+    "valor_resta": 200.0,
+    "valor_encuentra": 93000.0,
+    "cuota_ingresada": 0.0
+  },
+  "pago": {
+    "importe": 4300.0
+  }
+}

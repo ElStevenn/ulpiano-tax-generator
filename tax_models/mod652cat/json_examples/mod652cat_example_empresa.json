@@ -1,0 +1,120 @@
+{
+  "encabezado": {
+    "fecha_devengo": "2025-02-14",
+    "fecha_presentacion": "2025-02-20",
+    "numero_autoliquidacion": "65200033355",
+    "numero_justificante": "J65220250220003",
+    "codigo_aleatorio": "Z9Y8X7W6",
+    "codigo_aleatorio_ref": "REF652-2025-03",
+    "no_sujeto": false,
+    "prescrito": false,
+    "condicion_suspensiva": false,
+    "relacion_convivencial_ayuda_mutua": false,
+    "observaciones": "",
+    "pagina_num": 1,
+    "pagina_de": 1
+  },
+  "beneficiario": {
+    "dni_nif": "B76543210",
+    "nombre_completo_razon_social": "Fundacion Horizonte",
+    "fecha_nacimiento": "2001-05-10",
+    "parentesco": "Entidad sin parentesco",
+    "grupo_parentesco": "IV",
+    "patrimonio_preexistente": 1200000.0,
+    "tiene_discapacidad": false,
+    "porcentaje_discapacidad": 0
+  },
+  "causante": {
+    "dni_nif": "22334455P",
+    "nombre_completo": "Jorge Vidal Ruiz",
+    "fecha_defuncion": "2025-02-01"
+  },
+  "tramitante": {
+    "dni_nif": "55667788R",
+    "nombre_completo_firmante": "Natalia Perez Cano",
+    "aporta_documento_original": true
+  },
+  "seguros": [
+    {
+      "numero_poliza": "POL-2015-1001",
+      "entidad_aseguradora": "Seguros Atlas",
+      "fecha_contratacion": "2015-01-10",
+      "valor_total": 200000.0,
+      "valor_declarado": 190000.0,
+      "numero_beneficiarios": 1
+    },
+    {
+      "numero_poliza": "POL-2016-1002",
+      "entidad_aseguradora": "Vida Industrial",
+      "fecha_contratacion": "2016-04-22",
+      "valor_total": 175000.0,
+      "valor_declarado": 170000.0,
+      "numero_beneficiarios": 2
+    },
+    {
+      "numero_poliza": "POL-2017-1003",
+      "entidad_aseguradora": "Aseguradora Central",
+      "fecha_contratacion": "2017-08-30",
+      "valor_total": 220000.0,
+      "valor_declarado": 210000.0,
+      "numero_beneficiarios": 1
+    },
+    {
+      "numero_poliza": "POL-2018-1004",
+      "entidad_aseguradora": "Vida Global",
+      "fecha_contratacion": "2018-12-15",
+      "valor_total": 160000.0,
+      "valor_declarado": 155000.0,
+      "numero_beneficiarios": 3
+    },
+    {
+      "numero_poliza": "POL-2019-1005",
+      "entidad_aseguradora": "Seguros Norte",
+      "fecha_contratacion": "2019-06-11",
+      "valor_total": 90000.0,
+      "valor_declarado": 85000.0,
+      "numero_beneficiarios": 2
+    },
+    {
+      "numero_poliza": "POL-2020-1006",
+      "entidad_aseguradora": "Seguros Sureste",
+      "fecha_contratacion": "2020-03-19",
+      "valor_total": 75000.0,
+      "valor_declarado": 70000.0,
+      "numero_beneficiarios": 1
+    }
+  ],
+  "liquidacion": {
+    "valor_1": 880000.0,
+    "valor_2": 20000.0,
+    "valor_3": 860000.0,
+    "valor_4a": 15000.0,
+    "valor_4b": 0.0,
+    "valor_4c": 0.0,
+    "valor_4d": 30000.0,
+    "valor_5": 815000.0,
+    "valor_6": 1.4,
+    "valor_7": 65000.0,
+    "valor_8": 70000.0,
+    "valor_9": 68000.0,
+    "valor_10": 60000.0,
+    "valor_11": 2000.0,
+    "valor_12": 58000.0,
+    "valor_13": 5000.0,
+    "valor_14": 53000.0,
+    "valor_15": 300.0,
+    "valor_16": 200.0,
+    "valor_17": 100.0,
+    "valor_18": 53600.0,
+    "valor_101": 880000.0,
+    "valor_102": 20000.0,
+    "valor_103": 860000.0,
+    "valor_porcentaje": 7.9,
+    "valor_resta": 3000.0,
+    "valor_encuentra": 815000.0,
+    "cuota_ingresada": 5000.0
+  },
+  "pago": {
+    "importe": 53600.0
+  }
+}
