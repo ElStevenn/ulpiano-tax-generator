@@ -1,0 +1,746 @@
+{
+  "model652cat": {
+    "description": "Data structure for Catalonia Model 652 (life insurance).",
+    "metadata": {
+      "source": "tax_models/mod652cat/mod652cat.pdf",
+      "formCode": "652",
+      "jurisdiction": "Catalonia",
+      "language": "es-ES",
+      "lastUpdated": "2026-01-03"
+    },
+    "structure": [
+      {
+        "id": "encabezado",
+        "label": "Encabezado",
+        "order": 0,
+        "required": false,
+        "fields": [
+          {
+            "id": "fecha_devengo",
+            "label": "Fecha de devengo",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Date of accrual (Fecha de devengo).",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\\\d{4}-\\\\d{2}-\\\\d{2}$"
+          },
+          {
+            "id": "fecha_presentacion",
+            "label": "Fecha de presentacion",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Presentation date (Fecha de presentacion).",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\\\d{4}-\\\\d{2}-\\\\d{2}$"
+          },
+          {
+            "id": "numero_autoliquidacion",
+            "label": "Numero de autoliquidacion",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Numero de la ultima autoliquidacion."
+          },
+          {
+            "id": "numero_justificante",
+            "label": "Numero de justificante",
+            "type": "string",
+            "order": 4,
+            "required": false,
+            "description": "Numero de justificante del documento."
+          },
+          {
+            "id": "codigo_modelo",
+            "label": "Codigo del modelo",
+            "type": "string",
+            "order": 5,
+            "required": false,
+            "description": "Codigo del modelo (652).",
+            "default": "652"
+          },
+          {
+            "id": "codigo_aleatorio",
+            "label": "Codigo aleatorio",
+            "type": "string",
+            "order": 6,
+            "required": false,
+            "description": "Codigo aleatorio impreso en el formulario."
+          },
+          {
+            "id": "codigo_aleatorio_ref",
+            "label": "Codigo aleatorio referencia",
+            "type": "string",
+            "order": 7,
+            "required": false,
+            "description": "Referencia asociada al codigo aleatorio."
+          },
+          {
+            "id": "no_sujeto",
+            "label": "No sujeto",
+            "type": "boolean",
+            "order": 8,
+            "required": false,
+            "description": "Marca la casilla de No sujeto."
+          },
+          {
+            "id": "prescrito",
+            "label": "Prescrito",
+            "type": "boolean",
+            "order": 9,
+            "required": false,
+            "description": "Marca la casilla de Prescrito."
+          },
+          {
+            "id": "condicion_suspensiva",
+            "label": "Condicion suspensiva",
+            "type": "boolean",
+            "order": 10,
+            "required": false,
+            "description": "Marca la casilla de condicion suspensiva."
+          },
+          {
+            "id": "relacion_convivencial_ayuda_mutua",
+            "label": "Relacion convivencial de ayuda mutua",
+            "type": "boolean",
+            "order": 11,
+            "required": false,
+            "description": "Marca la casilla de relacion convivencial de ayuda mutua."
+          },
+          {
+            "id": "observaciones",
+            "label": "Observaciones",
+            "type": "string",
+            "order": 12,
+            "required": false,
+            "description": "Observaciones para el anexo de polizas."
+          },
+          {
+            "id": "pagina_num",
+            "label": "Pagina numero",
+            "type": "number",
+            "order": 13,
+            "required": false,
+            "description": "Numero de pagina en el anexo.",
+            "format": "integer"
+          },
+          {
+            "id": "pagina_de",
+            "label": "Pagina total",
+            "type": "number",
+            "order": 14,
+            "required": false,
+            "description": "Total de paginas del anexo.",
+            "format": "integer"
+          }
+        ]
+      },
+      {
+        "id": "beneficiario",
+        "label": "Sujeto pasivo (beneficiario)",
+        "order": 1,
+        "required": true,
+        "fields": [
+          {
+            "id": "dni_nif",
+            "label": "NIF del beneficiario",
+            "type": "string",
+            "order": 1,
+            "required": true,
+            "description": "NIF/NIE/CIF del beneficiario.",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre_completo_razon_social",
+            "label": "Nombre completo o razon social",
+            "type": "string",
+            "order": 2,
+            "required": true,
+            "description": "Nombre y apellidos o razon social."
+          },
+          {
+            "id": "fecha_nacimiento",
+            "label": "Fecha de nacimiento",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Fecha de nacimiento del beneficiario.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\\\d{4}-\\\\d{2}-\\\\d{2}$"
+          },
+          {
+            "id": "parentesco",
+            "label": "Parentesco",
+            "type": "string",
+            "order": 4,
+            "required": false,
+            "description": "Parentesco con la persona asegurada."
+          },
+          {
+            "id": "grupo_parentesco",
+            "label": "Grupo",
+            "type": "string",
+            "order": 5,
+            "required": false,
+            "description": "Grupo de parentesco.",
+            "values": [
+              "I",
+              "II",
+              "III",
+              "IV"
+            ]
+          },
+          {
+            "id": "patrimonio_preexistente",
+            "label": "Patrimonio preexistente",
+            "type": "number",
+            "order": 6,
+            "required": false,
+            "description": "Patrimonio preexistente declarado.",
+            "format": "decimal"
+          },
+          {
+            "id": "tiene_discapacidad",
+            "label": "Tiene discapacidad",
+            "type": "boolean",
+            "order": 7,
+            "required": false,
+            "description": "Marca la casilla de discapacidad."
+          },
+          {
+            "id": "porcentaje_discapacidad",
+            "label": "Porcentaje de discapacidad",
+            "type": "number",
+            "order": 8,
+            "required": false,
+            "description": "Porcentaje de discapacidad.",
+            "format": "integer",
+            "dependsOn": "tiene_discapacidad"
+          }
+        ]
+      },
+      {
+        "id": "causante",
+        "label": "Persona asegurada",
+        "order": 2,
+        "required": true,
+        "fields": [
+          {
+            "id": "dni_nif",
+            "label": "NIF de la persona asegurada",
+            "type": "string",
+            "order": 1,
+            "required": true,
+            "description": "NIF/NIE/CIF de la persona asegurada.",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre_completo",
+            "label": "Nombre completo",
+            "type": "string",
+            "order": 2,
+            "required": true,
+            "description": "Nombre y apellidos de la persona asegurada."
+          },
+          {
+            "id": "fecha_defuncion",
+            "label": "Fecha de defuncion",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Fecha de defuncion de la persona asegurada.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\\\d{4}-\\\\d{2}-\\\\d{2}$"
+          }
+        ]
+      },
+      {
+        "id": "tramitante",
+        "label": "Presentador",
+        "order": 3,
+        "required": false,
+        "fields": [
+          {
+            "id": "dni_nif",
+            "label": "NIF del presentador",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "NIF/NIE/CIF del presentador.",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre_completo_firmante",
+            "label": "Nombre completo del presentador",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Nombre y apellidos del presentador."
+          },
+          {
+            "id": "aporta_documento_original",
+            "label": "Aporta documento original",
+            "type": "boolean",
+            "order": 3,
+            "required": false,
+            "description": "Indica si aporta el documento original."
+          }
+        ]
+      },
+      {
+        "id": "seguros",
+        "label": "Seguros",
+        "order": 4,
+        "required": false,
+        "type": "array",
+        "description": "Polizas de seguro de vida declaradas.",
+        "fields": {
+          "numero_poliza": {
+            "type": "string",
+            "required": false,
+            "description": "Numero de poliza."
+          },
+          "entidad_aseguradora": {
+            "type": "string",
+            "required": false,
+            "description": "Entidad aseguradora."
+          },
+          "fecha_contratacion": {
+            "type": "string",
+            "required": false,
+            "description": "Fecha de contratacion.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\\\d{4}-\\\\d{2}-\\\\d{2}$"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total de la poliza.",
+            "format": "decimal"
+          },
+          "valor_declarado": {
+            "type": "number",
+            "required": false,
+            "description": "Valor declarado.",
+            "format": "decimal"
+          },
+          "numero_beneficiarios": {
+            "type": "integer",
+            "required": false,
+            "description": "Numero de beneficiarios."
+          }
+        }
+      },
+      {
+        "id": "liquidacion",
+        "label": "Liquidacion",
+        "order": 5,
+        "required": false,
+        "fields": [
+          {
+            "id": "valor_1",
+            "label": "Valor 1",
+            "type": "number",
+            "order": 1,
+            "required": false,
+            "description": "Box 1 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "1"
+          },
+          {
+            "id": "valor_2",
+            "label": "Valor 2",
+            "type": "number",
+            "order": 2,
+            "required": false,
+            "description": "Box 2 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "2"
+          },
+          {
+            "id": "valor_3",
+            "label": "Valor 3",
+            "type": "number",
+            "order": 3,
+            "required": false,
+            "description": "Box 3 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "3"
+          },
+          {
+            "id": "valor_4a",
+            "label": "Valor 4A",
+            "type": "number",
+            "order": 4,
+            "required": false,
+            "description": "Box 4A from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "4A"
+          },
+          {
+            "id": "valor_4b",
+            "label": "Valor 4B",
+            "type": "number",
+            "order": 5,
+            "required": false,
+            "description": "Box 4B from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "4B"
+          },
+          {
+            "id": "valor_4c",
+            "label": "Valor 4C",
+            "type": "number",
+            "order": 6,
+            "required": false,
+            "description": "Box 4C from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "4C"
+          },
+          {
+            "id": "valor_4d",
+            "label": "Valor 4D",
+            "type": "number",
+            "order": 7,
+            "required": false,
+            "description": "Box 4D from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "4D"
+          },
+          {
+            "id": "valor_5",
+            "label": "Valor 5",
+            "type": "number",
+            "order": 8,
+            "required": false,
+            "description": "Box 5 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "5"
+          },
+          {
+            "id": "valor_6",
+            "label": "Valor 6",
+            "type": "number",
+            "order": 9,
+            "required": false,
+            "description": "Box 6 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "6"
+          },
+          {
+            "id": "valor_7",
+            "label": "Valor 7",
+            "type": "number",
+            "order": 10,
+            "required": false,
+            "description": "Box 7 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "7"
+          },
+          {
+            "id": "valor_8",
+            "label": "Valor 8",
+            "type": "number",
+            "order": 11,
+            "required": false,
+            "description": "Box 8 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "8"
+          },
+          {
+            "id": "valor_9",
+            "label": "Valor 9",
+            "type": "number",
+            "order": 12,
+            "required": false,
+            "description": "Box 9 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "9"
+          },
+          {
+            "id": "valor_10",
+            "label": "Valor 10",
+            "type": "number",
+            "order": 13,
+            "required": false,
+            "description": "Box 10 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "10"
+          },
+          {
+            "id": "valor_11",
+            "label": "Valor 11",
+            "type": "number",
+            "order": 14,
+            "required": false,
+            "description": "Box 11 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "11"
+          },
+          {
+            "id": "valor_12",
+            "label": "Valor 12",
+            "type": "number",
+            "order": 15,
+            "required": false,
+            "description": "Box 12 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "12"
+          },
+          {
+            "id": "valor_13",
+            "label": "Valor 13",
+            "type": "number",
+            "order": 16,
+            "required": false,
+            "description": "Box 13 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "13"
+          },
+          {
+            "id": "valor_14",
+            "label": "Valor 14",
+            "type": "number",
+            "order": 17,
+            "required": false,
+            "description": "Box 14 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "14"
+          },
+          {
+            "id": "valor_15",
+            "label": "Valor 15",
+            "type": "number",
+            "order": 18,
+            "required": false,
+            "description": "Box 15 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "15"
+          },
+          {
+            "id": "valor_16",
+            "label": "Valor 16",
+            "type": "number",
+            "order": 19,
+            "required": false,
+            "description": "Box 16 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "16"
+          },
+          {
+            "id": "valor_17",
+            "label": "Valor 17",
+            "type": "number",
+            "order": 20,
+            "required": false,
+            "description": "Box 17 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "17"
+          },
+          {
+            "id": "valor_18",
+            "label": "Valor 18",
+            "type": "number",
+            "order": 21,
+            "required": false,
+            "description": "Box 18 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "18"
+          },
+          {
+            "id": "valor_101",
+            "label": "Valor 101",
+            "type": "number",
+            "order": 22,
+            "required": false,
+            "description": "Box 101 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "101"
+          },
+          {
+            "id": "valor_102",
+            "label": "Valor 102",
+            "type": "number",
+            "order": 23,
+            "required": false,
+            "description": "Box 102 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "102"
+          },
+          {
+            "id": "valor_103",
+            "label": "Valor 103",
+            "type": "number",
+            "order": 24,
+            "required": false,
+            "description": "Box 103 from the liquidation section.",
+            "format": "decimal",
+            "boxNumber": "103"
+          },
+          {
+            "id": "valor_porcentaje",
+            "label": "Valor porcentaje",
+            "type": "number",
+            "order": 25,
+            "required": false,
+            "description": "Percentage value used in the liquidation formula.",
+            "format": "decimal"
+          },
+          {
+            "id": "valor_resta",
+            "label": "Valor resta",
+            "type": "number",
+            "order": 26,
+            "required": false,
+            "description": "Intermediate subtraction value in the liquidation formula.",
+            "format": "decimal"
+          },
+          {
+            "id": "valor_encuentra",
+            "label": "Valor encuentra",
+            "type": "number",
+            "order": 27,
+            "required": false,
+            "description": "Intermediate value in the liquidation formula.",
+            "format": "decimal"
+          },
+          {
+            "id": "cuota_ingresada",
+            "label": "Cuota ingresada",
+            "type": "number",
+            "order": 28,
+            "required": false,
+            "description": "Cuota liquidada anteriormente o ingresada.",
+            "format": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "pago",
+        "label": "Pago",
+        "order": 6,
+        "required": false,
+        "fields": [
+          {
+            "id": "importe",
+            "label": "Importe",
+            "type": "number",
+            "order": 1,
+            "required": false,
+            "description": "Importe del ingreso.",
+            "format": "decimal"
+          }
+        ]
+      }
+    ],
+    "example": {
+      "encabezado": {
+        "fecha_devengo": "2025-09-15",
+        "fecha_presentacion": "2025-09-18",
+        "numero_autoliquidacion": "65200012345",
+        "numero_justificante": "J65220250918001",
+        "codigo_aleatorio": "A1B2C3D4",
+        "codigo_aleatorio_ref": "REF652-2025",
+        "no_sujeto": false,
+        "prescrito": false,
+        "condicion_suspensiva": false,
+        "relacion_convivencial_ayuda_mutua": true,
+        "observaciones": "",
+        "pagina_num": 1,
+        "pagina_de": 1
+      },
+      "beneficiario": {
+        "dni_nif": "12345678Z",
+        "nombre_completo_razon_social": "Laura Gomez Roca",
+        "fecha_nacimiento": "1987-05-22",
+        "parentesco": "Conyuge",
+        "grupo_parentesco": "II",
+        "patrimonio_preexistente": 180000.0,
+        "tiene_discapacidad": true,
+        "porcentaje_discapacidad": 45
+      },
+      "causante": {
+        "dni_nif": "87654321X",
+        "nombre_completo": "Miguel Roca Serra",
+        "fecha_defuncion": "2025-08-30"
+      },
+      "tramitante": {
+        "dni_nif": "11223344J",
+        "nombre_completo_firmante": "Sergio Pardo Rios",
+        "aporta_documento_original": true
+      },
+      "seguros": [
+        {
+          "numero_poliza": "POL-2020-0001",
+          "entidad_aseguradora": "Seguros Vida Norte",
+          "fecha_contratacion": "2020-01-10",
+          "valor_total": 120000.0,
+          "valor_declarado": 120000.0,
+          "numero_beneficiarios": 1
+        },
+        {
+          "numero_poliza": "POL-2019-0142",
+          "entidad_aseguradora": "Mutua Capital",
+          "fecha_contratacion": "2019-07-18",
+          "valor_total": 95000.0,
+          "valor_declarado": 95000.0,
+          "numero_beneficiarios": 2
+        },
+        {
+          "numero_poliza": "POL-2021-0450",
+          "entidad_aseguradora": "Aseguradora Iberica",
+          "fecha_contratacion": "2021-03-05",
+          "valor_total": 110000.0,
+          "valor_declarado": 100000.0,
+          "numero_beneficiarios": 1
+        },
+        {
+          "numero_poliza": "POL-2018-0788",
+          "entidad_aseguradora": "Vida Global",
+          "fecha_contratacion": "2018-11-22",
+          "valor_total": 115000.0,
+          "valor_declarado": 110000.0,
+          "numero_beneficiarios": 3
+        }
+      ],
+      "liquidacion": {
+        "valor_1": 425000.0,
+        "valor_2": 15000.0,
+        "valor_3": 410000.0,
+        "valor_4a": 8000.0,
+        "valor_4b": 4000.0,
+        "valor_4c": 6000.0,
+        "valor_4d": 12000.0,
+        "valor_5": 380000.0,
+        "valor_6": 1.25,
+        "valor_7": 28000.0,
+        "valor_8": 30000.0,
+        "valor_9": 27000.0,
+        "valor_10": 25000.0,
+        "valor_11": 1000.0,
+        "valor_12": 24000.0,
+        "valor_13": 2000.0,
+        "valor_14": 22000.0,
+        "valor_15": 200.0,
+        "valor_16": 100.0,
+        "valor_17": 50.0,
+        "valor_18": 22350.0,
+        "valor_101": 425000.0,
+        "valor_102": 15000.0,
+        "valor_103": 410000.0,
+        "valor_porcentaje": 7.5,
+        "valor_resta": 2000.0,
+        "valor_encuentra": 380000.0,
+        "cuota_ingresada": 2000.0
+      },
+      "pago": {
+        "importe": 22350.0
+      }
+    },
+    "notes": {
+      "fieldMappings": "tax_models/mod652cat/data_models/mod652cat_field_mappings.json",
+      "idNaming": "Field IDs do not include section prefixes; names use snake_case and match DB fields when available."
+    }
+  }
+}
