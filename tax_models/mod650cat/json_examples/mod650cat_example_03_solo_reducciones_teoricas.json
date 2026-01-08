@@ -19,7 +19,19 @@
     "patrimonio_preexistente": 25000.0,
     "tiene_discapacidad": false,
     "porcentaje_discapacidad": null,
-    "titulo_sucesorio": "Heredera"
+    "titulo_sucesorio": "Heredera",
+    "pago": {
+      "pagoIban": "ES1234567890123456789012",
+      "pagoCargoEnCuenta": true,
+      "pagoPagoEfectivo": false,
+      "pagoPaisBanco": "ES",
+      "pagoDigitosControlBanco": "12",
+      "pagoEntidadBanco": "3456",
+      "pagoSucursalBanco": "7890",
+      "pagoDigitosControlBanco2": "12",
+      "pagoNumeroCuenta": "3456789012",
+      "pagoImporte": 32000.0
+    }
   },
   "causante": {
     "dni_nif": "65432109C",
@@ -56,18 +68,6 @@
     "correo_electronico": "laura.fernandez@example.com",
     "acuerdo_declaracion": true,
     "fecha_firma": "2024-11-19"
-  },
-  "pago": {
-    "pagoIban": "ES1234567890123456789012",
-    "pagoCargoEnCuenta": true,
-    "pagoPagoEfectivo": false,
-    "pagoPaisBanco": "ES",
-    "pagoDigitosControlBanco": "12",
-    "pagoEntidadBanco": "3456",
-    "pagoSucursalBanco": "7890",
-    "pagoDigitosControlBanco2": "12",
-    "pagoNumeroCuenta": "3456789012",
-    "pagoImporte": 32000.0
   },
   "liquidacion": {
     "liquidacionBonificacionDiscapacidad": 0.0,

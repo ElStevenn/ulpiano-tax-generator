@@ -19,7 +19,19 @@
     "patrimonio_preexistente": 0.0,
     "tiene_discapacidad": false,
     "porcentaje_discapacidad": null,
-    "titulo_sucesorio": "Heredera"
+    "titulo_sucesorio": "Heredera",
+    "pago": {
+      "pagoIban": "ES9121000418450200051332",
+      "pagoCargoEnCuenta": true,
+      "pagoPagoEfectivo": false,
+      "pagoPaisBanco": "ES",
+      "pagoDigitosControlBanco": "91",
+      "pagoEntidadBanco": "2100",
+      "pagoSucursalBanco": "0418",
+      "pagoDigitosControlBanco2": "45",
+      "pagoNumeroCuenta": "0200051332",
+      "pagoImporte": 45000.0
+    }
   },
   "causante": {
     "dni_nif": "87654321A",
@@ -56,18 +68,6 @@
     "correo_electronico": "maria.garcia@example.com",
     "acuerdo_declaracion": true,
     "fecha_firma": "2024-11-20"
-  },
-  "pago": {
-    "pagoIban": "ES9121000418450200051332",
-    "pagoCargoEnCuenta": true,
-    "pagoPagoEfectivo": false,
-    "pagoPaisBanco": "ES",
-    "pagoDigitosControlBanco": "91",
-    "pagoEntidadBanco": "2100",
-    "pagoSucursalBanco": "0418",
-    "pagoDigitosControlBanco2": "45",
-    "pagoNumeroCuenta": "0200051332",
-    "pagoImporte": 45000.0
   },
   "liquidacion": {
     "liquidacionBonificacionDiscapacidad": 0.0,

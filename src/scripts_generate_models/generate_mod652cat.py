@@ -236,14 +236,6 @@ def _apply_seguro_row(form: Dict[str, Any], index: int, seguro: Dict[str, Any]) 
     valor_declarado = seguro.get("valor_declarado")
     numero_beneficiarios = seguro.get("numero_beneficiarios")
 
-    if index <= 4:
-        form[f"ENTIDAD_ASEGURADORA_{index}"] = entidad
-        form[f"NUMERO_POLIZA_{index}"] = numero_poliza
-        form[f"FECHA_CONTRATACION_{index}"] = fecha
-        form[f"VALOR_TOTAL_{index}"] = valor_total
-        form[f"VALOR_DECLARADO_{index}"] = valor_declarado
-        form[f"NB_{index}"] = numero_beneficiarios
-
     suffix_with_alt = f"{index}_2" if index <= 4 else str(index)
     suffix = str(index)
 

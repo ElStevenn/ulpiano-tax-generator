@@ -200,9 +200,30 @@ tramitante = expediente.roles_personas.filter(
 
 | Campo en Modelo de Impuestos | Campo en BD | Tabla | Tipo | Notas |
 |------------------------------|-------------|-------|------|-------|
-| `titulo_sucesorio` | `titulo` | `atribuciones` | Enum | ✅ Existe (heredero, legatario, legitimario, etc.) |
+| `titulo_sucesorio` | `titulo` | `atribuciones` | Enum | ✅ Existe. Valores: `heredero`, `legatario`, `donatario_por_causa_de_muerte`, `fiduciario`, `fideicomisario`, `sustituto_vulgar`, `usufructuario`, `nudo_propietario`, `conyuge_viudo_con_derecho_vidual`, `beneficiario_de_seguro_de_vida`, `prelegado` |
 | `cuota_porcentaje` | `cuota_porcentaje` | `atribuciones` | Numeric(5,2) | ✅ Existe (disponible pero no en modelo) |
 | `cuota_tipo` | `cuota_tipo` | `atribuciones` | Enum | ✅ Existe (disponible pero no en modelo) |
+| `relacion` | **calculado dinámicamente** (familiares) o `relacion` (persona_beneficiaria) | — | Enum/String | ⚠️ Para MiembroFamiliar se deriva del árbol familiar. Valores Enum soportados: `Padre`, `Madre`, `Hijo`, `Nieto`, `Bisnieto`, `Abuelo`, `Bisabuelo`, `Hermano`, `Tío`, `Sobrino`, `Primo`, `Tío abuelo`, `Sobrino nieto`, `Primo segundo`, `Primo tercero`, `Cónyuge`, `Suegro`, `Yerno`, `Nuera`, `Cuñado`, `Pareja de hecho`, `Adoptante`, `Adoptado`, `Tutor`, `Curador`, `Sin vínculo familiar`. Para PersonaBeneficiaria se usa su campo `relacion` (string libre) |
+| `grupo_parentesco` | **calculado dinámicamente** | — | Enum | ⚠️ Derivar de la relación con el causante y edad (<21) según lógica de `_calcular_grupo_parentesco_causante`. Valores: `grupo_i`, `grupo_ii`, `grupo_iii`, `grupo_iv` |
+| `bienes_asignados` | `atribucion_metadata.bienes_asignados` + tabla `bienes_atribuidos` | `atribuciones` / `bienes_atribuidos` | Lista de objetos | ✅ Estructura en schema (`BienAsignadoCreate`): `bien_id`, `porcentaje_asignado`, `derecho_transmitido`, `valor_estimado`, `metadatos`, `condiciones`, `sustituciones` |
+| `valor_disponible_bien_asignado` | **calculado** (`valor_estimado * porcentaje_asignado/100`) | — | Numeric | ⚠️ Solo en respuestas de bienes asignados (legatario/prelegado) |
+| `bienes_residuales` (herederos) | **calculado** desde remanentes del escenario | — | Lista de objetos | ⚠️ Campos en respuesta: `bien_id`, `nombre`, `tipo_bien`, `descripcion_general`, `valor_estimado`, `valor_disponible`, `valor_heredero`, `porcentaje_disponible_total`, `porcentaje_heredero`, `tipo_titularidad`, `cuota`, `titularidad`, `derecho_real`, `titularidad_sociedad`, `cargas` |
+
+### Bienes Atribuidos (tabla `bienes_asignados`)
+
+| Campo en Modelo de Impuestos | Campo en BD | Tabla | Tipo | Notas |
+|------------------------------|-------------|-------|------|-------|
+| `bien_atribuido_id` | `id` | `bienes_asignados` | UUID | ✅ Identificador del bien asignado a la atribución |
+| `atribucion_id` | `atribucion_id` | `bienes_asignados` | UUID (FK) | ✅ Referencia a `atribuciones.id` |
+| `bien_id` | `bien_id` | `bienes_asignados` | UUID (FK) | ✅ Referencia a `inventario_bienes.id` |
+| `porcentaje_asignado` | `porcentaje_asignado` | `bienes_asignados` | Numeric | ✅ 0–100, opcional |
+| `derecho_transmitido` | `derecho_transmitido` | `bienes_asignados` | String | ✅ Texto libre (pleno, nuda_propiedad, usufructo, etc.) |
+| `valor_estimado` | `valor_estimado` | `bienes_asignados` | Numeric | ✅ Estimación opcional |
+| `metadatos` | `metadatos` | `bienes_asignados` | JSONB | ✅ Metadatos del derecho transmitido |
+| `condiciones` | `condiciones` | `bienes_asignados` | JSONB | ✅ Condiciones aplicables al bien asignado |
+| `sustituciones` | `sustituciones` | `bienes_asignados` | JSONB | ✅ Sustituciones específicas del bien |
+| `cargas_gravamenes` (respuesta) | — (se carga de `inventario_bienes.cargas` activas) | `cargas` | Lista de objetos | ⚠️ Solo en respuesta; incluye `id`, `tipo`, `importe`, `deuda_pendiente`, `interes`, `vencimiento`, `acreedor_o_titular_derecho`, `descripcion`, `asiento`, `rango`, `estado`, `fechas`, `activa` |
+| `valor_disponible` (respuesta) | **calculado** | — | Numeric | ⚠️ Si hay `porcentaje_asignado`, se multiplica por `valor_estimado`; si no, usa `valor_estimado` |
 
 ---
 
@@ -345,6 +366,6 @@ Los siguientes campos **NO existen** en la base de datos y deben inventarse sigu
 ---
 
 **Versión**: 1.0  
-**Última Actualización**: 11/12/2025
+**Última Actualización**: 2024  
 **Modelo de Base de Datos**: `models.py` (líneas 1-2488)
 

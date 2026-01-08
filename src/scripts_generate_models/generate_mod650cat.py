@@ -36,9 +36,9 @@ from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-DEFAULT_DATA = BASE_DIR / "tax_models" / "mod650cat" / "json_examples" / "mod650cat_example.json"
+DEFAULT_DATA = BASE_DIR / "tax_models" / "mod650cat" / "json_examples" / "mod650cat_example_03_solo_reducciones_teoricas.json"
 DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "mod650cat" / "data_models" / "mod650cat_data_structure.json"
-DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "mod650cat" / "mod650cat.pdf"
+DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "models" / "mod650cat.pdf"
 DEFAULT_OUTPUT_DIR = BASE_DIR / "generated"
 # Offsets (multipliers) to center the drawn "X" inside checkbox widgets
 CHECKBOX_X_OFFSET_MULT = -0.35  # shift left relative to font size
@@ -184,29 +184,30 @@ FIELD_MAPPINGS: List[FieldMapping] = [
     FieldMapping("tramitante.fecha_firma", FIRST_COPY_PAGES, x=470, y_from_top=642, formatter="date_spanish", font_size=9),
     # Área de pago (Ingreso)
 
-    FieldMapping("pago.pagoPaisBanco", FIRST_COPY_PAGES, x=50, y_from_top=745, font_size=10),
-    FieldMapping("pago.pagoDigitosControlBanco", FIRST_COPY_PAGES, x=79, y_from_top=745, font_size=10),
-    FieldMapping("pago.pagoEntidadBanco", FIRST_COPY_PAGES, x=115, y_from_top=745, font_size=10),
-    FieldMapping("pago.pagoSucursalBanco", FIRST_COPY_PAGES, x=165, y_from_top=745, font_size=10),
-    FieldMapping("pago.pagoDigitosControlBanco2", FIRST_COPY_PAGES, x=222, y_from_top=745, font_size=10),
-    FieldMapping("pago.pagoNumeroCuenta", FIRST_COPY_PAGES, x=255, y_from_top=745, font_size=10),
+    FieldMapping("beneficiario.pago.pagoPaisBanco", FIRST_COPY_PAGES, x=50, y_from_top=745, font_size=10),
+    FieldMapping("beneficiario.pago.pagoDigitosControlBanco", FIRST_COPY_PAGES, x=79, y_from_top=745, font_size=10),
+    FieldMapping("beneficiario.pago.pagoEntidadBanco", FIRST_COPY_PAGES, x=115, y_from_top=745, font_size=10),
+    FieldMapping("beneficiario.pago.pagoSucursalBanco", FIRST_COPY_PAGES, x=165, y_from_top=745, font_size=10),
+    FieldMapping("beneficiario.pago.pagoDigitosControlBanco2", FIRST_COPY_PAGES, x=222, y_from_top=745, font_size=10),
+    FieldMapping("beneficiario.pago.pagoNumeroCuenta", FIRST_COPY_PAGES, x=256, y_from_top=745, font_size=10),
     # Métodos de pago (a la derecha, en la línea superior)
     FieldMapping(
-        "pago.pagoCargoEnCuenta",
+        "beneficiario.pago.pagoCargoEnCuenta",
         FIRST_COPY_PAGES,
         x=362.2,
         y_from_top=725.2,
         field_type="checkbox",
     ),
     FieldMapping(
-        "pago.pagoPagoEfectivo",
+        "beneficiario.pago.pagoPagoEfectivo",
         FIRST_COPY_PAGES,
         x=439.2,
         y_from_top=726.6,
         field_type="checkbox",
     ),
     # Importe (debajo de "En efectivo", a la derecha)
-    FieldMapping("pago.pagoImporte", FIRST_COPY_PAGES, x=450, y_from_top=748, formatter="decimal", font_size=9),
+    # En el impreso el separador decimal ya está preimpreso, por lo que usamos entero para evitar doble coma.
+    FieldMapping("beneficiario.pago.pagoImporte", FIRST_COPY_PAGES, x=436, y_from_top=746, formatter="integer", font_size=10),
     # Liquidación (autoliquidación) - se aplica a las páginas de cálculo
     FieldMapping("liquidacion.liquidacionBonificacionDiscapacidad", SETTLEMENT_PAGES, x=200, y_from_top=207.5, formatter="decimal"),
     FieldMapping("liquidacion.liquidacionCuotaTributariaCasoGeneral", SETTLEMENT_PAGES, x=189.6, y_from_top=506.4, formatter="decimal"),
@@ -376,22 +377,22 @@ def build_overlay(
 
     # Auto-populate IBAN components from IBAN if provided
     # The IBAN is always split into its components for the form fields
-    iban = flattened_data.get("pago.pagoIban", "")
+    iban = flattened_data.get("beneficiario.pago.pagoIban", "")
     if iban:
         iban_parts = split_spanish_iban(iban)
         # Always populate components from IBAN, even if they exist (IBAN is the source of truth)
         if iban_parts['country']:
-            flattened_data["pago.pagoPaisBanco"] = iban_parts['country']
+            flattened_data["beneficiario.pago.pagoPaisBanco"] = iban_parts['country']
         if iban_parts['controlDigits']:
-            flattened_data["pago.pagoDigitosControlBanco"] = iban_parts['controlDigits']
+            flattened_data["beneficiario.pago.pagoDigitosControlBanco"] = iban_parts['controlDigits']
         if iban_parts['entity']:
-            flattened_data["pago.pagoEntidadBanco"] = iban_parts['entity']
+            flattened_data["beneficiario.pago.pagoEntidadBanco"] = iban_parts['entity']
         if iban_parts['branch']:
-            flattened_data["pago.pagoSucursalBanco"] = iban_parts['branch']
+            flattened_data["beneficiario.pago.pagoSucursalBanco"] = iban_parts['branch']
         if iban_parts['controlDigits2']:
-            flattened_data["pago.pagoDigitosControlBanco2"] = iban_parts['controlDigits2']
+            flattened_data["beneficiario.pago.pagoDigitosControlBanco2"] = iban_parts['controlDigits2']
         if iban_parts['accountNumber']:
-            flattened_data["pago.pagoNumeroCuenta"] = iban_parts['accountNumber']
+            flattened_data["beneficiario.pago.pagoNumeroCuenta"] = iban_parts['accountNumber']
 
     buffer = BytesIO()
     canv = canvas.Canvas(buffer)

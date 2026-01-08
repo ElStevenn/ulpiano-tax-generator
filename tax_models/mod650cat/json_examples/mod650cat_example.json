@@ -19,7 +19,13 @@
     "patrimonio_preexistente": 150000,
     "tiene_discapacidad": true,
     "porcentaje_discapacidad": 33,
-    "titulo_sucesorio": "Heredero"
+    "titulo_sucesorio": "Heredero",
+    "pago": {
+      "pagoIban": "ES1200491500052718123412",
+      "pagoCargoEnCuenta": true,
+      "pagoPagoEfectivo": false,
+      "pagoImporte": 80000.0
+    }
   },
   "causante": {
     "dni_nif": "20263967F",
@@ -56,12 +62,6 @@
     "correo_electronico": "test@example.com",
     "acuerdo_declaracion": true,
     "fecha_firma": "2024-11-17"
-  },
-  "pago": {
-    "pagoIban": "ES1200491500052718123412",
-    "pagoCargoEnCuenta": true,
-    "pagoPagoEfectivo": false,
-    "pagoImporte": 80000.00
   },
   "liquidacion": {
     "liquidacionBonificacionDiscapacidad": 0,

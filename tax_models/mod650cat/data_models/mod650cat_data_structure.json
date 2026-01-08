@@ -353,6 +353,101 @@
             "order": 20,
             "required": false,
             "description": "Título legal de la sucesión (Título sucesorio)."
+          },
+          {
+            "id": "pago",
+            "label": "Pago",
+            "type": "object",
+            "order": 21,
+            "required": true,
+            "fields": [
+              {
+                "id": "pagoIban",
+                "label": "IBAN",
+                "type": "string",
+                "order": 1,
+                "required": false,
+                "description": "Código IBAN completo para el cargo/pago.",
+                "validationRegex": "^[A-Z]{2}\\d{2}[A-Z0-9]{4,30}$"
+              },
+              {
+                "id": "pagoCargoEnCuenta",
+                "label": "Cargo en cuenta",
+                "type": "boolean",
+                "order": 2,
+                "required": false,
+                "description": "Casilla 'Cargo en cuenta'."
+              },
+              {
+                "id": "pagoPagoEfectivo",
+                "label": "Pago en efectivo",
+                "type": "boolean",
+                "order": 3,
+                "required": false,
+                "description": "Casilla 'En efectivo'."
+              },
+              {
+                "id": "pagoPaisBanco",
+                "label": "País del banco",
+                "type": "string",
+                "order": 4,
+                "required": false,
+                "description": "Código de país (ES).",
+                "default": "ES"
+              },
+              {
+                "id": "pagoDigitosControlBanco",
+                "label": "DC",
+                "type": "string",
+                "order": 5,
+                "required": false,
+                "description": "Dígitos de control (primer DC)."
+              },
+              {
+                "id": "pagoEntidadBanco",
+                "label": "Entidad",
+                "type": "string",
+                "order": 6,
+                "required": false,
+                "description": "Código de entidad (4 dígitos).",
+                "validationRegex": "^\\d{4}$"
+              },
+              {
+                "id": "pagoSucursalBanco",
+                "label": "Sucursal",
+                "type": "string",
+                "order": 7,
+                "required": false,
+                "description": "Código de sucursal (4 dígitos).",
+                "validationRegex": "^\\d{4}$"
+              },
+              {
+                "id": "pagoDigitosControlBanco2",
+                "label": "DC2",
+                "type": "string",
+                "order": 8,
+                "required": false,
+                "description": "Segundo DC."
+              },
+              {
+                "id": "pagoNumeroCuenta",
+                "label": "Número de cuenta",
+                "type": "string",
+                "order": 9,
+                "required": false,
+                "description": "Cuenta (10 dígitos).",
+                "validationRegex": "^\\d{10}$"
+              },
+              {
+                "id": "pagoImporte",
+                "label": "Importe",
+                "type": "number",
+                "order": 10,
+                "required": false,
+                "description": "Importe del pago en EUR.",
+                "format": "decimal"
+              }
+            ]
           }
         ]
       },
@@ -490,101 +585,6 @@
             "format": "YYYY-MM-DD",
             "validation": "Debe ser una fecha válida en formato ISO (YYYY-MM-DD).",
             "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
-          }
-        ]
-      },
-      {
-        "id": "pago",
-        "label": "Detalles de pago",
-        "order": 4,
-        "required": true,
-        "fields": [
-          {
-            "id": "iban",
-            "label": "IBAN",
-            "type": "string",
-            "order": 1,
-            "required": false,
-            "description": "Código internacional de cuenta bancaria (IBAN).",
-            "validation": "Debe seguir el formato IBAN (código de país + dígitos de control + BBAN).",
-            "validationRegex": "^[A-Z]{2}\\d{2}[A-Z0-9]{4,30}$"
-          },
-          {
-            "id": "cargo_en_cuenta",
-            "label": "Cargo en cuenta",
-            "type": "boolean",
-            "order": 2,
-            "required": false,
-            "description": "Casilla 'Cargo en cuenta' que autoriza al banco a cargar el IBAN."
-          },
-          {
-            "id": "pago_efectivo",
-            "label": "Pago en efectivo",
-            "type": "boolean",
-            "order": 3,
-            "required": false,
-            "description": "Casilla 'En efectivo' para pagos en efectivo."
-          },
-          {
-            "id": "pais_banco",
-            "label": "País del banco",
-            "type": "string",
-            "order": 4,
-            "required": false,
-            "description": "Código de país escrito bajo 'País' junto a las cajas IBAN.",
-            "default": "ES"
-          },
-          {
-            "id": "digitos_control_banco",
-            "label": "Dígitos de control (DC)",
-            "type": "string",
-            "order": 5,
-            "required": false,
-            "description": "Dígitos de control mostrados en la primera caja 'DC' (después del código de país)."
-          },
-          {
-            "id": "entidad_banco",
-            "label": "Entidad bancaria",
-            "type": "string",
-            "order": 6,
-            "required": false,
-            "description": "Código de entidad bancaria (Entidad) - 4 dígitos.",
-            "validationRegex": "^\\d{4}$"
-          },
-          {
-            "id": "sucursal_banco",
-            "label": "Sucursal bancaria",
-            "type": "string",
-            "order": 7,
-            "required": false,
-            "description": "Código de sucursal bancaria (Sucursal) - 4 dígitos.",
-            "validationRegex": "^\\d{4}$"
-          },
-          {
-            "id": "digitos_control_banco_2",
-            "label": "Dígitos de control 2 (DC)",
-            "type": "string",
-            "order": 8,
-            "required": false,
-            "description": "Segundos dígitos de control mostrados en la caja 'DC' (después de la sucursal)."
-          },
-          {
-            "id": "numero_cuenta",
-            "label": "Número de cuenta",
-            "type": "string",
-            "order": 9,
-            "required": false,
-            "description": "Número de cuenta (Número de cuenta) - 10 dígitos.",
-            "validationRegex": "^\\d{10}$"
-          },
-          {
-            "id": "importe",
-            "label": "Importe",
-            "type": "number",
-            "order": 10,
-            "required": false,
-            "description": "Importe del pago (Importe) en EUR.",
-            "format": "decimal"
           }
         ]
       },

@@ -19,7 +19,19 @@
     "patrimonio_preexistente": 75000.0,
     "tiene_discapacidad": true,
     "porcentaje_discapacidad": 33.0,
-    "titulo_sucesorio": "Heredero"
+    "titulo_sucesorio": "Heredero",
+    "pago": {
+      "pagoIban": "ES9820385778983000045698",
+      "pagoCargoEnCuenta": true,
+      "pagoPagoEfectivo": false,
+      "pagoPaisBanco": "ES",
+      "pagoDigitosControlBanco": "98",
+      "pagoEntidadBanco": "2038",
+      "pagoSucursalBanco": "5778",
+      "pagoDigitosControlBanco2": "98",
+      "pagoNumeroCuenta": "3000045698",
+      "pagoImporte": 48000.0
+    }
   },
   "causante": {
     "dni_nif": "54321098D",
@@ -56,18 +68,6 @@
     "correo_electronico": "jordi.sanchez@example.com",
     "acuerdo_declaracion": true,
     "fecha_firma": "2024-11-17"
-  },
-  "pago": {
-    "pagoIban": "ES9820385778983000045698",
-    "pagoCargoEnCuenta": true,
-    "pagoPagoEfectivo": false,
-    "pagoPaisBanco": "ES",
-    "pagoDigitosControlBanco": "98",
-    "pagoEntidadBanco": "2038",
-    "pagoSucursalBanco": "5778",
-    "pagoDigitosControlBanco2": "98",
-    "pagoNumeroCuenta": "3000045698",
-    "pagoImporte": 48000.0
   },
   "liquidacion": {
     "liquidacionBonificacionDiscapacidad": 5000.0,

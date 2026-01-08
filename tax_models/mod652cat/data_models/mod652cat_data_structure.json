@@ -344,7 +344,7 @@
             "type": "number",
             "order": 1,
             "required": false,
-            "description": "Box 1 from the liquidation section.",
+            "description": "Base imponible inicial (capitales percibidos o indemnizaciones brutas).",
             "format": "decimal",
             "boxNumber": "1"
           },
@@ -354,7 +354,7 @@
             "type": "number",
             "order": 2,
             "required": false,
-            "description": "Box 2 from the liquidation section.",
+            "description": "Gastos deducibles o primas pendientes que se restan de la base.",
             "format": "decimal",
             "boxNumber": "2"
           },
@@ -364,7 +364,7 @@
             "type": "number",
             "order": 3,
             "required": false,
-            "description": "Box 3 from the liquidation section.",
+            "description": "Base imponible ajustada (valor_1 - valor_2).",
             "format": "decimal",
             "boxNumber": "3"
           },
@@ -374,7 +374,7 @@
             "type": "number",
             "order": 4,
             "required": false,
-            "description": "Box 4A from the liquidation section.",
+            "description": "Reducciones o bonificaciones estatales (apartado 4A).",
             "format": "decimal",
             "boxNumber": "4A"
           },
@@ -384,7 +384,7 @@
             "type": "number",
             "order": 5,
             "required": false,
-            "description": "Box 4B from the liquidation section.",
+            "description": "Reducciones por discapacidad u otras reducciones específicas (apartado 4B).",
             "format": "decimal",
             "boxNumber": "4B"
           },
@@ -394,7 +394,7 @@
             "type": "number",
             "order": 6,
             "required": false,
-            "description": "Box 4C from the liquidation section.",
+            "description": "Reducciones por seguros colectivos u otros conceptos habilitados (apartado 4C).",
             "format": "decimal",
             "boxNumber": "4C"
           },
@@ -404,7 +404,7 @@
             "type": "number",
             "order": 7,
             "required": false,
-            "description": "Box 4D from the liquidation section.",
+            "description": "Otras reducciones autonómicas/extraordinarias (apartado 4D).",
             "format": "decimal",
             "boxNumber": "4D"
           },
@@ -414,7 +414,7 @@
             "type": "number",
             "order": 8,
             "required": false,
-            "description": "Box 5 from the liquidation section.",
+            "description": "Base liquidable (valor_3 - sumatoria reducciones 4A-4D).",
             "format": "decimal",
             "boxNumber": "5"
           },
@@ -424,7 +424,7 @@
             "type": "number",
             "order": 9,
             "required": false,
-            "description": "Box 6 from the liquidation section.",
+            "description": "Tipo aplicable (%).",
             "format": "decimal",
             "boxNumber": "6"
           },
@@ -434,7 +434,7 @@
             "type": "number",
             "order": 10,
             "required": false,
-            "description": "Box 7 from the liquidation section.",
+            "description": "Cuota íntegra (valor_5 * valor_6 / 100).",
             "format": "decimal",
             "boxNumber": "7"
           },
@@ -444,7 +444,7 @@
             "type": "number",
             "order": 11,
             "required": false,
-            "description": "Box 8 from the liquidation section.",
+            "description": "Bonificaciones o deducciones aplicables (restan a la cuota).",
             "format": "decimal",
             "boxNumber": "8"
           },
@@ -454,7 +454,7 @@
             "type": "number",
             "order": 12,
             "required": false,
-            "description": "Box 9 from the liquidation section.",
+            "description": "Recargos o incrementos (suman a la cuota).",
             "format": "decimal",
             "boxNumber": "9"
           },
@@ -464,7 +464,7 @@
             "type": "number",
             "order": 13,
             "required": false,
-            "description": "Box 10 from the liquidation section.",
+            "description": "Intereses de demora.",
             "format": "decimal",
             "boxNumber": "10"
           },
@@ -474,7 +474,7 @@
             "type": "number",
             "order": 14,
             "required": false,
-            "description": "Box 11 from the liquidation section.",
+            "description": "Sanciones u otros cargos.",
             "format": "decimal",
             "boxNumber": "11"
           },
@@ -484,7 +484,7 @@
             "type": "number",
             "order": 15,
             "required": false,
-            "description": "Box 12 from the liquidation section.",
+            "description": "Total de ajustes/bonificaciones aplicadas (suma de valor_8 a valor_11 con su signo).",
             "format": "decimal",
             "boxNumber": "12"
           },
@@ -494,7 +494,7 @@
             "type": "number",
             "order": 16,
             "required": false,
-            "description": "Box 13 from the liquidation section.",
+            "description": "Cuota resultante antes de pagos previos (valor_7 + recargos - bonificaciones).",
             "format": "decimal",
             "boxNumber": "13"
           },
@@ -504,7 +504,7 @@
             "type": "number",
             "order": 17,
             "required": false,
-            "description": "Box 14 from the liquidation section.",
+            "description": "Pagos previos o cuotas ingresadas en autoliquidaciones anteriores.",
             "format": "decimal",
             "boxNumber": "14"
           },
@@ -514,7 +514,7 @@
             "type": "number",
             "order": 18,
             "required": false,
-            "description": "Box 15 from the liquidation section.",
+            "description": "Recargos de fraccionamiento u otros ajustes adicionales.",
             "format": "decimal",
             "boxNumber": "15"
           },
@@ -524,7 +524,7 @@
             "type": "number",
             "order": 19,
             "required": false,
-            "description": "Box 16 from the liquidation section.",
+            "description": "Intereses de fraccionamiento u otros intereses aplicados.",
             "format": "decimal",
             "boxNumber": "16"
           },
@@ -534,7 +534,7 @@
             "type": "number",
             "order": 20,
             "required": false,
-            "description": "Box 17 from the liquidation section.",
+            "description": "Otros ajustes menores o compensaciones.",
             "format": "decimal",
             "boxNumber": "17"
           },
@@ -544,7 +544,7 @@
             "type": "number",
             "order": 21,
             "required": false,
-            "description": "Box 18 from the liquidation section.",
+            "description": "Resultado a ingresar o devolver tras todos los ajustes.",
             "format": "decimal",
             "boxNumber": "18"
           },
@@ -554,7 +554,7 @@
             "type": "number",
             "order": 22,
             "required": false,
-            "description": "Box 101 from the liquidation section.",
+            "description": "Capital asegurado total (referencia para cálculos auxiliares).",
             "format": "decimal",
             "boxNumber": "101"
           },
@@ -564,7 +564,7 @@
             "type": "number",
             "order": 23,
             "required": false,
-            "description": "Box 102 from the liquidation section.",
+            "description": "Gastos deducibles o primas no consumidas vinculadas al capital (referencia).",
             "format": "decimal",
             "boxNumber": "102"
           },
@@ -574,7 +574,7 @@
             "type": "number",
             "order": 24,
             "required": false,
-            "description": "Box 103 from the liquidation section.",
+            "description": "Base imponible de referencia tras ajustes iniciales.",
             "format": "decimal",
             "boxNumber": "103"
           },
@@ -584,7 +584,7 @@
             "type": "number",
             "order": 25,
             "required": false,
-            "description": "Percentage value used in the liquidation formula.",
+            "description": "Porcentaje aplicado en el cálculo (coeficiente o tipo).",
             "format": "decimal"
           },
           {
@@ -593,7 +593,7 @@
             "type": "number",
             "order": 26,
             "required": false,
-            "description": "Intermediate subtraction value in the liquidation formula.",
+            "description": "Importe a restar como ajuste adicional.",
             "format": "decimal"
           },
           {
@@ -602,7 +602,7 @@
             "type": "number",
             "order": 27,
             "required": false,
-            "description": "Intermediate value in the liquidation formula.",
+            "description": "Base o resultado intermedio tras aplicar porcentaje y resta.",
             "format": "decimal"
           },
           {
@@ -611,7 +611,7 @@
             "type": "number",
             "order": 28,
             "required": false,
-            "description": "Cuota liquidada anteriormente o ingresada.",
+            "description": "Importe ya ingresado en periodos o pagos previos.",
             "format": "decimal"
           }
         ]

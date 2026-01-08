@@ -19,7 +19,19 @@
     "patrimonio_preexistente": 120000.0,
     "tiene_discapacidad": true,
     "porcentaje_discapacidad": 65.0,
-    "titulo_sucesorio": "Heredera"
+    "titulo_sucesorio": "Heredera",
+    "pago": {
+      "pagoIban": "ES7600810012345678901234",
+      "pagoCargoEnCuenta": true,
+      "pagoPagoEfectivo": false,
+      "pagoPaisBanco": "ES",
+      "pagoDigitosControlBanco": "76",
+      "pagoEntidadBanco": "0081",
+      "pagoSucursalBanco": "0012",
+      "pagoDigitosControlBanco2": "34",
+      "pagoNumeroCuenta": "5678901234",
+      "pagoImporte": 38500.0
+    }
   },
   "causante": {
     "dni_nif": "43210987E",
@@ -56,18 +68,6 @@
     "correo_electronico": "anna.torres@example.com",
     "acuerdo_declaracion": true,
     "fecha_firma": "2024-11-16"
-  },
-  "pago": {
-    "pagoIban": "ES7600810012345678901234",
-    "pagoCargoEnCuenta": true,
-    "pagoPagoEfectivo": false,
-    "pagoPaisBanco": "ES",
-    "pagoDigitosControlBanco": "76",
-    "pagoEntidadBanco": "0081",
-    "pagoSucursalBanco": "0012",
-    "pagoDigitosControlBanco2": "34",
-    "pagoNumeroCuenta": "5678901234",
-    "pagoImporte": 38500.0
   },
   "liquidacion": {
     "liquidacionBonificacionDiscapacidad": 15000.0,

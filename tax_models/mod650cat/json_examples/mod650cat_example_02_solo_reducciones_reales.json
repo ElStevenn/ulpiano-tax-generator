@@ -19,7 +19,19 @@
     "patrimonio_preexistente": 50000.0,
     "tiene_discapacidad": false,
     "porcentaje_discapacidad": null,
-    "titulo_sucesorio": "Heredero"
+    "titulo_sucesorio": "Heredero",
+    "pago": {
+      "pagoIban": "ES2100492352082414205764",
+      "pagoCargoEnCuenta": true,
+      "pagoPagoEfectivo": false,
+      "pagoPaisBanco": "ES",
+      "pagoDigitosControlBanco": "21",
+      "pagoEntidadBanco": "0049",
+      "pagoSucursalBanco": "2352",
+      "pagoDigitosControlBanco2": "08",
+      "pagoNumeroCuenta": "2414205764",
+      "pagoImporte": 56000.0
+    }
   },
   "causante": {
     "dni_nif": "76543210B",
@@ -56,18 +68,6 @@
     "correo_electronico": "carlos.martinez@example.com",
     "acuerdo_declaracion": true,
     "fecha_firma": "2024-11-18"
-  },
-  "pago": {
-    "pagoIban": "ES2100492352082414205764",
-    "pagoCargoEnCuenta": true,
-    "pagoPagoEfectivo": false,
-    "pagoPaisBanco": "ES",
-    "pagoDigitosControlBanco": "21",
-    "pagoEntidadBanco": "0049",
-    "pagoSucursalBanco": "2352",
-    "pagoDigitosControlBanco2": "08",
-    "pagoNumeroCuenta": "2414205764",
-    "pagoImporte": 56000.0
   },
   "liquidacion": {
     "liquidacionBonificacionDiscapacidad": 0.0,
