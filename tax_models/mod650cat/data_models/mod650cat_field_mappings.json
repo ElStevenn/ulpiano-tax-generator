@@ -1,0 +1,1992 @@
+[
+  {
+    "key": "form.beneficiario.dni_nif",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 70,
+    "y_from_top": 209,
+    "font_size": 11,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.nombre_completo_razon_social",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 138,
+    "y_from_top": 222,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.nombre_via",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 33,
+    "y_from_top": 242,
+    "font_size": 8,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.numero_via",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 230,
+    "y_from_top": 242,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.escalera",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 266,
+    "y_from_top": 242,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.piso",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 280,
+    "y_from_top": 242,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.puerta",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 300,
+    "y_from_top": 242,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.codigo_postal",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 34,
+    "y_from_top": 263,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.municipio",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 100,
+    "y_from_top": 263,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.provincia",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 230,
+    "y_from_top": 263,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.pais",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 290,
+    "y_from_top": 263,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.telefono",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 33,
+    "y_from_top": 287,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.correo_electronico",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 126,
+    "y_from_top": 287,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.fecha_nacimiento",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 105,
+    "y_from_top": 301,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "date",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.patrimonio_preexistente",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 86,
+    "y_from_top": 320,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.parentesco",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 205,
+    "y_from_top": 301,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.grupo_parentesco",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 295,
+    "y_from_top": 301,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.porcentaje_discapacidad",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 278,
+    "y_from_top": 320,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "integer",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.titulo_sucesorio",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 94,
+    "y_from_top": 333,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.tiene_discapacidad",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 253.0,
+    "y_from_top": 318.7,
+    "font_size": 10,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.dni_nif",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 62,
+    "y_from_top": 367,
+    "font_size": 11,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.nombre_completo",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 105,
+    "y_from_top": 380,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.nombre_via",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 33,
+    "y_from_top": 400,
+    "font_size": 8,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.numero_via",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 230,
+    "y_from_top": 400,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.escalera",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 266,
+    "y_from_top": 400,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.piso",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 280,
+    "y_from_top": 400,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.puerta",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 300,
+    "y_from_top": 400,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.codigo_postal",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 34,
+    "y_from_top": 421,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.municipio",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 100,
+    "y_from_top": 421,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.provincia",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 230,
+    "y_from_top": 421,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.pais",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 290,
+    "y_from_top": 421,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.obligado_impuesto_patrimonio_ultimos_cuatro_anos",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 515.8,
+    "y_from_top": 376.5,
+    "font_size": 9,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.es_testamentaria",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 455.6,
+    "y_from_top": 395.1,
+    "font_size": 9,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.es_intestada",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 404.7,
+    "y_from_top": 396.3,
+    "font_size": 9,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.numero_personas_interesadas",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 491,
+    "y_from_top": 417,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "integer",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.notario_o_autoridad",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 124,
+    "y_from_top": 463,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.causante.fecha_acta_notarial",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 435,
+    "y_from_top": 463,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "date_spanish",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.dni_nif",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 65,
+    "y_from_top": 607,
+    "font_size": 11,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.nombre_completo_firmante",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 136,
+    "y_from_top": 622,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.nombre_via",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 33,
+    "y_from_top": 642,
+    "font_size": 8,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.numero_via",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 230,
+    "y_from_top": 642,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.escalera",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 266,
+    "y_from_top": 642,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.piso",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 280,
+    "y_from_top": 642,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.puerta",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 300,
+    "y_from_top": 642,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.codigo_postal",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 34,
+    "y_from_top": 663,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.municipio",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 100,
+    "y_from_top": 663,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.provincia",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 230,
+    "y_from_top": 663,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.pais",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 290,
+    "y_from_top": 663,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.telefono",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 33,
+    "y_from_top": 687,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.correo_electronico",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 126,
+    "y_from_top": 687,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.tramitante.acuerdo_declaracion",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 470,
+    "y_from_top": 611,
+    "font_size": 9,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": ""
+  },
+  {
+    "key": "form.beneficiario.pago.pagoPaisBanco",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 50,
+    "y_from_top": 745,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.pago.pagoDigitosControlBanco",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 79,
+    "y_from_top": 745,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.pago.pagoEntidadBanco",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 115,
+    "y_from_top": 745,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.pago.pagoSucursalBanco",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 165,
+    "y_from_top": 745,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.pago.pagoDigitosControlBanco2",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 222,
+    "y_from_top": 745,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.pago.pagoNumeroCuenta",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 256,
+    "y_from_top": 745,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.pago.pagoCargoEnCuenta",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 362.2,
+    "y_from_top": 725.2,
+    "font_size": 10,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.pago.pagoPagoEfectivo",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 439.2,
+    "y_from_top": 726.6,
+    "font_size": 10,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.beneficiario.pago.pagoImporte",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 436,
+    "y_from_top": 746,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "integer",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.es_liquidacion_parcial",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 158.7,
+    "y_from_top": 498.9,
+    "font_size": 10,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.es_liquidacion_complementaria",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 158.7,
+    "y_from_top": 515.8,
+    "font_size": 10,
+    "field_type": "checkbox",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.numero_ultima_autoliquidacion",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 173.0,
+    "y_from_top": 536.7,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "text",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.fecha_presentacion_liquidacion",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 173.0,
+    "y_from_top": 553.8,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "date_spanish",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.cuota_ingresada",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 173.0,
+    "y_from_top": 570.8,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.cuota_ingresar_caja_22",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 434.8,
+    "y_from_top": 504.1,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.recargo_caja_23",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 434.8,
+    "y_from_top": 525.8,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.intereses_demora_caja_24",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 434.8,
+    "y_from_top": 547.6,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.total_ingresar_caja_25",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 434.8,
+    "y_from_top": 569.3,
+    "font_size": 9,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.caudal_hereditario_fiscal_caja_1",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 222.9,
+    "y_from_top": 121.4,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.participacion_contribuyente_caudal_hereditario_caja_2",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 222.9,
+    "y_from_top": 142.7,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.percepciones_seguros_vida_caja_3",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 222.9,
+    "y_from_top": 163.9,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.bienes_adicionales_base_imponible_caja_4",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 222.9,
+    "y_from_top": 187.1,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.base_imponible_real_caja_5",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 222.9,
+    "y_from_top": 210.3,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.valor_pleno_dominio_caja_6",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 497.1,
+    "y_from_top": 121.1,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.valor_nuda_propiedad_caja_7",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 497.1,
+    "y_from_top": 142.4,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.donaciones_acumulables_caja_8",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 497.1,
+    "y_from_top": 163.6,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.bienes_derechos_exentos_convenios_caja_9",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 497.1,
+    "y_from_top": 186.8,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.base_imponible_teorica_caja_10",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 497.1,
+    "y_from_top": 209.9,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.base_liquidable_real_caja_13",
+    "pages": [
+      4
+    ],
+    "x": 285.0,
+    "y_from_top": 486.0,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.base_liquidable_real_caja_13",
+    "pages": [
+      5
+    ],
+    "x": 285.0,
+    "y_from_top": 486.54,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.base_liquidable_real_caja_13",
+    "pages": [
+      4
+    ],
+    "x": 556.72,
+    "y_from_top": 646.43,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.base_liquidable_real_caja_13",
+    "pages": [
+      5
+    ],
+    "x": 556.67,
+    "y_from_top": 645.87,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.base_liquidable_teorica_caja_14",
+    "pages": [
+      4
+    ],
+    "x": 556.2,
+    "y_from_top": 485.0,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.base_liquidable_teorica_caja_14",
+    "pages": [
+      5
+    ],
+    "x": 556.67,
+    "y_from_top": 484.87,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_integra_caja_16",
+    "pages": [
+      4
+    ],
+    "x": 285.0,
+    "y_from_top": 556.6,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_integra_caja_16",
+    "pages": [
+      5
+    ],
+    "x": 285.0,
+    "y_from_top": 556.2,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_caso_general",
+    "pages": [
+      4
+    ],
+    "x": 285.0,
+    "y_from_top": 602.2,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_caso_general",
+    "pages": [
+      5
+    ],
+    "x": 285.0,
+    "y_from_top": 602.21,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_caja_605",
+    "pages": [
+      4
+    ],
+    "x": 532.4,
+    "y_from_top": 576.6,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_caja_605",
+    "pages": [
+      5
+    ],
+    "x": 532.67,
+    "y_from_top": 576.87,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.reduccion_exceso_cuota_caja_606",
+    "pages": [
+      4
+    ],
+    "x": 260.86,
+    "y_from_top": 621.1,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.reduccion_exceso_cuota_caja_606",
+    "pages": [
+      5
+    ],
+    "x": 260.86,
+    "y_from_top": 621.1,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.reduccion_exceso_cuota_caja_606",
+    "pages": [
+      4
+    ],
+    "x": 535.2,
+    "y_from_top": 595.93,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.reduccion_exceso_cuota_caja_606",
+    "pages": [
+      5
+    ],
+    "x": 535.2,
+    "y_from_top": 595.09,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_ajustada_caja_607",
+    "pages": [
+      4
+    ],
+    "x": 532.42,
+    "y_from_top": 610.32,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_ajustada_caja_607",
+    "pages": [
+      5
+    ],
+    "x": 532.42,
+    "y_from_top": 610.9,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_ajustada_caja_18",
+    "pages": [
+      4
+    ],
+    "x": 285.58,
+    "y_from_top": 639.24,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_ajustada_caja_18",
+    "pages": [
+      5
+    ],
+    "x": 285.58,
+    "y_from_top": 639.24,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_ajustada_caja_18",
+    "pages": [
+      4
+    ],
+    "x": 556.72,
+    "y_from_top": 666.43,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.cuota_tributaria_ajustada_caja_18",
+    "pages": [
+      5
+    ],
+    "x": 556.0,
+    "y_from_top": 666.21,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.tipo_medio_efectivo_cuota_tributaria",
+    "pages": [
+      4
+    ],
+    "x": 219.86,
+    "y_from_top": 656.88,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.tipo_medio_efectivo_cuota_tributaria",
+    "pages": [
+      5
+    ],
+    "x": 220.0,
+    "y_from_top": 656.21,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.tipo_medio_efectivo_caja_17",
+    "pages": [
+      4
+    ],
+    "x": 513.72,
+    "y_from_top": 627.43,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.tipo_medio_efectivo_caja_17",
+    "pages": [
+      5
+    ],
+    "x": 512.67,
+    "y_from_top": 626.87,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.bonificacion_cuota_caja_19",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 199.3,
+    "y_from_top": 710.5,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.deduccion_doble_imposicion_caja_20",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 198.6,
+    "y_from_top": 729.3,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.deduccion_cuotas_anteriores_caja_21",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 198.6,
+    "y_from_top": 749.1,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.cuota_ingresar_caja_22",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 198.1,
+    "y_from_top": 767.1,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.recargo_caja_23",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 467.2,
+    "y_from_top": 708.3,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.intereses_demora_caja_24",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 467.1,
+    "y_from_top": 728.1,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.liquidacion.total_ingresar_caja_25",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 466.7,
+    "y_from_top": 746.1,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "decimal",
+    "true_label": "X"
+  },
+  {
+    "key": "form.reducciones[0].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 360.58,
+    "y_from_top": 266.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[1].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 281.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[2].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 295.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[3].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 309.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[4].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 323.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[5].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 338.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[6].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 352.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[7].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 366.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[8].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 380.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[9].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 394.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[10].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 409.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[11].importeReal",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 423.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[0].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 506.0,
+    "y_from_top": 267.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[1].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 504.58,
+    "y_from_top": 281.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[2].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.1,
+    "y_from_top": 296.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[3].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.05,
+    "y_from_top": 310.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[4].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.58,
+    "y_from_top": 324.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[5].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.0,
+    "y_from_top": 338.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[6].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.0,
+    "y_from_top": 351.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[7].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.0,
+    "y_from_top": 366.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[8].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.0,
+    "y_from_top": 380.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[9].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.0,
+    "y_from_top": 394.2,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[10].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.0,
+    "y_from_top": 410.15,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.reducciones[11].importeTeorico",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 505.0,
+    "y_from_top": 423.62,
+    "font_size": 8.0,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.totalesReducciones.total_reducciones_real_caja_11",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 361.0,
+    "y_from_top": 438.2,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.totalesReducciones.total_reducciones_teorica_caja_12",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 506.0,
+    "y_from_top": 436.87,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.liquidacion.porcentaje_resto_caja_502",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 149.2,
+    "y_from_top": 530.6,
+    "font_size": 8.5,
+    "field_type": "text",
+    "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.tramitante.fecha_firma_dia",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 432.59,
+    "y_from_top": 639.26,
+    "font_size": 9.0,
+    "field_type": "text",
+    "formatter": "text",
+    "align": "center"
+  },
+  {
+    "key": "form.tramitante.fecha_firma_anio",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 491.99,
+    "y_from_top": 639.26,
+    "font_size": 9.0,
+    "field_type": "text",
+    "formatter": "text",
+    "align": "center"
+  },
+  {
+    "key": "form.tramitante.fecha_firma_mes",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 556.94,
+    "y_from_top": 639.26,
+    "font_size": 9.0,
+    "field_type": "text",
+    "formatter": "text",
+    "align": "center"
+  }
+]

@@ -316,7 +316,12 @@
             "order": 16,
             "required": true,
             "description": "Grupo fiscal solicitado junto a Parentesco (Grupo).",
-            "values": ["I", "II", "III", "IV"]
+            "values": [
+              "I",
+              "II",
+              "III",
+              "IV"
+            ]
           },
           {
             "id": "patrimonio_preexistente",
@@ -595,10 +600,112 @@
         "required": true,
         "fields": [
           {
+            "id": "caudal_hereditario_fiscal_caja_1",
+            "label": "Caudal hereditario fiscal (caja 1)",
+            "type": "number",
+            "order": 1,
+            "required": false,
+            "description": "Importe del caudal hereditario fiscal.",
+            "format": "decimal",
+            "boxNumber": "1"
+          },
+          {
+            "id": "participacion_contribuyente_caudal_hereditario_caja_2",
+            "label": "Participacion del contribuyente en el caudal hereditario (caja 2)",
+            "type": "number",
+            "order": 2,
+            "required": false,
+            "description": "Importe de participacion del contribuyente en el caudal hereditario.",
+            "format": "decimal",
+            "boxNumber": "2"
+          },
+          {
+            "id": "percepciones_seguros_vida_caja_3",
+            "label": "Percepciones como beneficiario de seguros de vida (caja 3)",
+            "type": "number",
+            "order": 3,
+            "required": false,
+            "description": "Importe de percepciones por seguros de vida.",
+            "format": "decimal",
+            "boxNumber": "3"
+          },
+          {
+            "id": "bienes_adicionales_base_imponible_caja_4",
+            "label": "Bienes adicionales a la base imponible individual (caja 4)",
+            "type": "number",
+            "order": 4,
+            "required": false,
+            "description": "Importe de bienes adicionales a la base imponible individual.",
+            "format": "decimal",
+            "boxNumber": "4"
+          },
+          {
+            "id": "base_imponible_real_caja_5",
+            "label": "Base imponible real (caja 5)",
+            "type": "number",
+            "order": 5,
+            "required": false,
+            "description": "Base imponible real (2 + 3 + 4).",
+            "format": "decimal",
+            "boxNumber": "5",
+            "calculation": "participacionContribuyenteCaudalHereditarioCaja2 + percepcionesSegurosVidaCaja3 + bienesAdicionalesBaseImponibleCaja4"
+          },
+          {
+            "id": "valor_pleno_dominio_caja_6",
+            "label": "Valor del pleno dominio (caja 6)",
+            "type": "number",
+            "order": 6,
+            "required": false,
+            "description": "Valor del pleno dominio para bienes en nuda propiedad.",
+            "format": "decimal",
+            "boxNumber": "6"
+          },
+          {
+            "id": "valor_nuda_propiedad_caja_7",
+            "label": "Valor de la nuda propiedad (caja 7)",
+            "type": "number",
+            "order": 7,
+            "required": false,
+            "description": "Valor de la nuda propiedad.",
+            "format": "decimal",
+            "boxNumber": "7"
+          },
+          {
+            "id": "donaciones_acumulables_caja_8",
+            "label": "Donaciones acumulables (caja 8)",
+            "type": "number",
+            "order": 8,
+            "required": false,
+            "description": "Importe de donaciones acumulables.",
+            "format": "decimal",
+            "boxNumber": "8"
+          },
+          {
+            "id": "bienes_derechos_exentos_convenios_caja_9",
+            "label": "Bienes y derechos exentos por convenios internacionales (caja 9)",
+            "type": "number",
+            "order": 9,
+            "required": false,
+            "description": "Importe de bienes y derechos exentos por convenios internacionales.",
+            "format": "decimal",
+            "boxNumber": "9"
+          },
+          {
+            "id": "base_imponible_teorica_caja_10",
+            "label": "Base imponible teorica (caja 10)",
+            "type": "number",
+            "order": 10,
+            "required": false,
+            "description": "Base imponible teorica (5 + 6 - 7 + 8 + 9).",
+            "format": "decimal",
+            "boxNumber": "10",
+            "calculation": "baseImponibleRealCaja5 + valorPlenoDominioCaja6 - valorNudaPropiedadCaja7 + donacionesAcumulablesCaja8 + bienesDerechosExentosConveniosCaja9"
+          },
+          {
             "id": "bonificacion_discapacidad",
             "label": "Bonificación por discapacidad",
             "type": "number",
-            "order": 1,
+            "order": 11,
             "required": false,
             "description": "Importe en la línea 'Por discapacidad'.",
             "format": "decimal"
@@ -607,7 +714,7 @@
             "id": "cuota_tributaria_caso_general",
             "label": "Cuota tributaria - caso general",
             "type": "number",
-            "order": 2,
+            "order": 12,
             "required": false,
             "description": "Cuota tributaria. Caso general (si 5 = 10).",
             "format": "decimal"
@@ -616,7 +723,7 @@
             "id": "tipo_medio_efectivo_cuota_tributaria",
             "label": "Cuota tributaria - tipo medio efectivo",
             "type": "number",
-            "order": 3,
+            "order": 13,
             "required": false,
             "description": "Cuota tributaria. Tipo medio efectivo (si 5 ≠ 10).",
             "format": "decimal"
@@ -625,29 +732,29 @@
             "id": "base_liquidable_real_caja_13",
             "label": "Base liquidable real (caja 13)",
             "type": "number",
-            "order": 4,
+            "order": 14,
             "required": false,
             "description": "Base liquidable real mostrada en la caja 13.",
             "format": "decimal",
             "boxNumber": "13",
-            "calculation": "baseBrutaReal - totalReduccionesRealCaja11"
+            "calculation": "baseBrutaReal - total_reducciones_real_caja_11"
           },
           {
             "id": "base_liquidable_teorica_caja_14",
             "label": "Base liquidable teórica (caja 14)",
             "type": "number",
-            "order": 5,
+            "order": 15,
             "required": false,
             "description": "Base liquidable teórica mostrada en la caja 14.",
             "format": "decimal",
             "boxNumber": "14",
-            "calculation": "baseBrutaTeorica - totalReduccionesTeoricaCaja12"
+            "calculation": "baseBrutaTeorica - total_reducciones_teorica_caja_12"
           },
           {
             "id": "cuota_integra_caja_16",
             "label": "Cuota íntegra (caja 16)",
             "type": "number",
-            "order": 6,
+            "order": 16,
             "required": false,
             "description": "Cuota íntegra calculada para la caja 16.",
             "format": "decimal",
@@ -657,7 +764,7 @@
             "id": "cuota_tributaria_caja_605",
             "label": "Cuota tributaria (caja 605)",
             "type": "number",
-            "order": 7,
+            "order": 17,
             "required": false,
             "description": "Cuota tributaria antes de reducciones (caja 605).",
             "format": "decimal",
@@ -667,7 +774,7 @@
             "id": "reduccion_exceso_cuota_caja_606",
             "label": "Reducción por exceso de cuota (caja 606)",
             "type": "number",
-            "order": 8,
+            "order": 18,
             "required": false,
             "description": "Reducción por exceso de cuota.",
             "format": "decimal",
@@ -677,7 +784,7 @@
             "id": "cuota_tributaria_ajustada_caja_607",
             "label": "Cuota tributaria ajustada (caja 607)",
             "type": "number",
-            "order": 9,
+            "order": 19,
             "required": false,
             "description": "Cuota ajustada 605 - 606.",
             "format": "decimal",
@@ -688,7 +795,7 @@
             "id": "tipo_medio_efectivo_caja_17",
             "label": "Tipo medio efectivo (caja 17)",
             "type": "number",
-            "order": 10,
+            "order": 20,
             "required": false,
             "description": "Tipo medio efectivo 607 / 14 x 100.",
             "format": "decimal",
@@ -699,7 +806,7 @@
             "id": "cuota_tributaria_ajustada_caja_18",
             "label": "Cuota tributaria ajustada (caja 18)",
             "type": "number",
-            "order": 11,
+            "order": 21,
             "required": false,
             "description": "Cuota tributaria ajustada mostrada en la caja 18.",
             "format": "decimal",
@@ -710,7 +817,7 @@
             "id": "bonificacion_cuota_caja_19",
             "label": "Bonificación de la cuota tributaria (caja 19)",
             "type": "number",
-            "order": 12,
+            "order": 22,
             "required": false,
             "description": "Bonificación de la cuota tributaria.",
             "format": "decimal",
@@ -720,7 +827,7 @@
             "id": "deduccion_doble_imposicion_caja_20",
             "label": "Deducción por doble imposición (caja 20)",
             "type": "number",
-            "order": 13,
+            "order": 23,
             "required": false,
             "description": "Deducción por doble imposición internacional.",
             "format": "decimal",
@@ -730,7 +837,7 @@
             "id": "deduccion_cuotas_anteriores_caja_21",
             "label": "Deducción de cuotas anteriores (caja 21)",
             "type": "number",
-            "order": 14,
+            "order": 24,
             "required": false,
             "description": "Deducción de cuotas anteriores.",
             "format": "decimal",
@@ -740,7 +847,7 @@
             "id": "cuota_ingresar_caja_22",
             "label": "Importe a ingresar (caja 22)",
             "type": "number",
-            "order": 15,
+            "order": 25,
             "required": false,
             "description": "Cuota a pagar: 18 - 19 - 20 - 21.",
             "format": "decimal",
@@ -751,7 +858,7 @@
             "id": "recargo_caja_23",
             "label": "Recargo (caja 23)",
             "type": "number",
-            "order": 16,
+            "order": 26,
             "required": false,
             "description": "Recàrrec aplicado al importe a ingresar.",
             "format": "decimal",
@@ -761,7 +868,7 @@
             "id": "intereses_demora_caja_24",
             "label": "Intereses de demora (caja 24)",
             "type": "number",
-            "order": 17,
+            "order": 27,
             "required": false,
             "description": "Intereses de demora.",
             "format": "decimal",
@@ -771,12 +878,55 @@
             "id": "total_ingresar_caja_25",
             "label": "Importe total a ingresar (caja 25)",
             "type": "number",
-            "order": 18,
+            "order": 28,
             "required": false,
             "description": "Total a ingresar = 22 + 23 + 24.",
             "format": "decimal",
             "boxNumber": "25",
             "calculation": "cuotaIngresarCaja22 + recargoCaja23 + interesesDemoraCaja24"
+          },
+          {
+            "id": "es_liquidacion_parcial",
+            "label": "Liquidacion parcial",
+            "type": "boolean",
+            "order": 29,
+            "required": false,
+            "description": "Marca si se trata de una liquidacion parcial."
+          },
+          {
+            "id": "es_liquidacion_complementaria",
+            "label": "Liquidacion complementaria",
+            "type": "boolean",
+            "order": 30,
+            "required": false,
+            "description": "Marca si se trata de una liquidacion complementaria."
+          },
+          {
+            "id": "numero_ultima_autoliquidacion",
+            "label": "Numero de la ultima autoliquidacion",
+            "type": "string",
+            "order": 31,
+            "required": false,
+            "description": "Numero de referencia de la autoliquidacion anterior."
+          },
+          {
+            "id": "fecha_presentacion_liquidacion",
+            "label": "Fecha de presentacion",
+            "type": "string",
+            "order": 32,
+            "required": false,
+            "description": "Fecha de presentacion de la autoliquidacion anterior.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          {
+            "id": "cuota_ingresada",
+            "label": "Cuota ingresada",
+            "type": "number",
+            "order": 33,
+            "required": false,
+            "description": "Cuota ingresada en la autoliquidacion anterior.",
+            "format": "decimal"
           }
         ]
       },
@@ -807,16 +957,16 @@
             "values": [
               "por_parentesco",
               "por_discapacidad",
-              "por_empresa_familiar",
-              "por_seguro_vida",
+              "para_personas_mayores",
+              "por_imposicion_decenal",
+              "por_seguros_vida",
+              "por_actividad_empresarial_profesional",
+              "por_participacion_entidades",
               "por_vivienda_habitual",
-              "por_empresa_continuidad",
-              "por_empresa_nueva_actividad",
-              "por_adquisicion_vivienda",
-              "por_donaciones_previas",
-              "por_otros_conceptos",
-              "por_transmisiones_empresariales",
-              "por_otros"
+              "por_bienes_interes_cultural",
+              "por_explotaciones_agrarias",
+              "por_fincas_rusticas_forestales",
+              "otras_reducciones"
             ]
           },
           "etiqueta": {
@@ -876,9 +1026,9 @@
             "type": "number",
             "order": 3,
             "required": false,
-            "description": "Total de reducciones aplicadas (normalmente igual a totalReduccionesRealCaja11 si se usa base real).",
+            "description": "Total de reducciones aplicadas (normalmente igual a total_reducciones_real_caja_11 si se usa base real).",
             "format": "decimal",
-            "calculation": "totalReduccionesRealCaja11 o totalReduccionesTeoricaCaja12 según corresponda"
+            "calculation": "total_reducciones_real_caja_11 o total_reducciones_teorica_caja_12 según corresponda"
           }
         ]
       }
@@ -888,6 +1038,15 @@
       "causante": {
         "dni_nif": "11111111H",
         "nombre_completo": "Causante de Ejemplo",
+        "nombre_via": "Carrer del Mar",
+        "numero_via": "45",
+        "escalera": "B",
+        "piso": "3",
+        "puerta": "2",
+        "codigo_postal": "08002",
+        "municipio": "Barcelona",
+        "provincia": "Barcelona",
+        "pais": "ES",
         "obligado_impuesto_patrimonio_ultimos_cuatro_anos": true,
         "es_testamentaria": true,
         "es_intestada": false,
@@ -913,42 +1072,73 @@
         "parentesco": "Hijo/a",
         "grupo_parentesco": "I",
         "patrimonio_preexistente": 150000,
-        "tiene_discapacidad": false,
-        "porcentaje_discapacidad": null,
-        "titulo_sucesorio": "Testamento"
+        "tiene_discapacidad": true,
+        "porcentaje_discapacidad": 33,
+        "titulo_sucesorio": "Testamento",
+        "pago": {
+          "pagoIban": "ES1200491500052718123412",
+          "pagoCargoEnCuenta": true,
+          "pagoPagoEfectivo": false,
+          "pagoPaisBanco": "ES",
+          "pagoDigitosControlBanco": "12",
+          "pagoEntidadBanco": "0049",
+          "pagoSucursalBanco": "1500",
+          "pagoDigitosControlBanco2": "05",
+          "pagoNumeroCuenta": "2718123412",
+          "pagoImporte": 76100
+        }
       },
       "tramitante": {
         "dni_nif": "00000000T",
         "nombre_completo_firmante": "Tramitante de Prueba",
+        "nombre_via": "Carrer Gran",
+        "numero_via": "12",
+        "escalera": "A",
+        "piso": "2",
+        "puerta": "1",
+        "codigo_postal": "08001",
+        "municipio": "Barcelona",
+        "provincia": "Barcelona",
+        "pais": "ES",
+        "telefono": "600000000",
+        "correo_electronico": "test@example.com",
         "acuerdo_declaracion": true,
         "fecha_firma": "2024-11-17"
       },
-      "pago": {
-        "iban": "ES1200491500052718123412",
-        "cargo_en_cuenta": true,
-        "pago_efectivo": false,
-        "pais_banco": "ES",
-        "digitos_control_banco": "12"
-      },
       "liquidacion": {
-        "bonificacion_discapacidad": 0,
+        "caudal_hereditario_fiscal_caja_1": 619300,
+        "participacion_contribuyente_caudal_hereditario_caja_2": 532000,
+        "percepciones_seguros_vida_caja_3": 20000,
+        "bienes_adicionales_base_imponible_caja_4": 11000,
+        "base_imponible_real_caja_5": 563000,
+        "valor_pleno_dominio_caja_6": 0,
+        "valor_nuda_propiedad_caja_7": 75200,
+        "donaciones_acumulables_caja_8": 5000,
+        "bienes_derechos_exentos_convenios_caja_9": 2500,
+        "base_imponible_teorica_caja_10": 495300,
+        "bonificacion_discapacidad": 3000,
         "cuota_tributaria_caso_general": 0,
-        "tipo_medio_efectivo_cuota_tributaria": 0,
+        "tipo_medio_efectivo_cuota_tributaria": 16.67,
         "base_liquidable_real_caja_13": 500000,
-        "base_liquidable_teorica_caja_14": 500000,
+        "base_liquidable_teorica_caja_14": 450000,
         "cuota_integra_caja_16": 80000,
         "cuota_tributaria_caja_605": 80000,
-        "reduccion_exceso_cuota_caja_606": 0,
-        "cuota_tributaria_ajustada_caja_607": 80000,
-        "tipo_medio_efectivo_caja_17": 16,
-        "cuota_tributaria_ajustada_caja_18": 80000,
-        "bonificacion_cuota_caja_19": 0,
-        "deduccion_doble_imposicion_caja_20": 0,
-        "deduccion_cuotas_anteriores_caja_21": 0,
-        "cuota_ingresar_caja_22": 80000,
-        "recargo_caja_23": 0,
-        "intereses_demora_caja_24": 0,
-        "total_ingresar_caja_25": 80000
+        "reduccion_exceso_cuota_caja_606": 5000,
+        "cuota_tributaria_ajustada_caja_607": 75000,
+        "tipo_medio_efectivo_caja_17": 16.67,
+        "cuota_tributaria_ajustada_caja_18": 83350,
+        "bonificacion_cuota_caja_19": 5000,
+        "deduccion_doble_imposicion_caja_20": 2000,
+        "deduccion_cuotas_anteriores_caja_21": 1000,
+        "cuota_ingresar_caja_22": 75350,
+        "recargo_caja_23": 500,
+        "intereses_demora_caja_24": 250,
+        "total_ingresar_caja_25": 76100,
+        "es_liquidacion_parcial": false,
+        "es_liquidacion_complementaria": true,
+        "numero_ultima_autoliquidacion": "2024-000123",
+        "fecha_presentacion_liquidacion": "2024-11-18",
+        "cuota_ingresada": 30000
       },
       "reducciones": [
         {
@@ -956,30 +1146,102 @@
           "casillaTeorica": 401,
           "clave": "por_parentesco",
           "etiqueta": "Por parentesco",
-          "importeReal": 10000.00,
-          "importeTeorico": 0.00
+          "importeReal": 2500,
+          "importeTeorico": 1850
         },
         {
           "casillaReal": 302,
           "casillaTeorica": 402,
           "clave": "por_discapacidad",
           "etiqueta": "Por discapacidad",
-          "importeReal": 0.00,
-          "importeTeorico": 0.00
+          "importeReal": 3000,
+          "importeTeorico": 2200
+        },
+        {
+          "casillaReal": 303,
+          "casillaTeorica": 403,
+          "clave": "para_personas_mayores",
+          "etiqueta": "Para personas mayores",
+          "importeReal": 3500,
+          "importeTeorico": 2550
+        },
+        {
+          "casillaReal": 304,
+          "casillaTeorica": 404,
+          "clave": "por_imposicion_decenal",
+          "etiqueta": "Por imposicion decenal",
+          "importeReal": 4000,
+          "importeTeorico": 2900
+        },
+        {
+          "casillaReal": 305,
+          "casillaTeorica": 405,
+          "clave": "por_seguros_vida",
+          "etiqueta": "Por seguros de vida",
+          "importeReal": 4500,
+          "importeTeorico": 3250
+        },
+        {
+          "casillaReal": 306,
+          "casillaTeorica": 406,
+          "clave": "por_actividad_empresarial_profesional",
+          "etiqueta": "Por actividad empresarial o profesional",
+          "importeReal": 5000,
+          "importeTeorico": 3600
+        },
+        {
+          "casillaReal": 307,
+          "casillaTeorica": 407,
+          "clave": "por_participacion_entidades",
+          "etiqueta": "Por la participacion en entidades",
+          "importeReal": 5500,
+          "importeTeorico": 3950
         },
         {
           "casillaReal": 308,
           "casillaTeorica": 408,
           "clave": "por_vivienda_habitual",
           "etiqueta": "Por vivienda habitual del/de la causante",
-          "importeReal": 5000.00,
-          "importeTeorico": 0.00
+          "importeReal": 6000,
+          "importeTeorico": 4300
+        },
+        {
+          "casillaReal": 309,
+          "casillaTeorica": 409,
+          "clave": "por_bienes_interes_cultural",
+          "etiqueta": "Por bienes de interes cultural",
+          "importeReal": 6500,
+          "importeTeorico": 4650
+        },
+        {
+          "casillaReal": 310,
+          "casillaTeorica": 410,
+          "clave": "por_explotaciones_agrarias",
+          "etiqueta": "Por explotaciones agrarias",
+          "importeReal": 7000,
+          "importeTeorico": 5000
+        },
+        {
+          "casillaReal": 311,
+          "casillaTeorica": 411,
+          "clave": "por_fincas_rusticas_forestales",
+          "etiqueta": "Por fincas rusticas forestales",
+          "importeReal": 7500,
+          "importeTeorico": 5350
+        },
+        {
+          "casillaReal": 312,
+          "casillaTeorica": 412,
+          "clave": "otras_reducciones",
+          "etiqueta": "Otras reducciones",
+          "importeReal": 8000,
+          "importeTeorico": 5700
         }
       ],
       "totalesReducciones": {
-        "total_reducciones_real_caja_11": 15000.00,
-        "total_reducciones_teorica_caja_12": 0.00,
-        "total_reducciones_aplicadas": 15000.00
+        "total_reducciones_real_caja_11": 63000,
+        "total_reducciones_teorica_caja_12": 45300,
+        "total_reducciones_aplicadas": 63000
       }
     },
     "notes": {
@@ -989,8 +1251,8 @@
         "codigoPostal": "Regex: ^\\d{5}$",
         "nif": "Formato DNI/NIE/CIF válido",
         "fecha": "Formato ISO YYYY-MM-DD",
-        "sumas": "sum(reducciones.importeReal) === totalesReducciones.totalReduccionesRealCaja11 y sum(reducciones.importeTeorico) === totalesReducciones.totalReduccionesTeoricaCaja12",
-        "baseLiquidable": "Si totalReduccionesRealCaja11 > 0, recalcular baseLiquidableRealCaja13 = baseBrutaReal - totalReduccionesRealCaja11"
+        "sumas": "sum(reducciones.importeReal) === totalesReducciones.total_reducciones_real_caja_11 y sum(reducciones.importeTeorico) === totalesReducciones.total_reducciones_teorica_caja_12",
+        "baseLiquidable": "Si total_reducciones_real_caja_11 > 0, recalcular baseLiquidableRealCaja13 = baseBrutaReal - total_reducciones_real_caja_11"
       },
       "idNaming": "Los IDs de campos no incluyen prefijos de sección ya que el contexto se determina por la sección padre. Los nombres siguen snake_case para coincidir con los campos de la base de datos."
     }
