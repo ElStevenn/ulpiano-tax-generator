@@ -93,16 +93,14 @@
     {
       "casillaReal": 301,
       "casillaTeorica": 401,
-      "clave": "por_parentesco",
-      "etiqueta": "Por parentesco",
+      "tipo_reduccion": "por_parentesco",
       "importeReal": 0.0,
       "importeTeorico": 50000.0
     },
     {
       "casillaReal": 302,
       "casillaTeorica": 402,
-      "clave": "por_discapacidad",
-      "etiqueta": "Por discapacidad",
+      "tipo_reduccion": "por_discapacidad",
       "importeReal": 0.0,
       "importeTeorico": 50000.0
     }

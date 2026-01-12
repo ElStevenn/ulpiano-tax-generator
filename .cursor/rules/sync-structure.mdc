@@ -1,0 +1,7 @@
+---
+description: Any structural change requested by the user must be reflected in the data_structure files
+alwaysApply: false
+---
+# Overview
+
+When the user requests changes to the structure (sections, fields, types, validations, ordering, nested objects), always update the corresponding *data_structure.json* to keep the schema in sync with code, mappings, and examples. Do not leave structural edits only in code or examples; the data structure must be updated accordingly.

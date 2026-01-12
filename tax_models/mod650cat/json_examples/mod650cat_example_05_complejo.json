@@ -93,40 +93,35 @@
     {
       "casillaReal": 301,
       "casillaTeorica": 401,
-      "clave": "por_parentesco",
-      "etiqueta": "Por parentesco",
+      "tipo_reduccion": "por_parentesco",
       "importeReal": 30000.0,
       "importeTeorico": 40000.0
     },
     {
       "casillaReal": 302,
       "casillaTeorica": 402,
-      "clave": "por_discapacidad",
-      "etiqueta": "Por discapacidad",
+      "tipo_reduccion": "por_discapacidad",
       "importeReal": 50000.0,
       "importeTeorico": 60000.0
     },
     {
       "casillaReal": 303,
       "casillaTeorica": 403,
-      "clave": "por_empresa_familiar",
-      "etiqueta": "Por empresa familiar",
+      "tipo_reduccion": "por_participacion_entidades",
       "importeReal": 100000.0,
       "importeTeorico": 0.0
     },
     {
       "casillaReal": 304,
       "casillaTeorica": 404,
-      "clave": "por_seguro_vida",
-      "etiqueta": "Por seguro de vida",
+      "tipo_reduccion": "por_seguros_vida",
       "importeReal": 20000.0,
       "importeTeorico": 0.0
     },
     {
       "casillaReal": 308,
       "casillaTeorica": 408,
-      "clave": "por_vivienda_habitual",
-      "etiqueta": "Por vivienda habitual del/de la causante",
+      "tipo_reduccion": "por_vivienda_habitual",
       "importeReal": 150000.0,
       "importeTeorico": 0.0
     }

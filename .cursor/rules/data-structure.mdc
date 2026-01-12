@@ -1,0 +1,7 @@
+---
+description: Avoid embedding example payloads inside data_structure files
+alwaysApply: false
+---
+# Overview
+
+Do not add example data or sample payloads to *data_structure.json* files. These files must define only schema: sections, fields, validations, notes. All sample data belongs in separate JSON example files.

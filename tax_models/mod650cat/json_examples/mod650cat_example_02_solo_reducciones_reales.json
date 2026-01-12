@@ -93,16 +93,14 @@
     {
       "casillaReal": 301,
       "casillaTeorica": 401,
-      "clave": "por_parentesco",
-      "etiqueta": "Por parentesco",
+      "tipo_reduccion": "por_parentesco",
       "importeReal": 15000.0,
       "importeTeorico": 0.0
     },
     {
       "casillaReal": 308,
       "casillaTeorica": 408,
-      "clave": "por_vivienda_habitual",
-      "etiqueta": "Por vivienda habitual del/de la causante",
+      "tipo_reduccion": "por_vivienda_habitual",
       "importeReal": 100000.0,
       "importeTeorico": 0.0
     }

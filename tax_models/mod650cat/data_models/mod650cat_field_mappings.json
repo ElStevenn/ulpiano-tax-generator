@@ -221,7 +221,7 @@
     "y_from_top": 320,
     "font_size": 10,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -971,7 +971,7 @@
     "y_from_top": 570.8,
     "font_size": 9,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -986,7 +986,7 @@
     "y_from_top": 504.1,
     "font_size": 9,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1001,7 +1001,7 @@
     "y_from_top": 525.8,
     "font_size": 9,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1016,7 +1016,7 @@
     "y_from_top": 547.6,
     "font_size": 9,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1031,7 +1031,7 @@
     "y_from_top": 569.3,
     "font_size": 9,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1044,7 +1044,7 @@
     "y_from_top": 121.4,
     "font_size": 8.5,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1057,7 +1057,7 @@
     "y_from_top": 142.7,
     "font_size": 8.5,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1070,7 +1070,7 @@
     "y_from_top": 163.9,
     "font_size": 8.5,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1083,7 +1083,7 @@
     "y_from_top": 187.1,
     "font_size": 8.5,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1096,7 +1096,7 @@
     "y_from_top": 210.3,
     "font_size": 8.5,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1109,7 +1109,7 @@
     "y_from_top": 121.1,
     "font_size": 8.5,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_plain",
     "true_label": "X"
   },
   {
@@ -1599,11 +1599,11 @@
       4,
       5
     ],
-    "x": 360.58,
+    "x": 359.58,
     "y_from_top": 266.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1612,11 +1612,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 281.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1625,11 +1625,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 295.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1638,11 +1638,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 309.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1651,11 +1651,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 323.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1664,11 +1664,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 338.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1677,11 +1677,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 352.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1690,11 +1690,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 366.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1703,11 +1703,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 380.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1716,11 +1716,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 394.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1729,11 +1729,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 409.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1742,11 +1742,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 423.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1755,11 +1755,11 @@
       4,
       5
     ],
-    "x": 506.0,
+    "x": 505.0,
     "y_from_top": 267.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1768,11 +1768,11 @@
       4,
       5
     ],
-    "x": 504.58,
+    "x": 503.58,
     "y_from_top": 281.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1781,11 +1781,11 @@
       4,
       5
     ],
-    "x": 505.1,
+    "x": 504.1,
     "y_from_top": 296.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1794,11 +1794,11 @@
       4,
       5
     ],
-    "x": 505.05,
+    "x": 504.05,
     "y_from_top": 310.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1807,11 +1807,11 @@
       4,
       5
     ],
-    "x": 505.58,
+    "x": 504.58,
     "y_from_top": 324.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1820,11 +1820,11 @@
       4,
       5
     ],
-    "x": 505.0,
+    "x": 504.0,
     "y_from_top": 338.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1833,11 +1833,11 @@
       4,
       5
     ],
-    "x": 505.0,
+    "x": 504.0,
     "y_from_top": 351.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1846,11 +1846,11 @@
       4,
       5
     ],
-    "x": 505.0,
+    "x": 504.0,
     "y_from_top": 366.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1859,11 +1859,11 @@
       4,
       5
     ],
-    "x": 505.0,
+    "x": 504.0,
     "y_from_top": 380.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1872,11 +1872,11 @@
       4,
       5
     ],
-    "x": 505.0,
+    "x": 504.0,
     "y_from_top": 394.2,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1885,11 +1885,11 @@
       4,
       5
     ],
-    "x": 505.0,
+    "x": 504.0,
     "y_from_top": 410.15,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1898,11 +1898,11 @@
       4,
       5
     ],
-    "x": 505.0,
+    "x": 504.0,
     "y_from_top": 423.62,
     "font_size": 8.0,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1911,11 +1911,11 @@
       4,
       5
     ],
-    "x": 361.0,
+    "x": 360.0,
     "y_from_top": 438.2,
     "font_size": 8.5,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {
@@ -1924,11 +1924,11 @@
       4,
       5
     ],
-    "x": 506.0,
+    "x": 505.0,
     "y_from_top": 436.87,
     "font_size": 8.5,
     "field_type": "text",
-    "formatter": "decimal",
+    "formatter": "decimal_split_space",
     "align": "right"
   },
   {

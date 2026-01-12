@@ -939,21 +939,24 @@
         "description": "Lista de reducciones aplicables a la base imponible. Cada reducción tiene un importe real (casillas 301-312) y teórico (casillas 401-412).",
         "fields": {
           "casillaReal": {
+            "label": "Casilla reducción real (301-312)",
             "type": "integer",
             "required": true,
-            "description": "Número de casilla para el importe real (301-312).",
+            "description": "Número de casilla en la columna de reducción real (rango 301-312).",
             "validation": "Debe ser un número entre 301 y 312."
           },
           "casillaTeorica": {
+            "label": "Casilla reducción teórica (401-412)",
             "type": "integer",
             "required": true,
-            "description": "Número de casilla para el importe teórico (401-412).",
+            "description": "Número de casilla en la columna de reducción teórica (rango 401-412).",
             "validation": "Debe ser un número entre 401 y 412."
           },
-          "clave": {
+          "tipo_reduccion": {
+            "label": "Tipo de reducción",
             "type": "string",
             "required": true,
-            "description": "Clave única identificadora de la reducción (snake_case).",
+            "description": "Tipo de reducción (enum).",
             "values": [
               "por_parentesco",
               "por_discapacidad",
@@ -969,22 +972,19 @@
               "otras_reducciones"
             ]
           },
-          "etiqueta": {
-            "type": "string",
-            "required": true,
-            "description": "Etiqueta descriptiva de la reducción."
-          },
           "importeReal": {
+            "label": "Importe reducción real",
             "type": "number",
             "required": false,
-            "description": "Importe de la reducción aplicado a la base real (casilla 301-312).",
+            "description": "Importe aplicado sobre la base real (se muestra en la casillaReal 301-312).",
             "format": "decimal",
             "default": 0.0
           },
           "importeTeorico": {
+            "label": "Importe reducción teórica",
             "type": "number",
             "required": false,
-            "description": "Importe de la reducción aplicado a la base teórica (casilla 401-412).",
+            "description": "Importe aplicado sobre la base teórica (se muestra en la casillaTeorica 401-412).",
             "format": "decimal",
             "default": 0.0
           }
@@ -1033,217 +1033,6 @@
         ]
       }
     ],
-    "example": {
-      "encabezado": {},
-      "causante": {
-        "dni_nif": "11111111H",
-        "nombre_completo": "Causante de Ejemplo",
-        "nombre_via": "Carrer del Mar",
-        "numero_via": "45",
-        "escalera": "B",
-        "piso": "3",
-        "puerta": "2",
-        "codigo_postal": "08002",
-        "municipio": "Barcelona",
-        "provincia": "Barcelona",
-        "pais": "ES",
-        "obligado_impuesto_patrimonio_ultimos_cuatro_anos": true,
-        "es_testamentaria": true,
-        "es_intestada": false,
-        "numero_personas_interesadas": 2,
-        "notario_o_autoridad": "Notario Anna Serra",
-        "fecha_acta_notarial": "2024-08-01"
-      },
-      "beneficiario": {
-        "dni_nif": "00000000T",
-        "nombre_completo_razon_social": "Beneficiario de Prueba",
-        "nombre_via": "Carrer Gran",
-        "numero_via": "12",
-        "escalera": "A",
-        "piso": "2",
-        "puerta": "1",
-        "codigo_postal": "08001",
-        "municipio": "Barcelona",
-        "provincia": "Barcelona",
-        "pais": "ES",
-        "telefono": "600000000",
-        "correo_electronico": "test@example.com",
-        "fecha_nacimiento": "1990-05-12",
-        "parentesco": "Hijo/a",
-        "grupo_parentesco": "I",
-        "patrimonio_preexistente": 150000,
-        "tiene_discapacidad": true,
-        "porcentaje_discapacidad": 33,
-        "titulo_sucesorio": "Testamento",
-        "pago": {
-          "pagoIban": "ES1200491500052718123412",
-          "pagoCargoEnCuenta": true,
-          "pagoPagoEfectivo": false,
-          "pagoPaisBanco": "ES",
-          "pagoDigitosControlBanco": "12",
-          "pagoEntidadBanco": "0049",
-          "pagoSucursalBanco": "1500",
-          "pagoDigitosControlBanco2": "05",
-          "pagoNumeroCuenta": "2718123412",
-          "pagoImporte": 76100
-        }
-      },
-      "tramitante": {
-        "dni_nif": "00000000T",
-        "nombre_completo_firmante": "Tramitante de Prueba",
-        "nombre_via": "Carrer Gran",
-        "numero_via": "12",
-        "escalera": "A",
-        "piso": "2",
-        "puerta": "1",
-        "codigo_postal": "08001",
-        "municipio": "Barcelona",
-        "provincia": "Barcelona",
-        "pais": "ES",
-        "telefono": "600000000",
-        "correo_electronico": "test@example.com",
-        "acuerdo_declaracion": true,
-        "fecha_firma": "2024-11-17"
-      },
-      "liquidacion": {
-        "caudal_hereditario_fiscal_caja_1": 619300,
-        "participacion_contribuyente_caudal_hereditario_caja_2": 532000,
-        "percepciones_seguros_vida_caja_3": 20000,
-        "bienes_adicionales_base_imponible_caja_4": 11000,
-        "base_imponible_real_caja_5": 563000,
-        "valor_pleno_dominio_caja_6": 0,
-        "valor_nuda_propiedad_caja_7": 75200,
-        "donaciones_acumulables_caja_8": 5000,
-        "bienes_derechos_exentos_convenios_caja_9": 2500,
-        "base_imponible_teorica_caja_10": 495300,
-        "bonificacion_discapacidad": 3000,
-        "cuota_tributaria_caso_general": 0,
-        "tipo_medio_efectivo_cuota_tributaria": 16.67,
-        "base_liquidable_real_caja_13": 500000,
-        "base_liquidable_teorica_caja_14": 450000,
-        "cuota_integra_caja_16": 80000,
-        "cuota_tributaria_caja_605": 80000,
-        "reduccion_exceso_cuota_caja_606": 5000,
-        "cuota_tributaria_ajustada_caja_607": 75000,
-        "tipo_medio_efectivo_caja_17": 16.67,
-        "cuota_tributaria_ajustada_caja_18": 83350,
-        "bonificacion_cuota_caja_19": 5000,
-        "deduccion_doble_imposicion_caja_20": 2000,
-        "deduccion_cuotas_anteriores_caja_21": 1000,
-        "cuota_ingresar_caja_22": 75350,
-        "recargo_caja_23": 500,
-        "intereses_demora_caja_24": 250,
-        "total_ingresar_caja_25": 76100,
-        "es_liquidacion_parcial": false,
-        "es_liquidacion_complementaria": true,
-        "numero_ultima_autoliquidacion": "2024-000123",
-        "fecha_presentacion_liquidacion": "2024-11-18",
-        "cuota_ingresada": 30000
-      },
-      "reducciones": [
-        {
-          "casillaReal": 301,
-          "casillaTeorica": 401,
-          "clave": "por_parentesco",
-          "etiqueta": "Por parentesco",
-          "importeReal": 2500,
-          "importeTeorico": 1850
-        },
-        {
-          "casillaReal": 302,
-          "casillaTeorica": 402,
-          "clave": "por_discapacidad",
-          "etiqueta": "Por discapacidad",
-          "importeReal": 3000,
-          "importeTeorico": 2200
-        },
-        {
-          "casillaReal": 303,
-          "casillaTeorica": 403,
-          "clave": "para_personas_mayores",
-          "etiqueta": "Para personas mayores",
-          "importeReal": 3500,
-          "importeTeorico": 2550
-        },
-        {
-          "casillaReal": 304,
-          "casillaTeorica": 404,
-          "clave": "por_imposicion_decenal",
-          "etiqueta": "Por imposicion decenal",
-          "importeReal": 4000,
-          "importeTeorico": 2900
-        },
-        {
-          "casillaReal": 305,
-          "casillaTeorica": 405,
-          "clave": "por_seguros_vida",
-          "etiqueta": "Por seguros de vida",
-          "importeReal": 4500,
-          "importeTeorico": 3250
-        },
-        {
-          "casillaReal": 306,
-          "casillaTeorica": 406,
-          "clave": "por_actividad_empresarial_profesional",
-          "etiqueta": "Por actividad empresarial o profesional",
-          "importeReal": 5000,
-          "importeTeorico": 3600
-        },
-        {
-          "casillaReal": 307,
-          "casillaTeorica": 407,
-          "clave": "por_participacion_entidades",
-          "etiqueta": "Por la participacion en entidades",
-          "importeReal": 5500,
-          "importeTeorico": 3950
-        },
-        {
-          "casillaReal": 308,
-          "casillaTeorica": 408,
-          "clave": "por_vivienda_habitual",
-          "etiqueta": "Por vivienda habitual del/de la causante",
-          "importeReal": 6000,
-          "importeTeorico": 4300
-        },
-        {
-          "casillaReal": 309,
-          "casillaTeorica": 409,
-          "clave": "por_bienes_interes_cultural",
-          "etiqueta": "Por bienes de interes cultural",
-          "importeReal": 6500,
-          "importeTeorico": 4650
-        },
-        {
-          "casillaReal": 310,
-          "casillaTeorica": 410,
-          "clave": "por_explotaciones_agrarias",
-          "etiqueta": "Por explotaciones agrarias",
-          "importeReal": 7000,
-          "importeTeorico": 5000
-        },
-        {
-          "casillaReal": 311,
-          "casillaTeorica": 411,
-          "clave": "por_fincas_rusticas_forestales",
-          "etiqueta": "Por fincas rusticas forestales",
-          "importeReal": 7500,
-          "importeTeorico": 5350
-        },
-        {
-          "casillaReal": 312,
-          "casillaTeorica": 412,
-          "clave": "otras_reducciones",
-          "etiqueta": "Otras reducciones",
-          "importeReal": 8000,
-          "importeTeorico": 5700
-        }
-      ],
-      "totalesReducciones": {
-        "total_reducciones_real_caja_11": 63000,
-        "total_reducciones_teorica_caja_12": 45300,
-        "total_reducciones_aplicadas": 63000
-      }
-    },
     "notes": {
       "ordering": "Las secciones y campos siguen el diseño ATC-650E-6 para que los componentes de la interfaz puedan consumir este JSON secuencialmente.",
       "boxMapping": "Las referencias a las cajas 11-25 y 301-312 (real), 401-412 (teórica) y 605-607 coinciden con la numeración impresa en el formulario de la administración catalana.",

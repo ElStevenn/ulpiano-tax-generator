@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_DATA = BASE_DIR / "tax_models" / "mod650cat" / "json_examples" / "mod650cat_example.json"
 DEFAULT_STRUCTURE = BASE_DIR / "tax_models" / "mod650cat" / "data_models" / "mod650cat_data_structure.json"
 DEFAULT_MAPPING = BASE_DIR / "tax_models" / "mod650cat" / "data_models" / "mod650cat_field_mappings.json"
-DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "mod650cat" / "mod650cat.pdf"
+DEFAULT_TEMPLATE = BASE_DIR / "tax_models" / "models" / "mod650cat.pdf"
 DEFAULT_OUTPUT_DIR = BASE_DIR / "generated"
 
 # Offsets (multipliers) to center the drawn "X" inside checkbox widgets
@@ -341,8 +341,7 @@ def _normalize_reducciones(reducciones: Any) -> List[Dict[str, Any]]:
             {
                 "casillaReal": casilla,
                 "casillaTeorica": entry.get("casillaTeorica") or casilla + 100,
-                "clave": entry.get("clave"),
-                "etiqueta": entry.get("etiqueta"),
+                "tipo_reduccion": entry.get("tipo_reduccion"),
                 "importeReal": entry.get("importeReal", 0),
                 "importeTeorico": entry.get("importeTeorico", 0),
             }
@@ -372,8 +371,7 @@ def _apply_discapacidad_reduccion(form: Dict[str, Any]) -> None:
 
     porcentaje = _parse_number(beneficiario.get("porcentaje_discapacidad"))
     target_casilla = 303 if porcentaje is not None and porcentaje >= 65 else 302
-    target_clave = "para_personas_mayores" if target_casilla == 303 else "por_discapacidad"
-    target_etiqueta = "Para personas mayores" if target_casilla == 303 else "Por discapacidad"
+    target_tipo = "para_personas_mayores" if target_casilla == 303 else "por_discapacidad"
 
     bonificacion = _parse_number(liquidacion.get("bonificacion_discapacidad"))
     if not bonificacion:
@@ -396,8 +394,7 @@ def _apply_discapacidad_reduccion(form: Dict[str, Any]) -> None:
             current = _parse_number(entry.get("importeReal"))
             if current is None or current == 0:
                 entry["importeReal"] = bonificacion
-                entry.setdefault("clave", target_clave)
-                entry.setdefault("etiqueta", target_etiqueta)
+                entry.setdefault("tipo_reduccion", target_tipo)
             break
 
 
@@ -522,6 +519,30 @@ def format_value(value: Any, formatter: str) -> str:
             return str(value)
         formatted = f"{number:,.2f}"
         return formatted.replace(",", "X").replace(".", ",").replace("X", ".")
+    if formatter == "decimal_plain":
+        try:
+            number = float(value)
+        except (TypeError, ValueError):
+            return str(value)
+        return f"{number:.2f}".replace(".", ",")
+    if formatter == "decimal_no_decimals":
+        try:
+            number = float(value)
+        except (TypeError, ValueError):
+            return str(value)
+        # Render only the integer part with thousand separator using dot.
+        integer = int(round(number))
+        return f"{integer:,}".replace(",", ".")
+    if formatter == "decimal_split_space":
+        try:
+            number = float(value)
+        except (TypeError, ValueError):
+            return str(value)
+        integer = int(number)
+        decimals = int(round(abs(number - integer) * 100)) % 100
+        integer_txt = f"{integer:,}".replace(",", ".")
+        padded = integer_txt.rjust(6)  # pad to align with thousands (e.g., "10.000")
+        return f"{padded} {decimals:02d}"
     if formatter == "integer":
         try:
             return f"{int(value)}"
