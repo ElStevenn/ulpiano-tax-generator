@@ -1,0 +1,147 @@
+{
+  "encabezado": {
+    "fecha_devengo": "2025-06-15",
+    "fecha_presentacion": "2025-06-20",
+    "numero_ultima_autoliquidacion": "65300004567",
+    "codigo_modelo": "653",
+    "codigo_aleatorio": "A1B2C3D4",
+    "codigo_aleatorio_ref": "REF653-2025",
+    "no_sujeto": false,
+    "prescrito": false,
+    "liquidacion_complementaria": true
+  },
+  "contribuyente": {
+    "dni_nif": "99887766M",
+    "nombre_completo_razon_social": "Clara Mendez Rios",
+    "fecha_nacimiento": "1978-03-22",
+    "nombre_via": "Carrer Major",
+    "numero_via": "12",
+    "escalera": "A",
+    "piso": "3",
+    "puerta": "2",
+    "codigo_postal": "08002",
+    "municipio": "Barcelona",
+    "provincia": "Barcelona",
+    "pais": "ES",
+    "telefono": "600111222",
+    "correo_electronico": "mario.lopez@example.com"
+  },
+  "contribuyente_adicional": {
+    "dni_nif": "22334455K",
+    "nombre_completo_razon_social": "Hugo Navarro Diaz"
+  },
+  "usufructuario": {
+    "dni_nif": "87654321X",
+    "nombre_completo_razon_social": "Lucia Serra Vila",
+    "fecha_nacimiento": "1955-11-05",
+    "nombre_via": "Avinguda Diagonal",
+    "numero_via": "350",
+    "escalera": "B",
+    "piso": "2",
+    "puerta": "1",
+    "codigo_postal": "08013",
+    "municipio": "Barcelona",
+    "provincia": "Barcelona",
+    "pais": "ES",
+    "telefono": "600333444",
+    "correo_electronico": "lucia.serra@example.com"
+  },
+  "usufructo": {
+    "tipo_usufructo": "Vitalicio",
+    "duracion": "Hasta fallecimiento",
+    "causa_extincion": "Fallecimiento",
+    "fecha_constitucion": "2010-05-10"
+  },
+  "acto": {
+    "titulo_adquisicion": "Herencia",
+    "origen": "Testamento",
+    "numero_expediente_acto": "EXP-2025-0001",
+    "numero_expediente": "EXP-2025-0001"
+  },
+  "causante": {
+    "dni_nif": "44556677T",
+    "nombre_completo": "Josep Vila Serra"
+  },
+  "documento": {
+    "tipo_documento": "Escritura publica",
+    "notario_o_autoridad": "Notaria Maria Perez",
+    "fecha_documento": "2025-06-10",
+    "numero_protocolo": "1234/2025",
+    "lugar_documento": "Barcelona"
+  },
+  "tramitante": {
+    "dni_nif": "11223344J",
+    "nombre_completo_firmante": "Sergio Pardo Rios",
+    "nombre_via": "Carrer Marina",
+    "numero_via": "120",
+    "escalera": "C",
+    "piso": "4",
+    "puerta": "3",
+    "codigo_postal": "08005",
+    "municipio": "Barcelona",
+    "provincia": "Barcelona",
+    "pais": "ES",
+    "telefono": "600555666",
+    "correo_electronico": "sergio.pardo@example.com",
+    "fecha_firma": "2025-06-20"
+  },
+  "resumen_autoliquidacion": {
+    "cuota_ingresada": 1200.0,
+    "cuota_ingresar": 3500.0,
+    "recargo": 0.0,
+    "intereses_demora": 0.0,
+    "total_ingresar": 3500.0
+  },
+  "liquidacion_primera": {
+    "valor_total_bienes_consolidados": 250000.0,
+    "porcentaje_usufructo": 50.0,
+    "base_imponible": 125000.0,
+    "reducciones_usufructo": 8000.0,
+    "exceso_reducciones_nuda_propiedad": 1200.0,
+    "base_liquidable": 115800.0,
+    "tipo_medio_efectivo": 7.25,
+    "cuota_tributaria": 8395.5,
+    "bonificacion_cuota": 500.0,
+    "deduccion_cuotas_anteriores": 200.0,
+    "cuota_ingresar": 7695.5,
+    "resto_al_porcentaje": 30.0,
+    "hasta": 250000.0,
+    "resta": 1500.0
+  },
+  "liquidacion_segunda": {
+    "valor_total_bienes_consolidados": 160000.0,
+    "porcentaje_usufructo": 40.0,
+    "base_imponible": 64000.0,
+    "hasta": 65000.0,
+    "resta": 500.0,
+    "cuota_tributaria": 3200.0,
+    "recargo": 120.0,
+    "intereses_demora": 80.0,
+    "total_ingresar": 3400.0
+  },
+  "pago": {
+    "pago_efectivo": true,
+    "cargo_en_cuenta": false,
+    "importe": 3400.0
+  },
+  "bienes_consolidados": [
+    {
+      "tipo": "Inmueble",
+      "descripcion": "Vivienda habitual",
+      "identificacion": "RefCat 1234567AB",
+      "valor_total": 180000.0
+    },
+    {
+      "tipo": "Deposito",
+      "descripcion": "Cuenta bancaria",
+      "identificacion": "IBAN ES1200491500052718123412",
+      "valor_total": 40000.0
+    },
+    {
+      "tipo": "Vehiculo",
+      "descripcion": "Turismo",
+      "identificacion": "1234-BCD",
+      "valor_total": 30000.0
+    }
+  ]
+}
