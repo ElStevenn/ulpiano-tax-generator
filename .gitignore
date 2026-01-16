@@ -4,3 +4,6 @@ generated/*
 .vscode
 .env
 __pycache__/
+
+.env
+src/data_extractor/tests/example_docs/*
