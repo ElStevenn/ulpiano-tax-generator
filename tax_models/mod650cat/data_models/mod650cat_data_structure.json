@@ -140,12 +140,12 @@
             "description": "Casilla para 'intestada' (sucesión intestada, es decir, sin testamento)."
           },
           {
-            "id": "numero_personas_interesadas",
-            "label": "Número de personas interesadas",
+            "id": "num_beneficiarios",
+            "label": "Total personas beneficiarias",
             "type": "number",
             "order": 15,
             "required": true,
-            "description": "Número de personas interesadas en la sucesión.",
+            "description": "Número total de personas que participan o pueden participar en la herencia.",
             "format": "integer",
             "validation": "Debe ser mayor o igual a 1."
           },
@@ -194,6 +194,22 @@
             "order": 2,
             "required": true,
             "description": "Nombre legal completo del beneficiario (o el nombre de la empresa cuando actúa como entidad)."
+          },
+          {
+            "id": "nombre",
+            "label": "Nombre",
+            "type": "string",
+            "order": 2.1,
+            "required": false,
+            "description": "Nombre de pila del beneficiario."
+          },
+          {
+            "id": "apellidos",
+            "label": "Apellidos",
+            "type": "string",
+            "order": 2.2,
+            "required": false,
+            "description": "Apellidos del beneficiario."
           },
           {
             "id": "nombre_via",
@@ -281,7 +297,7 @@
             "boxNumber": "3"
           },
           {
-            "id": "correo_electronico",
+            "id": "email",
             "label": "Dirección de correo electrónico",
             "type": "string",
             "order": 13,
@@ -360,23 +376,23 @@
             "description": "Título legal de la sucesión (Título sucesorio)."
           },
           {
-            "id": "pago",
-            "label": "Pago",
+            "id": "ingreso",
+            "label": "Ingreso",
             "type": "object",
             "order": 21,
             "required": true,
             "fields": [
               {
-                "id": "pagoIban",
+                "id": "iban",
                 "label": "IBAN",
                 "type": "string",
                 "order": 1,
                 "required": false,
-                "description": "Código IBAN completo para el cargo/pago.",
+                "description": "Código IBAN completo. A partir del IBAN se extraen automáticamente: país, DC, entidad, sucursal, DC2 y número de cuenta.",
                 "validationRegex": "^[A-Z]{2}\\d{2}[A-Z0-9]{4,30}$"
               },
               {
-                "id": "pagoCargoEnCuenta",
+                "id": "en_cargo_cuenta",
                 "label": "Cargo en cuenta",
                 "type": "boolean",
                 "order": 2,
@@ -384,75 +400,31 @@
                 "description": "Casilla 'Cargo en cuenta'."
               },
               {
-                "id": "pagoPagoEfectivo",
-                "label": "Pago en efectivo",
+                "id": "en_efectivo",
+                "label": "En efectivo",
                 "type": "boolean",
                 "order": 3,
                 "required": false,
                 "description": "Casilla 'En efectivo'."
               },
               {
-                "id": "pagoPaisBanco",
-                "label": "País del banco",
-                "type": "string",
-                "order": 4,
-                "required": false,
-                "description": "Código de país (ES).",
-                "default": "ES"
-              },
-              {
-                "id": "pagoDigitosControlBanco",
-                "label": "DC",
-                "type": "string",
-                "order": 5,
-                "required": false,
-                "description": "Dígitos de control (primer DC)."
-              },
-              {
-                "id": "pagoEntidadBanco",
-                "label": "Entidad",
-                "type": "string",
-                "order": 6,
-                "required": false,
-                "description": "Código de entidad (4 dígitos).",
-                "validationRegex": "^\\d{4}$"
-              },
-              {
-                "id": "pagoSucursalBanco",
-                "label": "Sucursal",
-                "type": "string",
-                "order": 7,
-                "required": false,
-                "description": "Código de sucursal (4 dígitos).",
-                "validationRegex": "^\\d{4}$"
-              },
-              {
-                "id": "pagoDigitosControlBanco2",
-                "label": "DC2",
-                "type": "string",
-                "order": 8,
-                "required": false,
-                "description": "Segundo DC."
-              },
-              {
-                "id": "pagoNumeroCuenta",
-                "label": "Número de cuenta",
-                "type": "string",
-                "order": 9,
-                "required": false,
-                "description": "Cuenta (10 dígitos).",
-                "validationRegex": "^\\d{10}$"
-              },
-              {
-                "id": "pagoImporte",
+                "id": "importe",
                 "label": "Importe",
                 "type": "number",
-                "order": 10,
+                "order": 4,
                 "required": false,
-                "description": "Importe del pago en EUR.",
+                "description": "Importe del ingreso en EUR.",
                 "format": "decimal"
               }
-            ]
+            ],
+            "calculatedFields": {
+              "pais": "Extraído del IBAN (posiciones 0-2)",
+              "dc": "Extraído del IBAN (posiciones 2-4)",
+              "entidad": "Extraído del IBAN (posiciones 4-8)",
+              "sucursal": "Extraído del IBAN (posiciones 8-12)",
+              "dc2": "Extraído del IBAN (posiciones 12-14)",
+              "numero_cuenta": "Extraído del IBAN (posiciones 14-24)"
+            }
           }
         ]
       },
@@ -564,7 +536,7 @@
             "description": "Contacto telefónico (Teléfono)."
           },
           {
-            "id": "correo_electronico",
+            "id": "email",
             "label": "Dirección de correo electrónico",
             "type": "string",
             "order": 13,
@@ -600,7 +572,7 @@
         "required": true,
         "fields": [
           {
-            "id": "caudal_hereditario_fiscal_caja_1",
+            "id": "caudal_hereditario",
             "label": "Caudal hereditario fiscal (caja 1)",
             "type": "number",
             "order": 1,
@@ -610,18 +582,18 @@
             "boxNumber": "1"
           },
           {
-            "id": "participacion_contribuyente_caudal_hereditario_caja_2",
-            "label": "Participacion del contribuyente en el caudal hereditario (caja 2)",
+            "id": "participacion_caudal",
+            "label": "Participación del/de la contribuyente en el caudal hereditario (caja 2)",
             "type": "number",
             "order": 2,
             "required": false,
-            "description": "Importe de participacion del contribuyente en el caudal hereditario.",
+            "description": "Importe de participación del/de la contribuyente en el caudal hereditario.",
             "format": "decimal",
             "boxNumber": "2"
           },
           {
-            "id": "percepciones_seguros_vida_caja_3",
-            "label": "Percepciones como beneficiario de seguros de vida (caja 3)",
+            "id": "percepcion_seguro_vida",
+            "label": "Percepciones como beneficiario/aria de contratos de seguros de vida (caja 3)",
             "type": "number",
             "order": 3,
             "required": false,
@@ -630,12 +602,12 @@
             "boxNumber": "3"
           },
           {
-            "id": "bienes_adicionales_base_imponible_caja_4",
-            "label": "Bienes adicionales a la base imponible individual (caja 4)",
+            "id": "bienes_adicionales_base_imponible",
+            "label": "Bienes adicionales en la base imponible individual (caja 4)",
             "type": "number",
             "order": 4,
             "required": false,
-            "description": "Importe de bienes adicionales a la base imponible individual.",
+            "description": "Importe de bienes adicionales incluidos en la base imponible individual.",
             "format": "decimal",
             "boxNumber": "4"
           },
@@ -645,48 +617,48 @@
             "type": "number",
             "order": 5,
             "required": false,
-            "description": "Base imponible real (2 + 3 + 4).",
+            "description": "Base imponible real calculada como la suma de participacion_caudal + percepcion_seguro_vida + bienes_adicionales_base_imponible.",
             "format": "decimal",
             "boxNumber": "5",
-            "calculation": "participacionContribuyenteCaudalHereditarioCaja2 + percepcionesSegurosVidaCaja3 + bienesAdicionalesBaseImponibleCaja4"
+            "calculation": "participacion_caudal + percepcion_seguro_vida + bienes_adicionales_base_imponible"
           },
           {
-            "id": "valor_pleno_dominio_caja_6",
+            "id": "titularidad_total_pleno_dominio",
             "label": "Valor del pleno dominio (caja 6)",
             "type": "number",
             "order": 6,
             "required": false,
-            "description": "Valor del pleno dominio para bienes en nuda propiedad.",
+            "description": "Se pone la SUMA de los valores de TODOS los bienes en los que ESE beneficiario adquiere la NUDA PROPIEDAD, calculados en pleno dominio y en nuda propiedad, respectivamente.",
             "format": "decimal",
             "boxNumber": "6"
           },
           {
-            "id": "valor_nuda_propiedad_caja_7",
+            "id": "titularidad_total_nuda_propiedad",
             "label": "Valor de la nuda propiedad (caja 7)",
             "type": "number",
             "order": 7,
             "required": false,
-            "description": "Valor de la nuda propiedad.",
+            "description": "Es la SUMA del valor fiscal de TODAS las nudas propiedades que ese beneficiario adquiere del causante",
             "format": "decimal",
             "boxNumber": "7"
           },
           {
-            "id": "donaciones_acumulables_caja_8",
+            "id": "donaciones_causante_beneficiario",
             "label": "Donaciones acumulables (caja 8)",
             "type": "number",
             "order": 8,
             "required": false,
-            "description": "Importe de donaciones acumulables.",
+            "description": "Suma de las donaciones realizadas por el causante a este beneficiario dentro del plazo legal de acumulación (con carácter general, los 4 años anteriores al fallecimiento), a efectos del cálculo fiscal del impuesto.",
             "format": "decimal",
             "boxNumber": "8"
           },
           {
-            "id": "bienes_derechos_exentos_convenios_caja_9",
+            "id": "suma_bienes_internacionales",
             "label": "Bienes y derechos exentos por convenios internacionales (caja 9)",
             "type": "number",
             "order": 9,
             "required": false,
-            "description": "Importe de bienes y derechos exentos por convenios internacionales.",
+            "description": "La suma del valor fiscal de todos los bienes y derechos que adquiere este beneficiario y que no tributan en España por aplicación de un convenio internacional.",
             "format": "decimal",
             "boxNumber": "9"
           },
@@ -696,10 +668,10 @@
             "type": "number",
             "order": 10,
             "required": false,
-            "description": "Base imponible teorica (5 + 6 - 7 + 8 + 9).",
+            "description": "Base imponible teórica calculada como base_imponible_real_caja_5 + titularidad_total_pleno_dominio - titularidad_total_nuda_propiedad + donaciones_causante_beneficiario + suma_bienes_internacionales.",
             "format": "decimal",
             "boxNumber": "10",
-            "calculation": "baseImponibleRealCaja5 + valorPlenoDominioCaja6 - valorNudaPropiedadCaja7 + donacionesAcumulablesCaja8 + bienesDerechosExentosConveniosCaja9"
+            "calculation": "base_imponible_real_caja_5 + titularidad_total_pleno_dominio - titularidad_total_nuda_propiedad + donaciones_causante_beneficiario + suma_bienes_internacionales"
           },
           {
             "id": "bonificacion_discapacidad",
@@ -844,46 +816,51 @@
             "boxNumber": "21"
           },
           {
-            "id": "cuota_ingresar_caja_22",
-            "label": "Importe a ingresar (caja 22)",
-            "type": "number",
+            "id": "resumen_autoliquidacion",
+            "label": "Resumen de la autoliquidación",
+            "type": "object",
             "order": 25,
             "required": false,
-            "description": "Cuota a pagar: 18 - 19 - 20 - 21.",
-            "format": "decimal",
-            "boxNumber": "22",
-            "calculation": "cuotaTributariaAjustadaCaja18 - bonificacionCuotaCaja19 - deduccionDobleImposicionCaja20 - deduccionCuotasAnterioresCaja21"
-          },
-          {
-            "id": "recargo_caja_23",
-            "label": "Recargo (caja 23)",
-            "type": "number",
-            "order": 26,
-            "required": false,
-            "description": "Recàrrec aplicado al importe a ingresar.",
-            "format": "decimal",
-            "boxNumber": "23"
-          },
-          {
-            "id": "intereses_demora_caja_24",
-            "label": "Intereses de demora (caja 24)",
-            "type": "number",
-            "order": 27,
-            "required": false,
-            "description": "Intereses de demora.",
-            "format": "decimal",
-            "boxNumber": "24"
-          },
-          {
-            "id": "total_ingresar_caja_25",
-            "label": "Importe total a ingresar (caja 25)",
-            "type": "number",
-            "order": 28,
-            "required": false,
-            "description": "Total a ingresar = 22 + 23 + 24.",
-            "format": "decimal",
-            "boxNumber": "25",
-            "calculation": "cuotaIngresarCaja22 + recargoCaja23 + interesesDemoraCaja24"
+            "fields": [
+              {
+                "id": "importe_pagar_base",
+                "label": "Cuota a ingresar (caja 22)",
+                "type": "number",
+                "order": 1,
+                "required": false,
+                "description": "La cuota a ingresar es el importe final del impuesto que debe pagar el beneficiario por la adquisición hereditaria",
+                "format": "decimal",
+                "boxNumber": "22",
+                "calculation": "cuotaTributariaAjustadaCaja18 - bonificacionCuotaCaja19 - deduccionDobleImposicionCaja20 - deduccionCuotasAnterioresCaja21"
+              },
+              {
+                "id": "recargo",
+                "label": "Recargo (caja 23)",
+                "type": "number",
+                "order": 2,
+                "required": false,
+                "description": "Importe adicional que se aplica cuando la autoliquidación se presenta fuera de plazo sin requerimiento previo de la Administración.",
+                "format": "decimal",
+                "boxNumber": "23"
+              },
+              {
+                "id": "intereses_demora",
+                "label": "Intereses de demora (caja 24)",
+                "type": "number",
+                "order": 3,
+                "required": false,
+                "description": "Intereses aplicados por el retraso en el ingreso del impuesto, normalmente cuando existe requerimiento de la Administración o retrasos prolongados",
+                "format": "decimal",
+                "boxNumber": "24"
+              }
+            ],
+            "calculatedFields": {
+              "total_ingresar": {
+                "label": "Importe total a ingresar (caja 25)",
+                "boxNumber": "25",
+                "calculation": "importe_pagar_base + recargo + intereses_demora"
+              }
+            }
           },
           {
             "id": "es_liquidacion_parcial",

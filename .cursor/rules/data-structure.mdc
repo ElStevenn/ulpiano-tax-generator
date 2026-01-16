@@ -5,3 +5,5 @@ alwaysApply: false
 # Overview
 
 Do not add example data or sample payloads to *data_structure.json* files. These files must define only schema: sections, fields, validations, notes. All sample data belongs in separate JSON example files.
+
+Field IDs and labels must be descriptive and semantic. Do not include box number references (e.g., `_caja_X` in IDs or `(caja X)` in labels). Use the `boxNumber` field to store form box references instead.

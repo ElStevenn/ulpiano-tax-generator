@@ -280,7 +280,7 @@ def build_pdf_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     form["txt_Provincia"] = contribuyente.get("provincia")
     form["txt_Pais"] = contribuyente.get("pais")
     form["txt_Tlfono_Contri"] = contribuyente.get("telefono")
-    form["txt_Adreca_Contri"] = contribuyente.get("correo_electronico")
+    form["txt_Adreca_Contri"] = contribuyente.get("email")
 
     form["txt_NIF_Altres"] = contribuyente_adicional.get("dni_nif")
     form["txt_Cognoms_altres"] = contribuyente_adicional.get("nombre_completo_razon_social")
@@ -300,7 +300,7 @@ def build_pdf_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     form["txt_Provincia_Usu"] = usufructuario.get("provincia")
     form["txt_Pais_Usu"] = usufructuario.get("pais")
     form["txt_Tlfono_Usu"] = usufructuario.get("telefono")
-    form["txt_Adreca_Usu"] = usufructuario.get("correo_electronico")
+    form["txt_Adreca_Usu"] = usufructuario.get("email")
 
     form["txt_Tipus"] = usufructo.get("tipo_usufructo")
     form["txt_Durada"] = usufructo.get("duracion")
@@ -377,7 +377,7 @@ def build_pdf_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     form["txt_Provincia_Pre"] = tramitante.get("provincia")
     form["txt_Pais_Pre"] = tramitante.get("pais")
     form["txt_Tlfono_Contri_Pre"] = tramitante.get("telefono")
-    form["txt_Adreca_Contri_Pre"] = tramitante.get("correo_electronico")
+    form["txt_Adreca_Contri_Pre"] = tramitante.get("email")
 
     form["Efectiu"] = pago.get("pago_efectivo")
     form["Carrec_compte"] = pago.get("cargo_en_cuenta")

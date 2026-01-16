@@ -12,7 +12,7 @@
     "provincia": "Barcelona",
     "pais": "ES",
     "telefono": "933789012",
-    "correo_electronico": "laura.fernandez@example.com",
+    "email": "laura.fernandez@example.com",
     "fecha_nacimiento": "1988-11-05",
     "parentesco": "Nieta",
     "grupo_parentesco": "II",
@@ -20,17 +20,11 @@
     "tiene_discapacidad": false,
     "porcentaje_discapacidad": null,
     "titulo_sucesorio": "Heredera",
-    "pago": {
-      "pagoIban": "ES1234567890123456789012",
-      "pagoCargoEnCuenta": true,
-      "pagoPagoEfectivo": false,
-      "pagoPaisBanco": "ES",
-      "pagoDigitosControlBanco": "12",
-      "pagoEntidadBanco": "3456",
-      "pagoSucursalBanco": "7890",
-      "pagoDigitosControlBanco2": "12",
-      "pagoNumeroCuenta": "3456789012",
-      "pagoImporte": 32000.0
+    "ingreso": {
+      "iban": "ES1234567890123456789012",
+      "en_cargo_cuenta": true,
+      "en_efectivo": false,
+      "importe": 32000.0
     }
   },
   "causante": {
@@ -48,7 +42,7 @@
     "obligado_impuesto_patrimonio_ultimos_cuatro_anos": false,
     "es_testamentaria": false,
     "es_intestada": true,
-    "numero_personas_interesadas": 3,
+    "num_beneficiarios": 3,
     "notario_o_autoridad": "Notario Antoni Vila",
     "fecha_acta_notarial": "2024-08-25"
   },
@@ -65,29 +59,34 @@
     "provincia": "Barcelona",
     "pais": "ES",
     "telefono": "933789012",
-    "correo_electronico": "laura.fernandez@example.com",
+    "email": "laura.fernandez@example.com",
     "acuerdo_declaracion": true,
     "fecha_firma": "2024-11-19"
   },
   "liquidacion": {
-    "liquidacionBonificacionDiscapacidad": 0.0,
-    "liquidacionCuotaTributariaCasoGeneral": 0.0,
-    "liquidacionTipoMedioEfectivoCuotaTributaria": 40000.0,
-    "liquidacionBaseLiquidableRealCaja13": 600000.0,
-    "liquidacionBaseLiquidableTeoricaCaja14": 400000.0,
-    "liquidacionCuotaIntegraCaja16": 40000.0,
-    "liquidacionCuotaTributariaCaja605": 40000.0,
-    "liquidacionReduccionExcesoCuotaCaja606": 0.0,
-    "liquidacionCuotaTributariaAjustadaCaja607": 40000.0,
-    "liquidacionTipoMedioEfectivoCaja17": 10.0,
-    "liquidacionCuotaTributariaAjustadaCaja18": 60000.0,
-    "liquidacionBonificacionCuotaCaja19": 0.0,
-    "liquidacionDeduccionDobleImposicionCaja20": 0.0,
-    "liquidacionDeduccionCuotasAnterioresCaja21": 0.0,
-    "liquidacionCuotaIngresarCaja22": 60000.0,
-    "liquidacionRecargoCaja23": 0.0,
-    "liquidacionInteresesDemoraCaja24": 0.0,
-    "liquidacionTotalIngresarCaja25": 60000.0
+    "caudal_hereditario": 500000.0,
+    "participacion_caudal": 350000.0,
+    "percepcion_seguro_vida": 25000.0,
+    "bienes_adicionales_base_imponible": 0.0,
+    "bonificacion_discapacidad": 0.0,
+    "cuota_tributaria_caso_general": 0.0,
+    "tipo_medio_efectivo_cuota_tributaria": 40000.0,
+    "base_liquidable_real_caja_13": 600000.0,
+    "base_liquidable_teorica_caja_14": 400000.0,
+    "cuota_integra_caja_16": 40000.0,
+    "cuota_tributaria_caja_605": 40000.0,
+    "reduccion_exceso_cuota_caja_606": 0.0,
+    "cuota_tributaria_ajustada_caja_607": 40000.0,
+    "tipo_medio_efectivo_caja_17": 10.0,
+    "cuota_tributaria_ajustada_caja_18": 60000.0,
+    "bonificacion_cuota_caja_19": 0.0,
+    "deduccion_doble_imposicion_caja_20": 0.0,
+    "deduccion_cuotas_anteriores_caja_21": 0.0,
+    "resumen_autoliquidacion": {
+      "importe_pagar_base": 60000.0,
+      "recargo": 0.0,
+      "intereses_demora": 0.0
+    }
   },
   "reducciones": [
     {
@@ -106,8 +105,8 @@
     }
   ],
   "totalesReducciones": {
-    "totalReduccionesRealCaja11": 0.0,
-    "totalReduccionesTeoricaCaja12": 100000.0,
-    "totalReduccionesAplicadas": 100000.0
+    "total_reducciones_real_caja_11": 0.0,
+    "total_reducciones_teorica_caja_12": 100000.0,
+    "total_reducciones_aplicadas": 100000.0
   }
 }

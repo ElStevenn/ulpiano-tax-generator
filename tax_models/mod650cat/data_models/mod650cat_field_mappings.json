@@ -180,7 +180,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.beneficiario.correo_electronico",
+    "key": "form.beneficiario.email",
     "pages": [
       0,
       1,
@@ -510,7 +510,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.causante.numero_personas_interesadas",
+    "key": "form.causante.num_beneficiarios",
     "pages": [
       0,
       1,
@@ -735,7 +735,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.tramitante.correo_electronico",
+    "key": "form.tramitante.email",
     "pages": [
       0,
       1,
@@ -765,7 +765,7 @@
     "true_label": ""
   },
   {
-    "key": "form.beneficiario.pago.pagoPaisBanco",
+    "key": "form.beneficiario.ingreso.pais",
     "pages": [
       0,
       1,
@@ -780,7 +780,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.beneficiario.pago.pagoDigitosControlBanco",
+    "key": "form.beneficiario.ingreso.dc",
     "pages": [
       0,
       1,
@@ -795,7 +795,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.beneficiario.pago.pagoEntidadBanco",
+    "key": "form.beneficiario.ingreso.entidad",
     "pages": [
       0,
       1,
@@ -810,7 +810,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.beneficiario.pago.pagoSucursalBanco",
+    "key": "form.beneficiario.ingreso.sucursal",
     "pages": [
       0,
       1,
@@ -825,7 +825,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.beneficiario.pago.pagoDigitosControlBanco2",
+    "key": "form.beneficiario.ingreso.dc2",
     "pages": [
       0,
       1,
@@ -840,7 +840,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.beneficiario.pago.pagoNumeroCuenta",
+    "key": "form.beneficiario.ingreso.numero_cuenta",
     "pages": [
       0,
       1,
@@ -855,7 +855,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.beneficiario.pago.pagoCargoEnCuenta",
+    "key": "form.beneficiario.ingreso.en_cargo_cuenta",
     "pages": [
       0,
       1,
@@ -870,7 +870,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.beneficiario.pago.pagoPagoEfectivo",
+    "key": "form.beneficiario.ingreso.en_efectivo",
     "pages": [
       0,
       1,
@@ -885,7 +885,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.beneficiario.pago.pagoImporte",
+    "key": "form.beneficiario.ingreso.importe",
     "pages": [
       0,
       1,
@@ -975,7 +975,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.cuota_ingresar_caja_22",
+    "key": "form.liquidacion.resumen_autoliquidacion.importe_pagar_base",
     "pages": [
       0,
       1,
@@ -990,7 +990,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.recargo_caja_23",
+    "key": "form.liquidacion.resumen_autoliquidacion.recargo",
     "pages": [
       0,
       1,
@@ -1005,7 +1005,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.intereses_demora_caja_24",
+    "key": "form.liquidacion.resumen_autoliquidacion.intereses_demora",
     "pages": [
       0,
       1,
@@ -1020,7 +1020,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.total_ingresar_caja_25",
+    "key": "form.liquidacion.resumen_autoliquidacion.total_ingresar",
     "pages": [
       0,
       1,
@@ -1035,12 +1035,38 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.caudal_hereditario_fiscal_caja_1",
+    "key": "form.beneficiario.dni_nif",
     "pages": [
       4,
       5
     ],
-    "x": 222.9,
+    "x": 55,
+    "y_from_top": 56,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "align": "left"
+  },
+  {
+    "key": "form.beneficiario.apellidos_nombre",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 175,
+    "y_from_top": 56,
+    "font_size": 10,
+    "field_type": "text",
+    "formatter": "text",
+    "align": "left"
+  },
+  {
+    "key": "form.liquidacion.caudal_hereditario",
+    "pages": [
+      4,
+      5
+    ],
+    "x": 212.9,
     "y_from_top": 121.4,
     "font_size": 8.5,
     "field_type": "text",
@@ -1048,12 +1074,12 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.participacion_contribuyente_caudal_hereditario_caja_2",
+    "key": "form.liquidacion.participacion_caudal",
     "pages": [
       4,
       5
     ],
-    "x": 222.9,
+    "x": 212.9,
     "y_from_top": 142.7,
     "font_size": 8.5,
     "field_type": "text",
@@ -1061,12 +1087,12 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.percepciones_seguros_vida_caja_3",
+    "key": "form.liquidacion.percepcion_seguro_vida",
     "pages": [
       4,
       5
     ],
-    "x": 222.9,
+    "x": 212.9,
     "y_from_top": 163.9,
     "font_size": 8.5,
     "field_type": "text",
@@ -1074,12 +1100,12 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.bienes_adicionales_base_imponible_caja_4",
+    "key": "form.liquidacion.bienes_adicionales_base_imponible",
     "pages": [
       4,
       5
     ],
-    "x": 222.9,
+    "x": 212.9,
     "y_from_top": 187.1,
     "font_size": 8.5,
     "field_type": "text",
@@ -1092,7 +1118,7 @@
       4,
       5
     ],
-    "x": 222.9,
+    "x": 212.9,
     "y_from_top": 210.3,
     "font_size": 8.5,
     "field_type": "text",
@@ -1100,12 +1126,12 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.valor_pleno_dominio_caja_6",
+    "key": "form.liquidacion.titularidad_total_pleno_dominio",
     "pages": [
       4,
       5
     ],
-    "x": 497.1,
+    "x": 487.1,
     "y_from_top": 121.1,
     "font_size": 8.5,
     "field_type": "text",
@@ -1113,12 +1139,12 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.valor_nuda_propiedad_caja_7",
+    "key": "form.liquidacion.titularidad_total_nuda_propiedad",
     "pages": [
       4,
       5
     ],
-    "x": 497.1,
+    "x": 487.1,
     "y_from_top": 142.4,
     "font_size": 8.5,
     "field_type": "text",
@@ -1126,12 +1152,12 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.donaciones_acumulables_caja_8",
+    "key": "form.liquidacion.donaciones_causante_beneficiario",
     "pages": [
       4,
       5
     ],
-    "x": 497.1,
+    "x": 487.1,
     "y_from_top": 163.6,
     "font_size": 8.5,
     "field_type": "text",
@@ -1139,12 +1165,12 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.bienes_derechos_exentos_convenios_caja_9",
+    "key": "form.liquidacion.suma_bienes_internacionales",
     "pages": [
       4,
       5
     ],
-    "x": 497.1,
+    "x": 487.1,
     "y_from_top": 186.8,
     "font_size": 8.5,
     "field_type": "text",
@@ -1157,7 +1183,7 @@
       4,
       5
     ],
-    "x": 497.1,
+    "x": 487.1,
     "y_from_top": 209.9,
     "font_size": 8.5,
     "field_type": "text",
@@ -1542,7 +1568,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.cuota_ingresar_caja_22",
+    "key": "form.liquidacion.resumen_autoliquidacion.importe_pagar_base",
     "pages": [
       4,
       5
@@ -1555,7 +1581,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.recargo_caja_23",
+    "key": "form.liquidacion.resumen_autoliquidacion.recargo",
     "pages": [
       4,
       5
@@ -1568,7 +1594,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.intereses_demora_caja_24",
+    "key": "form.liquidacion.resumen_autoliquidacion.intereses_demora",
     "pages": [
       4,
       5
@@ -1581,7 +1607,7 @@
     "true_label": "X"
   },
   {
-    "key": "form.liquidacion.total_ingresar_caja_25",
+    "key": "form.liquidacion.resumen_autoliquidacion.total_ingresar",
     "pages": [
       4,
       5
@@ -1942,6 +1968,21 @@
     "font_size": 8.5,
     "field_type": "text",
     "formatter": "decimal",
+    "align": "right"
+  },
+  {
+    "key": "form.tramitante.municipio",
+    "pages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "x": 410,
+    "y_from_top": 639.26,
+    "font_size": 7.0,
+    "field_type": "text",
+    "formatter": "text",
     "align": "right"
   },
   {

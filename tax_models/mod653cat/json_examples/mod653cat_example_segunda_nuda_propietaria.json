@@ -24,7 +24,7 @@
     "provincia": "Barcelona",
     "pais": "ES",
     "telefono": "600111222",
-    "correo_electronico": "mario.lopez@example.com"
+    "email": "mario.lopez@example.com"
   },
   "contribuyente_adicional": {
     "dni_nif": "22334455K",
@@ -44,7 +44,7 @@
     "provincia": "Barcelona",
     "pais": "ES",
     "telefono": "600333444",
-    "correo_electronico": "lucia.serra@example.com"
+    "email": "lucia.serra@example.com"
   },
   "usufructo": {
     "tipo_usufructo": "Vitalicio",
@@ -82,7 +82,7 @@
     "provincia": "Barcelona",
     "pais": "ES",
     "telefono": "600555666",
-    "correo_electronico": "sergio.pardo@example.com",
+    "email": "sergio.pardo@example.com",
     "fecha_firma": "2025-06-20"
   },
   "resumen_autoliquidacion": {

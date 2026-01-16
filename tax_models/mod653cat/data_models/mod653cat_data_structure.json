@@ -210,7 +210,7 @@
             "description": "Telefono de contacto."
           },
           {
-            "id": "correo_electronico",
+            "id": "email",
             "label": "Direccion electronica",
             "type": "string",
             "order": 14,
@@ -359,7 +359,7 @@
             "description": "Telefono de contacto."
           },
           {
-            "id": "correo_electronico",
+            "id": "email",
             "label": "Direccion electronica",
             "type": "string",
             "order": 14,
@@ -629,7 +629,7 @@
             "description": "Telefono de contacto."
           },
           {
-            "id": "correo_electronico",
+            "id": "email",
             "label": "Direccion electronica",
             "type": "string",
             "order": 13,
@@ -1064,7 +1064,7 @@
         "provincia": "Barcelona",
         "pais": "ES",
         "telefono": "600111222",
-        "correo_electronico": "mario.lopez@example.com"
+        "email": "mario.lopez@example.com"
       },
       "contribuyente_adicional": {},
       "usufructuario": {
@@ -1081,7 +1081,7 @@
         "provincia": "Barcelona",
         "pais": "ES",
         "telefono": "600333444",
-        "correo_electronico": "lucia.serra@example.com"
+        "email": "lucia.serra@example.com"
       },
       "usufructo": {
         "tipo_usufructo": "Vitalicio",
@@ -1119,7 +1119,7 @@
         "provincia": "Barcelona",
         "pais": "ES",
         "telefono": "600555666",
-        "correo_electronico": "sergio.pardo@example.com",
+        "email": "sergio.pardo@example.com",
         "fecha_firma": "2025-06-20"
       },
       "resumen_autoliquidacion": {

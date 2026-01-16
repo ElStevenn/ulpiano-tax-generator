@@ -2,6 +2,8 @@
   "beneficiario": {
     "dni_nif": "00000000T",
     "nombre_completo_razon_social": "Marc Díaz Martínez",
+    "nombre": "Marc",
+    "apellidos": "Díaz Martínez",
     "nombre_via": "Carrer Girona",
     "numero_via": "12",
     "escalera": "B",
@@ -12,7 +14,7 @@
     "provincia": "Barcelona",
     "pais": "ES",
     "telefono": "600000000",
-    "correo_electronico": "test@example.com",
+    "email": "test@example.com",
     "fecha_nacimiento": "2003-03-12",
     "parentesco": "Hijo/a",
     "grupo_parentesco": "I",
@@ -20,11 +22,11 @@
     "tiene_discapacidad": true,
     "porcentaje_discapacidad": 33,
     "titulo_sucesorio": "Heredero",
-    "pago": {
-      "pagoIban": "ES1200491500052718123412",
-      "pagoCargoEnCuenta": true,
-      "pagoPagoEfectivo": false,
-      "pagoImporte": 80000.0
+    "ingreso": {
+      "iban": "ES1200491500052718123412",
+      "en_cargo_cuenta": true,
+      "en_efectivo": false,
+      "importe": 80000.0
     }
   },
   "causante": {
@@ -42,7 +44,7 @@
     "obligado_impuesto_patrimonio_ultimos_cuatro_anos": true,
     "es_testamentaria": true,
     "es_intestada": false,
-    "numero_personas_interesadas": 2,
+    "num_beneficiarios": 2,
     "notario_o_autoridad": "Notary Anna Serra",
     "fecha_acta_notarial": "2024-08-01"
   },
@@ -59,29 +61,38 @@
     "provincia": "Barcelona",
     "pais": "ES",
     "telefono": "600000000",
-    "correo_electronico": "test@example.com",
+    "email": "test@example.com",
     "acuerdo_declaracion": true,
     "fecha_firma": "2024-11-17"
   },
   "liquidacion": {
-    "liquidacionBonificacionDiscapacidad": 0,
-    "liquidacionCuotaTributariaCasoGeneral": 0,
-    "liquidacionTipoMedioEfectivoCuotaTributaria": 0,
-    "liquidacionBaseLiquidableRealCaja13": 500000,
-    "liquidacionBaseLiquidableTeoricaCaja14": 500000,
-    "liquidacionCuotaIntegraCaja16": 80000,
-    "liquidacionCuotaTributariaCaja605": 80000,
-    "liquidacionReduccionExcesoCuotaCaja606": 0,
-    "liquidacionCuotaTributariaAjustadaCaja607": 80000,
-    "liquidacionTipoMedioEfectivoCaja17": 16,
-    "liquidacionCuotaTributariaAjustadaCaja18": 80000,
-    "liquidacionBonificacionCuotaCaja19": 0,
-    "liquidacionDeduccionDobleImposicionCaja20": 0,
-    "liquidacionDeduccionCuotasAnterioresCaja21": 0,
-    "liquidacionCuotaIngresarCaja22": 80000,
-    "liquidacionRecargoCaja23": 0,
-    "liquidacionInteresesDemoraCaja24": 0,
-    "liquidacionTotalIngresarCaja25": 80000
+    "caudal_hereditario": 120000.0,
+    "participacion_caudal": 100000.0,
+    "percepcion_seguro_vida": 20000.0,
+    "bienes_adicionales_base_imponible": 5000.0,
+    "titularidad_total_pleno_dominio": 50000.0,
+    "titularidad_total_nuda_propiedad": 20000.0,
+    "donaciones_causante_beneficiario": 15000.0,
+    "suma_bienes_internacionales": 5000.0,
+    "bonificacion_discapacidad": 0.0,
+    "cuota_tributaria_caso_general": 0.0,
+    "tipo_medio_efectivo_cuota_tributaria": 0.0,
+    "base_liquidable_real_caja_13": 500000.0,
+    "base_liquidable_teorica_caja_14": 500000.0,
+    "cuota_integra_caja_16": 80000.0,
+    "cuota_tributaria_caja_605": 80000.0,
+    "reduccion_exceso_cuota_caja_606": 0.0,
+    "cuota_tributaria_ajustada_caja_607": 80000.0,
+    "tipo_medio_efectivo_caja_17": 16.0,
+    "cuota_tributaria_ajustada_caja_18": 80000.0,
+    "bonificacion_cuota_caja_19": 0.0,
+    "deduccion_doble_imposicion_caja_20": 0.0,
+    "deduccion_cuotas_anteriores_caja_21": 0.0,
+    "resumen_autoliquidacion": {
+      "importe_pagar_base": 80000.0,
+      "recargo": 0.0,
+      "intereses_demora": 0.0
+    }
   },
   "reducciones": [
     {
@@ -107,8 +118,8 @@
     }
   ],
   "totalesReducciones": {
-    "totalReduccionesRealCaja11": 15000.00,
-    "totalReduccionesTeoricaCaja12": 0.00,
-    "totalReduccionesAplicadas": 15000.00
+    "total_reducciones_real_caja_11": 15000.0,
+    "total_reducciones_teorica_caja_12": 0.0,
+    "total_reducciones_aplicadas": 15000.0
   }
 }

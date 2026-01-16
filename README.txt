@@ -14,7 +14,7 @@ Proporciona a la IA el siguiente prompt junto con el PDF del formulario oficial 
 "Genera un data model JSON completo para el modelo de impuesto [NOMBRE_MODELO] basándote en el formulario oficial PDF y los campos de la base de datos.
 
 REFERENCIAS OBLIGATORIAS:
-- database_fields.md: Este archivo contiene el mapeo completo de todos los campos que existen en la base de datos. Documenta qué campos hay, en qué tablas están, y cómo acceder a ellos. SIEMPRE consulta este archivo antes de inventar nombres de campos porque muchos campos ya existen en BD con nombres específicos (ej: zip_code en lugar de codigo_postal, email en lugar de correo_electronico, patrimonio_valor en lugar de patrimonio_preexistente).
+- database_fields.md: Este archivo contiene el mapeo completo de todos los campos que existen en la base de datos. Documenta qué campos hay, en qué tablas están, y cómo acceder a ellos. SIEMPRE consulta este archivo antes de inventar nombres de campos porque muchos campos ya existen en BD con nombres específicos (ej: zip_code en lugar de codigo_postal, email en lugar de email, patrimonio_valor en lugar de patrimonio_preexistente).
 - tax_models/mod650cat/data_models/mod650cat_data_structure.json: Usa este archivo como referencia del formato y estructura JSON a seguir.
 
 PROCESO:

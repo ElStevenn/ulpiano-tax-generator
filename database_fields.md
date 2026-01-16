@@ -69,7 +69,7 @@ Este documento mapea los nombres de campos del modelo de datos de impuestos con 
 | `provincia` | `provincia` | `addresses` | `atribucion.party.persona.miembro_familiar.address.provincia` | ✅ Existe (si es miembro_familiar) |
 | `pais` | `pais` | `addresses` | `atribucion.party.persona.miembro_familiar.address.pais` | ✅ Existe (si es miembro_familiar) |
 | `telefono` | `telefono` | `persona` | `atribucion.party.persona.telefono` | ✅ Existe |
-| `correo_electronico` | `email` | `persona` | `atribucion.party.persona.email` | ✅ Existe |
+| `email` | `email` | `persona` | `atribucion.party.persona.email` | ✅ Existe |
 | `fecha_nacimiento` | `fecha_nacimiento` | `persona` | `atribucion.party.persona.fecha_nacimiento` | ✅ Existe |
 | `parentesco` | `relacion_personal` | `relacion_causante_familiar` | `atribucion.party.persona.miembro_familiar.relaciones_con_causante.relacion_personal` | ✅ Existe |
 | `grupo_parentesco` | N/A | - | - | ❌ No existe - calcular según parentesco |
@@ -109,7 +109,7 @@ Este documento mapea los nombres de campos del modelo de datos de impuestos con 
 | `provincia` | `provincia` | `addresses` | `tramitante.persona.miembro_familiar.address.provincia` | ✅ Existe (si es miembro_familiar) |
 | `pais` | `pais` | `addresses` | `tramitante.persona.miembro_familiar.address.pais` | ✅ Existe (si es miembro_familiar) |
 | `telefono` | `telefono` | `persona` | `tramitante.persona.telefono` | ✅ Existe |
-| `correo_electronico` | `email` | `persona` | `tramitante.persona.email` | ✅ Existe |
+| `email` | `email` | `persona` | `tramitante.persona.email` | ✅ Existe |
 | `acuerdo_declaracion` | N/A | - | - | ❌ No existe - inventar (default: true) |
 | `fecha_firma` | N/A | - | - | ❌ No existe - usar fecha actual (`.today()`) |
 

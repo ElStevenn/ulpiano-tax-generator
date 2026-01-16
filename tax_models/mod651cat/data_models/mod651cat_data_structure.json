@@ -430,7 +430,7 @@
             "order": 18
           },
           {
-            "id": "correo_electronico",
+            "id": "email",
             "label": "Correo electronico",
             "type": "string",
             "required": false,
@@ -621,7 +621,7 @@
             "order": 14
           },
           {
-            "id": "correo_electronico",
+            "id": "email",
             "label": "Correo electronico",
             "type": "string",
             "required": false,
@@ -1481,7 +1481,7 @@
         "provincia": "Barcelona",
         "pais": "Espana",
         "telefono": "650987222",
-        "correo_electronico": "laura.medina@example.com",
+        "email": "laura.medina@example.com",
         "titulo_sucesorio": "Donacion",
         "cuota_porcentaje": 100,
         "cuota_tipo": "total",
@@ -1505,7 +1505,7 @@
         "provincia": "Barcelona",
         "pais": "Espana",
         "telefono": "677445566",
-        "correo_electronico": "sergio.pardo@example.com"
+        "email": "sergio.pardo@example.com"
       },
       "pago": {
         "metodo_pago": "transferencia",

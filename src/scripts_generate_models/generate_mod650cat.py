@@ -258,26 +258,26 @@ def _apply_iban_fields(form: Dict[str, Any]) -> None:
     beneficiario = form.get("beneficiario")
     if not isinstance(beneficiario, dict):
         return
-    pago = beneficiario.get("pago")
-    if not isinstance(pago, dict):
+    ingreso = beneficiario.get("ingreso")
+    if not isinstance(ingreso, dict):
         return
-    iban = pago.get("pagoIban")
+    iban = ingreso.get("iban")
     if not iban:
         return
 
     iban_parts = split_spanish_iban(str(iban))
     if iban_parts["country"]:
-        pago["pagoPaisBanco"] = iban_parts["country"]
+        ingreso["pais"] = iban_parts["country"]
     if iban_parts["controlDigits"]:
-        pago["pagoDigitosControlBanco"] = iban_parts["controlDigits"]
+        ingreso["dc"] = iban_parts["controlDigits"]
     if iban_parts["entity"]:
-        pago["pagoEntidadBanco"] = iban_parts["entity"]
+        ingreso["entidad"] = iban_parts["entity"]
     if iban_parts["branch"]:
-        pago["pagoSucursalBanco"] = iban_parts["branch"]
+        ingreso["sucursal"] = iban_parts["branch"]
     if iban_parts["controlDigits2"]:
-        pago["pagoDigitosControlBanco2"] = iban_parts["controlDigits2"]
+        ingreso["dc2"] = iban_parts["controlDigits2"]
     if iban_parts["accountNumber"]:
-        pago["pagoNumeroCuenta"] = iban_parts["accountNumber"]
+        ingreso["numero_cuenta"] = iban_parts["accountNumber"]
 
 
 def _split_date_parts(value: Any) -> tuple[str, str, str]:
@@ -405,19 +405,19 @@ def _apply_liquidacion_calculations(form: Dict[str, Any]) -> None:
 
     totales = form.get("totalesReducciones") if isinstance(form.get("totalesReducciones"), dict) else {}
 
-    comp_caja_2 = _parse_number(liquidacion.get("participacion_contribuyente_caudal_hereditario_caja_2"))
-    comp_caja_3 = _parse_number(liquidacion.get("percepciones_seguros_vida_caja_3"))
-    comp_caja_4 = _parse_number(liquidacion.get("bienes_adicionales_base_imponible_caja_4"))
+    comp_caja_2 = _parse_number(liquidacion.get("participacion_caudal"))
+    comp_caja_3 = _parse_number(liquidacion.get("percepcion_seguro_vida"))
+    comp_caja_4 = _parse_number(liquidacion.get("bienes_adicionales_base_imponible"))
     if any(value is not None for value in (comp_caja_2, comp_caja_3, comp_caja_4)):
         base_real_calc = (comp_caja_2 or 0.0) + (comp_caja_3 or 0.0) + (comp_caja_4 or 0.0)
         _set_default(liquidacion, "base_imponible_real_caja_5", base_real_calc)
 
     base_real = _parse_number(liquidacion.get("base_imponible_real_caja_5"))
     if base_real is not None:
-        comp_caja_6 = _parse_number(liquidacion.get("valor_pleno_dominio_caja_6")) or 0.0
-        comp_caja_7 = _parse_number(liquidacion.get("valor_nuda_propiedad_caja_7")) or 0.0
-        comp_caja_8 = _parse_number(liquidacion.get("donaciones_acumulables_caja_8")) or 0.0
-        comp_caja_9 = _parse_number(liquidacion.get("bienes_derechos_exentos_convenios_caja_9")) or 0.0
+        comp_caja_6 = _parse_number(liquidacion.get("titularidad_total_pleno_dominio")) or 0.0
+        comp_caja_7 = _parse_number(liquidacion.get("titularidad_total_nuda_propiedad")) or 0.0
+        comp_caja_8 = _parse_number(liquidacion.get("donaciones_causante_beneficiario")) or 0.0
+        comp_caja_9 = _parse_number(liquidacion.get("suma_bienes_internacionales")) or 0.0
         base_teor_calc = base_real + comp_caja_6 - comp_caja_7 + comp_caja_8 + comp_caja_9
         _set_default(liquidacion, "base_imponible_teorica_caja_10", base_teor_calc)
 
@@ -464,24 +464,49 @@ def _apply_liquidacion_calculations(form: Dict[str, Any]) -> None:
     bonificacion = _parse_number(liquidacion.get("bonificacion_cuota_caja_19")) or 0.0
     deduccion_doble = _parse_number(liquidacion.get("deduccion_doble_imposicion_caja_20")) or 0.0
     deduccion_previas = _parse_number(liquidacion.get("deduccion_cuotas_anteriores_caja_21")) or 0.0
+
+    resumen = liquidacion.get("resumen_autoliquidacion")
+    if not isinstance(resumen, dict):
+        resumen = {}
+        liquidacion["resumen_autoliquidacion"] = resumen
+
     if cuota_18 is not None:
         _set_default(
-            liquidacion,
-            "cuota_ingresar_caja_22",
+            resumen,
+            "importe_pagar_base",
             cuota_18 - bonificacion - deduccion_doble - deduccion_previas,
         )
 
-    cuota_22 = _parse_number(liquidacion.get("cuota_ingresar_caja_22"))
-    recargo = _parse_number(liquidacion.get("recargo_caja_23")) or 0.0
-    intereses = _parse_number(liquidacion.get("intereses_demora_caja_24")) or 0.0
+    cuota_22 = _parse_number(resumen.get("importe_pagar_base"))
+    recargo = _parse_number(resumen.get("recargo")) or 0.0
+    intereses = _parse_number(resumen.get("intereses_demora")) or 0.0
     if cuota_22 is not None:
-        _set_default(liquidacion, "total_ingresar_caja_25", cuota_22 + recargo + intereses)
+        _set_default(resumen, "total_ingresar", cuota_22 + recargo + intereses)
+
+
+def _apply_apellidos_nombre(form: Dict[str, Any]) -> None:
+    """Create 'apellidos_nombre' field as 'Apellidos, Nombre' for beneficiario."""
+    beneficiario = form.get("beneficiario")
+    if not isinstance(beneficiario, dict):
+        return
+    apellidos = beneficiario.get("apellidos", "")
+    nombre = beneficiario.get("nombre", "")
+    if apellidos and nombre:
+        beneficiario["apellidos_nombre"] = f"{apellidos}, {nombre}"
+    elif apellidos:
+        beneficiario["apellidos_nombre"] = apellidos
+    elif nombre:
+        beneficiario["apellidos_nombre"] = nombre
+    else:
+        # Fallback to nombre_completo_razon_social if no separate fields
+        beneficiario["apellidos_nombre"] = beneficiario.get("nombre_completo_razon_social", "")
 
 
 def build_pdf_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     form = copy.deepcopy(data) if isinstance(data, dict) else {}
     form["reducciones"] = _normalize_reducciones(form.get("reducciones"))
     _apply_discapacidad_reduccion(form)
+    _apply_apellidos_nombre(form)
     tramitante = form.get("tramitante")
     if isinstance(tramitante, dict):
         dia, mes, anio = _split_date_parts(tramitante.get("fecha_firma"))

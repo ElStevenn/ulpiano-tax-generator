@@ -50,7 +50,7 @@
     "provincia": "Barcelona",
     "pais": "Espana",
     "telefono": "687654321",
-    "correo_electronico": "juan.garcia@example.com",
+    "email": "juan.garcia@example.com",
     "titulo_sucesorio": "Donacion",
     "cuota_porcentaje": 100,
     "cuota_tipo": "total",
@@ -74,7 +74,7 @@
     "provincia": "Barcelona",
     "pais": "Espana",
     "telefono": "699887766",
-    "correo_electronico": "laura.fernandez@example.com"
+    "email": "laura.fernandez@example.com"
   },
   "pago": {
     "metodo_pago": "transferencia",
