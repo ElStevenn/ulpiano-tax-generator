@@ -1,0 +1,1934 @@
+{
+  "model660cat": {
+    "description": "Data structure for Catalonia Model 660 (declaracion de sucesiones).",
+    "metadata": {
+      "source": "tax_models/mod660cat/660_es.pdf",
+      "formCode": "660",
+      "jurisdiction": "Catalonia",
+      "language": "es-ES",
+      "lastUpdated": "2026-01-17"
+    },
+    "structure": [
+      {
+        "id": "encabezado",
+        "label": "Encabezado",
+        "order": 0,
+        "required": false,
+        "fields": [
+          {
+            "id": "fecha_devengo",
+            "label": "Fecha devengo",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Fecha devengo.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          {
+            "id": "fecha_defuncion",
+            "label": "Fecha defuncion",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Fecha defuncion.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          {
+            "id": "codigo_modelo",
+            "label": "Codigo modelo",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Codigo modelo.",
+            "default": "660"
+          },
+          {
+            "id": "codigo_aleatorio",
+            "label": "Codigo aleatorio",
+            "type": "string",
+            "order": 4,
+            "required": false,
+            "description": "Codigo aleatorio."
+          },
+          {
+            "id": "codigo_aleatorio_ref",
+            "label": "Codigo aleatorio ref",
+            "type": "string",
+            "order": 5,
+            "required": false,
+            "description": "Codigo aleatorio ref."
+          },
+          {
+            "id": "numero_personas_interesadas",
+            "label": "Numero personas interesadas",
+            "type": "number",
+            "order": 6,
+            "required": false,
+            "description": "Numero personas interesadas.",
+            "format": "integer"
+          }
+        ]
+      },
+      {
+        "id": "causante",
+        "label": "Causante",
+        "order": 1,
+        "required": true,
+        "fields": [
+          {
+            "id": "dni_nif",
+            "label": "Dni nif",
+            "type": "string",
+            "order": 1,
+            "required": true,
+            "description": "Dni nif.",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre_completo",
+            "label": "Nombre completo",
+            "type": "string",
+            "order": 2,
+            "required": true,
+            "description": "Nombre completo."
+          },
+          {
+            "id": "linea_direccion",
+            "label": "Linea direccion",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Linea direccion."
+          },
+          {
+            "id": "numero_via",
+            "label": "Numero via",
+            "type": "string",
+            "order": 4,
+            "required": false,
+            "description": "Numero via."
+          },
+          {
+            "id": "escalera",
+            "label": "Escalera",
+            "type": "string",
+            "order": 5,
+            "required": false,
+            "description": "Escalera."
+          },
+          {
+            "id": "piso",
+            "label": "Piso",
+            "type": "string",
+            "order": 6,
+            "required": false,
+            "description": "Piso."
+          },
+          {
+            "id": "puerta",
+            "label": "Puerta",
+            "type": "string",
+            "order": 7,
+            "required": false,
+            "description": "Puerta."
+          },
+          {
+            "id": "zip_code",
+            "label": "Codigo postal",
+            "type": "string",
+            "order": 8,
+            "required": false,
+            "description": "Codigo postal.",
+            "validationRegex": "^\\d{5}$"
+          },
+          {
+            "id": "municipio",
+            "label": "Municipio",
+            "type": "string",
+            "order": 9,
+            "required": false,
+            "description": "Municipio."
+          },
+          {
+            "id": "provincia",
+            "label": "Provincia",
+            "type": "string",
+            "order": 10,
+            "required": false,
+            "description": "Provincia."
+          },
+          {
+            "id": "pais",
+            "label": "Pais",
+            "type": "string",
+            "order": 11,
+            "required": false,
+            "description": "Pais.",
+            "default": "ES"
+          },
+          {
+            "id": "obligado_impuesto_patrimonio_ultimos_cuatro_anos",
+            "label": "Obligado impuesto patrimonio ultimos cuatro anos",
+            "type": "boolean",
+            "order": 12,
+            "required": false,
+            "description": "Obligado impuesto patrimonio ultimos cuatro anos."
+          }
+        ]
+      },
+      {
+        "id": "documento",
+        "label": "Datos del documento",
+        "order": 2,
+        "required": false,
+        "fields": [
+          {
+            "id": "tipo_documento",
+            "label": "Tipo documento",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Tipo documento."
+          },
+          {
+            "id": "notario_o_autoridad",
+            "label": "Notario o autoridad",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Notario o autoridad."
+          },
+          {
+            "id": "fecha_documento",
+            "label": "Fecha documento",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Fecha documento.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          {
+            "id": "numero_protocolo",
+            "label": "Numero protocolo",
+            "type": "string",
+            "order": 4,
+            "required": false,
+            "description": "Numero protocolo."
+          }
+        ]
+      },
+      {
+        "id": "presentador",
+        "label": "Presentador",
+        "order": 3,
+        "required": false,
+        "fields": [
+          {
+            "id": "dni_nif",
+            "label": "Dni nif",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Dni nif.",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre_completo",
+            "label": "Nombre completo",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Nombre completo."
+          },
+          {
+            "id": "linea_direccion",
+            "label": "Linea direccion",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Linea direccion."
+          },
+          {
+            "id": "numero_via",
+            "label": "Numero via",
+            "type": "string",
+            "order": 4,
+            "required": false,
+            "description": "Numero via."
+          },
+          {
+            "id": "escalera",
+            "label": "Escalera",
+            "type": "string",
+            "order": 5,
+            "required": false,
+            "description": "Escalera."
+          },
+          {
+            "id": "piso",
+            "label": "Piso",
+            "type": "string",
+            "order": 6,
+            "required": false,
+            "description": "Piso."
+          },
+          {
+            "id": "puerta",
+            "label": "Puerta",
+            "type": "string",
+            "order": 7,
+            "required": false,
+            "description": "Puerta."
+          },
+          {
+            "id": "zip_code",
+            "label": "Codigo postal",
+            "type": "string",
+            "order": 8,
+            "required": false,
+            "description": "Codigo postal.",
+            "validationRegex": "^\\d{5}$"
+          },
+          {
+            "id": "municipio",
+            "label": "Municipio",
+            "type": "string",
+            "order": 9,
+            "required": false,
+            "description": "Municipio."
+          },
+          {
+            "id": "provincia",
+            "label": "Provincia",
+            "type": "string",
+            "order": 10,
+            "required": false,
+            "description": "Provincia."
+          },
+          {
+            "id": "pais",
+            "label": "Pais",
+            "type": "string",
+            "order": 11,
+            "required": false,
+            "description": "Pais.",
+            "default": "ES"
+          },
+          {
+            "id": "telefono",
+            "label": "Telefono",
+            "type": "string",
+            "order": 12,
+            "required": false,
+            "description": "Telefono."
+          },
+          {
+            "id": "email",
+            "label": "Email",
+            "type": "string",
+            "order": 13,
+            "required": false,
+            "description": "Email."
+          },
+          {
+            "id": "lugar_firma",
+            "label": "Lugar firma",
+            "type": "string",
+            "order": 14,
+            "required": false,
+            "description": "Lugar firma."
+          },
+          {
+            "id": "fecha_firma",
+            "label": "Fecha firma",
+            "type": "string",
+            "order": 15,
+            "required": false,
+            "description": "Fecha firma.",
+            "format": "YYYY-MM-DD",
+            "validationRegex": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        ]
+      },
+      {
+        "id": "paginacion",
+        "label": "Paginacion",
+        "order": 5,
+        "required": false,
+        "fields": [
+          {
+            "id": "pagina_interesados",
+            "label": "Pagina interesados",
+            "type": "number",
+            "order": 1,
+            "required": false,
+            "description": "Pagina interesados.",
+            "format": "integer"
+          },
+          {
+            "id": "paginas_interesados",
+            "label": "Paginas interesados",
+            "type": "number",
+            "order": 2,
+            "required": false,
+            "description": "Paginas interesados.",
+            "format": "integer"
+          },
+          {
+            "id": "pagina_a",
+            "label": "Pagina a",
+            "type": "number",
+            "order": 3,
+            "required": false,
+            "description": "Pagina a.",
+            "format": "integer"
+          },
+          {
+            "id": "paginas_a",
+            "label": "Paginas a",
+            "type": "number",
+            "order": 4,
+            "required": false,
+            "description": "Paginas a.",
+            "format": "integer"
+          },
+          {
+            "id": "pagina_b",
+            "label": "Pagina b",
+            "type": "number",
+            "order": 5,
+            "required": false,
+            "description": "Pagina b.",
+            "format": "integer"
+          },
+          {
+            "id": "paginas_b",
+            "label": "Paginas b",
+            "type": "number",
+            "order": 6,
+            "required": false,
+            "description": "Paginas b.",
+            "format": "integer"
+          },
+          {
+            "id": "pagina_d",
+            "label": "Pagina d",
+            "type": "number",
+            "order": 7,
+            "required": false,
+            "description": "Pagina d.",
+            "format": "integer"
+          },
+          {
+            "id": "paginas_d",
+            "label": "Paginas d",
+            "type": "number",
+            "order": 8,
+            "required": false,
+            "description": "Paginas d.",
+            "format": "integer"
+          },
+          {
+            "id": "pagina_f",
+            "label": "Pagina f",
+            "type": "number",
+            "order": 9,
+            "required": false,
+            "description": "Pagina f.",
+            "format": "integer"
+          },
+          {
+            "id": "paginas_f",
+            "label": "Paginas f",
+            "type": "number",
+            "order": 10,
+            "required": false,
+            "description": "Paginas f.",
+            "format": "integer"
+          },
+          {
+            "id": "pagina_g",
+            "label": "Pagina g",
+            "type": "number",
+            "order": 11,
+            "required": false,
+            "description": "Pagina g.",
+            "format": "integer"
+          },
+          {
+            "id": "paginas_g",
+            "label": "Paginas g",
+            "type": "number",
+            "order": 12,
+            "required": false,
+            "description": "Paginas g.",
+            "format": "integer"
+          },
+          {
+            "id": "pagina_m",
+            "label": "Pagina m",
+            "type": "number",
+            "order": 13,
+            "required": false,
+            "description": "Pagina m.",
+            "format": "integer"
+          },
+          {
+            "id": "paginas_m",
+            "label": "Paginas m",
+            "type": "number",
+            "order": 14,
+            "required": false,
+            "description": "Paginas m.",
+            "format": "integer"
+          }
+        ]
+      },
+      {
+        "id": "ajuar_domestico",
+        "label": "Ajuar domestico",
+        "order": 18,
+        "required": false,
+        "fields": [
+          {
+            "id": "descripcion",
+            "label": "Descripcion",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Descripcion."
+          },
+          {
+            "id": "valor_declarado",
+            "label": "Valor declarado",
+            "type": "number",
+            "order": 2,
+            "required": false,
+            "description": "Valor declarado.",
+            "format": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "adicion_caudal",
+        "label": "Adicion al caudal hereditario",
+        "order": 21,
+        "required": false,
+        "fields": [
+          {
+            "id": "descripcion",
+            "label": "Descripcion",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Descripcion."
+          },
+          {
+            "id": "referencia_catastral",
+            "label": "Referencia catastral",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Referencia catastral."
+          },
+          {
+            "id": "valor_participacion",
+            "label": "Valor participacion",
+            "type": "number",
+            "order": 3,
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          {
+            "id": "valor_total",
+            "label": "Valor total",
+            "type": "number",
+            "order": 4,
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          {
+            "id": "valor_ingresar",
+            "label": "Valor ingresar",
+            "type": "number",
+            "order": 5,
+            "required": false,
+            "description": "Valor ingresar.",
+            "format": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "adicion_personas",
+        "label": "Adicion a personas interesadas",
+        "order": 22,
+        "required": false,
+        "fields": [
+          {
+            "id": "descripcion",
+            "label": "Descripcion",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Descripcion."
+          },
+          {
+            "id": "referencia_catastral",
+            "label": "Referencia catastral",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Referencia catastral."
+          },
+          {
+            "id": "dni_nif",
+            "label": "Dni nif",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Dni nif.",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre",
+            "label": "Nombre",
+            "type": "string",
+            "order": 4,
+            "required": false,
+            "description": "Nombre."
+          },
+          {
+            "id": "valor_participacion",
+            "label": "Valor participacion",
+            "type": "number",
+            "order": 5,
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          {
+            "id": "valor_total",
+            "label": "Valor total",
+            "type": "number",
+            "order": 6,
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          {
+            "id": "valor_ingresar",
+            "label": "Valor ingresar",
+            "type": "number",
+            "order": 7,
+            "required": false,
+            "description": "Valor ingresar.",
+            "format": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "otros",
+        "label": "Acumulacion de donaciones",
+        "order": 24,
+        "required": false,
+        "fields": [
+          {
+            "id": "tipo_bien",
+            "label": "Tipo bien",
+            "type": "string",
+            "order": 1,
+            "required": false,
+            "description": "Tipo bien."
+          },
+          {
+            "id": "descripcion",
+            "label": "Descripcion",
+            "type": "string",
+            "order": 2,
+            "required": false,
+            "description": "Descripcion."
+          },
+          {
+            "id": "referencia_catastral",
+            "label": "Referencia catastral",
+            "type": "string",
+            "order": 3,
+            "required": false,
+            "description": "Referencia catastral."
+          },
+          {
+            "id": "dni_nif",
+            "label": "Dni nif",
+            "type": "string",
+            "order": 4,
+            "required": false,
+            "description": "Dni nif.",
+            "validationRegex": "^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$|^[XYZ][0-9]{7}[A-Z]$|^[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]$"
+          },
+          {
+            "id": "nombre",
+            "label": "Nombre",
+            "type": "string",
+            "order": 5,
+            "required": false,
+            "description": "Nombre."
+          },
+          {
+            "id": "datos_escritura",
+            "label": "Datos escritura",
+            "type": "string",
+            "order": 6,
+            "required": false,
+            "description": "Datos escritura."
+          },
+    {
+      "id": "valor",
+      "label": "Valor",
+      "type": "number",
+      "order": 7,
+      "required": false,
+      "description": "Valor.",
+      "format": "decimal"
+    },
+          {
+            "id": "clave_beneficio_fiscal",
+            "label": "Clave beneficio fiscal",
+            "type": "string",
+            "order": 8,
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        ]
+      },
+      {
+        "id": "resumen_caudal",
+        "label": "Resumen del caudal hereditario",
+        "order": 25,
+        "required": false,
+        "fields": [
+          {
+            "id": "value_a",
+            "label": "Value a",
+            "type": "number",
+            "order": 1,
+            "required": false,
+            "description": "Value a.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_b",
+            "label": "Value b",
+            "type": "number",
+            "order": 2,
+            "required": false,
+            "description": "Value b.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_c",
+            "label": "Value c",
+            "type": "number",
+            "order": 3,
+            "required": false,
+            "description": "Value c.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_d",
+            "label": "Value d",
+            "type": "number",
+            "order": 4,
+            "required": false,
+            "description": "Value d.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_e",
+            "label": "Value e",
+            "type": "number",
+            "order": 5,
+            "required": false,
+            "description": "Value e.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_f",
+            "label": "Value f",
+            "type": "number",
+            "order": 6,
+            "required": false,
+            "description": "Value f.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_g",
+            "label": "Value g",
+            "type": "number",
+            "order": 7,
+            "required": false,
+            "description": "Value g.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_h",
+            "label": "Value h",
+            "type": "number",
+            "order": 8,
+            "required": false,
+            "description": "Value h.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_100",
+            "label": "Value 100",
+            "type": "number",
+            "order": 9,
+            "required": false,
+            "description": "Value 100.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_i",
+            "label": "Value i",
+            "type": "number",
+            "order": 10,
+            "required": false,
+            "description": "Value i.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_200",
+            "label": "Value 200",
+            "type": "number",
+            "order": 11,
+            "required": false,
+            "description": "Value 200.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_201",
+            "label": "Value 201",
+            "type": "number",
+            "order": 12,
+            "required": false,
+            "description": "Value 201.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_202",
+            "label": "Value 202",
+            "type": "number",
+            "order": 13,
+            "required": false,
+            "description": "Value 202.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_203",
+            "label": "Value 203",
+            "type": "number",
+            "order": 14,
+            "required": false,
+            "description": "Value 203.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_204",
+            "label": "Value 204",
+            "type": "number",
+            "order": 15,
+            "required": false,
+            "description": "Value 204.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_j",
+            "label": "Value j",
+            "type": "number",
+            "order": 16,
+            "required": false,
+            "description": "Value j.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_z",
+            "label": "Value z",
+            "type": "number",
+            "order": 17,
+            "required": false,
+            "description": "Value z.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_k",
+            "label": "Value k",
+            "type": "number",
+            "order": 18,
+            "required": false,
+            "description": "Value k.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_l",
+            "label": "Value l",
+            "type": "number",
+            "order": 19,
+            "required": false,
+            "description": "Value l.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_101",
+            "label": "Value 101",
+            "type": "number",
+            "order": 20,
+            "required": false,
+            "description": "Value 101.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_m1",
+            "label": "Value m1",
+            "type": "number",
+            "order": 21,
+            "required": false,
+            "description": "Value m1.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_p",
+            "label": "Value p",
+            "type": "number",
+            "order": 22,
+            "required": false,
+            "description": "Value p.",
+            "format": "decimal"
+          },
+          {
+            "id": "value_01",
+            "label": "Value 01",
+            "type": "number",
+            "order": 23,
+            "required": false,
+            "description": "Value 01.",
+            "format": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "personas_interesadas",
+        "label": "Personas interesadas",
+        "order": 4,
+        "required": false,
+        "type": "array",
+        "description": "Listado de personas interesadas (maximo 10).",
+        "fields": {
+          "dni_nif": {
+            "type": "string",
+            "required": false,
+            "description": "Dni nif."
+          },
+          "nombre_completo": {
+            "type": "string",
+            "required": false,
+            "description": "Nombre completo."
+          },
+          "fecha_nacimiento": {
+            "type": "string",
+            "required": false,
+            "description": "Fecha nacimiento.",
+            "format": "date"
+          },
+          "titulo_sucesorio": {
+            "type": "string",
+            "required": false,
+            "description": "Titulo sucesorio."
+          },
+          "parentesco": {
+            "type": "string",
+            "required": false,
+            "description": "Parentesco."
+          },
+          "grupo_parentesco": {
+            "type": "string",
+            "required": false,
+            "description": "Grupo parentesco."
+          },
+          "patrimonio_valor": {
+            "type": "number",
+            "required": false,
+            "description": "Patrimonio preexistente.",
+            "format": "decimal"
+          },
+          "tiene_discapacidad": {
+            "type": "boolean",
+            "required": false,
+            "description": "Tiene discapacidad."
+          },
+          "porcentaje_discapacidad": {
+            "type": "number",
+            "required": false,
+            "description": "Porcentaje discapacidad.",
+            "format": "decimal"
+          },
+          "linea_direccion": {
+            "type": "string",
+            "required": false,
+            "description": "Linea direccion."
+          },
+          "numero_via": {
+            "type": "string",
+            "required": false,
+            "description": "Numero via."
+          },
+          "escalera": {
+            "type": "string",
+            "required": false,
+            "description": "Escalera."
+          },
+          "piso": {
+            "type": "string",
+            "required": false,
+            "description": "Piso."
+          },
+          "puerta": {
+            "type": "string",
+            "required": false,
+            "description": "Puerta."
+          },
+          "zip_code": {
+            "type": "string",
+            "required": false,
+            "description": "Codigo postal."
+          },
+          "municipio": {
+            "type": "string",
+            "required": false,
+            "description": "Municipio."
+          },
+          "provincia": {
+            "type": "string",
+            "required": false,
+            "description": "Provincia."
+          },
+          "pais": {
+            "type": "string",
+            "required": false,
+            "description": "Pais."
+          },
+          "telefono": {
+            "type": "string",
+            "required": false,
+            "description": "Telefono."
+          },
+          "email": {
+            "type": "string",
+            "required": false,
+            "description": "Email."
+          }
+        }
+      },
+      {
+        "id": "bienes_urbanos",
+        "label": "Bienes inmuebles urbanos",
+        "order": 6,
+        "required": false,
+        "type": "array",
+        "description": "Bienes inmuebles urbanos (maximo 8 filas).",
+        "fields": {
+          "tipo": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo."
+          },
+          "derecho": {
+            "type": "string",
+            "required": false,
+            "description": "Derecho."
+          },
+          "via_publica": {
+            "type": "string",
+            "required": false,
+            "description": "Via publica."
+          },
+          "numero": {
+            "type": "string",
+            "required": false,
+            "description": "Numero."
+          },
+          "escalera": {
+            "type": "string",
+            "required": false,
+            "description": "Escalera."
+          },
+          "piso": {
+            "type": "string",
+            "required": false,
+            "description": "Piso."
+          },
+          "puerta": {
+            "type": "string",
+            "required": false,
+            "description": "Puerta."
+          },
+          "zip_code": {
+            "type": "string",
+            "required": false,
+            "description": "Codigo postal."
+          },
+          "municipio": {
+            "type": "string",
+            "required": false,
+            "description": "Municipio."
+          },
+          "provincia": {
+            "type": "string",
+            "required": false,
+            "description": "Provincia."
+          },
+          "referencia_catastral": {
+            "type": "string",
+            "required": false,
+            "description": "Referencia catastral."
+          },
+          "finca_registral": {
+            "type": "string",
+            "required": false,
+            "description": "Finca registral."
+          },
+          "subfinca_registral": {
+            "type": "string",
+            "required": false,
+            "description": "Subfinca registral."
+          },
+          "superficie": {
+            "type": "number",
+            "required": false,
+            "description": "Superficie.",
+            "format": "decimal"
+          },
+          "valor_catastral": {
+            "type": "number",
+            "required": false,
+            "description": "Valor catastral.",
+            "format": "decimal"
+          },
+          "valor_referencia": {
+            "type": "number",
+            "required": false,
+            "description": "Valor referencia.",
+            "format": "decimal"
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          },
+          "marca_parament": {
+            "type": "boolean",
+            "required": false,
+            "description": "Marca parament."
+          }
+        }
+      },
+      {
+        "id": "bienes_rusticos",
+        "label": "Bienes inmuebles rusticos",
+        "order": 7,
+        "required": false,
+        "type": "array",
+        "description": "Bienes inmuebles rusticos (maximo 4 filas).",
+        "fields": {
+          "tipo": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo."
+          },
+          "derecho": {
+            "type": "string",
+            "required": false,
+            "description": "Derecho."
+          },
+          "poligono": {
+            "type": "string",
+            "required": false,
+            "description": "Poligono."
+          },
+          "parcela": {
+            "type": "string",
+            "required": false,
+            "description": "Parcela."
+          },
+          "paraje": {
+            "type": "string",
+            "required": false,
+            "description": "Paraje."
+          },
+          "zip_code": {
+            "type": "string",
+            "required": false,
+            "description": "Codigo postal."
+          },
+          "municipio": {
+            "type": "string",
+            "required": false,
+            "description": "Municipio."
+          },
+          "provincia": {
+            "type": "string",
+            "required": false,
+            "description": "Provincia."
+          },
+          "referencia_catastral": {
+            "type": "string",
+            "required": false,
+            "description": "Referencia catastral."
+          },
+          "finca_registral": {
+            "type": "string",
+            "required": false,
+            "description": "Finca registral."
+          },
+          "subfinca_registral": {
+            "type": "string",
+            "required": false,
+            "description": "Subfinca registral."
+          },
+          "superficie": {
+            "type": "number",
+            "required": false,
+            "description": "Superficie.",
+            "format": "decimal"
+          },
+          "valor_catastral": {
+            "type": "number",
+            "required": false,
+            "description": "Valor catastral.",
+            "format": "decimal"
+          },
+          "valor_referencia": {
+            "type": "number",
+            "required": false,
+            "description": "Valor referencia.",
+            "format": "decimal"
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          },
+          "marca_parament": {
+            "type": "boolean",
+            "required": false,
+            "description": "Marca parament."
+          }
+        }
+      },
+      {
+        "id": "actividades_no_inmuebles",
+        "label": "Actividades no inmuebles",
+        "order": 8,
+        "required": false,
+        "type": "array",
+        "description": "Actividades empresariales (maximo 2 filas).",
+        "fields": {
+          "actividad": {
+            "type": "string",
+            "required": false,
+            "description": "Actividad."
+          },
+          "iae": {
+            "type": "string",
+            "required": false,
+            "description": "Iae."
+          },
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      },
+      {
+        "id": "bienes_afectos_actividades",
+        "label": "Bienes afectos a actividades",
+        "order": 9,
+        "required": false,
+        "type": "array",
+        "description": "Bienes afectos (maximo 2 filas).",
+        "fields": {
+          "tipo_bien": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo bien."
+          },
+          "via_publica": {
+            "type": "string",
+            "required": false,
+            "description": "Via publica."
+          },
+          "municipio": {
+            "type": "string",
+            "required": false,
+            "description": "Municipio."
+          },
+          "provincia": {
+            "type": "string",
+            "required": false,
+            "description": "Provincia."
+          },
+          "poligono": {
+            "type": "string",
+            "required": false,
+            "description": "Poligono."
+          },
+          "parcela": {
+            "type": "string",
+            "required": false,
+            "description": "Parcela."
+          },
+          "referencia_catastral": {
+            "type": "string",
+            "required": false,
+            "description": "Referencia catastral."
+          },
+          "finca_registral": {
+            "type": "string",
+            "required": false,
+            "description": "Finca registral."
+          },
+          "subfinca_registral": {
+            "type": "string",
+            "required": false,
+            "description": "Subfinca registral."
+          },
+          "superficie": {
+            "type": "number",
+            "required": false,
+            "description": "Superficie.",
+            "format": "decimal"
+          },
+          "valor_catastral": {
+            "type": "number",
+            "required": false,
+            "description": "Valor catastral.",
+            "format": "decimal"
+          },
+          "valor_referencia": {
+            "type": "number",
+            "required": false,
+            "description": "Valor referencia.",
+            "format": "decimal"
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "iae": {
+            "type": "string",
+            "required": false,
+            "description": "Iae."
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      },
+      {
+        "id": "depositos",
+        "label": "Depositos",
+        "order": 10,
+        "required": false,
+        "type": "array",
+        "description": "Depositos en cuenta (maximo 6 filas).",
+        "fields": {
+          "tipo_bien": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo bien."
+          },
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "iae": {
+            "type": "string",
+            "required": false,
+            "description": "Iae."
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      },
+      {
+        "id": "valores_cesion_mercado",
+        "label": "Valores cesion mercado",
+        "order": 11,
+        "required": false,
+        "type": "array",
+        "description": "Valores cedidos en mercados organizados.",
+        "fields": {
+          "tipo_bien": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo bien."
+          },
+          "entidad": {
+            "type": "string",
+            "required": false,
+            "description": "Entidad."
+          },
+          "nif_emisor": {
+            "type": "string",
+            "required": false,
+            "description": "Nif emisor."
+          },
+          "emisor": {
+            "type": "string",
+            "required": false,
+            "description": "Emisor."
+          },
+          "iae": {
+            "type": "string",
+            "required": false,
+            "description": "Iae."
+          },
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "titulos": {
+            "type": "string",
+            "required": false,
+            "description": "Titulos."
+          },
+          "valor_cotizacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor cotizacion.",
+            "format": "decimal"
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      },
+      {
+        "id": "valores_cesion_no_mercado",
+        "label": "Valores cesion no mercado",
+        "order": 12,
+        "required": false,
+        "type": "array",
+        "description": "Valores cedidos fuera de mercados organizados.",
+        "fields": {
+          "tipo_bien": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo bien."
+          },
+          "entidad": {
+            "type": "string",
+            "required": false,
+            "description": "Entidad."
+          },
+          "nif_emisor": {
+            "type": "string",
+            "required": false,
+            "description": "Nif emisor."
+          },
+          "emisor": {
+            "type": "string",
+            "required": false,
+            "description": "Emisor."
+          },
+          "nombre": {
+            "type": "string",
+            "required": false,
+            "description": "Nombre."
+          },
+          "iae": {
+            "type": "string",
+            "required": false,
+            "description": "Iae."
+          },
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      },
+      {
+        "id": "participaciones_mercado",
+        "label": "Participaciones en mercados",
+        "order": 13,
+        "required": false,
+        "type": "array",
+        "description": "Participaciones negociadas (maximo 4 filas).",
+        "fields": {
+          "tipo_bien": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo bien."
+          },
+          "entidad": {
+            "type": "string",
+            "required": false,
+            "description": "Entidad."
+          },
+          "nif_emisor": {
+            "type": "string",
+            "required": false,
+            "description": "Nif emisor."
+          },
+          "emisor": {
+            "type": "string",
+            "required": false,
+            "description": "Emisor."
+          },
+          "nombre": {
+            "type": "string",
+            "required": false,
+            "description": "Nombre."
+          },
+          "iae": {
+            "type": "string",
+            "required": false,
+            "description": "Iae."
+          },
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "valor_cotizacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor cotizacion.",
+            "format": "decimal"
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      },
+      {
+        "id": "participaciones_no_mercado",
+        "label": "Participaciones no negociadas",
+        "order": 14,
+        "required": false,
+        "type": "array",
+        "description": "Participaciones no negociadas.",
+        "fields": {
+          "tipo_bien": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo bien."
+          },
+          "nombre": {
+            "type": "string",
+            "required": false,
+            "description": "Nombre."
+          },
+          "nif_emisor": {
+            "type": "string",
+            "required": false,
+            "description": "Nif emisor."
+          },
+          "nombre_emisor": {
+            "type": "string",
+            "required": false,
+            "description": "Nombre emisor."
+          },
+          "iae": {
+            "type": "string",
+            "required": false,
+            "description": "Iae."
+          },
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      },
+      {
+        "id": "vehiculos",
+        "label": "Vehiculos",
+        "order": 15,
+        "required": false,
+        "type": "array",
+        "description": "Vehiculos, embarcaciones y aeronaves.",
+        "fields": {
+          "tipo_bien": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo bien."
+          },
+          "marca": {
+            "type": "string",
+            "required": false,
+            "description": "Marca."
+          },
+          "modelo": {
+            "type": "string",
+            "required": false,
+            "description": "Modelo."
+          },
+          "matricula": {
+            "type": "string",
+            "required": false,
+            "description": "Matricula."
+          },
+          "fecha_primera_matricula": {
+            "type": "string",
+            "required": false,
+            "description": "Fecha primera matricula.",
+            "format": "date"
+          },
+          "iae": {
+            "type": "string",
+            "required": false,
+            "description": "Iae."
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      },
+      {
+        "id": "otros_bienes",
+        "label": "Otros bienes",
+        "order": 16,
+        "required": false,
+        "type": "array",
+        "description": "Otros bienes o derechos.",
+        "fields": {
+          "tipo_bien": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo bien."
+          },
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "iae": {
+            "type": "string",
+            "required": false,
+            "description": "Iae."
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      },
+      {
+        "id": "cargas_deducibles",
+        "label": "Cargas deducibles",
+        "order": 17,
+        "required": false,
+        "type": "array",
+        "description": "Cargas deducibles.",
+        "fields": {
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          }
+        }
+      },
+      {
+        "id": "deudas_deducibles",
+        "label": "Deudas deducibles",
+        "order": 19,
+        "required": false,
+        "type": "array",
+        "description": "Deudas deducibles.",
+        "fields": {
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          }
+        }
+      },
+      {
+        "id": "gastos_deducibles",
+        "label": "Gastos deducibles",
+        "order": 20,
+        "required": false,
+        "type": "array",
+        "description": "Gastos deducibles.",
+        "fields": {
+          "tipo_bien": {
+            "type": "string",
+            "required": false,
+            "description": "Tipo bien."
+          },
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "valor_participacion": {
+            "type": "number",
+            "required": false,
+            "description": "Valor participacion.",
+            "format": "decimal"
+          }
+        }
+      },
+      {
+        "id": "seguros",
+        "label": "Seguros",
+        "order": 23,
+        "required": false,
+        "type": "array",
+        "description": "Seguros (maximo 4 filas).",
+        "fields": {
+          "entidad": {
+            "type": "string",
+            "required": false,
+            "description": "Entidad."
+          },
+          "numero_poliza": {
+            "type": "string",
+            "required": false,
+            "description": "Numero poliza."
+          },
+          "beneficiario": {
+            "type": "string",
+            "required": false,
+            "description": "Beneficiario."
+          },
+          "contratante": {
+            "type": "string",
+            "required": false,
+            "description": "Contratante."
+          },
+          "fecha_contratacion": {
+            "type": "string",
+            "required": false,
+            "description": "Fecha contratacion.",
+            "format": "date"
+          },
+          "valor_declarado": {
+            "type": "number",
+            "required": false,
+            "description": "Valor declarado.",
+            "format": "decimal"
+          },
+          "valor_total": {
+            "type": "number",
+            "required": false,
+            "description": "Valor total.",
+            "format": "decimal"
+          },
+          "descripcion": {
+            "type": "string",
+            "required": false,
+            "description": "Descripcion."
+          },
+          "clave_beneficio_fiscal": {
+            "type": "string",
+            "required": false,
+            "description": "Clave beneficio fiscal."
+          }
+        }
+      }
+    ],
+    "notes": {
+      "fieldMappings": "tax_models/mod660cat/data_models/mod660cat_field_mappings.json",
+      "idNaming": "Field IDs use snake_case and map to generate_mod660cat.py."
+    }
+  }
+}
