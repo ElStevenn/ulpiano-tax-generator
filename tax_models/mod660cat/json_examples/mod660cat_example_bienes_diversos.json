@@ -1,0 +1,350 @@
+{
+  "encabezado": {
+    "fecha_devengo": "2025-07-05",
+    "fecha_defuncion": "2025-06-20",
+    "codigo_modelo": "660",
+    "codigo_aleatorio": "D6600002",
+    "codigo_aleatorio_ref": "REF660-DIV",
+    "numero_personas_interesadas": 1
+  },
+  "causante": {
+    "dni_nif": "33333333K",
+    "nombre_completo": "Teresa Molina Gil",
+    "linea_direccion": "Avinguda Girona",
+    "numero_via": "45",
+    "zip_code": "17001",
+    "municipio": "Girona",
+    "provincia": "Girona",
+    "pais": "ES",
+    "obligado_impuesto_patrimonio_ultimos_cuatro_anos": true,
+    "escalera": "A",
+    "piso": "3",
+    "puerta": "2"
+  },
+  "presentador": {
+    "dni_nif": "44444444L",
+    "nombre_completo": "Marcos Molina Gil",
+    "telefono": "600222333",
+    "email": "marcos.molina@example.com",
+    "lugar_firma": "Girona",
+    "fecha_firma": "2025-07-10",
+    "linea_direccion": "Carrer Marina",
+    "numero_via": "120",
+    "escalera": "B",
+    "piso": "4",
+    "puerta": "1",
+    "zip_code": "08005",
+    "municipio": "Barcelona",
+    "provincia": "Barcelona",
+    "pais": "ES"
+  },
+  "personas_interesadas": [
+    {
+      "dni_nif": "44444444L",
+      "nombre_completo": "Marcos Molina Gil",
+      "fecha_nacimiento": "1988-07-12",
+      "titulo_sucesorio": "Heredero",
+      "parentesco": "Hijo",
+      "grupo_parentesco": "II",
+      "patrimonio_valor": 60000.0,
+      "tiene_discapacidad": true,
+      "porcentaje_discapacidad": 65.0,
+      "municipio": "Girona",
+      "provincia": "Girona",
+      "pais": "ES",
+      "linea_direccion": "Carrer Marina",
+      "numero_via": "100",
+      "escalera": "A",
+      "piso": "2",
+      "puerta": "1",
+      "zip_code": "08005",
+      "telefono": "600111222",
+      "email": "laura.torres@example.com"
+    }
+  ],
+  "bienes_urbanos": [
+    {
+      "tipo": "Vivienda",
+      "derecho": "Dominio",
+      "via_publica": "Carrer de la Creu",
+      "numero": "8",
+      "zip_code": "17002",
+      "municipio": "Girona",
+      "provincia": "Girona",
+      "referencia_catastral": "GR000111AA",
+      "superficie": 60.0,
+      "valor_catastral": 90000.0,
+      "valor_participacion": 100.0,
+      "valor_total": 110000.0,
+      "clave_beneficio_fiscal": "B02",
+      "escalera": "A",
+      "piso": "3",
+      "puerta": "2",
+      "finca_registral": "12345",
+      "subfinca_registral": "1",
+      "valor_referencia": 118000.0,
+      "marca_parament": false
+    }
+  ],
+  "bienes_rusticos": [
+    {
+      "tipo": "Terreno",
+      "derecho": "Dominio",
+      "poligono": "7",
+      "parcela": "88",
+      "paraje": "Mas Vell",
+      "zip_code": "17190",
+      "municipio": "Salt",
+      "provincia": "Girona",
+      "referencia_catastral": "GR998877YY",
+      "superficie": 5000.0,
+      "valor_catastral": 60000.0,
+      "valor_participacion": 100.0,
+      "valor_total": 70000.0,
+      "clave_beneficio_fiscal": "B03",
+      "finca_registral": "9876",
+      "subfinca_registral": "1",
+      "valor_referencia": 33000.0,
+      "marca_parament": false
+    }
+  ],
+  "vehiculos": [
+    {
+      "tipo_bien": "Embarcacion",
+      "marca": "Beneteau",
+      "modelo": "Oceanis 38",
+      "matricula": "7-BA-3-20",
+      "fecha_primera_matricula": "2016-06-30",
+      "iae": "000",
+      "valor_participacion": 100.0,
+      "valor_total": 45000.0,
+      "clave_beneficio_fiscal": "C03"
+    }
+  ],
+  "otros_bienes": [
+    {
+      "tipo_bien": "Arte",
+      "descripcion": "Cuadro contemporaneo",
+      "iae": "000",
+      "valor_participacion": 100.0,
+      "valor_total": 18000.0,
+      "clave_beneficio_fiscal": "C04"
+    }
+  ],
+  "resumen_caudal": {
+    "value_a": 110000.0,
+    "value_b": 70000.0,
+    "value_g": 45000.0,
+    "value_h": 18000.0,
+    "value_100": 243000.0,
+    "value_j": 243000.0,
+    "value_z": 243000.0,
+    "value_01": 14000.0,
+    "value_c": 30000.0,
+    "value_d": 35000.0,
+    "value_e": 18150.0,
+    "value_f": 42550.0,
+    "value_i": 30000.0,
+    "value_200": 5000.0,
+    "value_201": 8000.0,
+    "value_202": 3000.0,
+    "value_203": 20000.0,
+    "value_204": 5000.0,
+    "value_k": 10000.0,
+    "value_l": 421700.0,
+    "value_101": 25000.0,
+    "value_m1": 22000.0,
+    "value_p": 15000.0
+  },
+  "documento": {
+    "tipo_documento": "Escritura publica",
+    "notario_o_autoridad": "Notaria Maria Perez",
+    "fecha_documento": "2025-05-20",
+    "numero_protocolo": "1234/2025"
+  },
+  "paginacion": {
+    "pagina_interesados": 1,
+    "paginas_interesados": 1,
+    "pagina_a": 1,
+    "paginas_a": 1,
+    "pagina_b": 1,
+    "paginas_b": 1,
+    "pagina_d": 1,
+    "paginas_d": 1,
+    "pagina_f": 1,
+    "paginas_f": 1,
+    "pagina_g": 1,
+    "paginas_g": 1,
+    "pagina_m": 1,
+    "paginas_m": 1
+  },
+  "actividades_no_inmuebles": [
+    {
+      "actividad": "Minorista",
+      "iae": "653.1",
+      "descripcion": "Tienda de ropa",
+      "valor_participacion": 100.0,
+      "valor_total": 30000.0,
+      "clave_beneficio_fiscal": "D78"
+    }
+  ],
+  "bienes_afectos_actividades": [
+    {
+      "tipo_bien": "Nave",
+      "via_publica": "Carrer Industria",
+      "municipio": "Badalona",
+      "provincia": "Barcelona",
+      "poligono": "2",
+      "parcela": "12",
+      "referencia_catastral": "AF1234ZZ",
+      "finca_registral": "5555",
+      "subfinca_registral": "1",
+      "superficie": 600.0,
+      "valor_catastral": 75000.0,
+      "valor_referencia": 74000.0,
+      "valor_participacion": 60.0,
+      "valor_total": 90000.0,
+      "iae": "508.2",
+      "clave_beneficio_fiscal": "E90"
+    }
+  ],
+  "depositos": [
+    {
+      "tipo_bien": "C.corriente",
+      "descripcion": "Cuenta principal",
+      "iae": "000",
+      "valor_participacion": 100.0,
+      "valor_total": 25000.0,
+      "clave_beneficio_fiscal": "F01"
+    },
+    {
+      "tipo_bien": "Deposito",
+      "descripcion": "Deposito a plazo",
+      "iae": "000",
+      "valor_participacion": 50.0,
+      "valor_total": 10000.0,
+      "clave_beneficio_fiscal": "F02"
+    }
+  ],
+  "valores_cesion_mercado": [
+    {
+      "tipo_bien": "Bono",
+      "entidad": "Banco Central",
+      "nif_emisor": "Q1234567A",
+      "emisor": "Tesoro",
+      "iae": "000",
+      "descripcion": "Bono 2028",
+      "titulos": "10",
+      "valor_cotizacion": 101.5,
+      "valor_participacion": 100.0,
+      "valor_total": 10150.0,
+      "clave_beneficio_fiscal": "G12"
+    }
+  ],
+  "valores_cesion_no_mercado": [
+    {
+      "tipo_bien": "Obligacion",
+      "entidad": "Empresa Alfa",
+      "nif_emisor": "B12345678",
+      "emisor": "Empresa Alfa",
+      "nombre": "Obligacion privada",
+      "iae": "000",
+      "descripcion": "Emision 2027",
+      "valor_participacion": 80.0,
+      "valor_total": 8000.0,
+      "clave_beneficio_fiscal": "H34"
+    }
+  ],
+  "participaciones_mercado": [
+    {
+      "tipo_bien": "Accion",
+      "entidad": "Mercado continuo",
+      "nif_emisor": "A12345678",
+      "emisor": "Empresa Beta",
+      "nombre": "Acciones Beta",
+      "iae": "000",
+      "descripcion": "Cartera bolsa",
+      "valor_cotizacion": 25.5,
+      "valor_participacion": 100.0,
+      "valor_total": 2550.0,
+      "clave_beneficio_fiscal": "I56"
+    }
+  ],
+  "participaciones_no_mercado": [
+    {
+      "tipo_bien": "Participacion",
+      "nombre": "Sociedad Gamma",
+      "nif_emisor": "B87654321",
+      "nombre_emisor": "Sociedad Gamma",
+      "iae": "000",
+      "descripcion": "Participacion no cotizada",
+      "valor_participacion": 40.0,
+      "valor_total": 40000.0,
+      "clave_beneficio_fiscal": "J78"
+    }
+  ],
+  "cargas_deducibles": [
+    {
+      "descripcion": "Hipoteca pendiente",
+      "valor_participacion": 100.0,
+      "valor_total": 30000.0
+    }
+  ],
+  "ajuar_domestico": {
+    "descripcion": "Ajuar declarado",
+    "valor_declarado": 5000.0
+  },
+  "deudas_deducibles": [
+    {
+      "descripcion": "Prestamo personal",
+      "valor_participacion": 100.0,
+      "valor_total": 8000.0
+    }
+  ],
+  "gastos_deducibles": [
+    {
+      "tipo_bien": "Entierro",
+      "descripcion": "Servicios funerarios",
+      "valor_participacion": 3000.0
+    }
+  ],
+  "adicion_caudal": {
+    "descripcion": "Bienes adicionados",
+    "referencia_catastral": "AD12345ZZ",
+    "valor_participacion": 100.0,
+    "valor_total": 20000.0,
+    "valor_ingresar": 1500.0
+  },
+  "adicion_personas": {
+    "descripcion": "Adicion por donacion previa",
+    "referencia_catastral": "DP67890YY",
+    "dni_nif": "56789012D",
+    "nombre": "Luis Torres",
+    "valor_participacion": 50.0,
+    "valor_total": 5000.0,
+    "valor_ingresar": 350.0
+  },
+  "seguros": [
+    {
+      "entidad": "Aseguradora Seguros SA",
+      "numero_poliza": "POL-2025-001",
+      "beneficiario": "Laura Torres Ruiz",
+      "contratante": "Miguel Torres Ruiz",
+      "fecha_contratacion": "2015-01-10",
+      "valor_declarado": 20000.0,
+      "valor_total": 22000.0,
+      "descripcion": "Seguro vida",
+      "clave_beneficio_fiscal": "M34"
+    }
+  ],
+  "otros": {
+    "tipo_bien": "Donacion",
+    "descripcion": "Donacion anterior",
+    "referencia_catastral": "DN12345XX",
+    "dni_nif": "67890123E",
+    "nombre": "Ana Ruiz",
+    "datos_escritura": "Notaria Perez 55/2019",
+    "valor": 15000.0,
+    "clave_beneficio_fiscal": "N56"
+  }
+}

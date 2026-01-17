@@ -1,0 +1,416 @@
+{
+  "encabezado": {
+    "fecha_devengo": "2025-06-15",
+    "fecha_defuncion": "2025-05-01",
+    "codigo_modelo": "660",
+    "codigo_aleatorio": "A1B2C3D4",
+    "codigo_aleatorio_ref": "REF660-2025",
+    "numero_personas_interesadas": 3
+  },
+  "causante": {
+    "dni_nif": "12345678Z",
+    "nombre_completo": "Miguel Torres Ruiz",
+    "linea_direccion": "Carrer Major",
+    "numero_via": "12",
+    "escalera": "A",
+    "piso": "3",
+    "puerta": "2",
+    "zip_code": "08002",
+    "municipio": "Barcelona",
+    "provincia": "Barcelona",
+    "pais": "ES",
+    "obligado_impuesto_patrimonio_ultimos_cuatro_anos": true
+  },
+  "documento": {
+    "tipo_documento": "Escritura publica",
+    "notario_o_autoridad": "Notaria Maria Perez",
+    "fecha_documento": "2025-05-20",
+    "numero_protocolo": "1234/2025"
+  },
+  "presentador": {
+    "dni_nif": "11223344J",
+    "nombre_completo": "Sergio Pardo Rios",
+    "linea_direccion": "Carrer Marina",
+    "numero_via": "120",
+    "escalera": "B",
+    "piso": "4",
+    "puerta": "1",
+    "zip_code": "08005",
+    "municipio": "Barcelona",
+    "provincia": "Barcelona",
+    "pais": "ES",
+    "telefono": "600555666",
+    "email": "sergio.pardo@example.com",
+    "lugar_firma": "Barcelona",
+    "fecha_firma": "2025-06-20"
+  },
+  "personas_interesadas": [
+    {
+      "dni_nif": "23456789A",
+      "nombre_completo": "Laura Torres Ruiz",
+      "fecha_nacimiento": "1990-02-10",
+      "titulo_sucesorio": "Heredera",
+      "parentesco": "Hija",
+      "grupo_parentesco": "II",
+      "patrimonio_valor": 125000.0,
+      "tiene_discapacidad": false,
+      "porcentaje_discapacidad": 0,
+      "linea_direccion": "Carrer Marina",
+      "numero_via": "100",
+      "escalera": "A",
+      "piso": "2",
+      "puerta": "1",
+      "zip_code": "08005",
+      "municipio": "Barcelona",
+      "provincia": "Barcelona",
+      "pais": "ES",
+      "telefono": "600111222",
+      "email": "laura.torres@example.com"
+    },
+    {
+      "dni_nif": "34567890B",
+      "nombre_completo": "Carlos Torres Ruiz",
+      "fecha_nacimiento": "1992-08-18",
+      "titulo_sucesorio": "Heredero",
+      "parentesco": "Hijo",
+      "grupo_parentesco": "II",
+      "patrimonio_valor": 95000.0,
+      "tiene_discapacidad": true,
+      "porcentaje_discapacidad": 40,
+      "linea_direccion": "Carrer Arago",
+      "numero_via": "55",
+      "escalera": "C",
+      "piso": "1",
+      "puerta": "2",
+      "zip_code": "08013",
+      "municipio": "Barcelona",
+      "provincia": "Barcelona",
+      "pais": "ES",
+      "telefono": "600333444",
+      "email": "carlos.torres@example.com"
+    },
+    {
+      "dni_nif": "45678901C",
+      "nombre_completo": "Elena Torres Ruiz",
+      "fecha_nacimiento": "1995-11-30",
+      "titulo_sucesorio": "Heredera",
+      "parentesco": "Hija",
+      "grupo_parentesco": "II",
+      "patrimonio_valor": 80000.0,
+      "tiene_discapacidad": false,
+      "porcentaje_discapacidad": 0,
+      "linea_direccion": "Carrer Girona",
+      "numero_via": "15",
+      "escalera": "B",
+      "piso": "5",
+      "puerta": "3",
+      "zip_code": "08010",
+      "municipio": "Barcelona",
+      "provincia": "Barcelona",
+      "pais": "ES",
+      "telefono": "600555777",
+      "email": "elena.torres@example.com"
+    }
+  ],
+  "paginacion": {
+    "pagina_interesados": 1,
+    "paginas_interesados": 1,
+    "pagina_a": 1,
+    "paginas_a": 1,
+    "pagina_b": 1,
+    "paginas_b": 1,
+    "pagina_d": 1,
+    "paginas_d": 1,
+    "pagina_f": 1,
+    "paginas_f": 1,
+    "pagina_g": 1,
+    "paginas_g": 1,
+    "pagina_m": 1,
+    "paginas_m": 1
+  },
+  "bienes_urbanos": [
+    {
+      "tipo": "Vivienda",
+      "derecho": "Dominio",
+      "via_publica": "Carrer Major",
+      "numero": "12",
+      "escalera": "A",
+      "piso": "3",
+      "puerta": "2",
+      "zip_code": "08002",
+      "municipio": "Barcelona",
+      "provincia": "Barcelona",
+      "referencia_catastral": "1234567AB1234C0001DE",
+      "finca_registral": "12345",
+      "subfinca_registral": "1",
+      "superficie": 85.5,
+      "valor_catastral": 120000.0,
+      "valor_referencia": 118000.0,
+      "valor_participacion": 100.0,
+      "valor_total": 150000.0,
+      "clave_beneficio_fiscal": "A12",
+      "marca_parament": false
+    },
+    {
+      "tipo": "Local",
+      "derecho": "Dominio",
+      "via_publica": "Avinguda Diagonal",
+      "numero": "350",
+      "escalera": "B",
+      "piso": "1",
+      "puerta": "1",
+      "zip_code": "08013",
+      "municipio": "Barcelona",
+      "provincia": "Barcelona",
+      "referencia_catastral": "7654321CD4321E0002FG",
+      "finca_registral": "54321",
+      "subfinca_registral": "2",
+      "superficie": 120.0,
+      "valor_catastral": 95000.0,
+      "valor_referencia": 92000.0,
+      "valor_participacion": 50.0,
+      "valor_total": 110000.0,
+      "clave_beneficio_fiscal": "B34",
+      "marca_parament": true
+    }
+  ],
+  "bienes_rusticos": [
+    {
+      "tipo": "F.Rustica",
+      "derecho": "Dominio",
+      "poligono": "3",
+      "parcela": "45",
+      "paraje": "Can Serra",
+      "zip_code": "08520",
+      "municipio": "Les Franqueses",
+      "provincia": "Barcelona",
+      "referencia_catastral": "RU12345XY",
+      "finca_registral": "9876",
+      "subfinca_registral": "1",
+      "superficie": 2500.0,
+      "valor_catastral": 35000.0,
+      "valor_referencia": 33000.0,
+      "valor_participacion": 100.0,
+      "valor_total": 40000.0,
+      "clave_beneficio_fiscal": "C56",
+      "marca_parament": false
+    }
+  ],
+  "actividades_no_inmuebles": [
+    {
+      "actividad": "Minorista",
+      "iae": "653.1",
+      "descripcion": "Tienda de ropa",
+      "valor_participacion": 100.0,
+      "valor_total": 30000.0,
+      "clave_beneficio_fiscal": "D78"
+    }
+  ],
+  "bienes_afectos_actividades": [
+    {
+      "tipo_bien": "Nave",
+      "via_publica": "Carrer Industria",
+      "municipio": "Badalona",
+      "provincia": "Barcelona",
+      "poligono": "2",
+      "parcela": "12",
+      "referencia_catastral": "AF1234ZZ",
+      "finca_registral": "5555",
+      "subfinca_registral": "1",
+      "superficie": 600.0,
+      "valor_catastral": 75000.0,
+      "valor_referencia": 74000.0,
+      "valor_participacion": 60.0,
+      "valor_total": 90000.0,
+      "iae": "508.2",
+      "clave_beneficio_fiscal": "E90"
+    }
+  ],
+  "depositos": [
+    {
+      "tipo_bien": "C.corriente",
+      "descripcion": "Cuenta principal",
+      "iae": "000",
+      "valor_participacion": 100.0,
+      "valor_total": 25000.0,
+      "clave_beneficio_fiscal": "F01"
+    },
+    {
+      "tipo_bien": "Deposito",
+      "descripcion": "Deposito a plazo",
+      "iae": "000",
+      "valor_participacion": 50.0,
+      "valor_total": 10000.0,
+      "clave_beneficio_fiscal": "F02"
+    }
+  ],
+  "valores_cesion_mercado": [
+    {
+      "tipo_bien": "Bono",
+      "entidad": "Banco Central",
+      "nif_emisor": "Q1234567A",
+      "emisor": "Tesoro",
+      "iae": "000",
+      "descripcion": "Bono 2028",
+      "titulos": "10",
+      "valor_cotizacion": 101.5,
+      "valor_participacion": 100.0,
+      "valor_total": 10150.0,
+      "clave_beneficio_fiscal": "G12"
+    }
+  ],
+  "valores_cesion_no_mercado": [
+    {
+      "tipo_bien": "Obligacion",
+      "entidad": "Empresa Alfa",
+      "nif_emisor": "B12345678",
+      "emisor": "Empresa Alfa",
+      "nombre": "Obligacion privada",
+      "iae": "000",
+      "descripcion": "Emision 2027",
+      "valor_participacion": 80.0,
+      "valor_total": 8000.0,
+      "clave_beneficio_fiscal": "H34"
+    }
+  ],
+  "participaciones_mercado": [
+    {
+      "tipo_bien": "Accion",
+      "entidad": "Mercado continuo",
+      "nif_emisor": "A12345678",
+      "emisor": "Empresa Beta",
+      "nombre": "Acciones Beta",
+      "iae": "000",
+      "descripcion": "Cartera bolsa",
+      "valor_cotizacion": 25.5,
+      "valor_participacion": 100.0,
+      "valor_total": 2550.0,
+      "clave_beneficio_fiscal": "I56"
+    }
+  ],
+  "participaciones_no_mercado": [
+    {
+      "tipo_bien": "Participacion",
+      "nombre": "Sociedad Gamma",
+      "nif_emisor": "B87654321",
+      "nombre_emisor": "Sociedad Gamma",
+      "iae": "000",
+      "descripcion": "Participacion no cotizada",
+      "valor_participacion": 40.0,
+      "valor_total": 40000.0,
+      "clave_beneficio_fiscal": "J78"
+    }
+  ],
+  "vehiculos": [
+    {
+      "tipo_bien": "Turismo",
+      "marca": "Seat",
+      "modelo": "Leon",
+      "matricula": "1234BCD",
+      "fecha_primera_matricula": "2018-04-15",
+      "iae": "000",
+      "valor_participacion": 100.0,
+      "valor_total": 12000.0,
+      "clave_beneficio_fiscal": "K90"
+    }
+  ],
+  "otros_bienes": [
+    {
+      "tipo_bien": "Joyas",
+      "descripcion": "Coleccion familiar",
+      "iae": "000",
+      "valor_participacion": 100.0,
+      "valor_total": 15000.0,
+      "clave_beneficio_fiscal": "L12"
+    }
+  ],
+  "cargas_deducibles": [
+    {
+      "descripcion": "Hipoteca pendiente",
+      "valor_participacion": 100.0,
+      "valor_total": 30000.0
+    }
+  ],
+  "ajuar_domestico": {
+    "descripcion": "Ajuar declarado",
+    "valor_declarado": 5000.0
+  },
+  "deudas_deducibles": [
+    {
+      "descripcion": "Prestamo personal",
+      "valor_participacion": 100.0,
+      "valor_total": 8000.0
+    }
+  ],
+  "gastos_deducibles": [
+    {
+      "tipo_bien": "Entierro",
+      "descripcion": "Servicios funerarios",
+      "valor_participacion": 3000.0
+    }
+  ],
+  "adicion_caudal": {
+    "descripcion": "Bienes adicionados",
+    "referencia_catastral": "AD12345ZZ",
+    "valor_participacion": 100.0,
+    "valor_total": 20000.0,
+    "valor_ingresar": 1500.0
+  },
+  "adicion_personas": {
+    "descripcion": "Adicion por donacion previa",
+    "referencia_catastral": "DP67890YY",
+    "dni_nif": "56789012D",
+    "nombre": "Luis Torres",
+    "valor_participacion": 50.0,
+    "valor_total": 5000.0,
+    "valor_ingresar": 350.0
+  },
+  "seguros": [
+    {
+      "entidad": "Aseguradora Seguros SA",
+      "numero_poliza": "POL-2025-001",
+      "beneficiario": "Laura Torres Ruiz",
+      "contratante": "Miguel Torres Ruiz",
+      "fecha_contratacion": "2015-01-10",
+      "valor_declarado": 20000.0,
+      "valor_total": 22000.0,
+      "descripcion": "Seguro vida",
+      "clave_beneficio_fiscal": "M34"
+    }
+  ],
+  "otros": {
+    "tipo_bien": "Donacion",
+    "descripcion": "Donacion anterior",
+    "referencia_catastral": "DN12345XX",
+    "dni_nif": "67890123E",
+    "nombre": "Ana Ruiz",
+    "datos_escritura": "Notaria Perez 55/2019",
+    "valor": 15000.0,
+    "clave_beneficio_fiscal": "N56"
+  },
+  "resumen_caudal": {
+    "value_a": 260000.0,
+    "value_b": 40000.0,
+    "value_c": 30000.0,
+    "value_d": 35000.0,
+    "value_e": 18150.0,
+    "value_f": 42550.0,
+    "value_g": 12000.0,
+    "value_h": 15000.0,
+    "value_100": 452700.0,
+    "value_i": 30000.0,
+    "value_200": 5000.0,
+    "value_201": 8000.0,
+    "value_202": 3000.0,
+    "value_203": 20000.0,
+    "value_204": 5000.0,
+    "value_j": 431700.0,
+    "value_z": 431700.0,
+    "value_k": 10000.0,
+    "value_l": 421700.0,
+    "value_101": 25000.0,
+    "value_m1": 22000.0,
+    "value_p": 15000.0,
+    "value_01": 26500.0
+  }
+}
